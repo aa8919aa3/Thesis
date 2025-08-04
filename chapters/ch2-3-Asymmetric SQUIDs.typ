@@ -72,7 +72,7 @@ $ I_"max"(Phi) = (I_("c1") + I_("c2")) sqrt(cos^2((pi Phi) / Phi_0) + alpha^2 si
 
 $ phi_2 = phi_1 + (2pi Phi_"ext") / Phi_0 $
 
-透過精密量測非對稱 SQUID 的總臨界電流 $I_"c,total"$ 隨外部磁通量 $Phi_"ext"$ 的完整調變曲線，我們可以直接重構出較弱接面的電流-相位關係 (Current-Phase Relation, CPR)：
+透過精密量測非對稱 SQUID 的總臨界電流 $I_"c,total"$ 隨外部磁通量 $Phi_"ext"$ 的完整調變曲線，我們可以直接重構出較弱接面的電流-相位關係 (Current-Phase Relation, CPR)@Babich2023_LimitationsCPR_NanoLett：
 
 $ I_("s,weak")(phi) = I_("c,total")(Phi_"ext") - I_("c1") sin(phi_1) $
 
@@ -88,7 +88,7 @@ $ "調變深度" = (I_"max" - I_"min") / I_"max" = (2|I_("c1")||I_("c2")|) / (I_
 
 === 磁通量靈敏度 (Flux Sensitivity)
 
-非對稱性會改變 SQUID 的磁通量-電壓轉換係數：
+非對稱性會改變 SQUID 的磁通量-電壓轉換係數@Crete2021_SelfField_Micromachines：
 
 $ (d V) / (d Phi) = R_N (d I_c) / (d Phi) $
 
@@ -111,7 +111,7 @@ $ I_c(Phi_"ext") = sum_(n=0)^infinity a_n cos((2pi n Phi_"ext") / Phi_0) + b_n s
 
 === 非正弦 CPR 的識別 (Identification of Non-sinusoidal CPRs)
 
-標準正弦 CPR ($I_s = I_c sin(phi)$) 會產生標準的餘弦調變。任何偏離此形式的調變都指示著非傳統的 CPR：
+標準正弦 CPR ($I_s = I_c sin(phi)$) 會產生標準的餘弦調變。任何偏離此形式的調變都指示著非傳統的 CPR@Babich2023_LimitationsCPR_NanoLett：
 
 1. *偏斜 CPR (Skewed CPR)*：導致調變曲線的不對稱
 2. *二階諧波 CPR*：產生 $Phi_0/2$ 週期的調變分量
@@ -121,7 +121,7 @@ $ I_c(Phi_"ext") = sum_(n=0)^infinity a_n cos((2pi n Phi_"ext") / Phi_0) + b_n s
 
 === 元件設計考量 (Device Design Considerations)
 
-設計非對稱 SQUID 時需要考慮：
+設計非對稱 SQUID 時需要考慮@Butz2010_AsymDCSQUIDs_Diploma：
 
 1. *非對稱比的選擇*：平衡調變深度與 CPR 探測精度
 2. *迴路幾何*：最小化寄生電感和串擾
@@ -142,7 +142,7 @@ $ I_c(Phi_"ext") = sum_(n=0)^infinity a_n cos((2pi n Phi_"ext") / Phi_0) + b_n s
 
 === 拓撲半金屬的 CPR 特徵 (CPR Characteristics of Topological Semimetals)
 
-PtTe₂ 作為第二類狄拉克半金屬 (Type-II Dirac Semimetal)，其約瑟夫森接面預期表現出：
+PtTe₂ 作為第二類狄拉克半金屬 (Type-II Dirac Semimetal)，其約瑟夫森接面預期表現出@Cuozzo2024_MW_Tunable_Diode_PRResearch：
 
 1. *非正弦 CPR*：由於狄拉克費米子的特殊輸運性質
 2. *高次諧波分量*：特別是二階諧波 ($sin(2phi)$) 項
@@ -150,7 +150,7 @@ PtTe₂ 作為第二類狄拉克半金屬 (Type-II Dirac Semimetal)，其約瑟�
 
 === 約瑟夫森二極體效應的探測 (Detection of Josephson Diode Effect)
 
-非對稱 SQUID 也是探測約瑟夫森二極體效應 (Josephson Diode Effect, JDE) 的有效工具。透過量測正、負方向的切換電流差異：
+非對稱 SQUID 也是探測約瑟夫森二極體效應 (Josephson Diode Effect, JDE) 的有效工具@Cuozzo2024_MW_Tunable_Diode_PRResearch。透過量測正、負方向的切換電流差異：
 
 $ eta = (I_("sw")^+ - I_("sw")^-) / (I_("sw")^+ + I_("sw")^-) $
 
