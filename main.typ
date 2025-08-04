@@ -82,6 +82,8 @@
 #include "chapters/Ch3-method.typ"
 // 第四章：實驗結果
 #include "chapters/Ch4-experiments.typ"
+// 第五章第一節：討論
+#include "chapters/ch5-1-Discussion.typ"
 // 第五章：結論
 #include "chapters/Ch5-conclusion.typ"
 
