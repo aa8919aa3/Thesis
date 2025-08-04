@@ -172,7 +172,7 @@ Superconducting Quantum Interference Devices (SQUIDs) stand as the most sensitiv
 
 其次，在完成電極蒸鍍製程後，我們利用 AFM 對接觸金屬NbTi的形貌進行檢測。分析的重點包括金屬膜的表面粗糙度 (surface roughness)、顆粒大小 (grain size) 以及電極圖案的邊緣清晰度。同時，透過量測金屬與基板的步階高度，我們可以驗證其實際沉積厚度是否與蒸鍍儀器設定的目標值一致。此項表徵是確保元件具備良好歐姆接觸與電氣性能的關鍵品質控制環節。
 
-### 2.3.3 S**canning Electron Microscopy**
+### 2.3.3 **Scanning Electron Microscopy**
 
 ## 2.4 **E-Beam Lithography(EBL)**
 
@@ -369,13 +369,8 @@ c-10,0,-16.667,5,-20,15z M188 15 H145 v585 v1200 v585 h43z"></path></svg>)
 
 ## 4.3 Current-Phase Relation Analysis
 
-### 4.3.1 Unconventional CPR Features at central
-
-### 4.3.2 Unconventional CPR Features at n=1 Lobe
-
-### 4.3.3 Comparison of CPRs (n=0 vs. n=1 lobes)
-
-### 4.3.4 Correlation between Fraunhofer Asymmetry and CPR Unconventionality
+### 4.3.1 Unconventional CPR Features 
+### 4.3.2 Correlation between Fraunhofer Asymmetry and CPR Unconventionality
 
 # **Chapter V. Discussion**
 

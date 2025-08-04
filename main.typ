@@ -70,20 +70,23 @@
 // 主要內容
 // 第一章：介紹
 #include "chapters/Ch1-introduction.typ"
-
 // 第二章：相關研究
 #include "chapters/Ch2-related-work.typ"
-
+// 2-1
+#include "chapters/ch2-1-SQUID.typ"
+// 2-2
+#include "chapters/ch2-2-Device Fabrication.typ"
+// 3-1
+#include "chapters/ch3-1-Device Characterization.typ"
 // 第三章：研究方法
 #include "chapters/Ch3-method.typ"
-
 // 第四章：實驗結果
 #include "chapters/Ch4-experiments.typ"
-
 // 第五章：結論
 #include "chapters/Ch5-conclusion.typ"
 
-// 參考文獻（由模板自動生成）
-
 // 附錄
 #include "appendices/appendix.typ"
+
+// 參考文獻（由模板自動生成）
+
