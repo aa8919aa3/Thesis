@@ -76,6 +76,8 @@
 #include "chapters/ch2-1-SQUID.typ"
 // 2-2
 #include "chapters/ch2-2-Device Fabrication.typ"
+// 2-3
+#include "chapters/ch2-3-Asymmetric SQUIDs.typ"
 // 3-1
 #include "chapters/ch3-1-Device Characterization.typ"
 // 第三章：研究方法
