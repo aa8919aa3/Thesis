@@ -12,6 +12,10 @@ where γ is proportional to the normalized bias current j.
 
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib.patches import FancyArrowPatch
+from matplotlib.patches import ConnectionPatch
+from matplotlib.path import Path
+from matplotlib.patches import PathPatch
 from scipy.optimize import fsolve
 
 def find_local_minima_near_2pi(j, scaling_constant=0.5):
@@ -134,26 +138,48 @@ def main():
             y_pos = 1 - np.cos(x_pos) - scaling_constant * j * x_pos
             ax.text(x_pos, y_pos + 0.3, f'$j = {j}$', fontsize=12, ha='center')
     
-    # 6. Add plasma oscillation frequency arrow (U-shaped double arrow at j=0 curve near φ=2π)
+    # 6. Add plasma oscillation frequency arrow (enhanced U-shaped double arrow at j=0 curve near φ=2π)
     # For j=0, the minimum is exactly at φ=2π with U=0
     phi_center = 2*np.pi
     U_center = 0  # For j=0 case
-    # Create U-shaped arrow showing oscillation around the minimum
-    delta_phi = 0.3  # Width of the U-shape
-    delta_U = 0.8    # Height of the U-shape
+    # Create enhanced U-shaped arrow showing oscillation around the minimum
+    delta_phi = 0.28  # Width of the U-shape
+    delta_U = 0.75    # Height of the U-shape
     
-    # Draw U-shaped arrow with three segments
-    ax.annotate('', xy=(phi_center - delta_phi, U_center + delta_U), 
-                xytext=(phi_center - delta_phi, U_center),
-                arrowprops=dict(arrowstyle='->', lw=1.5, color='black'))
-    ax.annotate('', xy=(phi_center + delta_phi, U_center + delta_U), 
-                xytext=(phi_center - delta_phi, U_center + delta_U),
-                arrowprops=dict(arrowstyle='-', lw=1.5, color='black'))
-    ax.annotate('', xy=(phi_center + delta_phi, U_center), 
-                xytext=(phi_center + delta_phi, U_center + delta_U),
-                arrowprops=dict(arrowstyle='->', lw=1.5, color='black'))
-    ax.text(phi_center, U_center + delta_U + 0.3, r'$\omega_p$', 
-            ha='center', fontsize=12)
+    # Create a smooth U-shaped curve using parametric approach
+    t = np.linspace(0, np.pi, 50)  # Parameter for creating smooth U-curve
+    # U-shaped path: starts low, goes up, curves across top, comes back down
+    phi_curve = phi_center + delta_phi * np.cos(t)  # X coordinates  
+    U_curve = U_center + delta_U * (1 - np.cos(t)) / 2  # Y coordinates for U-shape
+    
+    # Plot the U-shaped curve
+    ax.plot(phi_curve, U_curve, 'k-', linewidth=2.0, alpha=0.8)
+    
+    # Add arrowheads at both ends to indicate bidirectional oscillation
+    # Left arrow (pointing inward/upward)
+    arrow_left = FancyArrowPatch((phi_center - delta_phi, U_center + 0.05), 
+                                (phi_center - delta_phi*0.85, U_center + delta_U*0.15),
+                                arrowstyle='->', mutation_scale=18, 
+                                linewidth=2.2, color='black')
+    ax.add_patch(arrow_left)
+    
+    # Right arrow (pointing inward/upward)
+    arrow_right = FancyArrowPatch((phi_center + delta_phi, U_center + 0.05), 
+                                 (phi_center + delta_phi*0.85, U_center + delta_U*0.15),
+                                 arrowstyle='->', mutation_scale=18, 
+                                 linewidth=2.2, color='black')
+    ax.add_patch(arrow_right)
+    
+    # Add small vertical indicators to show oscillation amplitude
+    ax.plot([phi_center - delta_phi, phi_center - delta_phi], 
+            [U_center, U_center + 0.15], 'k-', linewidth=1.5, alpha=0.7)
+    ax.plot([phi_center + delta_phi, phi_center + delta_phi], 
+            [U_center, U_center + 0.15], 'k-', linewidth=1.5, alpha=0.7)
+    
+    # Add omega_p label with improved positioning
+    ax.text(phi_center, U_center + delta_U + 0.4, r'$\omega_p$', 
+            ha='center', va='bottom', fontsize=14, fontweight='bold',
+            bbox=dict(boxstyle="round,pad=0.3", facecolor='white', alpha=0.8, edgecolor='none'))
     
     # 7. Add barrier height annotation (U0) for j=0.5 case
     # Find the exact minimum for j=0.5 near φ=2π and maximum near φ=3π
