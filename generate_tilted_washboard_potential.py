@@ -111,20 +111,20 @@ def main():
     # 8. Coordinate system and appearance settings
     ax.set_xticks([0, 2*np.pi, 4*np.pi, 6*np.pi])
     ax.set_xticklabels([r'$0$', r'$2\pi$', r'$4\pi$', r'$6\pi$'], fontsize=12)
-    ax.set_yticks([0, -4, -8, -12])
-    ax.set_yticklabels(['0', '-4', '-8', '-12'], fontsize=12)
+    ax.set_yticks([2, 0, -4, -8, -12])
+    ax.set_yticklabels(['2', '0', '-4', '-8', '-12'], fontsize=12)
     ax.set_xlabel(r'$\varphi$', fontsize=14)
     ax.set_ylabel(r'$U(\varphi)$ [$E_J$]', fontsize=14)
     ax.set_xlim(0, 6*np.pi)
-    ax.set_ylim(-12.5, 1.5)
+    ax.set_ylim(-12.8, 2.5)  # Adjusted range to show all curves completely
     
     # Remove top and right spines
     ax.spines['top'].set_visible(False)
     ax.spines['right'].set_visible(False)
     
-    # Position left spine at x=0 and bottom spine at y=0
+    # Position left spine at x=0 and bottom spine at bottom of plot area (standard coordinate system)
     ax.spines['left'].set_position(('data', 0))
-    ax.spines['bottom'].set_position(('data', 0))
+    ax.spines['bottom'].set_position(('axes', 0))  # Move x-axis to bottom of canvas
     
     # Disable grid
     ax.grid(False)
