@@ -84,6 +84,7 @@
 #include "chapters/Ch4-experiments.typ"
 // 第五章第一節：討論
 #include "chapters/ch5-1-Discussion.typ"
+#include "chapters/ch4-Results.typ"
 // 第五章：結論
 #include "chapters/Ch5-conclusion.typ"
 
