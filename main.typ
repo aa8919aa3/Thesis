@@ -72,12 +72,10 @@
 #include "chapters/Ch1-introduction.typ"
 // 第二章：相關研究
 #include "chapters/Ch2-related-work.typ"
-// 2-1
-#include "chapters/ch2-1-SQUID.typ"
+// 第二章：SQUID 理論（統合版）
+#include "chapters/Ch2-SQUID.typ"
 // 2-2
 #include "chapters/ch2-2-Device Fabrication.typ"
-// 2-3
-#include "chapters/ch2-3-Asymmetric SQUIDs.typ"
 // 3-1
 #include "chapters/ch3-1-Device Characterization.typ"
 // 第三章：研究方法
