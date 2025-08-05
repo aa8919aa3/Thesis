@@ -12,6 +12,55 @@ where γ is proportional to the normalized bias current j.
 
 import numpy as np
 import matplotlib.pyplot as plt
+from scipy.optimize import fsolve
+
+def find_local_minima_near_2pi(j, scaling_constant=0.5):
+    """
+    Find local minima of the tilted washboard potential near φ=2π using first derivative.
+    
+    The potential is: U(φ)/E_J = 1 - cos(φ) - γφ where γ = scaling_constant * j
+    First derivative: dU/dφ = sin(φ) - γ
+    For minima: sin(φ) = γ and second derivative cos(φ) > 0
+    """
+    gamma = scaling_constant * j
+    
+    # Only find solutions if |gamma| <= 1 (otherwise no solutions exist for sin(φ) = γ)
+    if abs(gamma) > 1:
+        return []
+    
+    minima = []
+    
+    # Search for solutions near 2π
+    # For φ near 2π, we look in the range [π, 3π] to capture minima around 2π
+    search_ranges = [
+        (1.5*np.pi, 2.5*np.pi),  # Around 2π
+        (3.5*np.pi, 4.5*np.pi),  # Around 4π  
+        (5.5*np.pi, 6.5*np.pi),  # Around 6π
+    ]
+    
+    for start, end in search_ranges:
+        if start > 6*np.pi:  # Don't search beyond our plot range
+            break
+            
+        # Initial guess for root finding
+        initial_guess = (start + end) / 2
+        
+        try:
+            # Solve sin(φ) - γ = 0
+            def derivative_eq(phi):
+                return np.sin(phi) - gamma
+            
+            solution = fsolve(derivative_eq, initial_guess)[0]
+            
+            # Check if solution is in the search range and verify it's a minimum
+            if start <= solution <= min(end, 6*np.pi):
+                # Second derivative test: cos(φ) > 0 for minimum
+                if np.cos(solution) > 0:
+                    minima.append(solution)
+        except:
+            continue
+    
+    return minima
 
 def main():
     # 1. Phase range and bias current settings
@@ -28,20 +77,12 @@ def main():
         U = 1 - np.cos(phi) - scaling_constant * j * phi  # Potential function
         ax.plot(phi, U, linestyle=ls, color='black', linewidth=2, label=f'j = {j}')
     
-    # 4. Add gray dots at representative local minima positions
-    # These positions are approximate and chosen to illustrate the concept
-    minima_positions = {
-        0.0: [np.pi/2, 5*np.pi/2, 9*np.pi/2],
-        0.5: [np.pi, 3*np.pi, 5*np.pi],
-        0.8: [1.2*np.pi, 3.5*np.pi, 5.8*np.pi],
-        1.3: [1.5*np.pi, 4*np.pi, 5.5*np.pi]
-    }
-    
-    for j, positions in minima_positions.items():
-        for pos in positions:
-            if pos <= 6*np.pi:  # Only plot within range
-                U_val = 1 - np.cos(pos) - scaling_constant * j * pos
-                ax.plot(pos, U_val, 'o', color='grey', markersize=6)
+    # 4. Add gray dots at local minima positions calculated using first derivative
+    for j in j_values:
+        minima_positions = find_local_minima_near_2pi(j, scaling_constant)
+        for pos in minima_positions:
+            U_val = 1 - np.cos(pos) - scaling_constant * j * pos
+            ax.plot(pos, U_val, 'o', color='grey', markersize=6)
     
     # 5. Add text labels for each curve
     annotations_phi = {0.0: 4.5*np.pi, 0.5: 4.6*np.pi, 0.8: 4.7*np.pi, 1.3: 3.2*np.pi}
@@ -90,13 +131,13 @@ def main():
     
     # 9. Save as SVG file
     fig.tight_layout()
-    output_file = 'tilted_washboard_potential.svg'
+    output_file = 'Images/tilted_washboard_potential.svg'
     fig.savefig(output_file, format='svg', bbox_inches='tight', dpi=300)
     print(f"Tilted washboard potential plot saved as: {output_file}")
     
     # Also save as PNG for preview
-    fig.savefig('tilted_washboard_potential.png', format='png', bbox_inches='tight', dpi=300)
-    print(f"Preview saved as: tilted_washboard_potential.png")
+    fig.savefig('Images/tilted_washboard_potential.png', format='png', bbox_inches='tight', dpi=300)
+    print(f"Preview saved as: Images/tilted_washboard_potential.png")
     
     plt.close()
 
