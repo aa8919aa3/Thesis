@@ -30,7 +30,7 @@
 // Origin of Asymmetric Fraunhofer Patterns in PtTe₂ SQUIDs
 // 本節內容有待補充
 
-此外，在$"PtTe"_2$基礎的超導量子干涉儀（Superconducting Quantum Interference Device, SQUID）中，非對稱夫朗和費（Fraunhofer）干涉圖樣的觀測提供了深入理解約瑟夫森接面（Josephson Junction）內在物理機制的重要線索。
+在$"PtTe"_2$基礎的超導量子干涉儀（Superconducting Quantum Interference Device, SQUID）中，非對稱夫朗和費（Fraunhofer）干涉圖樣的觀測提供了深入理解約瑟夫森接面（Josephson Junction）內在物理機制的重要線索。
 
 // 待補充：具體的非對稱性分析、物理機制討論、與理論預測的比較
 
@@ -39,7 +39,7 @@
 // Nature and Origin of Unconventional CPRs
 // 本節內容有待補充
 
-此外，非傳統的電流-相位關係（Current-Phase Relation, CPR）的出現是第二類狄拉克半金屬（Type-II Dirac Semimetal）與超導性結合的重要表現。在$"PtTe"_2$約瑟夫森接面中，偏離標準正弦函數的CPR反映了其獨特的拓撲電子結構。
+非傳統的電流-相位關係（Current-Phase Relation, CPR）的出現是第二類狄拉克半金屬（Type-II Dirac Semimetal）與超導性結合的重要表現。在$"PtTe"_2$約瑟夫森接面中，偏離標準正弦函數的CPR反映了其獨特的拓撲電子結構。
 
 // 待補充：CPR的具體形式分析、高階諧波成分、與材料拓撲性質的關聯
 
@@ -54,14 +54,14 @@
 // Fabrication Challenges
 // 製備過程中遇到的技術挑戰與解決方案
 
-此外，在$"PtTe"_2$基礎超導元件的製備過程中，遇到了多項技術挑戰，這些挑戰直接影響了最終元件的電學特性與量測結果的可靠性。
+在$"PtTe"_2$基礎超導元件的製備過程中，遇到了多項技術挑戰，這些挑戰直接影響了最終元件的電學特性與量測結果的可靠性。
 
 === 5.4.1 薄片尺寸與厚度控制 <subsection-flake-size-thickness>
 
 // Flake Size and Thickness
 // 本小節內容有待補充
 
-此外，二維材料薄片（Flake）的尺寸與厚度控制是影響元件性能的關鍵因素。機械剝離法（Mechanical Exfoliation）獲得的$"PtTe"_2$薄片在尺寸分佈和厚度均勻性方面存在固有的變異性。
+二維材料薄片（Flake）的尺寸與厚度控制是影響元件性能的關鍵因素。機械剝離法（Mechanical Exfoliation）獲得的$"PtTe"_2$薄片在尺寸分佈和厚度均勻性方面存在固有的變異性。
 
 // 待補充：具體的尺寸要求、厚度對電學特性的影響、改進策略
 
@@ -79,6 +79,6 @@
 // Side-Wall Issue of Sputtered Superconducting Leads
 // 本小節內容有待補充
 
-此外，磁控濺鍍（Magnetron Sputtering）製程中的側壁沉積問題會影響電極圖案的精確度與電學特性。特別是在製備細線寬的超導電極時，側壁效應可能導致短路或產生非預期的電流路徑。
+磁控濺鍍（Magnetron Sputtering）製程中的側壁沉積問題會影響電極圖案的精確度與電學特性。特別是在製備細線寬的超導電極時，側壁效應可能導致短路或產生非預期的電流路徑。
 
 // 待補充：側壁問題的具體表現、對元件性能的影響、解決方案與改進建議

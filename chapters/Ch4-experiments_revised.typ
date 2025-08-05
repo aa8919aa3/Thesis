@@ -16,13 +16,13 @@
 
 == 實驗結果概述 <section-results-overview>
 
-此外，本章節展示實驗的詳細結果與分析。實驗分為幾個主要部分：基準測試、方法比較、以及參數分析。
+本章節展示實驗的詳細結果與分析。實驗分為幾個主要部分：基準測試、方法比較、以及參數分析。
 
 == 基準測試結果 <section-baseline-results>
 
 === 資料集描述 <subsection-dataset-description>
 
-此外，實驗使用的資料集詳細資訊如 @tab-dataset-info 所示。
+實驗使用的資料集詳細資訊如 @tab-dataset-info 所示。
 
 #figure(
   table(
@@ -38,20 +38,20 @@
 
 === 基準方法效能 <subsection-baseline-performance>
 
-此外，各種基準方法的效能比較結果如 @fig-baseline-comparison 所示。
+各種基準方法的效能比較結果如 @fig-baseline-comparison 所示。
 
 #figure(
   image("../Images/gambar.png", width: 90%),
   caption: [基準方法效能比較]
 ) <fig-baseline-comparison>
 
-此外，從圖中可以看出，傳統方法在準確率方面表現較為一般，而較新的方法則有明顯的改善。
+從圖中可以看出，傳統方法在準確率方面表現較為一般，而較新的方法則有明顯的改善。
 
 == 方法比較與分析 <section-method-comparison>
 
 === 效能比較 <subsection-performance-comparison>
 
-此外，所提出方法與現有方法的詳細比較結果如 @tab-performance-comparison 所示。
+所提出方法與現有方法的詳細比較結果如 @tab-performance-comparison 所示。
 
 #figure(
   table(
@@ -66,17 +66,17 @@
   caption: [方法效能比較結果]
 ) <tab-performance-comparison>
 
-此外，結果顯示，本研究提出的方法在所有評估指標上都優於現有方法。
+結果顯示，本研究提出的方法在所有評估指標上都優於現有方法。
 
 === 統計顯著性檢驗 <subsection-statistical-significance>
 
-此外，為了驗證結果的統計顯著性，進行了 t 檢驗分析。結果顯示，本研究方法與其他方法之間的差異具有統計顯著性（p < 0.01）。
+為了驗證結果的統計顯著性，進行了 t 檢驗分析。結果顯示，本研究方法與其他方法之間的差異具有統計顯著性（p < 0.01）。
 
 == 參數敏感性分析 <section-parameter-sensitivity>
 
 === 學習率影響 <subsection-learning-rate-effect>
 
-此外，不同學習率對模型效能的影響如 @fig-learning-rate-effect 所示。
+不同學習率對模型效能的影響如 @fig-learning-rate-effect 所示。
 
 #figure(
   rect(width: 80%, height: 8cm, stroke: 1pt + gray)[
@@ -87,17 +87,17 @@
 
 === 批次大小影響 <subsection-batch-size-effect>
 
-此外，批次大小的選擇對訓練效率和最終效能都有重要影響。實驗結果顯示，批次大小為32時能夠達到最佳的效能平衡。
+批次大小的選擇對訓練效率和最終效能都有重要影響。實驗結果顯示，批次大小為32時能夠達到最佳的效能平衡。
 
 == 計算複雜度分析 <section-computational-complexity>
 
 === 時間複雜度 <subsection-time-complexity>
 
-此外，所提出方法的時間複雜度為 O(n log n)，其中 n 為資料點數量。與傳統方法相比，具有良好的可擴展性。
+所提出方法的時間複雜度為 O(n log n)，其中 n 為資料點數量。與傳統方法相比，具有良好的可擴展性。
 
 === 空間複雜度 <subsection-space-complexity>
 
-此外，方法的空間複雜度為 O(n)，記憶體使用效率較高。
+方法的空間複雜度為 O(n)，記憶體使用效率較高。
 
 == 實際應用案例 <section-real-world-applications>
 
@@ -105,7 +105,7 @@
 
 == 結果討論 <section-discussion>
 
-此外，實驗結果證實了本研究方法的有效性。主要發現包括：
+實驗結果證實了本研究方法的有效性。主要發現包括：
 
 1. 在各種評估指標上都優於現有方法
 2. 具有良好的參數穩定性

@@ -211,11 +211,14 @@ class TypstRevisionProcessor:
             return f"// Enhanced theoretical discussion for {comment.category}"
     
     def improve_paragraph_structure(self, lines: List[str]) -> None:
-        """Improve paragraph structure by adding transitions selectively"""
-        # Add transition phrases to connect ideas
-        transition_phrases = [
-            "此外，", "進一步地，", "同時，", "因此，", "However, ", "Furthermore, ", "Additionally, "
-        ]
+        """Improve paragraph structure by adding transitions very selectively"""
+        # Add transition phrases to connect ideas - use variety and be selective
+        chinese_transitions = ["此外，", "進一步地，", "同時，", "因此，"]
+        english_transitions = ["However, ", "Furthermore, ", "Additionally, ", "Moreover, "]
+        
+        # Only apply transitions sparingly - maximum 1 per 5 paragraphs
+        paragraph_count = 0
+        transitions_added = 0
         
         # Find paragraphs that would benefit from transitions (not headers, comments, or special syntax)
         for i in range(1, len(lines) - 1):
@@ -228,18 +231,34 @@ class TypstRevisionProcessor:
                 line.startswith('#') or 
                 line.startswith('-') or 
                 line.startswith('+') or
-                len(line) < 20):
+                len(line) < 30):  # Increased minimum length
                 continue
             
-            # Only add transitions to lines that don't already have them and are part of paragraphs
-            if not any(phrase in lines[i] for phrase in transition_phrases):
-                # Check if this line starts a new paragraph (previous line is empty)
-                if i > 0 and not lines[i-1].strip():
+            # Check if this line starts a new paragraph (previous line is empty)
+            if i > 0 and not lines[i-1].strip():
+                paragraph_count += 1
+                
+                # Only add transitions very selectively:
+                # 1. Not already containing transition phrases
+                # 2. Only every 5th paragraph or so
+                # 3. Line should be substantial content
+                all_transitions = chinese_transitions + english_transitions
+                if (not any(phrase.strip('，, ') in lines[i] for phrase in all_transitions) and
+                    paragraph_count % 5 == 0 and  # Only every 5th paragraph
+                    transitions_added < 3 and     # Maximum 3 transitions per document
+                    len(line) > 50):              # Substantial content only
+                    
                     # Add appropriate transition based on content language
                     if any('\u4e00' <= c <= '\u9fff' for c in line):  # Check for Chinese characters
-                        lines[i] = "此外，" + lines[i]
+                        # Use variety in Chinese transitions
+                        transition = chinese_transitions[transitions_added % len(chinese_transitions)]
+                        lines[i] = transition + lines[i]
                     else:
-                        lines[i] = "Furthermore, " + lines[i]
+                        # Use variety in English transitions  
+                        transition = english_transitions[transitions_added % len(english_transitions)]
+                        lines[i] = transition + lines[i]
+                    
+                    transitions_added += 1
     
     def create_revision_header(self, chapter_name: str, critical_fixes: int, improvements: int, suggestions: int) -> str:
         """Create revision summary header"""

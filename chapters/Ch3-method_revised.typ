@@ -16,7 +16,7 @@
 
 == 研究架構 <section-research-framework>
 
-此外，本研究採用系統性的研究方法，整體架構如 @fig-research-framework 所示。
+本研究採用系統性的研究方法，整體架構如 @fig-research-framework 所示。
 
 #figure(
   rect(width: 80%, height: 8cm, stroke: 1pt + gray)[
@@ -50,7 +50,7 @@
 3. 核心演算法執行
 4. 結果後處理
 
-此外，詳細的演算法描述如 @alg-main-algorithm 所示。
+詳細的演算法描述如 @alg-main-algorithm 所示。
 
 #figure(
   ```
@@ -73,7 +73,7 @@
 
 === 實驗環境 <subsection-experimental-setup>
 
-此外，實驗環境的詳細配置如 @tab-experimental-setup 所示。
+實驗環境的詳細配置如 @tab-experimental-setup 所示。
 
 #figure(
   table(
