@@ -93,8 +93,8 @@ $ I_s(phi) = sum_(n=1)^infinity A_n sin(n phi) + B_n cos(n phi) $
 雖然沒有任何真實裝置是完美對稱的，但這個模型提供了量子干涉的基本物理，並作為理解不對稱性和其他非理想性影響的基準。SQUID 的行為由一組關鍵參數決定，如表 1 所總結，這些參數結合了接面的內在屬性與迴路的幾何形狀。
 
 #table(
-  columns: (auto, auto, 2fr, 2.5fr),
-  inset: 10pt,
+  columns: (auto, auto, auto, auto),
+  // inset: 10pt,
   align: horizon,
   [*參數*], [*符號*], [*定義*], [*物理意義與相關片段*],
   [臨界電流], [$I_c$], [單一 JJ 可通過的最大無耗散電流。], [定義了約瑟夫森耦合的能量尺度 ($E_J = planck.reduce I_c / (2e)$)。],
