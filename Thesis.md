@@ -210,7 +210,7 @@ Superconducting Quantum Interference Devices (SQUIDs) stand as the most sensitiv
 1. **附著層 (Adhesion Layer)**：一層約 `[請提供 Cr 厚度]` nm 厚的**鉻 (Cr)**，用以增強標記與基板的附著力。
 2. **對比層 (Contrast Layer)**：一層約 `[請提供 Au 厚度]` nm 厚的**金 (Au)**，其較高的原子序數能夠在掃描式電子顯微鏡 (SEM) 下提供清晰的二次電子或背向散射電子圖像，從而利於 EBL 系統進行自動識別和對位。
 
-金屬沉積完成後，透過在 `[請提供剝離溶劑]` 中進行**剝離 (lift-off)**，移除抗蝕劑，最終在基板表面留下永久性的 Cr/Au 金屬對準標記。這些標記為所有後續的材料轉移和微影製程提供了一個固定的、高精度的參考坐標系。
+金屬沉積完成後，透過在 `[請提供剝離溶劑]` 中進行**離舉 (lift-off)**，移除抗蝕劑，最終在基板表面留下永久性的 Cr/Au 金屬對準標記。這些標記為所有後續的材料轉移和微影製程提供了一個固定的、高精度的參考坐標系。
 
 ## 2.6 Sputter Deposition
 
@@ -230,7 +230,7 @@ Superconducting Quantum Interference Devices (SQUIDs) stand as the most sensitiv
 
 ### 2.7.2 **Lift-off for Contacts**
 
-完成濺鍍後，樣品從真空系統中取出，並執行最後的剝離步驟以定義出最終的電極圖案。樣品浸泡於 `[請提供剝離溶劑，例如：丙酮]` 中 `[請確認時間與是否使用超音波輔助]`，以溶解下層的 PMMA 抗蝕劑，並移除覆蓋其上的多餘 NbTi 薄膜。此步驟完成後，僅留下在 EBL 步驟 (`2.4`) 中定義的、且與 PtTe₂ 直接接觸的超導電極結構。
+完成濺鍍後，樣品從真空系統中取出，並執行最後的離舉步驟以定義出最終的電極圖案。樣品浸泡於 `[請提供剝離溶劑，例如：丙酮]` 中 `[請確認時間與是否使用超音波輔助]`，以溶解下層的 PMMA 抗蝕劑，並移除覆蓋其上的多餘 NbTi 薄膜。此步驟完成後，僅留下在 EBL 步驟 (`2.4`) 中定義的、且與 PtTe₂ 直接接觸的超導電極結構。
 
 # **Chapter III. Device Characterization**
 
