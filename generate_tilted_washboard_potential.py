@@ -62,6 +62,49 @@ def find_local_minima_near_2pi(j, scaling_constant=0.5):
     
     return minima
 
+def find_local_maxima_near_3pi(j, scaling_constant=0.5):
+    """
+    Find local maxima of the tilted washboard potential near φ=3π using first derivative.
+    
+    For maxima: sin(φ) = γ and second derivative cos(φ) < 0
+    """
+    gamma = scaling_constant * j
+    
+    # Only find solutions if |gamma| <= 1
+    if abs(gamma) > 1:
+        return []
+    
+    maxima = []
+    
+    # Search for solutions near 3π
+    search_ranges = [
+        (2.5*np.pi, 3.5*np.pi),  # Around 3π
+    ]
+    
+    for start, end in search_ranges:
+        if start > 6*np.pi:  # Don't search beyond our plot range
+            break
+            
+        # Initial guess for root finding
+        initial_guess = (start + end) / 2
+        
+        try:
+            # Solve sin(φ) - γ = 0
+            def derivative_eq(phi):
+                return np.sin(phi) - gamma
+            
+            solution = fsolve(derivative_eq, initial_guess)[0]
+            
+            # Check if solution is in the search range and verify it's a maximum
+            if start <= solution <= min(end, 6*np.pi):
+                # Second derivative test: cos(φ) < 0 for maximum
+                if np.cos(solution) < 0:
+                    maxima.append(solution)
+        except:
+            continue
+    
+    return maxima
+
 def main():
     # 1. Phase range and bias current settings
     phi = np.linspace(0, 6*np.pi, 1000)
@@ -91,22 +134,42 @@ def main():
             y_pos = 1 - np.cos(x_pos) - scaling_constant * j * x_pos
             ax.text(x_pos, y_pos + 0.3, f'$j = {j}$', fontsize=12, ha='center')
     
-    # 6. Add plasma oscillation frequency arrow
-    x_arrow_start, x_arrow_end = np.pi, 2.5*np.pi
-    y_arrow = 1 - np.cos((x_arrow_start + x_arrow_end)/2)  # For j=0 case
-    ax.annotate('', xy=(x_arrow_start, y_arrow + 0.5), xytext=(x_arrow_end, y_arrow + 0.5),
-                arrowprops=dict(arrowstyle='<->', lw=1.5, color='black'))
-    ax.text((x_arrow_start + x_arrow_end)/2, y_arrow + 0.8, r'$\omega_p$', 
+    # 6. Add plasma oscillation frequency arrow (U-shaped double arrow at j=0 curve near φ=2π)
+    # For j=0, the minimum is exactly at φ=2π with U=0
+    phi_center = 2*np.pi
+    U_center = 0  # For j=0 case
+    # Create U-shaped arrow showing oscillation around the minimum
+    delta_phi = 0.3  # Width of the U-shape
+    delta_U = 0.8    # Height of the U-shape
+    
+    # Draw U-shaped arrow with three segments
+    ax.annotate('', xy=(phi_center - delta_phi, U_center + delta_U), 
+                xytext=(phi_center - delta_phi, U_center),
+                arrowprops=dict(arrowstyle='->', lw=1.5, color='black'))
+    ax.annotate('', xy=(phi_center + delta_phi, U_center + delta_U), 
+                xytext=(phi_center - delta_phi, U_center + delta_U),
+                arrowprops=dict(arrowstyle='-', lw=1.5, color='black'))
+    ax.annotate('', xy=(phi_center + delta_phi, U_center), 
+                xytext=(phi_center + delta_phi, U_center + delta_U),
+                arrowprops=dict(arrowstyle='->', lw=1.5, color='black'))
+    ax.text(phi_center, U_center + delta_U + 0.3, r'$\omega_p$', 
             ha='center', fontsize=12)
     
     # 7. Add barrier height annotation (U0) for j=0.5 case
-    phi_max, phi_min = np.pi, 2*np.pi
-    U_max = 1 - np.cos(phi_max) - scaling_constant * 0.5 * phi_max
-    U_min = 1 - np.cos(phi_min) - scaling_constant * 0.5 * phi_min
-    mid_point = (phi_max + phi_min)/2
-    ax.annotate('', xy=(mid_point, U_max), xytext=(mid_point, U_min),
-                arrowprops=dict(arrowstyle='<->', lw=1.5, color='black'))
-    ax.text(mid_point + 0.3, (U_max + U_min)/2, r'$U_0$', va='center', fontsize=12)
+    # Find the exact minimum for j=0.5 near φ=2π and maximum near φ=3π
+    j_05_minima = find_local_minima_near_2pi(0.5, scaling_constant)
+    j_05_maxima = find_local_maxima_near_3pi(0.5, scaling_constant)
+    
+    if j_05_minima and j_05_maxima:
+        phi_min = j_05_minima[0]  # First minimum near 2π
+        phi_max = j_05_maxima[0]  # First maximum near 3π
+        U_min = 1 - np.cos(phi_min) - scaling_constant * 0.5 * phi_min
+        U_max = 1 - np.cos(phi_max) - scaling_constant * 0.5 * phi_max
+        
+        # Draw vertical double arrow between minimum and maximum
+        ax.annotate('', xy=(phi_min, U_max), xytext=(phi_min, U_min),
+                    arrowprops=dict(arrowstyle='<->', lw=1.5, color='black'))
+        ax.text(phi_min + 0.3, (U_max + U_min)/2, r'$U_0$', va='center', fontsize=12)
     
     # 8. Coordinate system and appearance settings
     ax.set_xticks([0, 2*np.pi, 4*np.pi, 6*np.pi])
