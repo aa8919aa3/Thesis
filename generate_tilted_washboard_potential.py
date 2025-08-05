@@ -12,10 +12,6 @@ where γ is proportional to the normalized bias current j.
 
 import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib.patches import FancyArrowPatch
-from matplotlib.patches import ConnectionPatch
-from matplotlib.path import Path
-from matplotlib.patches import PathPatch
 from scipy.optimize import fsolve
 
 def find_local_minima_near_2pi(j, scaling_constant=0.5):
@@ -138,43 +134,48 @@ def main():
             y_pos = 1 - np.cos(x_pos) - scaling_constant * j * x_pos
             ax.text(x_pos, y_pos + 0.3, f'$j = {j}$', fontsize=12, ha='center')
     
-    # 6. Add plasma oscillation frequency arrow (enhanced U-shaped double arrow at j=0 curve near φ=2π)
+    # 6. Add plasma oscillation frequency arrow (simple U-shaped double arrow at j=0 curve near φ=2π)
     # For j=0, the minimum is exactly at φ=2π with U=0
     phi_center = 2*np.pi
     U_center = 0  # For j=0 case
-    # Create enhanced U-shaped arrow showing oscillation around the minimum
-    delta_phi = 0.28  # Width of the U-shape
-    delta_U = 0.75    # Height of the U-shape
+    # Create simple U-shaped arrow showing oscillation around the minimum
+    delta_phi = 0.25  # Width of the U-shape
+    delta_U = 0.65    # Height of the U-shape
     
-    # Create a smooth U-shaped curve using parametric approach
-    t = np.linspace(0, np.pi, 50)  # Parameter for creating smooth U-curve
-    # U-shaped path: starts low, goes up, curves across top, comes back down
-    phi_curve = phi_center + delta_phi * np.cos(t)  # X coordinates  
-    U_curve = U_center + delta_U * (1 - np.cos(t)) / 2  # Y coordinates for U-shape
+    # Create simple U-shaped design matching the reference image
+    # Draw the U-shape as three connected line segments: left vertical, bottom horizontal, right vertical
+    u_linewidth = 2.5
     
-    # Plot the U-shaped curve
-    ax.plot(phi_curve, U_curve, 'k-', linewidth=2.0, alpha=0.8)
-    
-    # Add arrowheads at both ends to indicate bidirectional oscillation
-    # Left arrow (pointing inward/upward)
-    arrow_left = FancyArrowPatch((phi_center - delta_phi, U_center + 0.05), 
-                                (phi_center - delta_phi*0.85, U_center + delta_U*0.15),
-                                arrowstyle='->', mutation_scale=18, 
-                                linewidth=2.2, color='black')
-    ax.add_patch(arrow_left)
-    
-    # Right arrow (pointing inward/upward)
-    arrow_right = FancyArrowPatch((phi_center + delta_phi, U_center + 0.05), 
-                                 (phi_center + delta_phi*0.85, U_center + delta_U*0.15),
-                                 arrowstyle='->', mutation_scale=18, 
-                                 linewidth=2.2, color='black')
-    ax.add_patch(arrow_right)
-    
-    # Add small vertical indicators to show oscillation amplitude
+    # Left vertical line
     ax.plot([phi_center - delta_phi, phi_center - delta_phi], 
-            [U_center, U_center + 0.15], 'k-', linewidth=1.5, alpha=0.7)
+            [U_center + delta_U, U_center], 
+            'k-', linewidth=u_linewidth, solid_capstyle='round')
+    
+    # Bottom horizontal line
+    ax.plot([phi_center - delta_phi, phi_center + delta_phi], 
+            [U_center, U_center], 
+            'k-', linewidth=u_linewidth, solid_capstyle='round')
+    
+    # Right vertical line
     ax.plot([phi_center + delta_phi, phi_center + delta_phi], 
-            [U_center, U_center + 0.15], 'k-', linewidth=1.5, alpha=0.7)
+            [U_center, U_center + delta_U], 
+            'k-', linewidth=u_linewidth, solid_capstyle='round')
+    
+    # Add triangular arrows at both ends pointing upward
+    arrow_size = 0.15
+    arrow_width = 0.08
+    
+    # Left upward arrow
+    arrow_left_x = [phi_center - delta_phi - arrow_width, phi_center - delta_phi, phi_center - delta_phi + arrow_width]
+    arrow_left_y = [U_center + delta_U - arrow_size, U_center + delta_U + arrow_size, U_center + delta_U - arrow_size]
+    ax.plot(arrow_left_x, arrow_left_y, 'k-', linewidth=u_linewidth, solid_capstyle='round')
+    ax.fill(arrow_left_x, arrow_left_y, 'k')
+    
+    # Right upward arrow
+    arrow_right_x = [phi_center + delta_phi - arrow_width, phi_center + delta_phi, phi_center + delta_phi + arrow_width]
+    arrow_right_y = [U_center + delta_U - arrow_size, U_center + delta_U + arrow_size, U_center + delta_U - arrow_size]
+    ax.plot(arrow_right_x, arrow_right_y, 'k-', linewidth=u_linewidth, solid_capstyle='round')
+    ax.fill(arrow_right_x, arrow_right_y, 'k')
     
     # Add omega_p label with improved positioning
     ax.text(phi_center, U_center + delta_U + 0.4, r'$\omega_p$', 
