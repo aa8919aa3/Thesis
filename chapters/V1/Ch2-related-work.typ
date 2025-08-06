@@ -161,7 +161,7 @@ $
 
 === 超導量子干涉儀 (SQUID) <subsection-SQUID>
 
-超導量子干涉儀（Superconducting Quantum Interference Device, SQUID）是基於約瑟夫森效應的超導元件，具有極高的磁場靈敏度和精確度，其工作原理基於磁通量量子化和量子干涉效應。RF SQUID 只需要一個約瑟夫森接面（超導穿隧接面），這可能使其生產成本較低，但靈敏度較低。DC。SQUID 主要有兩種類型：直流（DC）和射頻（RF）。DC SQUID 的基本結構由兩個約瑟夫森接面組成，這些接面被一個薄材料所隔開形成弱連結。RF SQUID 只需要一個約瑟夫森接面（超導穿隧接面），這可能使其生產成本較低，但靈敏度較低。
+超導量子干涉儀（Superconducting Quantum Interference Device, SQUID）是基於約瑟夫森效應的超導元件，具有極高的磁場靈敏度和精確度，其工作原理基於磁通量量子化和量子干涉效應。RF SQUID 只需要一個約瑟夫森接面（超導穿隧接面），這可能使其生產成本較低，但靈敏度較低。SQUID 主要有兩種類型：直流（DC）和射頻（RF）。DC SQUID 的基本結構由兩個約瑟夫森接面組成，這些接面被一個薄材料所隔開形成弱連結。
 
 直流超導量子干涉儀（DC SQUID）於 1964 年由福特研究實驗室（Ford Research Labs）的 Robert Jaklevic、John J. Lambe、James Mercereau 和 Arnold Silver 所發明，此後於 1962 年由 Brian Josephson 提出約瑟夫森效應，並於 1963 年由 John Rowell 和 Philip Anderson 在貝爾實驗室（Bell Labs）製造了第一個約瑟夫森接面@anderson_probable_1963。它在超導迴路中並聯了兩個約瑟夫森接面。它基於直流約瑟夫森效應。在沒有任何外部磁場的情況下，輸入電流（input current）$I_("input")$會平均分佈到兩個分支。若對超導迴路施加一個小的外部磁場，則會開始在迴路中循環一個屏蔽電流（screening current）$I_s$，該電流會產生一個抵銷外加磁通量的磁場，並創造一個與外部磁通量成正比的額外約瑟夫森相位。感應電流（induced current）的方向與$I$在超導迴路的一個分支中相同，而在另一個分支中與 $I$ 相反；總電流變為 $1/2I_("input")+I_s$ 在某一分支，而$1/2I_("input")-I_s$ 在另一分支。一旦任一分支中的電流超過約瑟夫森接面的臨界電流$I_c$，則在接面上會出現電壓。
 

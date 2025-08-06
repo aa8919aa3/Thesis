@@ -68,25 +68,40 @@
 // 表目錄（由模板自動生成）
 
 // 主要內容
-// 第一章：介紹
-#include "chapters/Ch1-introduction.typ"
-// 第二章：相關研究
-#include "chapters/Ch2-related-work.typ"
-// 第二章：SQUID 理論（統合版）
-#include "chapters/Ch2-SQUID.typ"
-// 2-2
-#include "chapters/ch2-2-Device Fabrication.typ"
-// 3-1
-#include "chapters/ch3-1-Device Characterization.typ"
-// 第三章：研究方法
-#include "chapters/Ch3-method.typ"
+// // 第一章：介紹
+// #include "chapters/Ch1-introduction.typ"
+// // 第二章：相關研究
+// #include "chapters/Ch2-related-work.typ"
+// // 第二章：SQUID 理論（統合版）
+// #include "chapters/Ch2-SQUID.typ"
+// // 2-2
+// #include "chapters/ch2-2-Device Fabrication.typ"
+// // 3-1
+// #include "chapters/ch3-1-Device Characterization.typ"
+// // 第三章：研究方法
+// #include "chapters/Ch3-method.typ"
+// // 第四章：實驗結果
+// #include "chapters/Ch4-experiments.typ"
+// // 第五章第一節：討論
+// #include "chapters/ch5-1-Discussion.typ"
+// #include "chapters/ch4-Results.typ"
+// // 第五章：結論
+// #include "chapters/Ch5-conclusion.typ"
+// 
+// 第一章：緒論
+#include "chapters/Ch1-Introduction.typ"
+// 第二章：理論背景
+#include "chapters/Ch2-Theoretical Background.typ"
+// 第三章：實驗方法
+#include "chapters/Ch3-Experimental Methods.typ"
 // 第四章：實驗結果
-#include "chapters/Ch4-experiments.typ"
-// 第五章第一節：討論
-#include "chapters/ch5-1-Discussion.typ"
-#include "chapters/ch4-Results.typ"
-// 第五章：結論
-#include "chapters/Ch5-conclusion.typ"
+#include "chapters/Ch4-Results.typ"
+// 第五章：討論
+#include "chapters/Ch5-Discussion.typ"
+// 第六章：結論與展望 (Chapter 6: Conclusion and Prospect)
+#include "chapters/Ch6-Conclusion and Prospect.typ"
+
+
 
 // 附錄
 #include "appendices/appendix.typ"
