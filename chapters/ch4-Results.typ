@@ -9,28 +9,25 @@
 
 === 基礎溫度下的 I-V 特性 <subsection-iv-characteristics>
 
-元件的基礎直流傳輸特性是透過在 100 mK 的恆定溫度下量測其電壓-電流 (I-V) 特性曲線來進行鑑定。@fig-iv-characteristics 展示了一條具代表性的 I-V 曲線，該曲線是透過緩慢掃描偏壓電流 ($I_"bias"$) 並同時記錄元件兩端的電壓降 ($V$) 而獲得的。
+元件的基礎直流傳輸特性是透過在 40 mK 的恆定溫度下量測其電壓-電流 (I-V) 特性曲線來進行鑑定。@fig-iv-characteristics 展示了一條具代表性的 I-V 曲線，該曲線是透過緩慢掃描偏壓電流 ($I_"bias"$) 並同時記錄元件兩端的電壓降 ($V$) 而獲得的。
 
 #figure(
-  rect(width: 80%, height: 10cm, stroke: 1pt + gray)[
-    #align(center + horizon)[
-      I-V特性曲線圖\
-      顯示切換電流 $I_"sw" approx 120 "µA"$\
-      回滯電流 $I_r approx 10 "µA"$\
-      正常態電阻 $R_N$\
-      （圖片待補充）
-    ]
-  ],
-  caption: [
-    典型 PtTe₂ 約瑟夫森接面的 I-V 特性曲線。圖中清晰地顯示了零電壓的超導分支、急劇的電阻性切換，以及顯著的遲滯行為。切換電流 $I_"sw" approx 120 "µA"$，回滯電流 $I_r approx 10 "µA"$。
-  ]
+   image("../Images/20.png", width: 100%, fit: "stretch"),
+  caption: [典型 PtTe₂ 約瑟夫森接面的 I-V 特性曲線]
 ) <fig-iv-characteristics>
+典型 PtTe₂ 約瑟夫森接面的 I-V 特性曲線。圖中清晰地顯示了零電壓的超導分支、急劇的電阻性切換，以及顯著的遲滯行為。切換電流 $I_"sw" approx 40 "µA"$，回滯電流 $I_r approx 5 "µA"$。
 
-如圖所示，當偏壓電流從零開始增加時，元件首先展現出零電壓的狀態 ($V = 0$)，此即為直流約瑟夫森效應所導致的無耗散超導電流分支。此超導態可一直維持，直到偏壓電流超過臨界閾值——切換電流 ($I_"sw"$)，此時接面會突然切換至一個具有有限電壓的電阻態。實驗上觀測到的切換電流約為 120 µA。
+如圖所示，當偏壓電流從負方向開始增加時，元件首先展現出零電壓的狀態 ($V = 0$)，此即為直流約瑟夫森效應所導致的無耗散超導電流分支。此超導態可一直維持，直到偏壓電流超過臨界閾值——切換電流 ($I_"sw"$)，此時接面會突然切換至一個具有有限電壓的電阻態。實驗上觀測到的切換電流約為 40 µA。
 
-在切換至電阻態後，I-V 特性遵循線性的歐姆關係，其斜率 ($d V / d I$) 即為接面的正常態電阻 ($R_N$)。當偏壓電流反向掃描時，我們觀察到顯著的遲滯現象。接面直到電流降低至回滯電流 ($I_r approx 10 "µA"$) 時，才重新返回零電壓的超導態。
-
+在切換至電阻態後，I-V 特性遵循線性的歐姆關係，其斜率 ($d V / d I$) 即為接面的正常態電阻 ($R_N$)。當偏壓電流反向掃描時，我們觀察到顯著的遲滯現象。接面直到電流降低至回滯電流 ($I_r approx 5 "µA"$) 時，才重新返回零電壓的超導態。
 這種由切換電流與回滯電流之間巨大差異 ($I_r << I_"sw"$) 所構成的遲滯迴線，是欠阻尼約瑟夫森接面的典型特徵，表明此接面的史都華-麥肯柏參數 $β_c > 1$。
+
+#figure(
+   image("../Images/34.png", width: 100%, fit: "stretch"),
+  caption: [PtTe₂約瑟夫森接面的MAR特性]
+) <fig-MAR>
+PtTe₂約瑟夫森接面的多安德烈夫反射（MAR）特性。圖中顯示了在不同偏壓電流下的 MAR 峰，這些峰值對應於接面內部的高階安德烈夫反射過程。
+
 
 === R-T 量測與超導轉變 <subsection-rt-measurements>
 
@@ -91,28 +88,19 @@ $ I_c R_N = (π Δ)/(2e) tanh(Δ/(2k_B T)) $
 為了探測接面內部超導電流的空間分佈特性，我們量測了臨界電流 $I_c$ 作為垂直磁場 ($B_⊥$) 函數的調變行為。@fig-fraunhofer-standard 展示了在沒有平面內磁場 ($B_∥ = 0$) 時的標準夫朗和費干涉圖樣。
 
 #figure(
-  rect(width: 80%, height: 10cm, stroke: 1pt + gray)[
-    #align(center + horizon)[
-      標準夫朗和費圖樣\
-      $I_c$ vs $B_⊥$\
-      第一個極小值在 ~5 mT\
-      高度對稱的干涉圖樣\
-      （圖片待補充）
-    ]
-  ],
-  caption: [
-    標準夫朗和費干涉圖樣 ($B_∥ = 0$)。臨界電流隨垂直磁場的變化呈現出典型的 $|sin(π Φ\/Φ_0)\/(π Φ\/Φ_0)|$ 形式，第一個極小值出現在約 5 mT 處。
-  ]
+   image("../Images/109.png", width: 100%, fit: "stretch"),
+  caption: [標準夫朗和費干涉圖樣 ($B_∥ = 0$)]
 ) <fig-fraunhofer-standard>
+標準夫朗和費干涉圖樣 ($B_∥ = 0$)。臨界電流隨垂直磁場的變化呈現出典型的 $|sin(π Φ\/Φ_0)\/(π Φ\/Φ_0)|$ 形式，第一個極小值出現在約 1 mT 處。
 
 實驗結果顯示：
 1. 在零磁場時，臨界電流達到最大值 $I_("c0")$
-2. 第一個極小值出現在約 5 mT 的磁場處
+2. 第一個極小值出現在約 1 mT 的磁場處
 3. 整個干涉圖樣呈現高度的左右對稱性
 4. 在極小值處的電流抑制非常顯著
 
 這些特徵表明接面具有非常均勻的超導電流密度分佈。根據第一個極小值的位置，我們可以估算出接面的有效磁學面積：
-$ A_"eff" = Φ_0 \/ B_"min,1" ≈ 2.07 × 10^(-15) \/ (5 × 10^(-3)) ≈ 4.1 × 10^(-13) "m"^2 $
+$ A_"eff" = Φ_0 \/ B_"min,1" ≈ 2.07 × 10^(-15) \/ (1 × 10^(-3)) ≈ 2.07 × 10^(-12) "m"^2 $
 
 === 平面內磁場下夫朗和費圖樣的演化 ($B_∥ ≠ 0$) <subsection-fraunhofer-evolution>
 
@@ -122,7 +110,7 @@ $ A_"eff" = Φ_0 \/ B_"min,1" ≈ 2.07 × 10^(-15) \/ (5 × 10^(-3)) ≈ 4.1 × 
   rect(width: 80%, height: 12cm, stroke: 1pt + gray)[
     #align(center + horizon)[
       夫朗和費圖樣演化\
-      不同 $B_∥$ 值：0, 50, 100, 150 mT\
+      不同 $B_∥$ 值：0, 50, 100, 150 mT\ 
       圖樣逐漸變得不對稱\
       極小值位置偏移\
       包絡函數形狀改變\
@@ -133,6 +121,39 @@ $ A_"eff" = Φ_0 \/ B_"min,1" ≈ 2.07 × 10^(-15) \/ (5 × 10^(-3)) ≈ 4.1 × 
     平面內磁場下夫朗和費圖樣的演化。隨著 $B_∥$ 的增加，原本對稱的干涉圖樣逐漸變得不對稱，極小值位置發生偏移，包絡函數形狀也隨之改變。
   ]
 ) <fig-fraunhofer-evolution>
+
+
+#figure(  
+  grid(  
+    columns: (1fr,) * 2,  
+    image("../Images/003-2_30mT_IVB_raw_data.svg"),  
+    image("../Images/003-2_60mT_IVB_raw_data.svg"),  
+    image("../Images/003-3_60mT_IVB_raw_data.svg"),  
+    image("../Images/005-1_30mT_IVB_raw_data.svg"),  
+    image("../Images/005-1_60mT_IVB_raw_data.svg"),  
+    image("../Images/005-2_60mT_IVB_raw_data.svg"),  
+  ),  
+  caption: [平面內磁場下夫朗和費圖樣的演化 / Evolution of the Fraunhofer pattern under in-plane magnetic field],  
+) <fig-fraunhofer-evolution2>
+
+#figure(  
+  grid(  
+    columns: (1fr,) * 2,  
+    image("../Images/003-2_Finite_Perpendicular_IVB_raw_data.svg"),  
+    image("../Images/003-2_Finite_Parallel_IVB_raw_data.svg"), 
+  ),  
+  caption: [垂直/平行電流方向磁場下夫朗和費圖樣的演化],  
+) <fig-fraunhofer-perpendicular-parallel>
+
+#figure(  
+  grid(  
+    columns: (1fr,) * 2,  
+    image("../Images/003-2_Finite_Perpendicular_IVB_raw_heatmap.svg"),  
+    image("../Images/003-2_Finite_Parallel_IVB_raw_heatmap.svg"), 
+  ),  
+  caption: [垂直/平行電流方向磁場下夫朗和費圖樣的演化熱圖],  
+) <fig-fraunhofer-perpendicular-parallel-heatmap>
+
 
 主要觀察結果包括：
 
@@ -167,6 +188,20 @@ $ A_"eff" = Φ_0 \/ B_"min,1" ≈ 2.07 × 10^(-15) \/ (5 × 10^(-3)) ≈ 4.1 × 
   ]
 ) <fig-cpr-reconstruction>
 
+#figure(  
+  grid(  
+    columns: (1fr,) * 3,  
+    image("../Images/003-2_CPR_30mT_summary_report.svg"),  
+    image("../Images/003-2_CPR_60mT_summary_report.svg"),  
+    image("../Images/003-3_CPR_60mT_summary_report.svg"),  
+    image("../Images/005-1_CPR_30mT_summary_report.svg"),  
+    image("../Images/005-1_CPR_60mT_summary_report.svg"),  
+    image("../Images/005-2_CPR_60mT_summary_report.svg"),
+  ),  
+  caption: [平面內磁場下CPR的演化 / Evolution of the CPR under in-plane magnetic field],  
+) <fig-CPR-evolution2>
+
+
 重構的 CPR 可以用以下形式表示：
 $ I_s(φ) = I_1 sin(φ + φ_1) + I_2 sin(2φ + φ_2) $
 
@@ -188,7 +223,7 @@ $ I_s(φ) = I_1 sin(φ + φ_1) + I_2 sin(2φ + φ_2) $
     [150], [105], [38], [0.36], [0.58]
   ),
   caption: [
-    在不同平面內磁場下的 CPR 參數。隨著 $B_∥$ 增加，二階諧波分量顯著增強，相位偏移也隨之增大。
+    在不同平面內磁場下的 CPR 參數。隨著 $B_∥$ 增加，二階諧波分量顯著增強，相位偏移也隨之增大(數字錯誤待更正)。
   ]
 ) <tab-cpr-parameters>
 

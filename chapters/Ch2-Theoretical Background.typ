@@ -367,6 +367,19 @@ $ eta = (I_("sw")^+ - I_("sw")^-) / (I_("sw")^+ + I_("sw")^-) $
 二碲化鉑（Platinum ditelluride, $"PtTe"_2$）是一種過渡金屬二硫屬化物（Transition Metal Dichalcogenide, TMD），屬於通式為 MX₂ 的材料家族，近年來因其豐富的物理內涵而備受關注。在結構上，二碲化鉑結晶為1T相 (CdI₂-type)，呈現出一種由鉑（Platinum, #math.attach(math.upright("Pt"), bl: "78")）原子層夾在兩層碲（Tellurium, #math.attach(math.upright("Te"), bl: "52")）原子層之間的八面體配位層狀結構。這種層狀特性使其可以透過機械剝離法，輕易地獲得從塊材到幾個原子層甚至單原子層厚度的二維薄片，為構建凡德瓦爾異質結構 (van der Waals heterostructures) 和平面型奈米元件提供了極大的可能性。
 在電子特性方面，二碲化鉑最引人注目的特徵是它已被理論預測並由角解析光電子能譜 (ARPES) 等實驗技術證實為一種第二類狄拉克半金屬 (Type-II Dirac Semimetal)。與傳統的第一類狄拉克半金屬（如石墨烯 Graphene）中點狀的費米面不同，第二類狄拉克半金屬擁有極度傾斜的狄拉克錐，使得電子和電洞口袋在狄拉克點處相切接觸。這些受晶體對稱性保護的狄拉克點，賦予了二碲化鉑獨特的低能電子態和輸運性質。特別是其拓樸保護的表面態，具有螺旋自旋-動量鎖定（helical spin-momentum locking）的特性，這意味著電子的動量與其自旋方向是鎖定的，賦予了二碲化鉑獨特的低能電子態和輸運性質，使其成為研究拓撲物理與超導性之間交互作用的理想材料平台。
 
+#figure(
+  image("../Images/Fig2-Characterization of PtTe2.png", width: 100%, fit: "stretch"),
+  caption: [II型狄拉克半金屬的二碲化鉑表徵。Ref.@yan_lorentz-violating_2017])<fig-Characterization-of-PtTe2>
+a, b：I型與II型狄拉克費米子的示意圖。
+c, d：二碲化鉑晶體結構的側視圖與頂視圖。綠色球體代表 Pt 原子，紅色球體代表 Te 原子，黑色虛線標示單位晶胞。
+e：(001) 平面的體相與投影表面(Brillouin Zone）。紅點（標記 D）顯示三維狄拉克點的位置。
+f：室溫下測得的拉曼光譜（Raman spectroscopy）。
+g：室溫下二碲化鉑的 X 射線繞射（X-ray diffractometer, XRD）圖譜，插圖為邊長數毫米的單晶樣品照片。
+h：電子束能量 70 eV 下的低能量電子衍射（Low-energy electron diffraction, LEED）圖樣。
+
+
+
+
 值得注意的是，塊材二碲化鉑本身並沒有超導性，然而，在本研究所探討的約瑟夫森接面元件中，二碲化鉑作為「弱連結 (weak link)」區域，其局部超導性主要是透過與具有更高超導轉變溫度的電極（如鈮鈦合金 Niobium–titanium, Nb-Ti）接觸，經由超導近接效應 (superconducting proximity effect) 所誘導產生。這就構成了一個超導體-狄拉克半金屬-超導體 (superconductor-Dirac semimetal-superconductor, S-DSM-S) 的混合結構。
 
 在這個S-DSM-S混合結構中，超導電流的傳輸是由由二碲化鉑內部獨特的狄拉克費米子所中介的。理論預測，這種由拓樸表面態主導的傳輸機制，會促進多重安德烈夫反射(multiple Andreev reflections, MAR))過程，從而導致一個偏離標準正弦函數的非傳統電流-相位關係@Cuozzo2024_MW_Tunable_Diode_PRResearch。此外，外加磁場可以與表面態的自旋相互作用，進而調控CPR的形式，甚至產生約瑟夫森二極體效應（Josephson Diode Effect, JDE），即正反方向的臨界電流不相等（$I_c^+ != I_c^-$），深入研究二碲化鉑約瑟夫森接面的電學特性，對於理解拓撲半金屬中的近接超導物理，以及探索其在未來量子技術中的應用潛力，具有至關重要的意義。
@@ -374,6 +387,12 @@ $ eta = (I_("sw")^+ - I_("sw")^-) / (I_("sw")^+ + I_("sw")^-) $
 因此，本研究的理論假說是：透過將PtTe₂作為弱連結整合進一個非對稱SQUID中，我們不僅能夠直接觀測到其預期中的非正弦CPR，還能利用外部磁場作為調控手段，系統性地研究其拓樸性質如何體現在宏觀的量子輸運現象上。
 
 #figure(
-  image("../Images/Fig2-S-DSM-S.png", width: 100%, fit: "stretch"),
-  caption: [S-DSM-S約瑟夫森接面示意圖，其中安德烈夫束縛態將超電流從一端超導電極 (S) 傳送到另一端超導電極。在DSM夾層中，沿其中一個 Dirac 錐向右移動的電子（藍色 e）在右側介面可被安德烈夫反射成同一狄拉克錐(Dirac cone)中向左移動的電洞（橙色 h）。該電洞又可在左側介面被反射回電子。 圖片來源：@li_4-periodic_2018]
-) <fig-s-DSM-S>
+  image("../Images/Fig3-S-DSM-S.png", width: 90%, fit: "stretch"),
+  caption: [S-DSM-S約瑟夫森接面示意圖(Type-I)。Ref.@li_4-periodic_2018])
+<fig-S-DSM-S>
+其中安德烈夫束縛態將超電流從一端超導電極 (S) 傳送到另一端超導電極。在DSM夾層中，沿其中一個狄拉克錐(Dirac cone)錐向右移動的電子（藍色 e）在右側介面可被安德烈夫反射成同一狄拉克錐中向左移動的電洞（橙色 h）。該電洞又可在左側介面被反射回電子。
+#figure(
+  image("../Images/Fig4-S-DSM-S Andreev reflections.png", width: 90%, fit: "stretch"),
+  caption: [狄拉克錐由I型傾斜轉變到II型。Ref.@PhysRevB.101.214508])
+<fig-S-DSM-S-Dirac-cone>
+向右（向左）移動之電子分別以藍色（紅色）標記。插圖顯示兩個狄拉克錐沿 $k_y$ 軸朝相反方向傾斜之示意。能量軸位於平面外。與費米能相交之狄拉克錐截面，分別以實線（電子）與虛線（空穴）所示之橢圓標示。狄拉克節點位於 $k_y$ 軸上的 $±k_D$。下方面板則示意在所示 $ζ$ 值下狄拉克錐的傾斜情形。

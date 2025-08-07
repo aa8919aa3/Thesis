@@ -13,8 +13,7 @@
 
 #figure(
   image("../Images/topological_materials.png",  width: 100%, fit: "stretch"),
-  caption: [拓樸材料晶體。
-  圖片來源：Department of Physics, NCKU@topological_materials]
+  caption: [拓樸材料晶體。Ref.@topological_materials]
 ) <fig-topological_materials>
 
 == 機械剝離法 (Mechanical Exfoliation Method)
