@@ -8,6 +8,7 @@
 #import "@preview/typsium:0.3.0": ce
 #import "@preview/physica:0.9.3": *
 #import "@preview/equate:0.3.2": equate
+
 #set heading(numbering: "1.")
 // Reset equation counter at each chapter
 #show heading.where(level: 1): it => {
@@ -36,7 +37,7 @@
   bibliography: bibliography("references.bib"),
   // 其他選項
   toc-title: "目錄",
-  lof-title: "圖次", 
+  lof-title: "圖次",
   lot-title: "表目錄",
   // 字體設定 - Times New Roman 與標楷體
   // 提供多個標楷體備用字體名稱以支援不同系統
@@ -87,11 +88,11 @@
 // #include "chapters/ch4-Results.typ"
 // // 第五章：結論
 // #include "chapters/Ch5-conclusion.typ"
-// 
+//
 // 第一章：緒論
 #include "chapters/Ch1-Introduction.typ"
 // 第二章：理論背景
-#include "chapters/Ch2-Theoretical Background.typ"
+#include "chapters/Ch2-Theoretical Background-body.typ"
 // 第三章：實驗方法
 #include "chapters/Ch3-Experimental Methods.typ"
 // 第四章：實驗結果
