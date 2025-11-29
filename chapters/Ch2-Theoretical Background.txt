@@ -6,8 +6,6 @@
 // 設定方程式編號格式
 #import "@preview/equate:0.3.2": equate
 
-#bibliography("../references.bib")
-
 = 理論背景 <chapter-theoretical-background>
 
 本章節旨在建立理解本研究核心物理現象所需的理論框架。我們將從約瑟夫森效應的基本原理出發，接著介紹作為其關鍵應用的超導量子干涉儀（SQUID），並特別強調非對稱SQUID如何成為探測非傳統電流-相位關係（CPR）的有力工具。最後，我們將聚焦於本研究的核心材料——第二類狄拉克半金屬(type-II Dirac semimetal)二碲化鉑（$"PtTe"_2$），闡述其獨特的拓樸性質為何預期會產生可被SQUID所量測的非正弦CPR。
