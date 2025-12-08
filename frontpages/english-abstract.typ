@@ -9,14 +9,14 @@
 
   #set align(left)
 
-  This research investigates the relevant research problems, adopts specific research methods, and obtains important research results.
+  This thesis investigates the transport properties of Superconducting Quantum Interference Devices (SQUIDs) based on the type-II Dirac semimetal 1T-PtTe₂, aiming to elucidate the interplay between topological materials and the superconducting proximity effect. We established a complete fabrication process and an ultra-low temperature measurement platform to systematically study the Current-Phase Relation (CPR) of PtTe₂ Josephson junctions and its evolution under external magnetic fields.
 
-  The main contributions of this thesis include: (1) proposing new research methods; (2) verifying theoretical hypotheses; (3) providing references for practical applications.
+  The experimental results demonstrate that PtTe₂ junctions exhibit a significant non-sinusoidal CPR, with the second harmonic component ($I_2$) reaching up to 36% of the first harmonic, far exceeding theoretical expectations for conventional tunneling junctions. Furthermore, we observed a pronounced Josephson Diode Effect (JDE) and verified that its efficiency can be continuously tuned by an in-plane magnetic field. Further analysis revealed a strong correlation between the asymmetry of Fraunhofer interference patterns and the unconventional CPR, providing direct evidence for the involvement of helical spin-momentum locked topological surface states in superconducting transport.
 
-  The research results show that the proposed method has significant improvements in performance and has good practicality. This research provides valuable references for the development of related fields.
+  This study successfully achieved flux-control over the CPR and demonstrated the functionality of a tunable $φ_0$-junction based on PtTe₂. These findings not only deepen the understanding of the superconducting proximity effect in topological semimetals but also lay a crucial physical foundation for developing novel and multifunctional superconducting quantum electronic devices.
   #v(2em)
   #text(weight: "bold")[Keywords:] #info.keywords-en
-#pagebreak()
+  #pagebreak()
 ]
 // 呼叫函數
 #english-abstract(info)

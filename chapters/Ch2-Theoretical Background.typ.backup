@@ -1,3 +1,13 @@
+// 第二章：理論背景
+// Chapter 2: Theoretical Background
+// 設定成段之文字首行皆空2字元
+#set par(first-line-indent: (amount: 2em, all: true))
+#import "@preview/physica:0.9.3": *
+// 設定方程式編號格式
+#import "@preview/equate:0.3.2": equate
+
+#bibliography("../references.bib")
+
 = 理論背景 <chapter-theoretical-background>
 
 本章節旨在建立理解本研究核心物理現象所需的理論框架。我們將從約瑟夫森效應的基本原理出發，接著介紹作為其關鍵應用的超導量子干涉儀（SQUID），並特別強調非對稱SQUID如何成為探測非傳統電流-相位關係（CPR）的有力工具。最後，我們將聚焦於本研究的核心材料——第二類狄拉克半金屬(type-II Dirac semimetal)二碲化鉑（$"PtTe"_2$），闡述其獨特的拓樸性質為何預期會產生可被SQUID所量測的非正弦CPR。
@@ -42,14 +52,14 @@ $ I_s(phi) = sum_(n=1)^infinity A_n sin(n phi) + B_n cos(n phi) $
 
 第二約瑟夫森關係式（second Josephson relation）或超導相演變方程式（superconducting phase evolution equation）@barone1982physics，描述了在接面兩端存在電壓$V$時，相位差的演化，即交流約瑟夫森效應（The AC Josephson effect）：
 
-$ (partial phi)/(partial t) = (2e V(t))/ħ "," $ <eq-2nd-josephson>
+$ (partial phi)/(partial t) = (2e V(t))/hbar"," $ <eq-2nd-josephson>
 
-其中$e$是基本電荷$1.602176634 times 10^(−19) C$（庫倫）@jeckelmann_elementary_2019@mohr_codata_2024，$ħ$是約化普朗克常數（reduced Planck constant） $1.054571817... times 10^(−34) J dot s$（焦耳$dot$秒）@mohr_codata_2024。
+其中$e$是基本電荷$1.602176634 times 10^(−19) C$（庫倫）@jeckelmann_elementary_2019@mohr_codata_2024，$hbar$是約化普朗克常數（reduced Planck constant） $1.054571817... times 10^(−34) J dot s$（焦耳$dot$秒）@mohr_codata_2024。
 
-對一個恆定電壓 V 積分此方程式可得 $phi(t) = phi_0 + (2e V) / ħ t$。將這個隨時間變化的相位代入第一約瑟夫森關係，會發現超導電流以一個高頻振盪，稱為約瑟夫森頻率 (Josephson frequency)，$f_J = (2e)/planck V$。對於 1 微伏 (microvolt) 的外加電壓，此頻率約為 483.6 MHz。其電壓和頻率之間的關係僅依賴於基本常數，為國際電壓標準的來源。
+對一個恆定電壓 V 積分此方程式可得 $phi(t) = phi_0 + (2e V) / planck.reduce t$。將這個隨時間變化的相位代入第一約瑟夫森關係，會發現超導電流以一個高頻振盪，稱為約瑟夫森頻率 (Josephson frequency)，$f_J = (2e)/planck V$。對於 1 微伏 (microvolt) 的外加電壓，此頻率約為 483.6 MHz。其電壓和頻率之間的關係僅依賴於基本常數，為國際電壓標準的來源。
 
 
-約瑟夫森常數（Josephson constant）的定義為$K_J=frac(2e, h)$，其倒數則為磁通量子（magnetic flux quantum）$Phi_0=frac(h, 2e)=2pi frac(ħ, 2e)$。則超導相變化方程式@eq-2nd-josephson 可以重新表達為：
+約瑟夫森常數（Josephson constant）的定義為$K_J=frac(2e, h)$，其倒數則為磁通量子（magnetic flux quantum）$Phi_0=frac(h, 2e)=2pi frac(hbar, 2e)$。則超導相變化方程式@eq-2nd-josephson 可以重新表達為：
 
 $ (partial phi)/(partial t)=2pi [K_J V(t)]=(2pi)/(Phi_0) V(t)"," $ <eq-sc-phase-evolution>
 此時定義$Phi=Phi_0 phi/(2pi)$，則接面兩端的電壓為：
@@ -62,16 +72,16 @@ $ V = (Phi_0)/(2pi) (partial phi)/(partial t) = (d Phi)/(d t) "," $
 將約瑟夫森關係式@eq-1st-josephson，@eq-sc-phase-evolution 改寫為：
 
 $
-  (partial I) / (partial phi) = & I_c cos phi , \
+  (partial I) / (partial phi) = & I_c cos phi ,\
   (partial phi) / (partial t) = & (2 pi) / (Phi_0) V.
 $
 
 接著，應用連鎖律（chain rule）計算電流的時間導數：
 
 $
-  (partial I) / (partial t)
+  (partial I) / (partial t) 
   = & (partial I) / (partial phi) (partial phi) / (partial t)
-      = & I_c cos phi dot (2 pi) / Phi_0 V,
+  = & I_c cos phi dot (2 pi) / Phi_0 V,
 $
 
 將上述結果整理為電感器的電流-電壓特性形式：
@@ -109,16 +119,16 @@ $ I_("ext") = I_s + I_R + I_C = I_c sin(phi) + V/R + C_J (dif V)/(dif t). $
 根據克希荷夫電路定律（Kirchhoff Circuit Laws），流過接面的總電流 $ I $ 可寫為：
 $ I = I_s + I_R + I_C $. <eq-rcsj-kcl>
 
-其中 $ I_s = I_c sin(phi) $ 為超導電流，$ I_R = V / R $ 為流過電阻的電流，$ I_C = C (dif V) / (dif t) $ 為流過電容的電流。將 $ V = (ħ) / (2 e) (dif phi) / (dif t) $ 代入，得到 RCSJ 模型核心方程：
+其中 $ I_s = I_c sin(phi) $ 為超導電流，$ I_R = V / R $ 為流過電阻的電流，$ I_C = C (dif V) / (dif t) $ 為流過電容的電流。將 $ V = (hbar) / (2 e) (dif phi) / (dif t) $ 代入，得到 RCSJ 模型核心方程：
 
-$ I = I_c sin(phi) + (ħ) / (2 e R) (dif phi) / (dif t) + (ħ C) / (2 e) (dif^2 phi) / (dif t^2) $. <eq-rcsj-core>
+$ I = I_c sin(phi) + (hbar) / (2 e R) (dif phi) / (dif t) + (hbar C) / (2 e) (dif^2 phi) / (dif t^2) $. <eq-rcsj-core>
 
 此方程為非線性微分方程，描述約瑟夫森接面在施加電流下的動態行為。RCSJ 模型能良好解釋約瑟夫森接面的 I–V 特性，包括遲滯（hysteresis）與電壓跳變（voltage jumps）。
 
 *物理意義：*
 - *$I_c sin(phi)$項：*代表超導電流，是約瑟夫森效應的量子本質；使得接面在零電壓下亦能傳輸電流，直至電流達臨界值$I_c$。
-- *$(ħ) / (2 e R) (dif phi) / (dif t)$項：* 代表正常電流，描述接面在電壓態下的耗散；電阻$R$反映準粒子激發與能量耗散。
-- *$(ħ C) / (2 e) (dif^2 phi) / (dif t^2)$項：* 代表電容電流，描述接面的電容效應；電容$C$決定接面對電壓變化的響應速度，並在某些情況下導致 I–V 特性的遲滯。
+- *$(hbar) / (2 e R) (dif phi) / (dif t)$項：* 代表正常電流，描述接面在電壓態下的耗散；電阻$R$反映準粒子激發與能量耗散。
+- *$(hbar C) / (2 e) (dif^2 phi) / (dif t^2)$項：* 代表電容電流，描述接面的電容效應；電容$C$決定接面對電壓變化的響應速度，並在某些情況下導致 I–V 特性的遲滯。
 
 RCSJ 模型是理解 DC SQUID 工作原理的基礎，因 SQUID 的響應直接取決於內部約瑟夫森接面的動態行為。透過分析此模型，可預測 SQUID 的電壓響應、臨界電流調製與雜訊特性。
 
@@ -162,7 +172,7 @@ SQUID 主要有兩種類型：直流（DC）和射頻（RF）。RF SQUID 只需�
 
 #figure(
   image("../Images/SQUID_schematic.png", width: 70%),
-  caption: [DC SQUID示意圖：兩個約瑟夫森接面（以叉號表示）並聯於一個電感為 L 的超導環上。偏置電流（bias current） $I$ 分流通過兩個臂，外加磁通量 $Phi_("ext")$ 穿過環路。 圖片來源：IMS, KIT@kit_squid_schematic],
+  caption: [DC SQUID示意圖：兩個約瑟夫森接面（以叉號表示）並聯於一個電感為 L 的超導環上。偏置電流（bias current） $I$ 分流通過兩個臂，外加磁通量 $Phi_("ext")$ 穿過環路。 圖片來源：IMS, KIT@kit_squid_schematic]
 ) <fig-squid-schematic>
 
 直流超導量子干涉儀（DC SQUID）於 1964 年由福特研究實驗室（Ford Research Labs）的 Robert Jaklevic、John J. Lambe、James Mercereau 和 Arnold Silver 所發明，此後於 1962 年由 Brian Josephson 提出約瑟夫森效應，並於 1963 年由 John Rowell 和 Philip Anderson 在貝爾實驗室（Bell Labs）製造了第一個約瑟夫森接面@anderson_probable_1963。SQUID的運作基於兩個宏觀量子現象：超導環路中的磁通量量子化，以及流經兩個接面的超導電流的量子干涉。
@@ -207,9 +217,9 @@ $ phi_2 - phi_1 = (2pi Phi) / Phi_0 + 2 n pi $
 使用三角恆等式 $sin A + sin B = 2 sin((A+B)/2) cos((A-B)/2)$，可得：
 $ I_s = 2I_c sin((phi_1 + phi_2)/2) cos((phi_2 - phi_1)/2) $
 將磁通約束代入餘弦項，得到：
-$
+$ 
   I_s = & 2I_c sin((phi_1 + phi_2)/2) cos((pi Phi)/Phi_0) \
-      = & 2I_c sin(phi_1 + (pi Phi)/Phi_0) cos((pi Phi)/Phi_0)
+  = & 2I_c sin(phi_1 + (pi Phi)/Phi_0)  cos((pi Phi)/Phi_0)
 $
 
 這個方程式是對稱直流 SQUID的總電流-相位關係。
@@ -253,12 +263,8 @@ $ beta_L equiv (2 L I_c) / Phi_0 $
 在此模型中，每個理想的約瑟夫森元件（由其 CPR 描述）與一個電阻 $R_N$（代表準粒子穿隧）和一個電容 C（代表接面的幾何電容）並聯。通過 SQUID 每個臂的總電流是超導電流、正常（歐姆）電流和位移電流的總和。
 
 最終的運動方程式是一組耦合的郎之萬方程式 (Langevin equations)：
-$
-  (Phi_0)/(2pi) C (d^2 phi_1)/(d t^2) + (Phi_0)/(2pi R_N) (d phi_1)/(d t) + I_c sin phi_1 = I_b/2 - I_("cir") + I_(N 1)(t)
-$
-$
-  (Phi_0)/(2pi) C (d^2 phi_2)/(d t^2) + (Phi_0)/(2pi R_N) (d phi_2)/(d t) + I_c sin phi_2 = I_b/2 + I_("cir") + I_(N 2)(t)
-$
+$ (Phi_0)/(2pi) C (d^2 phi_1)/(d t^2) + (Phi_0)/(2pi R_N) (d phi_1)/(d t) + I_c sin phi_1 = I_b/2 - I_("cir") + I_(N 1)(t) $
+$ (Phi_0)/(2pi) C (d^2 phi_2)/(d t^2) + (Phi_0)/(2pi R_N) (d phi_2)/(d t) + I_c sin phi_2 = I_b/2 + I_("cir") + I_(N 2)(t) $
 
 這些方程式通過循環電流 $I_("cir")$ 耦合，完全描述了在存在熱雜訊的情況下 SQUID 的古典動力學。
 
@@ -335,40 +341,32 @@ $ phi_r = phi + (2 pi Phi)/(Phi_0), $ <eq-asym-squid-phases>
 其中 $Phi$ 為穿過 SQUID 迴路的總磁通量，$Phi_0 = h/(2e)$ 為磁通量子。
 
 對於給定的磁通量 $Phi$，總超導電流在某一相位 $phi = phi_c(Phi)$ 取得最大值 $I_("s,max")(Phi)$，此時對相位的導數為零：
-$
-  (
-    (dif I_s)/(dif phi)
-  )_"(phi = phi_c)" = 0.
-$ <eq-asym-squid-extremum>
+$ (
+  (dif I_s)/(dif phi)
+)_"(phi = phi_c)" = 0. $ <eq-asym-squid-extremum>
 
 由@eq-asym-squid-Is、@eq-asym-squid-phases 可得
 $ 0 = (dif I_j)/(dif phi) |_(phi_c) + I_r cos(bracket(phi_c + (2 pi Phi)/(Phi_0))). $
 
 另一方面，將 $I_("s,max")(Phi) = I_s(phi_c(Phi), Phi)$ 對磁通量求導，可得
-$
-  (dif I_("s,max"))/(dif Phi)
+$ (dif I_("s,max"))/(dif Phi)
   = ((partial I_s)/(partial phi))_(phi_c) (dif phi_c)/(dif Phi)
-  + ((partial I_s)/(partial Phi))_(phi_c).
-$
+  + ((partial I_s)/(partial Phi))_(phi_c). $
 
 極值條件@eq-asym-squid-extremum 使第一項消失，因而
-$
-  (dif I_("s,max"))/(dif Phi)
-  = (2 pi I_r)/(Phi_0) cos(bracket(phi_c + (2 pi Phi)/(Phi_0))).
-$ <eq-asym-squid-dIsdPhi>
+$ (dif I_("s,max"))/(dif Phi)
+  = (2 pi I_r)/(Phi_0) cos(bracket(phi_c + (2 pi Phi)/(Phi_0))). $ <eq-asym-squid-dIsdPhi>
 
 也就是說，臨界電流–磁通曲線的導數直接給出參考接面 CPR 中的 $cos$ 項。解出餘弦的相位參數，可得臨界相位 $phi_c(Phi)$：
-$
-  phi_c(Phi) =
-  ± arccos((Phi_0)/(2 pi I_r) (dif I_("s,max"))/(dif Phi))
-  - (2 pi Phi)/(Phi_0) + 2 pi k, quad k in bb(Z).
-$ <eq-asym-squid-phic>
+$ phi_c(Phi) =
+  ± arccos(
+    (Phi_0)/(2 pi I_r) (dif I_("s,max"))/(dif Phi)
+  )
+  - (2 pi Phi)/(Phi_0) + 2 pi k, quad k in bb(Z). $ <eq-asym-squid-phic>
 
 這裡 $k$ 為整數，代表多值性；在實務上可透過要求 $phi_c(Phi)$ 對 $Phi$ 平滑變化來選擇適當的分支。進一步，由@eq-asym-squid-Is 可得在臨界相位下的弱接面電流：
-$
-  I_j(phi_c) = I_("s,max")(Phi)
-  - I_r sin(bracket(phi_c + (2 pi Phi)/(Phi_0))).
-$ <eq-asym-squid-Ij>
+$ I_j(phi_c) = I_("s,max")(Phi)
+  - I_r sin(bracket(phi_c + (2 pi Phi)/(Phi_0))). $ <eq-asym-squid-Ij>
 
 亦即，對每一個實驗磁通點 $Phi_i$ ，我們可以將量測到的 $I_("s,max")(Phi_i)$ 及其導數 $(dif I_("s,max"))/(dif Phi)|_(Phi_i)$ 經由@eq-asym-squid-phic、@eq-asym-squid-Ij 轉換為 CPR 上的一個點 $(phi_c(Phi_i), I_j(phi_c(Phi_i)))$。將這些點按相位排序後，即可重建弱接面的 CPR。
 
@@ -381,6 +379,67 @@ $ Phi_l approx (Delta I_c L) / 2, quad Delta I_c = I_r - I_j. $ <eq-asym-squid-P
 $ phi_r = phi + (2 pi Phi_("ext"))/(Phi_0) + Phi_l. $
 
 因此，有限電感並不改變 CPR 的形狀，而是導致在相位軸上的整體平移。本研究中我們將在後續數據分析章節中，透過擬合實驗量測的 $I_("s,max")(Phi_("ext"))$ 與電壓響應，反推出適當的有效 $L$ 與 $Phi_l$，並將其納入 CPR 重建程序中。
+
+
+=== 基於高度非對稱兩接面 SQUID 的 CPR 反演方法 CPR Reconstruction with a Highly Asymmetric Two-Junction SQUID <subsection-cpr-reconstruction-asym-squid>
+
+在前述討論中，我們指出高度非對稱 SQUID（$I_("c1") >> I_("c2")$）可以視為一個「相位偏置」的量測平台，其中臨界電流較大的接面提供近似固定的相位參考，而臨界電流較小的接面之相位則主要由外加磁通量控制。然而，若要從實驗上量得的 SQUID 臨界電流–磁通關係 $I_("s,max")(Phi)$ 反推出弱接面的完整電流–相位關係 (CPR)，仍需一個明確的解析程序。
+
+本研究採用 Ginzburg 等人提出的解析方法 @ginzburg_determination_2018。考慮一個由兩個約瑟夫森接面組成的不對稱 SQUID，其中：
+
+- *參考接面 (reference junction)*：臨界電流為 $I_r$，其 CPR 為已知且近似純正弦：
+  $ I_("s,r")(phi_r) = I_r sin phi_r. $
+- *被研究接面 (studied junction)*：臨界電流為 $I_j$，其 CPR 未知，記為：
+  $ I_("s,j")(phi) = I_j(phi). $
+
+忽略迴路電感的極限下，流經 SQUID 的總超導電流為兩接面電流之和：
+$ I_s = I_r sin phi_r + I_j(phi). $ <eq-asym-squid-Is>
+
+兩個接面的約瑟夫森相位差由磁通量量子化條件關聯：
+$ phi_r = phi + (2 pi Phi)/(Phi_0), $ <eq-asym-squid-phases>
+
+其中 $Phi$ 為穿過 SQUID 迴路的總磁通量，$Phi_0 = h/(2e)$ 為磁通量子。
+
+對於給定的磁通量 $Phi$，總超導電流在某一相位 $phi = phi_c(Phi)$ 取得最大值 $I_("s,max")(Phi)$，此時對相位的導數為零：
+$(
+  (dif I_s)/(dif phi)
+)_"(phi = phi_c)" = 0. $ <eq-asym-squid-extremum>
+
+由 @eq-asym-squid-Is、@eq-asym-squid-phases 可得
+$ 0 = (dif I_j)/(dif phi) |_(phi_c) + I_r cos(phi_c + (2 pi Phi)/(Phi_0)). $
+
+另一方面，將 $I_("s,max")(Phi) = I_s(phi_c(Phi), Phi)$ 對磁通量求導，可得
+$ (dif I_("s,max"))/(dif Phi)
+  = ((partial I_s)/(partial phi))_(phi_c) (dif phi_c)/(dif Phi)
+  + ((partial I_s)/(partial Phi))_(phi_c). $
+
+極值條件 @eq-asym-squid-extremum 使第一項消失，因而
+$ (dif I_("s,max"))/(dif Phi)
+  = (2 pi I_r)/(Phi_0) cos(phi_c + (2 pi Phi)/(Phi_0)). $ <eq-asym-squid-dIsdPhi>
+
+也就是說，臨界電流–磁通曲線的導數直接給出參考接面 CPR 中的 $cos$ 項。解出餘弦的相位參數，可得臨界相位 $phi_c(Phi)$：
+$ phi_c(Phi) =
+  ± arccos(
+    (Phi_0)/(2 pi I_r) (dif I_("s,max"))/(dif Phi)
+  )
+  - (2 pi Phi)/(Phi_0) + 2 pi k, quad k in bb(Z). $ <eq-asym-squid-phic>
+
+這裡 $k$ 為整數，代表多值性；在實務上可透過要求 $phi_c(Phi)$ 對 $Phi$ 平滑變化來選擇適當的分支。進一步，由 @eq-asym-squid-Is 可得在臨界相位下的弱接面電流：
+$ I_j(phi_c) = I_("s,max")(Phi)
+  - I_r sin(phi_c + (2 pi Phi)/(Phi_0)). $ <eq-asym-squid-Ij>
+
+亦即，對每一個實驗磁通點 $Phi_i$，我們可以將量測到的 $I_("s,max")(Phi_i)$ 及其導數 $(dif I_("s,max"))/(dif Phi) |_(Phi_i)$ 經由 @eq-asym-squid-phic、@eq-asym-squid-Ij 轉換為 CPR 上的一個點 $(phi_c(Phi_i), I_j(phi_c(Phi_i)))$。將這些點按相位排序後，即可重建弱接面的 CPR。
+
+在實際 SQUID 中，迴路電感 $L$ 不可忽略，總磁通量為
+$ Phi = Phi_("ext") + Phi_l, $
+其中 $Phi_("ext")$ 為外加磁通量，而 $Phi_l$ 為由迴路中循環電流 $I_("cir")$ 產生的自生磁通。對於高度非對稱的 SQUID（$I_r >> I_j$）且 $beta_L = 2 L I_r / Phi_0$ 不太大時，可近似認為 $Phi_l$ 在一個調變週期內幾乎為常數，並可寫為 @ginzburg_determination_2018：
+$ Phi_l approx (Delta I_c L) / 2, quad Delta I_c = I_r - I_j. $ <eq-asym-squid-Phil>
+
+在此近似下，有限電感的主要效果是使 @eq-asym-squid-phases 中的相位關係多出一個近似常數的相位偏移：
+$ phi_r = phi + (2 pi Phi_("ext"))/(Phi_0) + Phi_l. $
+
+因此，有限電感並不改變 CPR 的形狀，而是導致在相位軸上的整體平移。本研究中我們將在後續數據分析章節中，透過擬合實驗量測的 $I_("s,max")(Phi_("ext"))$ 與電壓響應，反推出適當的有效 $L$ 與 $Phi_l$，並將其納入 CPR 重建程序中。
+
 
 
 === 實驗設計與量測技術 (Experimental Design and Measurement Techniques)
@@ -406,11 +465,9 @@ $ phi_r = phi + (2 pi Phi_("ext"))/(Phi_0) + Phi_l. $
 $ I_s(phi) = I_(c 1) sin(phi) + I_(c 2) sin(2phi) $
 
 SQUID 的總超導電流變為：
-$
-  I_s^"total" (Phi) =
-  2 & I_(c 1) sin(phi_1 + (pi Phi)/Phi_0) cos((pi Phi)/Phi_0) #<equate:revoke> \
-  + & 2I_(c 2) sin(2(phi_1 +(pi Phi)/Phi_0)) cos((2pi Phi)/Phi_0)
-$
+$ I_s^"total" (Phi) =  
+2 & I_(c 1) sin(phi_1 + (pi Phi)/Phi_0) cos((pi Phi)/Phi_0) #<equate:revoke> \  
++ & 2I_(c 2) sin(2(phi_1 +(pi Phi)/Phi_0)) cos((2pi Phi)/Phi_0) $
 
 這揭示了一個關鍵結果：CPR 的第二諧波以 $Phi_0/2$ 的磁通週期進行干涉。一般來說，接面 CPR 的第 n 次諧波 $sin(n phi)$ 將在 SQUID 的總電流中產生一個干涉項，該干涉項以 $Phi_0/n$ 的週期進行調變。
 
@@ -435,8 +492,7 @@ $ eta = (I_("sw")^+ - I_("sw")^-) / (I_("sw")^+ + I_("sw")^-) $
 
 #figure(
   image("../Images/Fig2-Characterization of PtTe2.png", width: 100%, fit: "stretch"),
-  caption: [II型狄拉克半金屬的二碲化鉑表徵。Ref.@yan_lorentz-violating_2017],
-)<fig-Characterization-of-PtTe2>
+  caption: [II型狄拉克半金屬的二碲化鉑表徵。Ref.@yan_lorentz-violating_2017])<fig-Characterization-of-PtTe2>
 a, b：I型與II型狄拉克費米子的示意圖。
 c, d：二碲化鉑晶體結構的側視圖與頂視圖。綠色球體代表 Pt 原子，紅色球體代表 Te 原子，黑色虛線標示單位晶胞。
 e：(001) 平面的體相與投影表面(Brillouin Zone）。紅點（標記 D）顯示三維狄拉克點的位置。
@@ -455,13 +511,11 @@ h：電子束能量 70 eV 下的低能量電子衍射（Low-energy electron diff
 
 #figure(
   image("../Images/Fig3-S-DSM-S.png", width: 90%, fit: "stretch"),
-  caption: [S-DSM-S約瑟夫森接面示意圖(Type-I)。Ref.@li_4-periodic_2018],
-)
+  caption: [S-DSM-S約瑟夫森接面示意圖(Type-I)。Ref.@li_4-periodic_2018])
 <fig-S-DSM-S>
 其中安德烈夫束縛態將超電流從一端超導電極 (S) 傳送到另一端超導電極。在DSM夾層中，沿其中一個狄拉克錐(Dirac cone)錐向右移動的電子（藍色 e）在右側介面可被安德烈夫反射成同一狄拉克錐中向左移動的電洞（橙色 h）。該電洞又可在左側介面被反射回電子。
 #figure(
   image("../Images/Fig4-S-DSM-S Andreev reflections.png", width: 90%, fit: "stretch"),
-  caption: [狄拉克錐由I型傾斜轉變到II型。Ref.@PhysRevB.101.214508],
-)
+  caption: [狄拉克錐由I型傾斜轉變到II型。Ref.@PhysRevB.101.214508])
 <fig-S-DSM-S-Dirac-cone>
 向右（向左）移動之電子分別以藍色（紅色）標記。插圖顯示兩個狄拉克錐沿 $k_y$ 軸朝相反方向傾斜之示意。能量軸位於平面外。與費米能相交之狄拉克錐截面，分別以實線（電子）與虛線（空穴）所示之橢圓標示。狄拉克節點位於 $k_y$ 軸上的 $±k_D$。下方面板則示意在所示 $ζ$ 值下狄拉克錐的傾斜情形。

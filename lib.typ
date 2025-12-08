@@ -160,7 +160,7 @@
   toc-title: "目錄",
   lof-title: "圖次",
   lot-title: "表目錄",
-  cjk-font: ("BiauKai", "標楷體", "DFKai-SB", "KaiTi"),
+  cjk-font: ("BiauKaiTC", "標楷體", "Kai", "STKaiti"),
   en-font: "Times New Roman",
   watermark: true,
   body,
@@ -179,7 +179,7 @@
 
   // 設定文字格式
   set text(
-    font: ("Times New Roman", "BiauKai", "DFKai-SB", "Kai", "STKaiti"),
+    font: ("Times New Roman", "BiauKaiTC", "Kai", "STKaiti"),
     size: 12pt,
     lang: "zh",
     region: "TW",

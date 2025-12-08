@@ -9,7 +9,7 @@
 
 = 討論 <chapter-discussion>
 
-== 5.1 $"PtTe"_2$ 超導量子干涉儀中非對稱夫朗和費圖樣的起源 <section-asymmetric-fraunhofer-origin>
+== $"PtTe"_2$ 超導量子干涉儀中非對稱夫朗和費圖樣的起源 <section-asymmetric-fraunhofer-origin>
 
 // Origin of Asymmetric Fraunhofer Patterns in PtTe₂ SQUIDs
 // 本節內容有待補充
@@ -18,7 +18,7 @@
 
 // 待補充：具體的非對稱性分析、物理機制討論、與理論預測的比較
 
-== 5.2 非傳統電流-相位關係的性質與起源 <section-unconventional-cpr-nature>
+== 非傳統電流-相位關係的性質與起源 <section-unconventional-cpr-nature>
 
 // Nature and Origin of Unconventional CPRs
 // 本節內容有待補充
@@ -27,20 +27,24 @@
 
 // 待補充：CPR的具體形式分析、高階諧波成分、與材料拓撲性質的關聯
 
-== 5.3 [標題待補充] <section-additional-discussion>
+== 與相關研究之比較 <section-comparison-related-work>
 
-// 原始文件中此節標題為空，需要根據具體內容補充
+本文的研究結果與近期關於第二類狄拉克半金屬 Josephson 二極體效應的報導高度一致，特別是針對 $1T-"PtTe"_2$ 與同族材料 $"NiTe"_2$ 的研究。
 
-// 本節內容有待補充
+首先，我們觀察到的約瑟夫森二極體效應（JDE）與近期在 $1T-"PtTe"_2$ 單一接面中報導的現象 [arXiv:2403.19445] 相呼應。相關研究同樣發現了可透過磁場調控的二階 Josephson 效應（$phi_0$-junction behavior），並將其歸因於螺旋自旋-動量鎖定的表面態。我們的 SQUID 量測進一步提供了電流-相位關係（CPR）的直接相位敏感證據，確認了高階諧波 ($I_2$) 的存在及其相位偏移 ($delta$) 是導致二極體效應的微觀根源。
 
-== 5.4 製備技術挑戰 <section-fabrication-challenges>
+其次，與 $"NiTe"_2$ 的研究相比，我們同樣觀察到了二極體效率隨面內磁場的振盪與反轉行為。這被認為是有限動量庫柏對（Finite-momentum Cooper pairing）機制的特徵。然而，我們的角度依賴性測量顯示出獨特的對稱性特徵，這可能反映了 $"PtTe"_2$ 表面態具體的自旋織構差異。
+
+總體而言，本研究採用非對稱 SQUID 技術，不僅驗證了先前基於傳輸測量（Transport）的發現，更提供了關於超導電流相位動力學的細緻資訊，補充了現有文獻在相位敏感性測量方面的不足。
+
+== 製備技術挑戰 <section-fabrication-challenges>
 
 // Fabrication Challenges
 // 製備過程中遇到的技術挑戰與解決方案
 
 在$"PtTe"_2$基礎超導元件的製備過程中，遇到了多項技術挑戰，這些挑戰直接影響了最終元件的電學特性與量測結果的可靠性。
 
-=== 5.4.1 薄片尺寸與厚度控制 <subsection-flake-size-thickness>
+=== 薄片尺寸與厚度控制 <subsection-flake-size-thickness>
 
 // Flake Size and Thickness
 // 本小節內容有待補充
@@ -49,7 +53,7 @@
 
 // 待補充：具體的尺寸要求、厚度對電學特性的影響、改進策略
 
-=== 5.4.2 過渡金屬二硫屬化物表面保護與殘留物清除 <subsection-tmd-surface-protection>
+=== 過渡金屬二硫屬化物表面保護與殘留物清除 <subsection-tmd-surface-protection>
 
 // TMD Surface Protection and Residues Cleaning
 // 本小節內容有待補充
@@ -58,7 +62,7 @@
 
 // 待補充：具體的表面處理方法、殘留物的來源與影響、清除技術的比較
 
-=== 5.4.3 濺鍍超導電極的側壁問題 <subsection-sputtered-leads-sidewall>
+=== 濺鍍超導電極的側壁問題 <subsection-sputtered-leads-sidewall>
 
 // Side-Wall Issue of Sputtered Superconducting Leads
 // 本小節內容有待補充
