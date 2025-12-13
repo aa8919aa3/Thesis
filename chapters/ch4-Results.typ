@@ -61,55 +61,109 @@ $ I_c R_N = (π Δ)/(2e) tanh(Δ/(2k_B T)) $
 
 === 實驗室與樣品座標系定義 <subsection-frames-definition>
 
-1. *實驗室座標系 (Lab Frame)*：$(B_x, B_y, B_z)$
-  - 由三維向量磁鐵定義。
-  - $X, Y, Z$ 軸固定於低溫量測系統的幾何架構。
++ *實驗室座標系 (Lab Frame)*：$(X, Y, Z)$
 
-2. *樣品座標系 (Sample Frame)*：$(B_x', B_y', B_z')$
-  - $B_x'$ (Longitudinal)：沿樣品長軸方向，即超導電流 $I$ 的流動方向。
-  - $B_y'$ (Transverse)：沿樣品寬度方向，位於樣品平面內且垂直於電流。
-  - $B_z'$ (Normal)：垂直於樣品平面的法向量方向。
+  $X, Y, Z$ 軸由固定於低溫量測系統的由三維向量磁鐵的磁場指向定義。
+  - $X$ 軸沿水平方向指向右。
+  - $Y$ 軸沿水平方向且垂直於 $X$ 軸指向外側。
+  - $Z$ 軸垂直於 $X$ 軸且指向上方軸則與 $X, Y$ 軸共同形成右手座標系。
+  - 磁場大小表示為$B_"lab" = (B_x, B_y, B_z)$
 
-=== 座標轉換邏輯 <subsection-transformation-logic>
++ *樣品座標系 (Sample Frame)*：$(X', Y', Z')$
 
-在本實驗中，樣品被水平放置於實驗室的 $X-Z$ 平面內。因此，實驗室的 $Y$ 軸直接對應於樣品的法向量方向。然而，樣品在平面內的放置角度並非總是與實驗室主軸對齊，因此需要引入一個旋轉角度 $alpha$ 來進行修正。
+  $X', Y', Z'$ 軸由樣品本身的幾何與樣品接面電流方向定義。
+  - $X'$ 軸(Longitudinal)：沿樣品長軸方向，即樣品接面內超導電流 $I$ 的流動方向。
+  - $Y'$ 軸(Transverse)：沿樣品寬度方向，位於樣品平面內且垂直於電流。
+  - $Z'$ 軸(Normal)：垂直於樣品平面的法向量方向。
+  - 磁場大小表示為$B_"sample" = (B_(x'), B_(y'), B_(z'))$
 
-定義旋轉角 $alpha$ 為：在實驗室 $X-Z$ 平面中，從實驗室 $+X$ 軸逆時針旋轉至樣品電流方向 ($B_x'$) 的角度。
+=== 幾何配置與旋轉角定義 <subsection-transformation-logic>
 
-基於此幾何配置，座標轉換公式如下：
+在本實驗中，樣品被水平放置於實驗室的 $X-Z$ 平面內，因此樣品平面（$X'-Y'$ 平面）與實驗室 $X-Z$ 平面共面，而樣品法向量 $Z'$ 軸平行於實驗室 $Y$ 軸。
+
+由於樣品在平面內的放置角度並非總是與實驗室主軸對齊，因此引入旋轉角 $alpha$ 以描述平面內的偏轉。
+
+定義旋轉角 $alpha$ 為：在實驗室 $X-Z$ 平面中，從實驗室 $+X$ 軸逆時針旋轉至樣品電流方向（$X'$ 軸）的角度。
+=== 基底向量與旋轉矩陣 <subsection-rotation-matrix>
+
+依據上述幾何配置，樣品座標系三個基底向量在實驗室座標系中的表示如下：
 
 $
-  B_z' & = B_"lab,y" \
-  B_x' & = B_"lab,x" cos(alpha) + B_"lab,z" sin(alpha) \
-  B_y' & = -B_"lab,x" sin(alpha) + B_"lab,z" cos(alpha)
+  hat(z') = (0, 1, 0) \
+  hat(x') = (cos(alpha), 0, sin(alpha)) \
+  hat(y') = hat(z') times hat(x') = (sin(alpha), 0, -cos(alpha))
 $
 
-其中，$B_z'$ 代表面外磁場 (Out-of-plane field)，而面內磁場 (In-plane field) 的強度 $B_"in-plane"$ 與角度 $theta$ 則可由 $B_x'$與 $B_y'$ 計算得出：
+因此，旋轉矩陣 $R$（由實驗室座標系轉換至樣品座標系）可寫為：
+
 $
-  B_"in-plane" & = sqrt(B_x'^2 + B_y'^2) \
-         theta & = arctan(B_y' / B_x')
+  R
+  =
+  mat(
+    cos(alpha), 0, sin(alpha);
+    sin(alpha), 0, -cos(alpha);
+    0, 1, 0
+  )
+$
+此旋轉矩陣 $R$ 滿足正交條件 $R R^T = I$，且 $det(R) = 1$，確保此為遵循右手定則。
+=== 磁場分量轉換 <subsection-field-component-transform>
+
+實驗室座標系中的磁場 $bold(B_"lab") = (B_x, B_y, B_z)$ 轉換至樣品座標系之表示式為：
+
+$
+  mat(B_(x'); B_(y'); B_(z'))
+  =
+  R mat(B_x; B_y; B_z)
+  =
+  mat(
+    cos(alpha), 0, sin(alpha);
+    sin(alpha), 0, -cos(alpha);
+    0, 1, 0
+  )
+  mat(B_x; B_y; B_z)
+$
+
+展開後得：
+
+$
+  B_(x') = B_x cos(alpha) + B_z sin(alpha) \
+  B_(y') = B_x sin(alpha) - B_z cos(alpha) \
+  B_(z') = B_y
+$
+
+其中，$B_(z')$ 代表面外磁場 (Out-of-plane field)，而面內磁場 (In-plane field) 的強度 $B_"in-plane"$ 與角度 $theta$ 則可由 $B_(x')$ 與 $B_(y')$ 計算得出：
+
+$
+  B_"in-plane" = sqrt(B_(x')^2 + B_(y')^2) \
+  theta = arctan(B_(y') / B_(x'))
 $
 
 #figure(
-  image("../Images/coordinate_system_schematic_003_2.png", width: 60%),
+  image("../Images/coordinate_transform_diagram.png", width: 60%),
   caption: [
-    Sample 003-2 的座標系配置示意圖。樣品位於實驗室 $X-Z$ 平面，逆時針旋轉角度 $alpha = 121.3^degree$。綠色矩形代表樣品，藍色箭頭指示沿長軸的電流方向 ($X'$ axis)。
+    實驗室座標系 $(X, Y, Z)$（藍色）與樣品座標系 $(X', Y', Z')$（紅色）之幾何關係。
+    樣品平面（粉色矩形）位於 $X$-$Z$ 平面內，電流方向 $X'$ 與 $X$ 軸夾角為 $alpha$。
   ],
 ) <fig-coordinate-system>
+
+
 
 === 實例說明：Sample 003-2 <subsection-example-003-2>
 
 以本章主要分析的樣品 *Sample 003-2* 為例，其安裝角度經校準為 $alpha = 121.3^degree$。這意味著樣品的電流方向與實驗室 $X$ 軸與 $Z$ 軸之間存在特定的幾何關係，而非單純的平行或垂直。
 
-當我們在實驗室座標系中施加一個磁場向量 $(B_x, B_y, B_z)$ 時，其實際作用於樣品的效果必須透過上述矩陣進行解析。例如，若僅施加實驗室 $X$ 方向的磁場，在樣品座標系中將同時產生沿電流方向 ($B_x'$) 與垂直電流方向 ($B_y'$) 的分量，從而對夫朗和費干涉圖樣與電流相位關係產生複合影響。此一精確的座標轉換對於正確解讀後續章節中的各向異性磁場響應至關重要。
+當我們在實驗室座標系中施加一個磁場向量 $(B_x, B_y, B_z)$ 時，其實際作用於樣品的效果必須透過上述轉換關係進行解析。例如，若僅施加實驗室 $X$ 方向的磁場，在樣品座標系中將同時產生沿電流方向（$B_(x')$）與垂直電流方向（$B_(y')$）的分量，從而對夫朗和費干涉圖樣與電流相位關係產生複合影響。此一精確的座標轉換對於正確解讀後續章節中的各向異性磁場響應至關重要。
 
-== 夫朗和費圖樣對磁場的響應 <section-fraunhofer-patterns>
+#figure(
+  image("../Images/coordinate_system_schematic_003_2.png", width: 60%),
+  caption: [
+    Sample 003-2 的座標系配置示意圖。樣品位於實驗室 $X-Z$ 平面，逆時針旋轉角度 $alpha = 121.3^degree$。綠色矩形代表樣品，藍色箭頭指示沿長軸的電流方向（$x'$ axis）。
+  ],
+) <fig-coordinate-system>
 
-在本節中，我們採用樣品坐標系進行討論。定義 $x$ 軸沿接面電流方向，$z$ 軸垂直於樣品表面。面內磁場定義為 $B_"in-plane" = sqrt(B_x'^2 + B_y'^2)$，面外磁場為 $B_z'$。
+=== 夫朗和費圖樣 ($B_"in-plane" = 0$) <subsection-standard-fraunhofer>
 
-=== 標準夫朗和費圖樣 ($B_"in-plane" = 0$) <subsection-standard-fraunhofer>
-
-為了探測接面內部超導電流的空間分佈特性，我們量測了臨界電流 $I_c$ 作為面外磁場 ($B_z'$) 函數的調變行為。@fig-fraunhofer-heatmap 展示了原始的電壓-電流-磁場 (V-I-B) 掃描熱圖，其中深色區域代表零電阻的超導態。接著，我們從中提取出臨界電流 ($I_c$)，如 @fig-fraunhofer-standard 所示。這構成了在沒有面內磁場 ($B_"in-plane" = 0$) 時的標準夫朗和費干涉圖樣。
+為了探測接面內部超導電流的空間分佈特性，我們量測了切換電流 $I_s$ 作為面外磁場 ($B_z'$) 函數的調變行為。@fig-fraunhofer-heatmap 展示了原始的電壓-電流-磁場 (V-I-B) 掃描熱圖，其中深色區域代表零電阻的超導態。接著，我們從中提取出切換電流 $I_s$，如 @fig-fraunhofer-standard 所示。這構成了在沒有面內磁場 ($B_"in-plane" = 0$) 時的類夫朗和費干涉圖樣。
 
 #figure(
   image("../Images/Thesis_Fig_Fraunhofer_Heatmap.png", width: 90%),
@@ -123,14 +177,13 @@ $
 
 類夫朗和費干涉圖樣 ($B_"in-plane" = 0$)。臨界電流隨面外磁場 ($B_z'$) 的變化呈現出類 $|sin(π Φ/Φ_0) / (π Φ/Φ_0)|$ 的形式。
 
-實驗結果顯示：
-1. 在零磁場時，臨界電流達到最大值 $I_("c0")$
-2. 第一個極小值出現在約 1 mT 的磁場處
-3. 整個干涉圖樣呈現高度的左右對稱性
-4. 在極小值處的電流抑制非常顯著
+實驗結果顯示在面外磁場$B_z'$約為 0.25 mT 時，切換電流達到最大值 $I_"s, max"$，第一個極小值節點出現在面外磁場$B_z'$約為 1.9 mT 處，但有顯著的節點抬升現象，整個干涉圖樣呈現高度的左右對稱性，且正向切換電流 $I_c^+$ 與負向切換電流絕對值 $|I_c^-|$ 的行為幾乎完全重合。
 
-這些特徵表明接面具有非常均勻的超導電流密度分佈。根據第一個極小值的位置，我們可以估算出接面的有效磁學面積：
-$A_"eff" = Φ_0 / B_"period" ≈ 2.07 × 10^(-15) / (2.15 × 10^(-3)) ≈ 9.63 × 10^(-13) "m"^2 = 0.963 "μm"^2$
+這些特徵表明接面具有均勻的超導電流密度分佈。根據第一個節點的位置，我們可以估算出樣品接面的有效磁學面積：
+$
+A_"eff" = Φ_0 / B_"period" ≈ 2.07 × 10^(-15) / (2.15 × 10^(-3)) ≈ 9.63 × 10^(-13) "m"^2 = 0.963 "μm"^2
+$
+這與由光學顯微鏡測量及AutoCAD軟體計算的樣品接面的幾何面積0.8502675 $"μm"^2$相當。
 
 #figure(
   image("../Images/Ic_Flux_Norm_354_408.png", width: 80%),
@@ -161,23 +214,23 @@ $A_"eff" = Φ_0 / B_"period" ≈ 2.07 × 10^(-15) / (2.15 × 10^(-3)) ≈ 9.63 �
 //   caption: [面內磁場下夫朗和費圖樣的演化 / Evolution of the Fraunhofer pattern under in-plane magnetic field],
 // ) <fig-fraunhofer-evolution2>
 
-// #figure(
-//   grid(
-//     columns: (1fr,) * 2,
-//     image("../Images/003-2_Finite_Perpendicular_IVB_raw_data.svg"),
-//     image("../Images/003-2_Finite_Parallel_IVB_raw_data.svg"),
-//   ),
-//   caption: [垂直/平行電流方向磁場下夫朗和費圖樣的演化],
-// ) <fig-fraunhofer-perpendicular-parallel>
+#figure(
+  grid(
+    columns: (1fr,) * 2,
+    image("../Images/003-2_Finite_Perpendicular_IVB_raw_data.svg"),
+    image("../Images/003-2_Finite_Parallel_IVB_raw_data.svg"),
+  ),
+  caption: [垂直/平行電流方向磁場下夫朗和費圖樣的演化],
+) <fig-fraunhofer-perpendicular-parallel>
 
-// #figure(
-//   grid(
-//     columns: (1fr,) * 2,
-//     image("../Images/003-2_Finite_Perpendicular_IVB_raw_heatmap.svg"),
-//     image("../Images/003-2_Finite_Parallel_IVB_raw_heatmap.svg"),
-//   ),
-//   caption: [垂直/平行電流方向磁場下夫朗和費圖樣的演化熱圖],
-// ) <fig-fraunhofer-perpendicular-parallel-heatmap>
+#figure(
+  grid(
+    columns: (1fr,) * 2,
+    image("../Images/003-2_Finite_Perpendicular_IVB_raw_heatmap.svg"),
+    image("../Images/003-2_Finite_Parallel_IVB_raw_heatmap.svg"),
+  ),
+  caption: [垂直/平行電流方向磁場下夫朗和費圖樣的演化熱圖],
+) <fig-fraunhofer-perpendicular-parallel-heatmap>
 
 
 主要觀察結果包括：
