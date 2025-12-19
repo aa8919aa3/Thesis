@@ -249,6 +249,16 @@ $
 
 === CPR 模型選擇：諧波展開與透明度模型之比較 <subsection-cpr-model-selection>
 
+最原始的S-I-S約瑟夫森接面的電流相位關係為 $I_s(phi) = I_c sin(phi)$，但在實際的S-N-S系統中可能出現多通道與高階諧波分量，導致 CPR 呈現非正弦特徵。我們可以用最一般的傅立葉級數展開來描述 CPR，其中包含當時間反演對稱被打破時系統中可能存在的高階諧波和附加相位偏移$(phi_n)$：
+$
+ I_s (φ) = sum_(n=1)^infinity I_n sin(n phi + phi_n) 
+$
+
+這是最廣義的 CPR 表達式。任何週期為 2π 的 CPR 都可以展開成這種傅立葉正弦級數。$I_n$ 為第 n 階諧波的振幅。$phi_n$ 為第 n 階諧波的相位偏移。在時間反演對稱下，所有 $phi_n$ 為零；非零的 $phi_n$ 是時間反演對稱破缺的表現。
+
+
+
+
 在分析電流-相位關係時，我們選擇採用截斷的傅立葉級數模型 ($I_s(phi) = I_1 sin(phi) + I_2 sin(2phi + delta)$)，而非基於高透明度接面的微觀模型 ($I(phi) ~ sin(phi)/sqrt(1 - tau sin^2(phi/2))$)。此選擇基於以下兩個主要考量：
 
 1. *極高的透明度要求*：如 @fig-cpr-harmonics-tau 所示，若要僅透過透明度模型來解釋我們觀察到的顯著二階諧波分量（$I_2/I_1 approx 0.25$），接面的透明度 $tau$ 必須達到約 0.90。這是一個非常嚴格的物理條件，通常僅在完美的單原子接觸或極高品質的界面中才能實現。
@@ -303,19 +313,19 @@ $
   ],
 ) <fig-cpr-sweep-all>
 
-// #figure(
-//   grid(
-//     columns: (1fr,) * 3,
-//     image("../Images/003-2_CPR_30mT_summary_report.svg"),
-//     image("../Images/003-2_CPR_60mT_summary_report.svg"),
-//     image("../Images/003-3_CPR_60mT_summary_report.svg"),
-//
-//     image("../Images/005-1_CPR_30mT_summary_report.svg"),
-//     image("../Images/005-1_CPR_60mT_summary_report.svg"),
-//     image("../Images/005-2_CPR_60mT_summary_report.svg"),
-//   ),
-//   caption: [面內磁場下CPR的演化 / Evolution of the CPR under in-plane magnetic field],
-// ) <fig-CPR-evolution2>
+#figure(
+  grid(
+    columns: (1fr,) * 3,
+    image("../Images/003-2_CPR_30mT_summary_report.svg"),
+    image("../Images/003-2_CPR_60mT_summary_report.svg"),
+    image("../Images/003-3_CPR_60mT_summary_report.svg"),
+
+    image("../Images/005-1_CPR_30mT_summary_report.svg"),
+    image("../Images/005-1_CPR_60mT_summary_report.svg"),
+    image("../Images/005-2_CPR_60mT_summary_report.svg"),
+  ),
+  caption: [面內磁場下CPR的演化 / Evolution of the CPR under in-plane magnetic field],
+) <fig-CPR-evolution2>
 
 
 重構的 CPR 可以用以下形式表示：
