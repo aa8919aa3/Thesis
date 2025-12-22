@@ -7,52 +7,61 @@
 
 == 基礎元件表徵 <section-basic-characterization>
 
+約瑟夫森效應（Josephson Effect）自1962年由布賴恩·約瑟夫森（Brian Josephson）預測以來，已成為超導電子學、量子計算及精密計量學的基石 1。該效應描述了當兩塊超導體被一薄層弱連結（Weak Link，如絕緣體、正常金屬或幾何收縮）隔開時，宏觀量子波函數能夠發生穿隧或耦合的現象。這種耦合導致了超電流（Supercurrent）在無電壓降的情況下流過接面，其大小取決於兩側超導體之間的量子相位差 $phi$。
+
+在理想的理論模型中，約瑟夫森接面的電流-相位關係（Current-Phase Relation, CPR）通常被假定為正弦形式 $I_s = I_c sin(phi)$，其中 $I_c$ 為臨界電流（Critical Current），代表了接面所能承載的最大無耗散電流。然而，在實際的實驗操作與測量中，我們所觀測到的並非單一且固定的 $I_c$，而是一個受制於熱漲落、電路阻抗、掃描速率及接面內在動力學特性的動態變量。特別是在欠阻尼（Underdamped）接面中，電流—電壓（Current-Voltage, I-V）特性曲線呈現顯著的遲滯迴圈（Hysteresis Loop），導致系統從超導態（Superconducting State）進入電壓態（Voltage State）的電流閾值——即「切換電流」（Switching Current），與從電壓態返回超導態的電流閾值——即「重捕電流」（Re-trapping Current），在數值上並不重合。
+
+釐清這些電流參數的操作型定義（Operational Definitions），不僅是基礎物理測量的需求，更是理解非互易傳輸（Non-reciprocal transport）、開發超導整流元件（Superconducting Diodes）以及優化超導量子位元（Qubits）讀取機制的基礎。特別是當系統存在磁場、自旋軌道耦合（Spin-Orbit Coupling, SOC）或磁性雜質時，正向與負向偏壓下的電流閾值可能不再對稱，這使得嚴格區分正負方向的切換與重捕電流變得尤為重要。
+
+本章將從微觀理論模型出發，逐步推導這些電流參數的物理起源，並詳細闡述在實驗上如何通過特定的掃描協定來定義與測量 $I_"sw"^+, I_"sw"^-, I_r^+, I_r^-$。我們將特別關注偏壓電流方向對這些參數的影響，以及它們在絕對值上的對稱或不對稱關係，這些關係直接揭示了系統的時間反演對稱性（Time-Reversal Symmetry, TRS）的破缺情況。
+
+== 四大電流參數的詳盡操作型定義 <subsection-iv-characteristics>
+
+基於上述物理圖像，並結合實驗測量中的掃描程序，我們以下對四個關鍵電流參數進行嚴格的操作型定義。這些定義不僅描述了物理現象，還規範了測量條件。
+
+- 正向切換電流 (Positive Switching Current, $I_"sw"^+$)
+在電流控制模式下，當偏壓電流 $I$ 從零開始向正方向（$I > 0$）單調增加（即絕對值增加）時，接面從零電壓態（超導態）突變至有限電壓態（電阻態）瞬間所記錄到的電流值。
+
+- 負向切換電流 (Negative Switching Current, $I_"sw"^-$)
+
+在電流控制模式下，當偏壓電流 $I$ 從零開始向負方向（$I < 0$）單調減少（即絕對值增加）時，接面從超導態突變至有限負電壓態瞬間所記錄到的電流值。為了方便與 $I_"sw"^+$ 比較，文獻常取其絕對值 $|I_"sw"^-|$ 進行討論。
+
+- 正向重捕電流 (Positive Re-trapping Current, $I_r^+$)
+
+當接面處於正向電壓態（$V > 0, I > 0$）時，將偏壓電流從高值逐漸降低，直到接面重新回到超導態（$V=0$）或進入低電壓擴散分支瞬間所對應的電流值。
+
+- 負向重捕電流 (Negative Re-trapping Current, $I_r^-$)
+
+當接面處於負向電壓態（$V < 0, I < 0$）時，將偏壓電流絕對值逐漸降低（即 $I$ 從負值向零增加），直到接面重新回到超導態（$V=0$）瞬間所對應的電流值。
+
+
+
+
 === 基礎溫度下的 I-V 特性 <subsection-iv-characteristics>
 
-元件的基礎直流傳輸特性是透過在 40 mK 的恆定溫度下量測其電壓-電流 (I-V) 特性曲線來進行鑑定。@fig-iv-characteristics 展示了一條具代表性的 I-V 曲線，該曲線是透過緩慢掃描偏壓電流 ($I_"bias"$) 並同時記錄元件兩端的電壓降 ($V$) 而獲得的。
-
+為了鑑定元件的基本直流 (DC) 輸運特性，我們在極低溫環境（恆定溫度 $T = 40 "mK"$）下量測了其電流-電壓 ($I$-$V$) 特性曲線。該數據是透過對偏壓電流 ($I_"bias"$) 進行連續掃描並同步紀錄接面兩端電壓降 ($V$) 所獲得。
 #figure(
-  image("../Images/Thesis_Fig_IV_Curve.png", width: 80%),
-  caption: [典型 PtTe₂ 約瑟夫森接面的 I-V 特性曲線],
+  image("../Images/iv_run20.svg", width: 80%),
+  caption: [典型 PtTe₂ 約瑟夫森接面的負向重捕電流及正負向切換電流 I-V 特性曲線],
 ) <fig-iv-characteristics>
-典型 PtTe₂ 約瑟夫森接面的 I-V 特性曲線。圖中清晰地顯示了零電壓的超導分支、急劇的電阻性切換，以及顯著的遲滯行為。切換電流 $I_"sw" approx 40 "µA"$，回滯電流 $I_r approx 5 "µA"$。
+@fig-iv-characteristics 中清晰地顯示了零電壓的超導區域、急劇的電阻性切換（切換電流 $I_s approx 40 "µA"$）以及顯著的遲滯行為（重捕電流 $I_r approx 4 "µA"$），反映了該接面處於欠阻尼 (Underdamped) 狀態。
 
-如圖所示，當偏壓電流從負方向開始增加時，元件首先展現出零電壓的狀態 ($V = 0$)，此即為直流約瑟夫森效應所導致的無耗散超導電流分支。此超導態可一直維持，直到偏壓電流超過臨界閾值——切換電流 ($I_"sw"$)，此時接面會突然切換至一個具有有限電壓的電阻態。實驗上觀測到的切換電流約為 40 µA。
-
-在切換至電阻態後，I-V 特性遵循線性的歐姆關係，其斜率 ($d V / d I$) 即為接面的正常態電阻 ($R_N$)。當偏壓電流反向掃描時，我們觀察到顯著的遲滯現象。接面直到電流降低至回滯電流 ($I_r approx 5 "µA"$) 時，才重新返回零電壓的超導態。
-這種由切換電流與回滯電流之間巨大差異 ($I_r << I_"sw"$) 所構成的遲滯迴線，是欠阻尼約瑟夫森接面的典型特徵，表明此接面的史都華-麥肯柏參數 $β_c > 1$。
 
 #figure(
-  image("../Images/34.png", width: 100%, fit: "stretch"),
+  image("../Images/iv_dvdi_comparison_354_408.svg", width: 80%),
+  caption: [典型 PtTe₂ 約瑟夫森接面的正負向切換電流 I-V 特性曲線],
+) <fig-iv-dvdi-comparison>
+典型 PtTe₂ 約瑟夫森接面的正負向切換電流 I-V 特性曲線。
+
+
+
+
+
+#figure(
+  image("../Images/excess_fit_run_33.svg", width: 100%, fit: "stretch"),
   caption: [PtTe₂約瑟夫森接面的MAR特性],
 ) <fig-MAR>
-PtTe₂約瑟夫森接面的多安德烈夫反射（MAR）特性。圖中顯示了在不同偏壓電流下的 MAR 峰，這些峰值對應於接面內部的高階安德烈夫反射過程。
-
-
-
-=== $I_c R_N$ 乘積估算 <subsection-icrn-product>
-
-$I_c R_N$ 乘積是表徵約瑟夫森接面品質的重要參數，它反映了接面的超導能隙與傳輸特性。@tab-icrn-statistics 總結了多個元件的 $I_c R_N$ 乘積統計資料。
-
-#figure(
-  include "generated_icrn_table.typ",
-  caption: [
-    多個 PtTe₂ 約瑟夫森接面的 $I_c R_N$ 乘積統計（使用參考接面臨界電流）。
-  ],
-) <tab-icrn-statistics>
-
-對於 @tab-icrn-statistics 中用於 CPR 分析的典型元件 (Sample 003-2)：
-- 切換電流：$I_c approx 19.1$ µA
-- 正常態電阻：$R_N approx 1.92$ Ω
-- $I_c R_N$ 乘積：$approx 36.6$ µV
-
-雖然此數值低於理論極限，但表 @tab-icrn-statistics 顯示其他樣品（如 Sample 004-2）可達 $1.2$ mV，表明 $I_c R_N$ 乘積受製程變異影響較大。整體而言，數值範圍與其他 PtTe₂ 相關研究一致。
-這個數值與典型的金屬約瑟夫森接面相比較低，但與其他拓撲材料基礎的接面相當，反映了 PtTe₂ 作為弱連結材料的特性以及可能存在的近接效應影響。
-
-根據 Ambegaokar-Baratoff 關係，理論預期的 $I_c R_N$ 乘積應為：
-$ I_c R_N = (π Δ)/(2e) tanh(Δ/(2k_B T)) $
-
-其中 $Δ$ 為超導能隙。在 $T ≪ T_c$ 的極限下，對於 $T_c ≈ 2.7$ K 的 PtTe₂，理論預期約為 0.4 mV。觀測到的較高數值可能反映了接面的多重安德烈夫反射過程或非傳統的配對機制。
+PtTe₂約瑟夫森接面的多安德烈夫反射（MAR）特性。圖中谷值對應於接面內部的高階安德烈夫反射過程。
 
 
 == 座標系定義與轉換 (Coordinate System Definition and Transformation) <section-coordinate-system>
@@ -131,7 +140,7 @@ $
   B_(z') = B_y
 $
 
-其中，$B_(z')$ 代表面外磁場 (Out-of-plane field)，而面內磁場 (In-plane field) 的強度 $B_"in-plane"$ 與角度 $theta$ 則可由 $B_(x')$ 與 $B_(y')$ 計算得出：
+其中，$B_(z')$ 代表面外磁場 (Out-of-plane field)，而面內磁場 (In-plane field) 的強度 $B_"In-Plane"$ 與角度 $theta$ 則可由 $B_(x')$ 與 $B_(y')$ 計算得出：
 
 $
   B_"in-plane" = sqrt(B_(x')^2 + B_(y')^2) \
@@ -167,41 +176,80 @@ $
 
 #figure(
   image("../Images/Thesis_Fig_Fraunhofer_Heatmap.png", width: 90%),
-  caption: [標準夫朗和費干涉圖樣的原始量測數據熱圖 ($V$ vs $I, B_z'$)。由 Run #354 (正偏壓) 與 #408 (負偏壓) 數據合成，展示了清晰的超導區間(深色區域)隨磁場的調變。],
+  caption: [夫朗和費干涉圖樣的原始量測數據熱圖 ($V$ vs $I, B_z'$)。],
 ) <fig-fraunhofer-heatmap>
-
+@fig-fraunhofer-heatmap 由003-2樣品的正偏壓（Run #354）與負偏壓（Run #408） 數據合成，展示了清晰的超導區間(白色區域)隨磁場的調變。
 #figure(
   image("../Images/Ic_Norm_354_408.png", width: 80%),
-  caption: [從原始數據中提取的臨界電流 ($I_c^+$ 與 $|I_c^-|$) 隨面外磁場 ($B_z'$) 的變化，已對 Run #354 最大值進行正規化。灰色垂直虛線標示偏移中心與第一個週期節點，水平箭頭指示週期 $B_"period" approx 2.15 "mT"$。],
+  caption: [正規化切換電流 ($I_s$) 隨面外磁場 ($B_z'$) 的變化。],
 ) <fig-fraunhofer-standard>
-
+從原始數據中提取的切換電流 ($I_s$) 隨面外磁場 ($B_z'$) 的變化，已對 Run #354 最大值進行正規化。灰色垂直虛線標示偏移中心與第一個週期節點，水平箭頭指示週期 $B_"period" approx 2.15 "mT"$。
 類夫朗和費干涉圖樣 ($B_"in-plane" = 0$)。臨界電流隨面外磁場 ($B_z'$) 的變化呈現出類 $|sin(π Φ/Φ_0) / (π Φ/Φ_0)|$ 的形式。
 
 實驗結果顯示在面外磁場$B_z'$約為 0.25 mT 時，切換電流達到最大值 $I_"s, max"$，第一個極小值節點出現在面外磁場$B_z'$約為 1.9 mT 處，但有顯著的節點抬升現象，整個干涉圖樣呈現高度的左右對稱性，且正向切換電流 $I_c^+$ 與負向切換電流絕對值 $|I_c^-|$ 的行為幾乎完全重合。
 
 這些特徵表明接面具有均勻的超導電流密度分佈。根據第一個節點的位置，我們可以估算出樣品接面的有效磁學面積：
 $
-A_"eff" = Φ_0 / B_"period" ≈ 2.07 × 10^(-15) / (2.15 × 10^(-3)) ≈ 9.63 × 10^(-13) "m"^2 = 0.963 "μm"^2
+  A_"eff" = Φ_0 / B_"period" ≈ 2.07 × 10^(-15) / (2.15 × 10^(-3)) ≈ 9.63 × 10^(-13) "m"^2 = 0.963 "μm"^2
 $
 這與由光學顯微鏡測量及AutoCAD軟體計算的樣品接面的幾何面積0.8502675 $"μm"^2$相當。
 
+// #figure(
+//   image("../Images/Ic_Flux_Norm_354_408.png", width: 80%),
+//   caption: [
+//     標準夫朗和費干涉圖樣的正規化版本。左側圖顯示臨界電流隨正規化磁通量 ($Phi/Phi_0$) 的變化，其中 $Phi/Phi_0 = (B_z' - B_"offset") / B_"period"$。$I_c$ 已除以 $I_c^+$ 的最大值進行正規化。正向臨界電流 $I_c^+$ 與負向臨界電流絕對值 $|I_c^-|$ 在零場附近的行為顯示出高度的一致性。黑色虛線代表標準夫朗和費理論曲線 $I_c ~ |"sinc"(pi Phi/Phi_0)|$。
+//   ],
+// ) <fig-fraunhofer-normalized>
+
+=== 夫朗和費圖樣隨面內磁場角度的演化 <subsection-fraunhofer-angle-evolution>
+當施加固定面內磁場 ($B_"In-Plane"$) 時，夫朗和費圖樣隨面內磁場角度發生顯著變化。
 #figure(
-  image("../Images/Ic_Flux_Norm_354_408.png", width: 80%),
+  image("../Images/fraunhofer_evolution_60mT_filtered_linear.svg", width: 90%),
   caption: [
-    標準夫朗和費干涉圖樣的正規化版本。左側圖顯示臨界電流隨正規化磁通量 ($Phi/Phi_0$) 的變化，其中 $Phi/Phi_0 = (B_z' - B_"offset") / B_"period"$。$I_c$ 已除以 $I_c^+$ 的最大值進行正規化。正向臨界電流 $I_c^+$ 與負向臨界電流絕對值 $|I_c^-|$ 在零場附近的行為顯示出高度的一致性。黑色虛線代表標準夫朗和費理論曲線 $I_c ~ |"sinc"(pi Phi/Phi_0)|$。
-  ],
-) <fig-fraunhofer-normalized>
-
-=== 面內磁場下夫朗和費圖樣的演化 ($B_"in-plane" ≠ 0$) <subsection-fraunhofer-evolution>
-
-當施加面內磁場 ($B_"in-plane"$) 時，夫朗和費圖樣發生顯著變化。@fig-fraunhofer-evolution 展示了在不同 $B_"in-plane"$ 值下的干涉圖樣演化。
-
-#figure(
-  image("../Images/Thesis_Fig_Fraunhofer_Evolution.png", width: 80%),
-  caption: [
-    面內磁場下夫朗和費圖樣的演化。隨著 $B_"in-plane"$ 的增加，原本對稱的干涉圖樣逐漸變得不對稱，極小值位置發生偏移，包絡函數形狀也隨之改變。
+    樣品003-2在面內磁場$B_"In-Plane"$固定在 $60 "mT"$ 時，夫朗和費圖樣隨角度 $theta$ 的演化。
   ],
 ) <fig-fraunhofer-evolution>
+
+@fig-fraunhofer-evolution 展示了在不同 $theta$ 值下的干涉圖樣演化，隨著 $theta$ 的增加，原本對稱的干涉圖樣逐漸變得不對稱，對稱軸位置發生偏移，包絡函數形狀也隨之改變。
+#figure(
+  image("../Images/fraunhofer_heatmap_005-1_60mT_linear.svg", width: 90%),
+  caption: [
+    樣品005-1在面內磁場$B_"In-Plane"$固定在 $60 "mT"$ 時，夫朗和費圖樣隨角度 $theta$ 的演化熱圖。
+  ],
+) <fig-fraunhofer-evolution-heatmap>
+
+
+=== 夫朗和費圖樣隨面內磁場強度的演化 <subsection-fraunhofer-field-evolution>
+當施加固定角度的面內磁場 ($B_"In-Plane"$) 時，夫朗和費圖樣隨面內磁場強度發生顯著變化。
+
+#figure(
+  image("../Images/fraunhofer_evolution_27_log.svg", width: 90%),
+  caption: [
+    樣品003-2在面內磁場角度$theta$固定在 $27.4 degree$ 時，夫朗和費圖樣隨磁場強度$B_"In-Plane"$的演化。
+  ],
+) <fig-fraunhofer-field-evolution-27>
+
+#figure(
+  image("../Images/fraunhofer_heatmap_27_log.svg", width: 90%),
+  caption: [
+    樣品003-2在面內磁場角度$theta$固定在 $27.4 degree$ 時，夫朗和費圖樣隨磁場強度$B_"In-Plane"$的演化熱圖。
+  ],
+) <fig-fraunhofer-field-evolution-27-heatmap>
+
+#figure(
+  image("../Images/fraunhofer_evolution_297_log.svg", width: 90%),
+  caption: [
+    樣品003-2在面內磁場角度$theta$固定在 $297.4 degree$ 時，夫朗和費圖樣隨磁場強度$B_"In-Plane"$的演化。
+  ],
+) <fig-fraunhofer-field-evolution-297>
+
+#figure(
+  image("../Images/fraunhofer_heatmap_297_log.svg", width: 90%),
+  caption: [
+    樣品003-2在面內磁場角度$theta$固定在 $297.4 degree$ 時，夫朗和費圖樣隨磁場強度$B_"In-Plane"$的演化熱圖。
+  ],
+) <fig-fraunhofer-field-evolution-297-heatmap>
+
 
 
 // #figure(
@@ -235,7 +283,7 @@ $
 
 主要觀察結果包括：
 
-1. *圖樣不對稱性增加*：隨著 $B_"in-plane"$ 的增加，原本高度對稱的夫朗和費圖樣逐漸變得不對對稱
+1. *圖樣不對稱性增加*：隨著 $B_"In-Plane"$ 的增加，原本高度對稱的夫朗和費圖樣逐漸變得不對對稱
 
 2. *極小值位置偏移*：干涉圖樣的極小值不再出現在對稱的磁場位置，而是向正或負磁場方向偏移
 
@@ -251,20 +299,20 @@ $
 
 最原始的S-I-S約瑟夫森接面的電流相位關係為 $I_s(phi) = I_c sin(phi)$，但在實際的S-N-S系統中可能出現多通道與高階諧波分量，導致 CPR 呈現非純正弦特徵。我們可以用最一般的傅立葉級數展開來描述 CPR，其中包含當時間反演對稱被打破時系統中可能存在的高階諧波和附加相位偏移$(phi_n)$：
 $
- I_s (φ) = sum_(n=1)^infinity I_n sin(n phi + phi_n) 
+  I_s (φ) = sum_(n=1)^infinity I_n sin(n phi + phi_n)
 $
 
 這是最廣義的 CPR 表達式。任何週期為 2π 的 CPR 都可以展開成這種傅立葉正弦級數。$I_n$ 為第 n 階諧波的振幅。$phi_n$ 為第 n 階諧波的相位偏移。在時間反演對稱下，所有 $phi_n$ 為零；非零的 $phi_n$ 是時間反演對稱破缺的表現。選擇正弦函數是因為約瑟夫森效應的基本關係是正弦型的。高階諧波（n≥2）對應於多重安德烈夫反射過程，即庫珀對（或四重態）的「高階」隧穿。我們選擇將這個 CPR 展開到二階，因為更高階的超電流對總電流的貢獻可以忽略不計。這給出：
-$ 
- I(phi) = I_1 sin(phi + phi_1) + I_2 sin(2phi + phi_2) 
 $
-可以從這個通用 CPR 推導出某些眾所周知的非傳統 CPR 案例。例如令 $phi_1 = phi_2 = 0$，會得到一個僅包含一階和二階諧波項而無任何附加相位的 CPR，對應於典型的 $phi$ 接面。在式 (2) 中令 $I_2 = 0$ 的情況，則會產生具有正弦電流-相位關係的異常約瑟夫森接面或 $phi_0$ 結，其相位從零偏移了 $phi_1$。
+  I(phi) = I_1 sin(phi + phi_1) + I_2 sin(2phi + phi_2)
+$<CPR-general-form>
+可以從這個通用 CPR 推導出某些眾所周知的非傳統 CPR 案例。例如令 $phi_1 = phi_2 = 0$，會得到一個僅包含一階和二階諧波項而無任何附加相位的 CPR，對應於典型的 $phi$ 接面。在@CPR-general-form 中令 $I_2 = 0$ 的情況，則會產生具有正弦電流-相位關係的異常約瑟夫森接面或 $phi_0$ 接面，其相位從零偏移了 $phi_1$。
 
 現在，不失一般性，$phi$ 可以被 $(phi - phi_1)$ 替換，CPR 可以重寫為：
 
 $ I(phi) = I_1 sin phi + I_2 sin(2 phi + delta) $ <CPR-with-delta>
 
-其中引入了 $delta = phi_2 - 2 phi_1$，即一階和二階諧波項之間的相對相位。我們將把具有如@CPR-with-delta 所示 CPR 的約瑟夫森接面稱為「二階相位 $phi_0$ 可調接面」。
+其中引入了 $delta = phi_2 - 2 phi_1$，即一階和二階諧波項之間的相對相位。我們將把具有如@CPR-with-delta 所示 CPR 的約瑟夫森接面稱為「二階諧波相位差可調$phi_0$接面」。
 
 
 
@@ -290,6 +338,60 @@ $ I(phi) = I_1 sin phi + I_2 sin(2 phi + delta) $ <CPR-with-delta>
 ) <fig-cpr-diode-comparison>
 
 基於上述理由，採用包含相位自由度的諧波展開模型，是對本系統非傳統超導電流特性的更合適描述。
+
+
+#figure(
+  image("../Images/KO-1_cpr_fit_127.svg", width: 80%),
+  caption: [使用KO-1模型擬合典型 PtTe₂ 約瑟夫森接面的電流相位關係特性曲線],
+) <fig-OK-1-cpr-fit>
+使用KO-1模型擬合典型 PtTe₂ 約瑟夫森接面的電流相位關係特性曲線。
+
+在無面內磁場時，使用KO-1模型擬合典型 PtTe₂ 約瑟夫森接面的電流相位關係特性曲線。得出介面透明度為 $tau approx 0.6$，屬於中高透明度接面。
+
+#figure(
+  image("../Images/delta_cpr_fit_127.svg", width: 80%),
+  caption: [使用二階諧波相位差可調模型擬合典型 PtTe₂ 約瑟夫森接面的電流相位關係特性曲線],
+) <fig-delta-cpr-fit>
+使用二階諧波相位差可調模型擬合典型 PtTe₂ 約瑟夫森接面的電流相位關係特性曲線。
+
+#figure(
+  image("../Images/cpr_fit_508.svg", width: 80%),
+  caption: [樣品003-2在面內磁場強度為$180 "mT"$，角度為$297.4 degree$的二階諧波相位差可調模型擬合結果],
+) <fig-cpr-fit-508>
+@fig-cpr-fit-508 顯示在高面內磁場強度時，二階諧波相位差可調模型能夠很好地擬合實驗數據且二階諧波分量顯著。
+
+
+=== $I_c R_N$ 乘積估算 <subsection-icrn-product>
+
+$I_c R_N$ 乘積是表徵約瑟夫森接面品質的重要參數，它反映了接面的超導能隙與傳輸特性。@tab-icrn-statistics 總結了多個元件的 $I_c R_N$ 乘積統計資料。
+
+#figure(
+  include "generated_icrn_table.typ",
+  caption: [
+    多個 PtTe₂ 約瑟夫森接面的 $I_c R_N$ 乘積統計（使用參考接面的臨界電流）。
+  ],
+) <tab-icrn-statistics>
+
+對於 @tab-icrn-statistics 中用於 CPR 分析的典型元件 (Sample 003-2)：
+- 切換電流：$I_c approx 19.1$ µA
+- 正常態電阻：$R_N approx 1.92$ Ω
+- $I_c R_N$ 乘積：$approx 36.6$ µV
+
+雖然此數值低於理論極限，但表 @tab-icrn-statistics 顯示其他樣品（如 Sample 004-2）可達 $1.2$ mV，表明 $I_c R_N$ 乘積受製程變異影響較大。整體而言，數值範圍與其他 PtTe₂ 相關研究一致。
+這個數值與典型的金屬約瑟夫森接面相比較低，但與其他拓撲材料基礎的接面相當，反映了 PtTe₂ 作為弱連結材料的特性以及可能存在的近接效應影響。
+
+根據 Ambegaokar-Baratoff 關係，理論預期的 $I_c R_N$ 乘積應為：
+$ I_c R_N = (π Δ)/(2e) tanh(Δ/(2k_B T)) $
+
+其中 $Δ$ 為超導能隙。在 $T ≪ T_c$ 的極限下，對於 $T_c ≈ 2.7$ K 的 PtTe₂，理論預期約為 0.4 mV。觀測到的較高數值可能反映了接面的多重安德烈夫反射過程或非傳統的配對機制。
+
+
+// #figure(
+//   include "generated_properties_table.typ",
+//   caption: [
+//     NbTi 與 PtTe₂ 物性參數表。
+//   ],
+// ) <tab-properties>
 
 ==== SQUID 環路電感與自我屏蔽效應評估
 為了驗證模型的適用性，我們估算了 SQUID 環路的幾何電感 $L$。對於面積約 $250 "µm"^2$ 的環路，幾何電感估計為 $L approx 3$ pH。考量最大臨界電流 $I_c^"max" approx 100$ µA，計算出的屏蔽參數 $beta_L = 2 pi L I_c / Phi_0 approx 0.001$。由於 $beta_L lt lt 1$，自我屏蔽效應可以忽略，這證實了我們採用顯式 CPR 模型 ($I_s(phi)$) 而忽略迴路電感影響的合理性。
@@ -338,24 +440,25 @@ $ I(phi) = I_1 sin phi + I_2 sin(2 phi + delta) $ <CPR-with-delta>
 ) <fig-CPR-evolution2>
 
 
-重構的 CPR 可以用以下形式表示：
-$ I_s(φ) = I_1 sin(φ + φ_1) + I_2 sin(2φ + φ_2) $
+// 重構的 CPR 可以用以下形式表示：
+// $ I_s(φ) = I_1 sin(φ + φ_1) + I_2 sin(2φ + φ_2) $
 
 其中：
 - $I_1$：一階諧波振幅
 - $I_2$：二階諧波振幅
 - $φ_1, φ_2$：相應的相位偏移
-
+#include "gen_cpr_table.typ"
 @tab-cpr-parameters-gen 總結了在不同磁場條件下提取的 CPR 參數：
 
-#include "gen_cpr_table.typ"
+
 
 #figure(
   image("../Images/Thesis_Fig_I2I1_Evolution.png", width: 80%),
   caption: [
     二階諧波分量 ($I_2/I_1$) 隨面內磁場的演化。
   ],
-) <fig-i2i1-evolution>
+)
+// <fig-i2i1-evolution>
 
 實驗結果顯示：
 
@@ -417,7 +520,7 @@ $ I_s(φ) = I_1 sin(φ + φ_1) + I_2 sin(2φ + φ_2) $
 //     #align(center + horizon)[
 //       關聯性分析圖\
 //       夫朗和費非對稱性 vs CPR 二階分量\
-//       不同 $B_"in-plane"$ 條件下的數據點\
+//       不同 $B_"In-Plane"$ 條件下的數據點\
 //       線性關聯趨勢\
 //       （圖片待補充）
 //     ]
@@ -431,11 +534,11 @@ $ I_s(φ) = I_1 sin(φ + φ_1) + I_2 sin(2φ + φ_2) $
 
 1. *強正相關性*：夫朗和費圖樣的非對稱程度與 CPR 中二階諧波分量的大小呈現強正相關 ($R^2 > 0.9$)
 
-2. *磁場可調控性*：透過調節面內磁場 $B_"in-plane"$，可以連續地調控 CPR 的非傳統性
+2. *磁場可調控性*：透過調節面內磁場 $B_"In-Plane"$，可以連續地調控 CPR 的非傳統性
 
 3. *共同物理起源*：這種關聯性強烈暗示夫朗和費非對稱性和非傳統 CPR 具有共同的物理起源——PtTe₂ 的拓撲表面態
 
-4. *二極體效應的定量表徵*：二極體效率 $η = (I_c^+ - I_c^-)/(I_c^+ + I_c^-)$ 隨 $B_"in-plane"$ 呈現可預測的變化
+4. *二極體效應的定量表徵*：二極體效率 $η = (I_c^+ - I_c^-)/(I_c^+ + I_c^-)$ 隨 $B_"In-Plane"$ 呈現可預測的變化
 
 這些結果為理解 PtTe₂ 中的拓撲超導現象提供了直接的實驗證據，並展示了利用外部磁場調控量子元件特性的巨大潜力。
 
