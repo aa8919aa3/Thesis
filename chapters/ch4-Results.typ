@@ -55,10 +55,19 @@
 
 
 #figure(
-  image("../Images/excess_fit_run_33.svg", width: 100%, fit: "stretch"),
-  caption: [樣品004-1的多重安德烈夫反射特性展示],
+  image("../Images/run_33_expert_vis.svg", width: 100%, fit: "stretch"),
+  caption: [
+    $"PtTe"_2$ 約瑟夫森接面的直流傳輸特性與多重安德烈夫反射 (MAR)。
+    (a) 在基溫 ($T approx 40,"mK"$) 下量測之電流-電壓 ($I$-$V$) 特性曲線。接面展現出清晰的超電流分支 (Supercurrent branch)，其切換電流 (Switching current) $I_c approx 24, mu "A"$。高偏壓處的過剩電流 ($I_"exc"$，灰色虛線所示) 顯示該接面具有中透明度的介面特性。
+    (b) 微分電阻 ($d V slash d I$) 隨量測電壓 $V$ 的變化曲線。頻譜中展現一系列對應於次諧波能隙結構 (Sub-harmonic gap structures) 的電阻峰。垂直虛線標示了 MAR 特徵峰的理論預期位置 ($V_n = 2Delta slash "n"e$，其中 $n = 1, 2, 3$)，由此推算出超導能隙 $Delta approx 0.9725 "meV"$。並以 OBTK 模型的最佳擬合曲線，提取出的介面阻抗參數 $Z approx 0.7587$ 與穿透率 $tau approx 0.6347$並以$beta approx 1.1956$表示$e I_"exc" R_n slash Delta$。
+  ],
 ) <fig-MAR>
-@fig-MAR 展示了樣品004-1的多重安德烈夫反射（Multiple Andreev Reflection, MAR）特性。圖中電導曲線（灰虛線）谷值對應於接面內部的高階安德烈夫反射過程。為樣品接面品質優良的有力證據，然而因超電流（Supercurrent）過大，無法直接量測到線性電阻區域，即大於 $2 Delta$的範圍。圖中標示的過電流(Excess Current) $I_"excess"^+ approx 42.3 "µA"$ 僅能作為大致估計，實際的過電流按趨勢應大於此值。同時，由自熱效應引起的溫升也需加以考慮。
+@fig-MAR 展示的多重安德烈夫反射（Multiple Andreev Reflection, MAR）特性，為樣品接面品質優良的有力證據，然而因超電流（Supercurrent）過大，無法直接量測到線性電阻區域，即大於 $2 Delta$的範圍。圖中標示的過電流(Excess Current) $I_"excess"^+ approx 42.3 "µA"$ 僅能作為大致估計，實際的過電流按趨勢應大於此值。同時，由自熱效應引起的溫升也需加以考慮。
+我們在微分電阻 ($d V slash d I$) 頻譜 [圖 1(b)] 中觀察到顯著的次諧波能隙結構，這提供了電荷傳輸是由多重安德烈夫反射 (MAR) 主導的直接證據。電阻谷的位置與理論公式 $V_n = 2 Delta slash n e$ 高度吻合，使我們得以確立超導能隙為 $Delta approx 0.97 "meV"$。為了定量分析介面透明度，我們針對高偏壓數據進行了 Octavio-Tinkham-Blonder-Klapwijk (OBTK) 模型擬合。分析結果顯示介面阻抗參數 $Z approx 0.76$，對應之穿透率 $tau approx 0.63$。此高透明度意味著超電流的限制因素並非來自介面阻障，而是主要源於 $"PtTe"_2$ 通道內部的擴散散射過程。
+
+值得注意的是，量測所得的 $I_c R_n$ 積約為 $0.70 "mV"$，此數值低於短彈道接面 (Short ballistic junction) 的理論極限 ($I_c R_n approx pi Delta slash 2 e approx 1.52 "mV"$)。為了釐清此數值的物理起源，我們檢視了元件的特徵長度尺度。給定接面長度 $L = 260 "nm"$，我們發現實驗數據與擴散極限 (Diffusive limit) 高度吻合。利用長接面理論公式 $e I_c R_n approx 10.82 E_"Th"$ [Dubos et al., PRB 2001]，我們提取出的 Thouless 能為 $E_"Th" approx 65 mu "eV"$。
+
+由此推算的擴散係數 $D = E_"Th" L^2 slash planck approx 0.0067 "m"^2 slash "s"$，在費米速度 $v_F approx 0.65 times 10^6 "m/s"$ 的估算下，對應之平均自由徑 $l_e = 3 D slash v_F approx 31 "nm"$。這表明比值 $L slash l_e approx 8.4$，確認元件運作於明確的擴散區間 ($L >> l_e$)。此外，擴散相干長度估算為 $xi_"diff" = sqrt(planck D slash Delta) approx 67 "nm"$，使得 $L slash xi_"diff" approx 4$。這證實了我們的 $"PtTe"_2$ 接面屬於「長擴散約瑟夫森接面」類別，其超電流大小受限於電子穿越接面所需的擴散時間 (即 Thouless 能)，而非超導能隙。此結果成功解釋了為何在高介面透明度 ($tau approx 0.63$) 下，$I_c R_n$ 數值仍小於短接面理論極限的主因，並展示了 $"PtTe"_2$ 在擴散長度尺度下仍保有良好的相位同調性。
 
 
 == 座標系定義與轉換 (Coordinate System Definition and Transformation) <section-coordinate-system>
@@ -314,7 +323,7 @@ $ I(phi) = I_1 sin phi + I_2 sin(2 phi + delta) $ <CPR-with-delta>
 
 
 
-在分析電流-相位關係時，我們選擇採用截斷的傅立葉級數模型 ($I_s(phi) = I_1 sin(phi) + I_2 sin(2phi + delta)$)，而非基於高透明度接面的微觀模型 ($I(phi) ~ sin(phi)/sqrt(1 - tau sin^2(phi/2))$)。此選擇基於以下兩個主要考量：
+在分析電流-相位關係時，我們選擇採用截斷的傅立葉級數模型 ($I_s(phi) = I_1 sin(phi) + I_2 sin(2phi + delta)$)，而非Kulik-Omelyanchuk模型 ($I(phi) prop sin(phi)/sqrt(1 - tau sin^2(phi/2))$)。此選擇基於以下兩個主要考量：
 
 1. *極高的透明度要求*：如 @fig-cpr-harmonics-tau 所示，若要僅透過透明度模型來解釋我們觀察到的顯著二階諧波分量（$I_2/I_1 approx 0.25$），接面的透明度 $tau$ 必須達到約 0.90。這是一個非常嚴格的物理條件，通常僅在完美的單原子接觸或極高品質的界面中才能實現。
 
@@ -325,25 +334,25 @@ $ I(phi) = I_1 sin phi + I_2 sin(2 phi + delta) $ <CPR-with-delta>
   ],
 ) <fig-cpr-harmonics-tau>
 
-2. *時間反演對稱性的破缺*：標準的透明度模型通常假設時間反演對稱性，導致 $I_c^+ = |I_c^-|$（如 @fig-cpr-diode-comparison 綠色曲線所示）。然而，我們的實驗數據顯示明顯的時間反演對稱性的破缺 ($I_c^+ != |I_c^-|$)。為了描述這種時間反演對稱性的破缺，必須引入高階諧波的相位偏移 $delta$。然而標準的透明度模型隱含對高階諧波的相位偏移 $delta$ 的限制，$delta$必須固定於0。反而簡單的諧波展開模型多了這種自由度（如 @fig-cpr-diode-comparison 紫色曲線所示），能夠靈活地描述此系統。
+2. *時間反演對稱性的破缺*：標準的Kulik-Omelyanchuk模型通常假設時間反演對稱性，導致 $I_c^+ = |I_c^-|$（如 @fig-cpr-diode-comparison 綠色曲線所示）。然而，我們的實驗數據顯示明顯的時間反演對稱性的破缺 ($I_c^+ != |I_c^-|$)。為了描述這種時間反演對稱性的破缺，必須引入高階諧波的相位偏移 $delta$。然而標準的Kulik-Omelyanchuk模型隱含對高階諧波的相位偏移 $delta$ 的限制，$delta$必須固定於0。反而簡單的諧波展開模型多了這種自由度（如 @fig-cpr-diode-comparison 紫色曲線所示），能夠靈活地描述此系統。
 
 #figure(
   image("../Images/CPR_Diode_Comparison.png", width: 70%),
   caption: [
-    透明度模型與諧波模型的比較。標準透明度模型 (綠線) 雖然能產生偏斜的波形，但仍保持 $I_c^+ = |I_c^-|$ 的對稱性。含有相位偏移的諧波模型 (紫線) 則能自然描述 $I_c^+ != |I_c^-|$ 的約瑟夫森二極體效應。
+    透明度模型與諧波模型的比較。
   ],
 ) <fig-cpr-diode-comparison>
-
+標準Kulik-Omelyanchuk模型 (綠線) 雖然能產生偏斜的波形，但仍保持 $I_c^+ = |I_c^-|$ 的對稱性。含有相位偏移的諧波模型 (紫線) 則能自然描述 $I_c^+ != |I_c^-|$ 的約瑟夫森二極體效應。
 基於上述理由，採用包含相位自由度的諧波展開模型，是對本系統非傳統超導電流特性的更合適描述。
 
 
 #figure(
   image("../Images/KO-1_cpr_fit_127.svg", width: 80%),
-  caption: [使用KO-1模型擬合典型 PtTe₂ 約瑟夫森接面的電流相位關係特性曲線],
+  caption: [使用Kulik-Omelyanchuk模型擬合典型 PtTe₂ 約瑟夫森接面的電流相位關係特性曲線],
 ) <fig-OK-1-cpr-fit>
-使用KO-1模型擬合典型 PtTe₂ 約瑟夫森接面的電流相位關係特性曲線。
+使用Kulik-Omelyanchuk模型擬合典型 PtTe₂ 約瑟夫森接面的電流相位關係特性曲線。
 
-在無面內磁場時，使用KO-1模型擬合典型 PtTe₂ 約瑟夫森接面的電流相位關係特性曲線。得出介面透明度為 $tau approx 0.6$，屬於中高透明度接面。
+在無面內磁場時，使用Kulik-Omelyanchuk模型擬合典型 PtTe₂ 約瑟夫森接面的電流相位關係特性曲線。得出介面透明度為 $tau approx 0.6$，屬於中高透明度接面。
 
 #figure(
   image("../Images/delta_cpr_fit_127.svg", width: 80%),
