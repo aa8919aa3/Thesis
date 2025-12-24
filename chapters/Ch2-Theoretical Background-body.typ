@@ -1,9 +1,8 @@
 = 理論背景 <chapter-theoretical-background>
 
-本章節旨在建立理解本研究核心物理現象所需的理論框架。我們將從約瑟夫森效應的基本原理出發，接著介紹作為其關鍵應用的超導量子干涉儀（SQUID），並特別強調非對稱SQUID如何成為探測非傳統電流-相位關係（CPR）的有力工具。最後，我們將聚焦於本研究的核心材料——第二類狄拉克半金屬(type-II Dirac semimetal)二碲化鉑（$"PtTe"_2$），闡述其獨特的拓樸性質為何預期會產生可被SQUID所量測的非正弦CPR。
+本章節旨在建立理解本研究核心物理現象所需的理論框架。我們將從約瑟夫森效應的基本原理出發，接著介紹作為其關鍵應用的超導量子干涉儀（SQUID），並特別強調非對稱SQUID如何成為探測非傳統電流-相位關係（CPR）的有力工具。最後，我們將聚焦於本研究的核心材料——第二類狄拉克半金屬(type-II Dirac semimetal)二碲化鉑（$"PtTe"_2$），闡述其獨特的材料性質為何預期會產生可被SQUID所量測的非單一簡諧態CPR。
 
 == 超導體中的宏觀量子現象基礎 Foundations of Macroscopic Quantum Phenomena in Superconductors <section-superconductivity>
-
 超導性 (superconductivity)為超導量子元件的基石。本章節將介紹超導體的基本性質，並解釋約瑟夫森效應如何在超導體中產生宏觀量子現象。
 
 === 庫柏對凝聚與宏觀波函數 The Cooper Pair Condensate and the Macroscopic Wavefunction <subsection-cooper-pairs>
@@ -403,7 +402,7 @@ $ phi_r = phi + (2 pi Phi_("ext"))/(Phi_0) + Phi_l. $
 === 高次諧波對磁通調變的影響 Effect of Higher Harmonics on Flux Modulation <subsection-higher-harmonics-effect>
 
 考慮一個 SQUID，其中接面具有包含前兩個諧波的 CPR：
-$ I_s(phi) = I_(c 1) sin(phi) + I_(c 2) sin(2phi) $
+$ I_s (phi) = I_(c 1) sin(phi) + I_(c 2) sin(2phi) $
 
 SQUID 的總超導電流變為：
 $

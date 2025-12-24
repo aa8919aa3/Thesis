@@ -42,26 +42,23 @@
 為了鑑定元件的基本直流 (DC) 輸運特性，我們在極低溫環境（恆定溫度 $T = 40 "mK"$）下量測了其電流-電壓 ($I$-$V$) 特性曲線。該數據是透過對偏壓電流 ($I_"bias"$) 進行連續掃描並同步紀錄接面兩端電壓降 ($V$) 所獲得。
 #figure(
   image("../Images/iv_run20.svg", width: 80%),
-  caption: [典型 PtTe₂ 約瑟夫森接面的負向重捕電流及正負向切換電流 I-V 特性曲線],
+  caption: [樣品003-2之負向重捕電流及正負向切換電流 I-V 特性曲線],
 ) <fig-iv-characteristics>
-@fig-iv-characteristics 中清晰地顯示了零電壓的超導區域、急劇的電阻性切換（切換電流 $I_s approx 40 "µA"$）以及顯著的遲滯行為（重捕電流 $I_r approx 4 "µA"$），反映了該接面處於欠阻尼 (Underdamped) 狀態。
+@fig-iv-characteristics 中清晰地顯示了零電壓的超導區域、急劇的電阻性切換（切換電流 $I_s approx 40 "µA"$）以及顯著的遲滯行為（重捕電流 $I_r approx 4 "µA"$），反映了該接面處於欠阻尼 (Underdamped) 狀態，使用正常電阻區域數據線性擬合得出正常電阻 $R_"n"$ 約為 $1.87 "Ω"$。
 
 
 #figure(
   image("../Images/iv_dvdi_comparison_354_408.svg", width: 80%),
-  caption: [典型 PtTe₂ 約瑟夫森接面的正負向切換電流 I-V 特性曲線],
+  caption: [樣品003-2之正負向切換電流 I-V 特性曲線],
 ) <fig-iv-dvdi-comparison>
-典型 PtTe₂ 約瑟夫森接面的正負向切換電流 I-V 特性曲線。
-
-
-
+@fig-iv-dvdi-comparison 是由正負偏壓量測拼接而成的正負向切換電流 I-V 特性曲線。正向切換電流 $I_s^+ approx 27 "µA"$，負向切換電流 $I_s^- approx -33.5 "µA"$， $Delta I_s approx -6.5 "µA"$，$eta approx 10.7%$。雖出現 $I_s^+ != abs(I_s^-)$，但此為SQUID樣品003-2的參考接面及目標接面並聯的結果。可能因熱擾動或接面間的微小相位差異所導致，無法直接斷定為約瑟夫森二極體效應。需由之後的電流電壓磁場掃描測量來驗證。
 
 
 #figure(
   image("../Images/excess_fit_run_33.svg", width: 100%, fit: "stretch"),
-  caption: [PtTe₂約瑟夫森接面的MAR特性],
+  caption: [樣品004-1的多重安德烈夫反射特性展示],
 ) <fig-MAR>
-PtTe₂約瑟夫森接面的多安德烈夫反射（MAR）特性。圖中谷值對應於接面內部的高階安德烈夫反射過程。
+@fig-MAR 展示了樣品004-1的多重安德烈夫反射（Multiple Andreev Reflection, MAR）特性。圖中電導曲線（灰虛線）谷值對應於接面內部的高階安德烈夫反射過程。為樣品接面品質優良的有力證據，然而因超電流（Supercurrent）過大，無法直接量測到線性電阻區域，即大於 $2 Delta$的範圍。圖中標示的過電流(Excess Current) $I_"excess"^+ approx 42.3 "µA"$ 僅能作為大致估計，實際的過電流按趨勢應大於此值。同時，由自熱效應引起的溫升也需加以考慮。
 
 
 == 座標系定義與轉換 (Coordinate System Definition and Transformation) <section-coordinate-system>
