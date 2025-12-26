@@ -314,72 +314,51 @@ $ I_c(Phi_"ext") = sum_(n=0)^infinity a_n cos((2pi n Phi_"ext") / Phi_0) + b_n s
 
 不同的傅立葉分量對應於 CPR 的不同諧波，從而可以識別非正弦 CPR 的特徵@Babich2023_LimitationsCPR_NanoLett。
 
-=== 基於高度非對稱兩接面 SQUID 的 CPR 反演方法 CPR Reconstruction with a Highly Asymmetric Two-Junction SQUID <subsection-cpr-reconstruction-asym-squid>
+=== CPR 重建方法 (CPR Reconstruction Method) <subsection-cpr-reconstruction-asym-squid>
 
-在前述討論中，我們指出高度非對稱 SQUID（$I_("c1") >> I_("c2")$）可以視為一個「相位偏置」的量測平台，其中臨界電流較大的接面提供近似固定的相位參考，而臨界電流較小的接面之相位則主要由外加磁通量控制。然而，若要從實驗上量得的 SQUID 臨界電流–磁通關係 $I_("s,max")(Phi)$ 反推出弱接面的完整電流–相位關係 (CPR)，仍需一個明確的解析程序。
+我們考慮一個非對稱的雙接面超導量子干涉元件 (asymmetric dc-SQUID)，其包含一個具有較大臨界電流 $I_r$ 的參考接面 (reference junction)，以及一個具有較小臨界電流 $I_j$ 的待測接面 (studied junction)，滿足條件 $I_r >> I_j$。假設參考接面的電流-相位關係 (CPR) 為標準的正弦函數 $I_r sin(phi_r)$，而待測接面的 CPR 則為待確定的未知函數 $I_j(phi)$。
 
-本研究採用 Ginzburg 等人提出的解析方法@ginzburg_determination_2018。考慮一個由兩個約瑟夫森接面組成的不對稱 SQUID，其中：
+流經干涉元件的總超導電流 $I_s$ 為兩臂電流之和：
+$ I_s = I_r sin(phi_r) + I_j(phi), $ <eq-total_current>
+其中 $phi_r$ 與 $phi$ 分別為參考接面與待測接面兩端的規範不變相位差 (gauge-invariant phase difference)。若忽略 SQUID 環路的幾何電感效應 ($L -> 0$)，由磁通量子化 (flux quantization) 所施加的相位限制條件為：
+$ phi_r = phi + (2pi Phi)/Phi_0, $ <eq-phase_constraint>
+此處 $Phi$ 為外加磁通量，$Phi_0 = h/(2e)$ 為磁通量子。
 
-- *參考接面 (reference junction)*：臨界電流為 $I_r$，其 CPR 為已知且近似純正弦：
-  $ I_("s,r")(phi_r) = I_r sin phi_r. $
-- *被研究接面 (studied junction)*：臨界電流為 $I_j$，其 CPR 未知，記為：
-  $ I_("s,j")(phi) = I_j(phi). $
+SQUID 的臨界電流 $I_(s, "max")$ 取決於總電流 $I_s$ 對相位 $phi$ 的極大值。根據極值條件 $d I_s \/ d phi = 0$，我們可得到臨界相位 $phi_c$ 的關係式：
+$ (d I_s)/(d phi)|_(phi=phi_c) = (d I_j)/(d phi) + I_r cos(phi_c + (2pi Phi)/Phi_0) = 0. $ <eqDerivativeCondition>
+此條件定義了發生最大超流時的相位 $phi_c$。
 
-忽略迴路電感的極限下，流經 SQUID 的總超導電流為兩接面電流之和：
-$ I_s = I_r sin phi_r + I_j(phi). $ <eq-asym-squid-Is>
-
-兩個接面的約瑟夫森相位差由磁通量量子化條件關聯：
-$ phi_r = phi + (2 pi Phi)/(Phi_0), $ <eq-asym-squid-phases>
-
-其中 $Phi$ 為穿過 SQUID 迴路的總磁通量，$Phi_0 = h/(2e)$ 為磁通量子。
-
-對於給定的磁通量 $Phi$，總超導電流在某一相位 $phi = phi_c(Phi)$ 取得最大值 $I_("s,max")(Phi)$，此時對相位的導數為零：
+將量測到的最大超流 $I_(s, "max")$ 對磁通 $Phi$ 進行微分，我們得到：
 $
-  (
-    (dif I_s)/(dif phi)
-  )_"(phi = phi_c)" = 0.
-$ <eq-asym-squid-extremum>
-
-由@eq-asym-squid-Is、@eq-asym-squid-phases 可得
-$ 0 = (dif I_j)/(dif phi) |_(phi_c) + I_r cos(bracket(phi_c + (2 pi Phi)/(Phi_0))). $
-
-另一方面，將 $I_("s,max")(Phi) = I_s(phi_c(Phi), Phi)$ 對磁通量求導，可得
+  (d I_(s, "max"))/(d Phi) = underbrace((d I_j)/(d phi) + I_r cos(phi_c + (2pi Phi)/Phi_0), =0 "，根據式" #box[@eqDerivativeCondition]) (d phi_c)/(d Phi) + (2pi I_r)/Phi_0 cos(phi_c + (2pi Phi)/Phi_0).
+$ <eq-flux_derivative>
+由於極大化條件，上式中括號內的第一項為零。這項簡化使我們能夠反轉關係式，將微觀的臨界相位 $phi_c$ 明確表示為實驗可觀測量 $d I_(s, "max") \/ d Phi$ 的函數：
 $
-  (dif I_("s,max"))/(dif Phi)
-  = ((partial I_s)/(partial phi))_(phi_c) (dif phi_c)/(dif Phi)
-  + ((partial I_s)/(partial Phi))_(phi_c).
+  phi_c = plus.minus arccos((Phi_0)/(2pi I_r) (d I_(s, "max"))/(d Phi)) - (2pi Phi)/Phi_0 + 2pi k, quad k in ZZ.
+$ <eq-phi_c_inversion>
+其中 $k$ 為整數。
+
+最後，將求得的 $phi_c$ 代回式 @eq-total_current 並利用三角恆等式，我們即可重建待測接面未知的電流-相位關係 $I_j(phi)$：
 $
+  I_j(phi_c) = I_(s, "max") - I_r sin(phi_c + (2pi Phi)/Phi_0) = I_(s, "max") - sqrt(I_r^2 - ((Phi_0)/(2pi) (d I_(s, "max"))/(d Phi))^2).
+$ <eq-final_cpr>
+此解析表示式允許我們直接從量測到的 SQUID 臨界電流隨磁場變化關係中，反演出待測接面的 CPR 波形 @ginzburg_determination_2018 @Babich2023_LimitationsCPR_NanoLett。
 
-極值條件@eq-asym-squid-extremum 使第一項消失，因而
+==== 有限電感效應之修正 (Correction for Finite Inductance) <subsection-correction-finite-inductance>
+
+在實際的實驗體系中，SQUID 環路不可避免地具有有限的幾何電感 $L$。這導致穿過 SQUID 環路的總磁通量 $Phi$ 與外部施加的磁通量 $Phi_("ext")$ 並不相等，必須考慮由環路電流所產生的屏蔽磁通 (shielding flux) 。修正後的磁通關係式為：
+$ Phi = Phi_("ext") - Phi_L, $ <eq-flux_correction>
+其中 $Phi_L$ 為電感所貢獻的磁通分量。
+
+根據 Ginzburg 等人的分析，在高度非對稱 ($I_r >> I_j$) 的極限下，流經電感的電流主要由參考接面的臨界電流決定，因此電感磁通 $Phi_L$ 可近似為一個與外加磁場無關的常數 ：
+$ Phi_L approx 1/2 L (I_r - I_j) = 1/2 L Delta I_c. $ <eq-inductance_flux>
+這意味著有限電感的主要效應是在磁通軸上引入一個固定的偏移量 (shift)。
+
+因此，考慮電感修正後的待測接面相位 $phi_c$ 應修正為 @ginzburg_determination_2018：
 $
-  (dif I_("s,max"))/(dif Phi)
-  = (2 pi I_r)/(Phi_0) cos(bracket(phi_c + (2 pi Phi)/(Phi_0))).
-$ <eq-asym-squid-dIsdPhi>
-
-也就是說，臨界電流–磁通曲線的導數直接給出參考接面 CPR 中的 $cos$ 項。解出餘弦的相位參數，可得臨界相位 $phi_c(Phi)$：
-$
-  phi_c(Phi) =
-  ± arccos((Phi_0)/(2 pi I_r) (dif I_("s,max"))/(dif Phi))
-  - (2 pi Phi)/(Phi_0) + 2 pi k, quad k in bb(Z).
-$ <eq-asym-squid-phic>
-
-這裡 $k$ 為整數，代表多值性；在實務上可透過要求 $phi_c(Phi)$ 對 $Phi$ 平滑變化來選擇適當的分支。進一步，由@eq-asym-squid-Is 可得在臨界相位下的弱接面電流：
-$
-  I_j(phi_c) = I_("s,max")(Phi)
-  - I_r sin(bracket(phi_c + (2 pi Phi)/(Phi_0))).
-$ <eq-asym-squid-Ij>
-
-亦即，對每一個實驗磁通點 $Phi_i$ ，我們可以將量測到的 $I_("s,max")(Phi_i)$ 及其導數 $(dif I_("s,max"))/(dif Phi)|_(Phi_i)$ 經由@eq-asym-squid-phic、@eq-asym-squid-Ij 轉換為 CPR 上的一個點 $(phi_c(Phi_i), I_j(phi_c(Phi_i)))$。將這些點按相位排序後，即可重建弱接面的 CPR。
-
-在實際 SQUID 中，迴路電感 $L$ 不可忽略，總磁通量為
-$ Phi = Phi_("ext") + Phi_l, $
-其中 $Phi_("ext")$ 為外加磁通量，而 $Phi_l$ 為由迴路中循環電流 $I_("cir")$ 產生的自生磁通。對於高度非對稱的 SQUID（$I_r >> I_j$）且 $beta_L = 2 L I_r / Phi_0$ 不太大時，可近似認為 $Phi_l$ 在一個調變週期內幾乎為常數，並可寫為@ginzburg_determination_2018：
-$ Phi_l approx (Delta I_c L) / 2, quad Delta I_c = I_r - I_j. $ <eq-asym-squid-Phil>
-
-在此近似下，有限電感的主要效果是使@eq-asym-squid-phases 中的相位關係多出一個近似常數的相位偏移：
-$ phi_r = phi + (2 pi Phi_("ext"))/(Phi_0) + Phi_l. $
-
-因此，有限電感並不改變 CPR 的形狀，而是導致在相位軸上的整體平移。本研究中我們將在後續數據分析章節中，透過擬合實驗量測的 $I_("s,max")(Phi_("ext"))$ 與電壓響應，反推出適當的有效 $L$ 與 $Phi_l$，並將其納入 CPR 重建程序中。
+  phi_c = plus.minus arccos((Phi_0)/(2pi I_r) (d I_(s, "max"))/(d Phi)) - (2pi Phi_("ext"))/Phi_0 - (2pi Phi_L)/Phi_0.
+$ <eq-corrected_phase>
+在實驗數據分析中，若觀察到 $I_(s, "max")$ 對 $Phi_("ext")$ 的干涉圖形發生水平偏移，即可利用此效應反推 SQUID 的寄生電感值，並對 CPR 重建結果進行校正。
 
 
 === 實驗設計與量測技術 (Experimental Design and Measurement Techniques)

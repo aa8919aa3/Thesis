@@ -37,7 +37,7 @@
 
 
 
-=== 基礎溫度下的 I-V 特性 <subsection-iv-characteristics>
+== 基礎溫度下的 I-V 特性 <subsection-iv-characteristics>
 
 為了鑑定元件的基本直流 (DC) 輸運特性，我們在極低溫環境（恆定溫度 $T = 40 "mK"$）下量測了其電流-電壓 ($I$-$V$) 特性曲線。該數據是透過對偏壓電流 ($I_"bias"$) 進行連續掃描並同步紀錄接面兩端電壓降 ($V$) 所獲得。
 #figure(
@@ -69,6 +69,9 @@
 
 由此推算的擴散係數 $D = E_"Th" L^2 slash planck approx 0.0067 "m"^2 slash "s"$，在費米速度 $v_F approx 0.65 times 10^6 "m/s"$ 的估算下，對應之平均自由徑 $l_e = 3 D slash v_F approx 31 "nm"$。這表明比值 $L slash l_e approx 8.4$，確認元件運作於明確的擴散區間 ($L >> l_e$)。此外，擴散相干長度估算為 $xi_"diff" = sqrt(planck D slash Delta) approx 67 "nm"$，使得 $L slash xi_"diff" approx 4$。這證實了我們的 $"PtTe"_2$ 接面屬於「長擴散約瑟夫森接面」類別，其超電流大小受限於電子穿越接面所需的擴散時間 (即 Thouless 能)，而非超導能隙。此結果成功解釋了為何在高介面透明度 ($tau approx 0.63$) 下，$I_c R_n$ 數值仍小於短接面理論極限的主因，並展示了 $"PtTe"_2$ 在擴散長度尺度下仍保有良好的相位同調性。
 
+在高於超導能隙 ($e V > 2 Delta$) 的偏壓區間，我們觀察到微分電阻 ($d V slash d I$) 並未如 BCS 理論預期飽和至恆定的正常態電阻 $R_n$，而是呈現隨電壓單調上升的趨勢 [圖 1(b)]。此現象主要歸因於接面處的焦耳熱效應 (Joule Heating) 累積導致的電子溫度 ($T_e$) 升高。在極低溫 ($T approx 20 "mK"$) 環境下，電子-聲子耦合 (electron-phonon coupling) 極弱，導致熱電子難以將能量耗散至晶格。
+
+此外，為了濾除高頻雜訊以優化低溫量測，我們的樣品PCB載台配置了 RC 濾波電路。串聯電阻元件在高注入電流下產生的額外熱量，可能進一步透過基板傳導或準粒子擴散影響接面溫度。這種由熱效應引起的電阻上翹是介觀超導元件測量中常見的非本徵效應 (extrinsic effect)。
 
 == 座標系定義與轉換 (Coordinate System Definition and Transformation) <section-coordinate-system>
 
@@ -323,7 +326,7 @@ $ I(phi) = I_1 sin phi + I_2 sin(2 phi + delta) $ <CPR-with-delta>
 
 
 
-在分析電流-相位關係時，我們選擇採用截斷的傅立葉級數模型 ($I_s(phi) = I_1 sin(phi) + I_2 sin(2phi + delta)$)，而非Kulik-Omelyanchuk模型 ($I(phi) prop sin(phi)/sqrt(1 - tau sin^2(phi/2))$)。此選擇基於以下兩個主要考量：
+在分析電流-相位關係時，我們選擇採用截斷的傅立葉級數模型 (@CPR-with-delta)，而非Kulik-Omelyanchuk模型 ($I(phi) prop sin(phi)/sqrt(1 - tau sin^2(phi/2))$)。此選擇基於以下兩個主要考量：
 
 1. *極高的透明度要求*：如 @fig-cpr-harmonics-tau 所示，若要僅透過透明度模型來解釋我們觀察到的顯著二階諧波分量（$I_2/I_1 approx 0.25$），接面的透明度 $tau$ 必須達到約 0.90。這是一個非常嚴格的物理條件，通常僅在完美的單原子接觸或極高品質的界面中才能實現。
 
@@ -374,14 +377,14 @@ $I_c R_N$ 乘積是表徵約瑟夫森接面品質的重要參數，它反映了�
 #figure(
   include "generated_icrn_table.typ",
   caption: [
-    多個 PtTe₂ 約瑟夫森接面的 $I_c R_N$ 乘積統計（使用參考接面的臨界電流）。
+    多個 PtTe₂ 約瑟夫森接面的 $I_c R_N$ 乘積統計
   ],
 ) <tab-icrn-statistics>
 
-對於 @tab-icrn-statistics 中用於 CPR 分析的典型元件 (Sample 003-2)：
-- 切換電流：$I_c approx 19.1$ µA
-- 正常態電阻：$R_N approx 1.92$ Ω
-- $I_c R_N$ 乘積：$approx 36.6$ µV
+樣品003-2之 $I_c R_N$ 乘積結果為：
+- 切換電流：$I_c^"(1)" approx 3.935$ µA
+- 正常態電阻：$R_N approx 1.848$ Ω
+- $I_c^"(1)" R_N$ 乘積：$approx 7.272$ µV
 
 雖然此數值低於理論極限，但表 @tab-icrn-statistics 顯示其他樣品（如 Sample 004-2）可達 $1.2$ mV，表明 $I_c R_N$ 乘積受製程變異影響較大。整體而言，數值範圍與其他 PtTe₂ 相關研究一致。
 這個數值與典型的金屬約瑟夫森接面相比較低，但與其他拓撲材料基礎的接面相當，反映了 PtTe₂ 作為弱連結材料的特性以及可能存在的近接效應影響。
