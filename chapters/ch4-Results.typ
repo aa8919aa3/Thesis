@@ -300,7 +300,7 @@ $
 
 4. *振幅調變*：不同極小值的深度出現差異，破壞了原有的週期性
 
-這些變化強烈暗示平面內磁場改變了 PtTe₂ 接面的電流-相位關係，可能是透過影響其拓撲表面態或誘導約瑟夫森二極體效應所致。
+這些變化強烈暗示平面內磁場改變了 PtTe₂ 接面的電流-相位關係，可能產生時間反演對稱性破缺。
 
 == 電流-相位關係分析 <section-cpr-analysis>
 
@@ -381,18 +381,18 @@ $I_c R_N$ 乘積是表徵約瑟夫森接面品質的重要參數，它反映了�
   ],
 ) <tab-icrn-statistics>
 
-樣品003-2之 $I_c R_N$ 乘積結果為：
-- 切換電流：$I_c^"(1)" approx 3.935$ µA
-- 正常態電阻：$R_N approx 1.848$ Ω
-- $I_c^"(1)" R_N$ 乘積：$approx 7.272$ µV
+// 樣品003-2之 $I_c R_N$ 乘積結果為：
+// - 切換電流：$I_c^"(1)" approx 3.935$ µA
+// - 正常態電阻：$R_N approx 1.848$ Ω
+// - $I_c^"(1)" R_N$ 乘積：$approx 7.272$ µV
 
-雖然此數值低於理論極限，但表 @tab-icrn-statistics 顯示其他樣品（如 Sample 004-2）可達 $1.2$ mV，表明 $I_c R_N$ 乘積受製程變異影響較大。整體而言，數值範圍與其他 PtTe₂ 相關研究一致。
-這個數值與典型的金屬約瑟夫森接面相比較低，但與其他拓撲材料基礎的接面相當，反映了 PtTe₂ 作為弱連結材料的特性以及可能存在的近接效應影響。
+// 雖然此數值低於理論極限，但表 @tab-icrn-statistics 顯示其他樣品（如 Sample 004-2）可達 $1.2$ mV，表明 $I_c R_N$ 乘積受製程變異影響較大。整體而言，數值範圍與其他 PtTe₂ 相關研究一致。
+// 這個數值與典型的金屬約瑟夫森接面相比較低，但與其他拓撲材料基礎的接面相當，反映了 PtTe₂ 作為弱連結材料的特性以及可能存在的近接效應影響。
 
-根據 Ambegaokar-Baratoff 關係，理論預期的 $I_c R_N$ 乘積應為：
-$ I_c R_N = (π Δ)/(2e) tanh(Δ/(2k_B T)) $
+// 根據 Ambegaokar-Baratoff 關係，理論預期的 $I_c R_N$ 乘積應為：
+// $ I_c R_N = (π Δ)/(2e) tanh(Δ/(2k_B T)) $
 
-其中 $Δ$ 為超導能隙。在 $T ≪ T_c$ 的極限下，對於 $T_c ≈ 2.7$ K 的 PtTe₂，理論預期約為 0.4 mV。觀測到的較高數值可能反映了接面的多重安德烈夫反射過程或非傳統的配對機制。
+// 其中 $Δ$ 為超導能隙。在 $T ≪ T_c$ 的極限下，對於 $T_c ≈ 2.7$ K 的 PtTe₂，理論預期約為 0.4 mV。觀測到的較高數值可能反映了接面的多重安德烈夫反射過程或非傳統的配對機制。
 
 
 // #figure(
@@ -405,122 +405,141 @@ $ I_c R_N = (π Δ)/(2e) tanh(Δ/(2k_B T)) $
 ==== SQUID 環路電感與自我屏蔽效應評估
 為了驗證模型的適用性，我們估算了 SQUID 環路的幾何電感 $L$。對於面積約 $250 "µm"^2$ 的環路，幾何電感估計為 $L approx 3$ pH。考量最大臨界電流 $I_c^"max" approx 100$ µA，計算出的屏蔽參數 $beta_L = 2 pi L I_c / Phi_0 approx 0.001$。由於 $beta_L lt lt 1$，自我屏蔽效應可以忽略，這證實了我們採用顯式 CPR 模型 ($I_s(phi)$) 而忽略迴路電感影響的合理性。
 
-=== 非傳統 CPR特徵 <subsection-unconventional-cpr>
+// === 非傳統 CPR特徵 <subsection-unconventional-cpr>
 
-透過分析非對稱 SQUID 的磁通量調變行為，我們可以重構出 PtTe₂ 接面的電流-相位關係 (CPR)。@fig-cpr-reconstruction 展示了重構出的 CPR 與傳統正弦 CPR 的比較。
+// 透過分析非對稱 SQUID 的磁通量調變行為，我們可以重構出 PtTe₂ 接面的電流-相位關係 (CPR)。@fig-cpr-reconstruction 展示了重構出的 CPR 與傳統正弦 CPR 的比較。
 
-#figure(
-  image("../Images/Thesis_Fig_CPR_Harmonics.png", width: 90%),
-  caption: [
-    重構的 PtTe₂ 接面電流-相位關係 (Sample 005-1, Run 170)。實驗數據與擬合結果顯示了顯著的非純正弦特徵。
-  ],
-) <fig-cpr-reconstruction>
+// #figure(
+//   image("../Images/Thesis_Fig_CPR_Harmonics.png", width: 90%),
+//   caption: [
+//     重構的 PtTe₂ 接面電流-相位關係 (Sample 005-1, Run 170)。實驗數據與擬合結果顯示了顯著的非純正弦特徵。
+//   ],
+// ) <fig-cpr-reconstruction>
 
-#figure(
-  grid(
-    columns: (1fr, 1fr),
-    rows: (auto, auto),
-    gutter: 1em,
-    image("../Images/CPR_Sweep_003-2_Run511.png"), image("../Images/CPR_Sweep_003-3_Run269.png"),
-    image("../Images/CPR_Sweep_005-1_Run170.png"), image("../Images/CPR_Sweep_005-2_Run230.png"),
-  ),
-  caption: [
-    固定面內磁場下的電流-相位關係掃描結果 ($I_c$ vs $Phi$)。
-    (a) Sample 003-2 (Run 511, $B_"in-plane" = 170$ mT)
-    (b) Sample 003-3 (Run 269, $B_"in-plane" = 60$ mT)
-    (c) Sample 005-1 (Run 170, $B_"in-plane" = 30$ mT)
-    (d) Sample 005-2 (Run 230, $B_"in-plane" = 60$ mT)
-    實線為基於諧波模型的擬合結果。
-  ],
-) <fig-cpr-sweep-all>
+// #figure(
+//   grid(
+//     columns: (1fr, 1fr),
+//     rows: (auto, auto),
+//     gutter: 1em,
+//     image("../Images/CPR_Sweep_003-2_Run511.png"), image("../Images/CPR_Sweep_003-3_Run269.png"),
+//     image("../Images/CPR_Sweep_005-1_Run170.png"), image("../Images/CPR_Sweep_005-2_Run230.png"),
+//   ),
+//   caption: [
+//     固定面內磁場下的電流-相位關係掃描結果 ($I_c$ vs $Phi$)。
+//     (a) Sample 003-2 (Run 511, $B_"in-plane" = 170$ mT)
+//     (b) Sample 003-3 (Run 269, $B_"in-plane" = 60$ mT)
+//     (c) Sample 005-1 (Run 170, $B_"in-plane" = 30$ mT)
+//     (d) Sample 005-2 (Run 230, $B_"in-plane" = 60$ mT)
+//     實線為基於諧波模型的擬合結果。
+//   ],
+// ) <fig-cpr-sweep-all>
 
-#figure(
-  grid(
-    columns: (1fr,) * 3,
-    image("../Images/003-2_CPR_30mT_summary_report.svg"),
-    image("../Images/003-2_CPR_60mT_summary_report.svg"),
-    image("../Images/003-3_CPR_60mT_summary_report.svg"),
+// #figure(
+//   grid(
+//     columns: (1fr,) * 3,
+//     image("../Images/003-2_CPR_30mT_summary_report.svg"),
+//     image("../Images/003-2_CPR_60mT_summary_report.svg"),
+//     image("../Images/003-3_CPR_60mT_summary_report.svg"),
 
-    image("../Images/005-1_CPR_30mT_summary_report.svg"),
-    image("../Images/005-1_CPR_60mT_summary_report.svg"),
-    image("../Images/005-2_CPR_60mT_summary_report.svg"),
-  ),
-  caption: [面內磁場下CPR的演化 / Evolution of the CPR under in-plane magnetic field],
-) <fig-CPR-evolution2>
-
-
-// 重構的 CPR 可以用以下形式表示：
-// $ I_s(φ) = I_1 sin(φ + φ_1) + I_2 sin(2φ + φ_2) $
-
-其中：
-- $I_1$：一階諧波振幅
-- $I_2$：二階諧波振幅
-- $φ_1, φ_2$：相應的相位偏移
-#include "gen_cpr_table.typ"
-@tab-cpr-parameters-gen 總結了在不同磁場條件下提取的 CPR 參數：
+//     image("../Images/005-1_CPR_30mT_summary_report.svg"),
+//     image("../Images/005-1_CPR_60mT_summary_report.svg"),
+//     image("../Images/005-2_CPR_60mT_summary_report.svg"),
+//   ),
+//   caption: [面內磁場下CPR的演化 / Evolution of the CPR under in-plane magnetic field],
+// ) <fig-CPR-evolution2>
 
 
+// // 重構的 CPR 可以用以下形式表示：
+// // $ I_s(φ) = I_1 sin(φ + φ_1) + I_2 sin(2φ + φ_2) $
 
-#figure(
-  image("../Images/Thesis_Fig_I2I1_Evolution.png", width: 80%),
-  caption: [
-    二階諧波分量 ($I_2/I_1$) 隨面內磁場的演化。
-  ],
-)
-// <fig-i2i1-evolution>
+// 其中：
+// - $I_1$：一階諧波振幅
+// - $I_2$：二階諧波振幅
+// - $φ_1, φ_2$：相應的相位偏移
+// #include "gen_cpr_table.typ"
+// @tab-cpr-parameters-gen 總結了在不同磁場條件下提取的 CPR 參數：
 
-實驗結果顯示：
 
-1. *顯著的二階諧波分量*：$I_2/I_1$ 從零磁場的 0.10 增加到 150 mT 時的 0.36，遠大於傳統接面的預期值（$< 0.01$）
 
-2. *磁場可調控性*：二階諧波分量隨面內磁場呈現系統性增長，展現出良好的可調控性
+// #figure(
+//   image("../Images/Thesis_Fig_I2I1_Evolution.png", width: 80%),
+//   caption: [
+//     二階諧波分量 ($I_2/I_1$) 隨面內磁場的演化。
+//   ],
+// )
+// // <fig-i2i1-evolution>
 
-3. *非零相位偏移*：$φ_1 ≠ 0, φ_2 ≠ 0$，且隨磁場變化，表明存在非互易性
+// 實驗結果顯示：
 
-4. *CPR 非對稱性*：$I_s(φ) ≠ -I_s(-φ)$，這是約瑟夫森二極體效應的直接證據
+// 1. *顯著的二階諧波分量*：$I_2/I_1$ 從零磁場的 0.10 增加到 150 mT 時的 0.25，遠大於傳統接面的預期值（$< 0.01$）
 
-這些非傳統 CPR 特徵可以歸因於 PtTe₂ 的拓撲表面態。在狄拉克半金屬中，螺旋自旋-動量鎖定的表面態能夠促進高階安德烈夫反射過程，從而產生高次諧波超電流分量。面內磁場透過調控自旋軌道耦合強度，進一步增強了這些非傳統效應。我們在擬合過程中提取的參數誤差（如 $delta I_1, delta I_2$）均小於擬合值的 5%，證實了特徵的穩健性。
+// 2. *磁場可調控性*：二階諧波分量隨面內磁場呈現系統性增長，展現出良好的可調控性
 
-=== 角度依賴的約瑟夫森二極體效應 <subsection-angle-jde>
-為了進一步探究二極體效應的幾何依賴性，我們測量了二極體效率 $eta$ 隨面內磁場角度 $theta$ 的變化。
+// 3. *非零相位偏移*：$φ_1 ≠ 0, φ_2 ≠ 0$，且隨磁場變化，表明存在非互易性
 
-#figure(
-  grid(
-    columns: (1fr, 1fr),
-    image("../Images/005-1_JDE_Angle.png", width: 95%), image("../Images/005-1_Ic_Angle.png", width: 95%),
-  ),
-  caption: [Sample 005-1 的角度解析二極體效應。(左) 二極體效率 $eta$ 隨面內角度的變化，顯示出明顯的振盪行為。(右) 對應的正負臨界電流隨角度的變化。],
-) <fig-angle-jde>
+// 4. *CPR 非互易性*：$I_s(φ) ≠ -I_s(-φ)$，這是時間反演對稱性破缺的間接證據。
 
-如 @fig-angle-jde 所示，二極體效率展現出與角度強烈相關的週期性變化，這與理論預期的自旋-軌道耦合各向異性相符。特定角度下的效率最大化暗示了拓撲表面態自旋織構的具體對稱性。
+// 這些非傳統 CPR 特徵可以歸因於 PtTe₂ 的拓撲表面態。在狄拉克半金屬中，螺旋自旋-動量鎖定的表面態能夠促進高階安德烈夫反射過程，從而產生高次諧波超電流分量。面內磁場透過調控自旋軌道耦合強度，進一步增強了這些非傳統效應。我們在擬合過程中提取的參數誤差（如 $delta I_1, delta I_2$）均小於擬合值的 5%，證實了特徵的穩健性。
+
+// === 角度依賴的約瑟夫森二極體效應 <subsection-angle-jde>
+// 為了進一步探究二極體效應的幾何依賴性，我們測量了二極體效率 $eta$ 隨面內磁場角度 $theta$ 的變化。
+
+// #figure(
+//   grid(
+//     columns: (1fr, 1fr),
+//     image("../Images/005-1_JDE_Angle.png", width: 95%), image("../Images/005-1_Ic_Angle.png", width: 95%),
+//   ),
+//   caption: [Sample 005-1 的角度解析二極體效應。(左) 二極體效率 $eta$ 隨面內角度的變化，顯示出明顯的振盪行為。(右) 對應的正負臨界電流隨角度的變化。],
+// ) <fig-angle-jde>
+
+// 如 @fig-angle-jde 所示，二極體效率展現出與角度強烈相關的週期性變化，這與理論預期的自旋-軌道耦合各向異性相符。特定角度下的效率最大化暗示了拓撲表面態自旋織構的具體對稱性。
 
 === CPR 參數隨面內磁場的各向異性演化 <subsection-cpr-evolution-003-2>
-為了探究不同晶體方向上的磁場響應差異，我們針對 Sample 003-2 在兩個特定角度 ($theta = 27.4^degree$ 與 $297.4^degree$) 進行了細緻的磁場掃描。@fig-003-2-evolution 展示了關鍵參數 ($I_c, I_1, I_2, I_2/I_1, delta$) 隨面內磁場強度的演化。
+為了探究不同晶體方向上的磁場響應差異，我們針對 Sample 003-2 在兩個特定角度 ($theta = 27.4^degree$ 與 $297.4^degree$) 進行了細緻的磁場掃描。
+
+// #figure(
+//   grid(
+//     columns: (1fr, 1fr),
+//     rows: (auto, auto, auto),
+//     gutter: 1em,
+//     image("../Images/Ic_vs_Field.png"), image("../Images/Ratio_vs_Field.png"),
+//     image("../Images/I1_vs_Field.png"), image("../Images/I2_vs_Field.png"),
+//     grid.cell(colspan: 2, image("../Images/Delta_vs_Field.png", width: 60%)),
+//   ),
+//   caption: [
+//     Sample 003-2 在特定角度下的參數演化 ($27.4^degree$ vs $297.4^degree$)。
+//     (a) 臨界電流 $I_c$ (b) 諧波比例 $I_2/I_1$
+//     (c) 一階諧波 $I_1$ (d) 二階諧波 $I_2$
+//     (e) 相位偏移 $delta$
+//     藍色與紅色曲線分別代表兩個不同的測量角度，顯示出明顯的各向異性響應。
+//   ],
+// ) <fig-003-2-evolution>
+
+// 從圖中可以觀察到：
+// 1. *$I_c$ 抑制的差異*：兩個角度下的 $I_c$ 雖均隨磁場下降，但速率略有不同，反映了有效結面積或場穿透深度的各向異性。
+// 2. *二階諧波的增強*：$I_2$ 分量在特定場強下顯著增強，且其峰值位置與角度有關。
+// 3. *相位偏移的演化*：$delta$ 隨磁場呈現非單調變化，且在兩個角度下表現出不同的符號或趨勢，進一步證實了自旋軌道耦合對相位動力學的調控作用。
 
 #figure(
   grid(
     columns: (1fr, 1fr),
-    rows: (auto, auto, auto),
-    gutter: 1em,
-    image("../Images/Ic_vs_Field.png"), image("../Images/Ratio_vs_Field.png"),
-    image("../Images/I1_vs_Field.png"), image("../Images/I2_vs_Field.png"),
-    grid.cell(colspan: 2, image("../Images/Delta_vs_Field.png", width: 60%)),
+    image("../Images/CPR_evolution_27_log_offset_corrected.svg", width: 95%),
+    image("../Images/CPR_evolution_297_log_offset_corrected.svg", width: 95%),
   ),
+  caption: [樣品003-2 在特定角度$theta$下的參數演化 ($27.4^degree$ vs $297.4^degree$)。(左) $theta = 27.4^degree$。(右) $theta = 297.4^degree$。],
+) <fig-angle-cpr-evolution>
+
+
+#figure(
+  image("../Images/compare_combined.svg", width: 100%),
   caption: [
-    Sample 003-2 在特定角度下的參數演化 ($27.4^degree$ vs $297.4^degree$)。
-    (a) 臨界電流 $I_c$ (b) 諧波比例 $I_2/I_1$
-    (c) 一階諧波 $I_1$ (d) 二階諧波 $I_2$
-    (e) 相位偏移 $delta$
-    藍色與紅色曲線分別代表兩個不同的測量角度，顯示出明顯的各向異性響應。
+    CPR擬合參數隨面內磁場的演化。
   ],
-) <fig-003-2-evolution>
+) <fig-cpr-fit-parameters-evolution>
 
-從圖中可以觀察到：
-1. *$I_c$ 抑制的差異*：兩個角度下的 $I_c$ 雖均隨磁場下降，但速率略有不同，反映了有效結面積或場穿透深度的各向異性。
-2. *二階諧波的增強*：$I_2$ 分量在特定場強下顯著增強，且其峰值位置與角度有關。
-3. *相位偏移的演化*：$delta$ 隨磁場呈現非單調變化，且在兩個角度下表現出不同的符號或趨勢，進一步證實了自旋軌道耦合對相位動力學的調控作用。
+@fig-cpr-fit-parameters-evolution 展示了關鍵數參 ($I_"c, ref", I_"c1", I_"c2", I_"c2"/I_"c1", delta, chi^2$) 隨面內磁場強度的演化。從擬合參數的演化可以觀察到參考接面臨界電流 $I_"c,ref"$、$I_"c1"$、$I_"c2"$ 在不同夾角$theta$下的面內場$B_"In-Plane"$作用下的下降趨勢有別，因此可能需要考慮參考介面的面內磁場作用，所以此參數演化統計的可靠性值得商榷，但依然可以從中提取出一些有用的物理現象。在低面內場時，$I_"c2"/I_"c1"$ 與 $delta$ 的數值較低，擬合誤差也較大，需要提升量測精度，以獲得更準確的結果。然而在高面內場時，$I_"c2"/I_"c1"$ 與 $delta$ 的數值較高，擬合誤差也較小，二階諧波相位可調模型可以很好地描述現象，但固定夾角$theta$時的面內場$B_"In-Plane"$強度與$I_"c2"/I_"c1"$ 和 $delta$ 的關係並非簡單的線性關係，這可能暗示了更複雜的物理現象，並非完全如 @sivakumar_long-range_2024 所述使用Rashba效應與SOC效應造成的自旋-動量耦合現象即可描述，因此樣品目標接面長度更長，面內場$B_"In-Plane"$更強，需要考慮更多因素。
 
-=== 夫朗和費非對稱性與 CPR 非傳統性的關聯 <subsection-fraunhofer-cpr-correlation>
+// === 夫朗和費非對稱性與 CPR 非傳統性的關聯 <subsection-fraunhofer-cpr-correlation>
 
 // @fig-correlation-analysis 展示了夫朗和費圖樣的非對稱性參數與 CPR 中二階諧波分量的關聯性。
 
@@ -539,29 +558,28 @@ $ I_c R_N = (π Δ)/(2e) tanh(Δ/(2k_B T)) $
 //   ],
 // ) <fig-correlation-analysis>
 
-關聯性分析揭示了幾個重要發現：
+// 關聯性分析揭示了幾個重要發現：
 
-1. *強正相關性*：夫朗和費圖樣的非對稱程度與 CPR 中二階諧波分量的大小呈現強正相關 ($R^2 > 0.9$)
+// 1. *強正相關性*：夫朗和費圖樣的非對稱程度與 CPR 中二階諧波分量的大小呈現強正相關 ($R^2 > 0.9$)
 
-2. *磁場可調控性*：透過調節面內磁場 $B_"In-Plane"$，可以連續地調控 CPR 的非傳統性
+// 2. *磁場可調控性*：透過調節面內磁場 $B_"In-Plane"$，可以連續地調控 CPR 的非傳統性
 
-3. *共同物理起源*：這種關聯性強烈暗示夫朗和費非對稱性和非傳統 CPR 具有共同的物理起源——PtTe₂ 的拓撲表面態
+// 3. *共同物理起源*：這種關聯性強烈暗示夫朗和費非對稱性和非傳統 CPR 具有共同的物理起源——PtTe₂ 的拓撲表面態
 
-4. *二極體效應的定量表徵*：二極體效率 $η = (I_c^+ - I_c^-)/(I_c^+ + I_c^-)$ 隨 $B_"In-Plane"$ 呈現可預測的變化
+// 4. *二極體效應的定量表徵*：二極體效率 $η = (I_c^+ - I_c^-)/(I_c^+ + I_c^-)$ 隨 $B_"In-Plane"$ 呈現可預測的變化
 
-這些結果為理解 PtTe₂ 中的拓撲超導現象提供了直接的實驗證據，並展示了利用外部磁場調控量子元件特性的巨大潜力。
+// 這些結果為理解 PtTe₂ 中的拓撲超導現象提供了直接的實驗證據，並展示了利用外部磁場調控量子元件特性的巨大潜力。
 
 == 結果總結 <section-results-summary>
 
 本章的實驗結果確立了以下重要發現：
 
-1. *高品質的 PtTe₂ 約瑟夫森接面*：成功製備了具有清晰超導特性和良好電學性能的元件
+1. *高品質的 PtTe₂ 約瑟夫森接面*：成功製備了具有清晰超導特性和良好電學性能的元件。
 
-2. *非傳統的電流-相位關係*：直接觀測到包含顯著二階諧波分量的非純正弦 CPR
+2. *非傳統的電流-相位關係*：直接觀測到包含顯著二階諧波分量的非純正弦 CPR。
 
-3. *磁場可調控的約瑟夫森二極體效應*：實現了透過外部磁場對元件非互易性的連續調控
+3. *高面內磁場下的顯著二階諧波分量與相位差*：觀察到高面內磁場下的 CPR 中二階諧波分量與相位差的顯著變化，這表明了磁場對 CPR 的調控作用。
 
-4. *拓撲物理的直接證據*：夫朗和費非對稱性與 CPR 非傳統性的強關聯性，為 PtTe₂ 中拓撲表面態的作用提供了有力證據
 
-這些結果不僅深化了我們對拓撲半金屬中近接超導現象的理解，更為開發新型可調控超導量子元件奠定了重要基礎。
+這些結果為理解 PtTe₂ 中的非傳統的電流-相位關係提供了直接的實驗證據，並展示了利用外部磁場調控量子元件特性的巨大潛力。
 

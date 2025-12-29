@@ -291,119 +291,192 @@ $ alpha = (I_("c1") - I_("c2")) / (I_("c1") + I_("c2")) $
 對於中等非對稱性 ($|alpha| < 1$)，總臨界電流可以近似表示為：
 $ I_"max"(Phi) = (I_("c1") + I_("c2")) sqrt(cos^2((pi Phi) / Phi_0) + alpha^2 sin^2((pi Phi) / Phi_0)) $
 
-=== 高度非對稱 SQUID：相位偏置探測器 Highly Asymmetric SQUIDs: Phase-Biased Detectors
-當一個接面的臨界電流遠大於另一個時（$I_("c1") >> I_("c2")$），SQUID 可以被視為一個相位偏置 (phase-biased) 的探測器。在此組態中：
 
-1. *較強接面 (Strong Junction)*：近似地提供一個固定的相位參考，$phi_1 approx "常數"$。
-2. *較弱接面 (Weak Junction)*：其相位差 $phi_2$ 主要由外部磁通量 $Phi_"ext"$ 控制。
+=== 高度非對稱 SQUID：相位偏置探測器 <subsection-highly-asymmetric-squid>
 
-透過精密量測非對稱 SQUID 的總臨界電流 $I_"c,total"$ 隨外部磁通量 $Phi_"ext"$ 的完整調變曲線，我們可以直接重構出較弱接面的電流-相位關係 (Current-Phase Relation, CPR)@Babich2023_LimitationsCPR_NanoLett：
-$ I_("s,weak")(phi) = I_("c,total")(Phi_"ext") - I_("c1") sin(phi_1) $
+當一個接面的臨界電流遠大於另一個時（$I_c^"Ref" >> I_c^"Tgt"$），非對稱 dc-SQUID 會進入「*相位偏置探測器*（phase-biased detector）」的工作模式：強接面提供近似固定的相位參考，使弱接面（待測接面）的相位幾乎由外加磁通線性掃描，因而能由量測到的 $I_s (Phi)$ 反推較弱接面的電流-相位關係（Current-Phase Relation, CPR）。
 
-=== 非對稱性對性能的影響與應用 (Impact of Asymmetry on Performance and Applications)
+==== 物理圖像與基本假設 <subsubsection-physics-picture>
 
-*磁通量調變深度（flux modulation depth, FMD）*：對於對稱 SQUID，磁通量調變的深度為 100%，即在半整數磁通量量子處臨界電流可以完全抵消。而對於非對稱 SQUID，調變深度由非對稱參數決定：
-$ "FMD" = (I_"max" - I_"min") / I_"max" = (2|I_("c1")||I_("c2")|) / (I_("c1")^2 + I_("c2")^2) $
+在高度非對稱極限中，我們將兩接面分別稱為：
 
-*磁通量靈敏度*：非對稱性會改變 SQUID 的磁通量-電壓轉換係數@Crete2021_SelfField_Micromachines：
-$ (d V) / (d Phi) = R_N (d I_c) / (d Phi) $
-其中 $R_N$ 是等效正常態電阻。對於非對稱 SQUID，此轉換係數在不同磁通量點會有所變化。
+- *參考接面（Reference Junction）*：臨界電流大、CPR 接近正弦或已知，近似呈現相位鎖定。
+- *目標接面（Target Junction / Junction-under-test）*：臨界電流小，其 CPR 即為欲分析之對象。
 
-*CPR 探測能力*：非對稱 SQUID 提供了一個探測約瑟夫森接面內在物理的強大工具。透過分析其磁通量調變圖樣的畸變，我們可以進行傅立葉分析：
-$ I_c(Phi_"ext") = sum_(n=0)^infinity a_n cos((2pi n Phi_"ext") / Phi_0) + b_n sin((2pi n Phi_"ext") / Phi_0) $
+本節先採用最常見、也最利於建立直覺的近似：
 
-不同的傅立葉分量對應於 CPR 的不同諧波，從而可以識別非正弦 CPR 的特徵@Babich2023_LimitationsCPR_NanoLett。
+1. *忽略迴路電感*（small-inductance limit）：迴路屏蔽效應可忽略，磁通-相位約束為
+  $phi_1 - phi_2 = 2pi Phi/Phi_0$。
+2. *參考接面 CPR 近似正弦*：$I_s^"Ref" (phi_1) = I_c^"Ref" sin(phi_1)$。
+3. *高度非對稱*：$I_c^"Ref" >> I_c^"Tgt"$，且參考接面在臨界附近的斜率足以主導最大化條件，使其相位被「鎖住」。
 
-=== CPR 重建方法 (CPR Reconstruction Method) <subsection-cpr-reconstruction-asym-squid>
+==== 總超電流與磁通-相位約束 <subsubsection-constraint>
 
-我們考慮一個非對稱的雙接面超導量子干涉元件 (asymmetric dc-SQUID)，其包含一個具有較大臨界電流 $I_r$ 的參考接面 (reference junction)，以及一個具有較小臨界電流 $I_j$ 的待測接面 (studied junction)，滿足條件 $I_r >> I_j$。假設參考接面的電流-相位關係 (CPR) 為標準的正弦函數 $I_r sin(phi_r)$，而待測接面的 CPR 則為待確定的未知函數 $I_j(phi)$。
+令參考接面相位為 $phi_1$、目標接面相位為 $phi_2$，則總超電流可寫為
 
-流經干涉元件的總超導電流 $I_s$ 為兩臂電流之和：
-$ I_s = I_r sin(phi_r) + I_j(phi), $ <eq-total_current>
-其中 $phi_r$ 與 $phi$ 分別為參考接面與待測接面兩端的規範不變相位差 (gauge-invariant phase difference)。若忽略 SQUID 環路的幾何電感效應 ($L -> 0$)，由磁通量子化 (flux quantization) 所施加的相位限制條件為：
-$ phi_r = phi + (2pi Phi)/Phi_0, $ <eq-phase_constraint>
-此處 $Phi$ 為外加磁通量，$Phi_0 = h/(2e)$ 為磁通量子。
+$ I_s (phi_1,phi_2) = I_c^"Ref" (phi_1) + I_c^"Tgt" (phi_2) $
 
-SQUID 的臨界電流 $I_(s, "max")$ 取決於總電流 $I_s$ 對相位 $phi$ 的極大值。根據極值條件 $d I_s \/ d phi = 0$，我們可得到臨界相位 $phi_c$ 的關係式：
-$ (d I_s)/(d phi)|_(phi=phi_c) = (d I_j)/(d phi) + I_r cos(phi_c + (2pi Phi)/Phi_0) = 0. $ <eqDerivativeCondition>
-此條件定義了發生最大超流時的相位 $phi_c$。
+其中 $I_c^"Tgt" (phi_2)$ 是目標接面的 CPR（未知）。在忽略迴路電感的近似下，有
 
-將量測到的最大超流 $I_(s, "max")$ 對磁通 $Phi$ 進行微分，我們得到：
-$
-  (d I_(s, "max"))/(d Phi) = underbrace((d I_j)/(d phi) + I_r cos(phi_c + (2pi Phi)/Phi_0), =0 "，根據式" #box[@eqDerivativeCondition]) (d phi_c)/(d Phi) + (2pi I_r)/Phi_0 cos(phi_c + (2pi Phi)/Phi_0).
-$ <eq-flux_derivative>
-由於極大化條件，上式中括號內的第一項為零。這項簡化使我們能夠反轉關係式，將微觀的臨界相位 $phi_c$ 明確表示為實驗可觀測量 $d I_(s, "max") \/ d Phi$ 的函數：
-$
-  phi_c = plus.minus arccos((Phi_0)/(2pi I_r) (d I_(s, "max"))/(d Phi)) - (2pi Phi)/Phi_0 + 2pi k, quad k in ZZ.
-$ <eq-phi_c_inversion>
-其中 $k$ 為整數。
+$ phi_1 - phi_2 = 2pi Phi/Phi_0 => phi_2 = phi_1 - 2pi Phi/Phi_0 $
 
-最後，將求得的 $phi_c$ 代回式 @eq-total_current 並利用三角恆等式，我們即可重建待測接面未知的電流-相位關係 $I_j(phi)$：
-$
-  I_j(phi_c) = I_(s, "max") - I_r sin(phi_c + (2pi Phi)/Phi_0) = I_(s, "max") - sqrt(I_r^2 - ((Phi_0)/(2pi) (d I_(s, "max"))/(d Phi))^2).
-$ <eq-final_cpr>
-此解析表示式允許我們直接從量測到的 SQUID 臨界電流隨磁場變化關係中，反演出待測接面的 CPR 波形 @ginzburg_determination_2018 @Babich2023_LimitationsCPR_NanoLett。
+因此，對每個外加磁通 $Phi$，SQUID 的臨界電流（或在準靜態量測下的切換電流近似）可視為一個「最大化問題」：
 
-==== 有限電感效應之修正 (Correction for Finite Inductance) <subsection-correction-finite-inductance>
+$ I_s (Phi) = max_(phi_1) [ I_c^"Ref" (phi_1) + I_c^"Tgt" (phi_1 - 2pi Phi/Phi_0) ] $
 
-在實際的實驗體系中，SQUID 環路不可避免地具有有限的幾何電感 $L$。這導致穿過 SQUID 環路的總磁通量 $Phi$ 與外部施加的磁通量 $Phi_("ext")$ 並不相等，必須考慮由環路電流所產生的屏蔽磁通 (shielding flux) 。修正後的磁通關係式為：
-$ Phi = Phi_("ext") - Phi_L, $ <eq-flux_correction>
-其中 $Phi_L$ 為電感所貢獻的磁通分量。
+==== 高度非對稱極限下的「相位鎖定」與線性掃描 <subsubsection-phase-lock>
 
-根據 Ginzburg 等人的分析，在高度非對稱 ($I_r >> I_j$) 的極限下，流經電感的電流主要由參考接面的臨界電流決定，因此電感磁通 $Phi_L$ 可近似為一個與外加磁場無關的常數 ：
-$ Phi_L approx 1/2 L (I_r - I_j) = 1/2 L Delta I_c. $ <eq-inductance_flux>
-這意味著有限電感的主要效應是在磁通軸上引入一個固定的偏移量 (shift)。
+若 $I_c^"Ref" >> I_c^"Tgt"$，則最大化主要由參考接面決定。對正弦 CPR 的參考接面而言，最大值發生在
 
-因此，考慮電感修正後的待測接面相位 $phi_c$ 應修正為 @ginzburg_determination_2018：
-$
-  phi_c = plus.minus arccos((Phi_0)/(2pi I_r) (d I_(s, "max"))/(d Phi)) - (2pi Phi_("ext"))/Phi_0 - (2pi Phi_L)/Phi_0.
-$ <eq-corrected_phase>
-在實驗數據分析中，若觀察到 $I_(s, "max")$ 對 $Phi_("ext")$ 的干涉圖形發生水平偏移，即可利用此效應反推 SQUID 的寄生電感值，並對 CPR 重建結果進行校正。
+$ phi_1 approx pi/2 (mod 2pi) $
+
+此時目標接面的相位近似為
+
+$ phi_2 approx pi/2 - 2pi Phi/Phi_0 $
+
+因此測得的臨界電流可近似寫成「大偏置直流 + 目標 CPR」：
+
+$ I_s (Phi) approx I_c^"Ref" (pi/2) + I_c^"Tgt" (pi/2 - 2pi Phi/Phi_0) $
+
+這個近似揭示了相位偏置探測器的核心：外加磁通 $Phi$ 等效地線性掃描目標接面相位 $phi_2$，使得 $I_s (Phi)$ 的磁通依賴形狀直接攜帶 $I_c^"Tgt" (phi)$ 的資訊。
+
+==== 量測切換電流與目標接面 CPR 的對應關係 <subsubsection-direct-readout>
+
+在上式近似成立時，可建立一個簡潔的對應：
+
+1. 定義相位映射
+  $ phi equiv phi_2 approx pi/2 - 2pi Phi/Phi_0 $
+2. 用量測得到的臨界電流扣除參考接面的 DC 偏置
+  $ I_c^"Tgt"(phi) approx I_s (Phi) - I_c^"Ref" (pi/2) $
+
+實作時常見做法是：先以 $max I_s (Phi)$ 估計 $I_c^"Ref" (pi/2)$（或以獨立量測校準參考接面），再將 $I_s (Phi)$ 平移並重新標定橫軸為相位 $phi$，即可得到目標接面的 CPR 之第一版重建。
+
+==== 適用條件與常見偏差來源 <subsubsection-validity>
+
+雖然「直讀」非常直觀，但在高精度 CPR 量測中，以下因素會使 $phi_1 approx pi/2$ 的鎖定條件失效，導致兩接面 CPR 混疊：
+
+- *導數鎖定條件不足*：最大化條件與 $partial I/partial phi$ 有關；若參考接面在臨界附近的斜率不夠主導，則 $phi_1$ 會偏離 $pi/2$，使得 $I_c^"Tgt"$ 的映射失真。
+- *非零迴路電感與額外電感*：一旦迴路屏蔽不可忽略，約束關係需加入 $L$ 與循環電流，$phi_1-phi_2$ 不再等於 $2pi Phi/Phi_0$。
+- *參考接面 CPR 非正弦*：例如 nanobridge 或長接面可能呈現 sawtooth/高諧波，會改變鎖定相位位置與映射規則。
+
+因此，嚴謹的 CPR 萃取通常會以「forward model」方式：保留 $I_c^"Tgt" (phi)$ 的參數化（如傅立葉展開）並在每個 $Phi$ 上做最大化以產生 $I_c^"pred" (Phi)$，再對量測曲線做全域擬合，能同時納入電感與參考接面非理想性。
 
 
-=== 實驗設計與量測技術 (Experimental Design and Measurement Techniques)
 
-*元件設計考量*：設計非對稱 SQUID 時需要考慮@Butz2010_AsymDCSQUIDs_Diploma：
-1. 非對稱比的選擇：平衡調變深度與 CPR 探測精度
-2. 迴路幾何：最小化寄生電感和串擾
-3. 材料選擇：確保接面特性的穩定性
 
-*低溫量測協議*：精確的 CPR 量測需要：
-1. 溫度穩定性：維持 $T << T_c$ 以確保超導性
-2. 磁場屏蔽：消除外部磁場干擾
-3. 電流偏置精度：高解析度的電流控制
-4. 電壓量測靈敏度：檢測微小的電壓變化
+// === 高度非對稱 SQUID：相位偏置探測器 Highly Asymmetric SQUIDs: Phase-Biased Detectors
+// 當一個接面的臨界電流遠大於另一個時（$I_("c1") >> I_("c2")$），SQUID 可以被視為一個相位偏置 (phase-biased) 的探測器。在此組態中：
 
-== 非正弦 CPR 與先進應用 Non-Sinusoidal CPRs and Advanced Applications <section-non-sinusoidal-cpr>
+// 1. *參考接面 (Reference Junction)*：近似地提供一個固定的相位參考，$phi_1 approx "常數"$。
+// 2. *目標接面 (Target Junction)*：其相位差 $phi_2$ 主要由外部磁通量 $Phi_"ext"$ 控制。
 
-將非正弦 CPR 納入 SQUID 的理論中，揭示了更豐富、更複雜的現象學。磁通調變模式的形狀成為接面 CPR 諧波含量的直接探測器。
+// 透過精密量測非對稱 SQUID 的總臨界電流 $I_"c,total"$ 隨外部磁通量 $Phi_"ext"$ 的完整調變曲線，我們可以直接重構出目標接面的電流-相位關係 (Current-Phase Relation, CPR)@Babich2023_LimitationsCPR_NanoLett：
+// $ I_("s,target")(phi) = I_("c,total")(Phi_"ext") - I_("c1") sin(phi_1) $
 
-=== 高次諧波對磁通調變的影響 Effect of Higher Harmonics on Flux Modulation <subsection-higher-harmonics-effect>
+// === 非對稱性對性能的影響與應用 (Impact of Asymmetry on Performance and Applications)
 
-考慮一個 SQUID，其中接面具有包含前兩個諧波的 CPR：
-$ I_s (phi) = I_(c 1) sin(phi) + I_(c 2) sin(2phi) $
+// *磁通量調變深度（flux modulation depth, FMD）*：對於對稱 SQUID，磁通量調變的深度為 100%，即在半整數磁通量量子處臨界電流可以完全抵消。而對於非對稱 SQUID，調變深度由非對稱參數決定：
+// $ "FMD" = (I_"max" - I_"min") / I_"max" = (2|I_("c1")||I_("c2")|) / (I_("c1")^2 + I_("c2")^2) $
 
-SQUID 的總超導電流變為：
-$
-  I_s^"total" (Phi) =
-  2 & I_(c 1) sin(phi_1 + (pi Phi)/Phi_0) cos((pi Phi)/Phi_0) #<equate:revoke> \
-  + & 2I_(c 2) sin(2(phi_1 +(pi Phi)/Phi_0)) cos((2pi Phi)/Phi_0)
-$
+// *磁通量靈敏度*：非對稱性會改變 SQUID 的磁通量-電壓轉換係數@Crete2021_SelfField_Micromachines：
+// $ (d V) / (d Phi) = R_N (d I_c) / (d Phi) $
+// 其中 $R_N$ 是等效正常態電阻。對於非對稱 SQUID，此轉換係數在不同磁通量點會有所變化。
 
-這揭示了一個關鍵結果：CPR 的第二諧波以 $Phi_0/2$ 的磁通週期進行干涉。一般來說，接面 CPR 的第 n 次諧波 $sin(n phi)$ 將在 SQUID 的總電流中產生一個干涉項，該干涉項以 $Phi_0/n$ 的週期進行調變。
+// *CPR 探測能力*：非對稱 SQUID 提供了一個探測約瑟夫森接面內在物理的強大工具。透過分析其磁通量調變圖樣的畸變，我們可以進行傅立葉分析：
+// $ I_c(Phi_"ext") = sum_(n=0)^infinity a_n cos((2pi n Phi_"ext") / Phi_0) + b_n sin((2pi n Phi_"ext") / Phi_0) $
 
-=== 拓撲量子材料的應用 Applications in Topological Quantum Materials <subsection-topological-materials>
+// 不同的傅立葉分量對應於 CPR 的不同諧波，從而可以識別非正弦 CPR 的特徵@Babich2023_LimitationsCPR_NanoLett。
 
-在 PtTe₂ 等新興量子材料的研究中，非對稱 SQUID 技術不僅能夠揭示材料的內在拓撲性質，更為開發新型超導量子元件提供了重要的設計指導。
+// === CPR 重建方法 (CPR Reconstruction Method) <subsection-cpr-reconstruction-asym-squid>
 
-PtTe₂ 作為第二類狄拉克半金屬 (Type-II Dirac Semimetal)，其約瑟夫森接面預期表現出@Cuozzo2024_MW_Tunable_Diode_PRResearch：
-1. 非正弦 CPR：由於狄拉克費米子的特殊輸運性質
-2. 高次諧波分量：特別是二階諧波 ($sin(2phi)$) 項
-3. 可調控性：透過外部磁場調控 CPR 的形式
+// 我們考慮一個非對稱的雙接面超導量子干涉元件 (asymmetric dc-SQUID)，其包含一個具有較大臨界電流 $I_r$ 的參考接面 (reference junction)，以及一個具有較小臨界電流 $I_j$ 的待測接面 (studied junction)，滿足條件 $I_r >> I_j$。假設參考接面的電流-相位關係 (CPR) 為標準的正弦函數 $I_r sin(phi_r)$，而待測接面的 CPR 則為待確定的未知函數 $I_j(phi)$。
 
-非對稱 SQUID 也是探測約瑟夫森二極體效應 (Josephson Diode Effect, JDE) 的有效工具@Cuozzo2024_MW_Tunable_Diode_PRResearch。透過量測正、負方向的切換電流差異：
-$ eta = (I_("sw")^+ - I_("sw")^-) / (I_("sw")^+ + I_("sw")^-) $
-可以量化 JDE 的強度，並與重構的 CPR 進行比對分析。
+// 流經干涉元件的總超導電流 $I_s$ 為兩臂電流之和：
+// $ I_s = I_r sin(phi_r) + I_j(phi), $ <eq-total_current>
+// 其中 $phi_r$ 與 $phi$ 分別為參考接面與待測接面兩端的規範不變相位差 (gauge-invariant phase difference)。若忽略 SQUID 環路的幾何電感效應 ($L -> 0$)，由磁通量子化 (flux quantization) 所施加的相位限制條件為：
+// $ phi_r = phi + (2pi Phi)/Phi_0, $ <eq-phase_constraint>
+// 此處 $Phi$ 為外加磁通量，$Phi_0 = h/(2e)$ 為磁通量子。
+
+// SQUID 的臨界電流 $I_(s, "max")$ 取決於總電流 $I_s$ 對相位 $phi$ 的極大值。根據極值條件 $d I_s \/ d phi = 0$，我們可得到臨界相位 $phi_c$ 的關係式：
+// $ (d I_s)/(d phi)|_(phi=phi_c) = (d I_j)/(d phi) + I_r cos(phi_c + (2pi Phi)/Phi_0) = 0. $ <eqDerivativeCondition>
+// 此條件定義了發生最大超流時的相位 $phi_c$。
+
+// 將量測到的最大超流 $I_(s, "max")$ 對磁通 $Phi$ 進行微分，我們得到：
+// $
+//   (d I_(s, "max"))/(d Phi) = underbrace((d I_j)/(d phi) + I_r cos(phi_c + (2pi Phi)/Phi_0), =0 "，根據式" #box[@eqDerivativeCondition]) (d phi_c)/(d Phi) + (2pi I_r)/Phi_0 cos(phi_c + (2pi Phi)/Phi_0).
+// $ <eq-flux_derivative>
+// 由於極大化條件，上式中括號內的第一項為零。這項簡化使我們能夠反轉關係式，將微觀的臨界相位 $phi_c$ 明確表示為實驗可觀測量 $d I_(s, "max") \/ d Phi$ 的函數：
+// $
+//   phi_c = plus.minus arccos((Phi_0)/(2pi I_r) (d I_(s, "max"))/(d Phi)) - (2pi Phi)/Phi_0 + 2pi k, quad k in ZZ.
+// $ <eq-phi_c_inversion>
+// 其中 $k$ 為整數。
+
+// 最後，將求得的 $phi_c$ 代回式 @eq-total_current 並利用三角恆等式，我們即可重建待測接面未知的電流-相位關係 $I_j(phi)$：
+// $
+//   I_j(phi_c) = I_(s, "max") - I_r sin(phi_c + (2pi Phi)/Phi_0) = I_(s, "max") - sqrt(I_r^2 - ((Phi_0)/(2pi) (d I_(s, "max"))/(d Phi))^2).
+// $ <eq-final_cpr>
+// 此解析表示式允許我們直接從量測到的 SQUID 臨界電流隨磁場變化關係中，反演出待測接面的 CPR 波形 @ginzburg_determination_2018 @Babich2023_LimitationsCPR_NanoLett。
+
+// ==== 有限電感效應之修正 (Correction for Finite Inductance) <subsection-correction-finite-inductance>
+
+// 在實際的實驗體系中，SQUID 環路不可避免地具有有限的幾何電感 $L$。這導致穿過 SQUID 環路的總磁通量 $Phi$ 與外部施加的磁通量 $Phi_("ext")$ 並不相等，必須考慮由環路電流所產生的屏蔽磁通 (shielding flux) 。修正後的磁通關係式為：
+// $ Phi = Phi_("ext") - Phi_L, $ <eq-flux_correction>
+// 其中 $Phi_L$ 為電感所貢獻的磁通分量。
+
+// 根據 Ginzburg 等人的分析，在高度非對稱 ($I_r >> I_j$) 的極限下，流經電感的電流主要由參考接面的臨界電流決定，因此電感磁通 $Phi_L$ 可近似為一個與外加磁場無關的常數 ：
+// $ Phi_L approx 1/2 L (I_r - I_j) = 1/2 L Delta I_c. $ <eq-inductance_flux>
+// 這意味著有限電感的主要效應是在磁通軸上引入一個固定的偏移量 (shift)。
+
+// 因此，考慮電感修正後的待測接面相位 $phi_c$ 應修正為 @ginzburg_determination_2018：
+// $
+//   phi_c = plus.minus arccos((Phi_0)/(2pi I_r) (d I_(s, "max"))/(d Phi)) - (2pi Phi_("ext"))/Phi_0 - (2pi Phi_L)/Phi_0.
+// $ <eq-corrected_phase>
+// 在實驗數據分析中，若觀察到 $I_(s, "max")$ 對 $Phi_("ext")$ 的干涉圖形發生水平偏移，即可利用此效應反推 SQUID 的寄生電感值，並對 CPR 重建結果進行校正。
+
+
+// === 實驗設計與量測技術 (Experimental Design and Measurement Techniques)
+
+// *元件設計考量*：設計非對稱 SQUID 時需要考慮@Butz2010_AsymDCSQUIDs_Diploma：
+// 1. 非對稱比的選擇：平衡調變深度與 CPR 探測精度
+// 2. 迴路幾何：最小化寄生電感和串擾
+// 3. 材料選擇：確保接面特性的穩定性
+
+// *低溫量測協議*：精確的 CPR 量測需要：
+// 1. 溫度穩定性：維持 $T << T_c$ 以確保超導性
+// 2. 磁場屏蔽：消除外部磁場干擾
+// 3. 電流偏置精度：高解析度的電流控制
+// 4. 電壓量測靈敏度：檢測微小的電壓變化
+
+// == 非正弦 CPR 與先進應用 Non-Sinusoidal CPRs and Advanced Applications <section-non-sinusoidal-cpr>
+
+// 將非正弦 CPR 納入 SQUID 的理論中，揭示了更豐富、更複雜的現象學。磁通調變模式的形狀成為接面 CPR 諧波含量的直接探測器。
+
+// === 高次諧波對磁通調變的影響 Effect of Higher Harmonics on Flux Modulation <subsection-higher-harmonics-effect>
+
+// 考慮一個 SQUID，其中接面具有包含前兩個諧波的 CPR：
+// $ I_s (phi) = I_(c 1) sin(phi) + I_(c 2) sin(2phi) $
+
+// SQUID 的總超導電流變為：
+// $
+//   I_s^"total" (Phi) =
+//   2 & I_(c 1) sin(phi_1 + (pi Phi)/Phi_0) cos((pi Phi)/Phi_0) #<equate:revoke> \
+//   + & 2I_(c 2) sin(2(phi_1 +(pi Phi)/Phi_0)) cos((2pi Phi)/Phi_0)
+// $
+
+// 這揭示了一個關鍵結果：CPR 的第二諧波以 $Phi_0/2$ 的磁通週期進行干涉。一般來說，接面 CPR 的第 n 次諧波 $sin(n phi)$ 將在 SQUID 的總電流中產生一個干涉項，該干涉項以 $Phi_0/n$ 的週期進行調變。
+
+// === 拓撲量子材料的應用 Applications in Topological Quantum Materials <subsection-topological-materials>
+
+// 在 PtTe₂ 等新興量子材料的研究中，非對稱 SQUID 技術不僅能夠揭示材料的內在拓撲性質，更為開發新型超導量子元件提供了重要的設計指導。
+
+// PtTe₂ 作為第二類狄拉克半金屬 (Type-II Dirac Semimetal)，其約瑟夫森接面預期表現出@Cuozzo2024_MW_Tunable_Diode_PRResearch：
+// 1. 非正弦 CPR：由於狄拉克費米子的特殊輸運性質
+// 2. 高次諧波分量：特別是二階諧波 ($sin(2phi)$) 項
+// 3. 可調控性：透過外部磁場調控 CPR 的形式
+
+// 非對稱 SQUID 也是探測約瑟夫森二極體效應 (Josephson Diode Effect, JDE) 的有效工具@Cuozzo2024_MW_Tunable_Diode_PRResearch。透過量測正、負方向的切換電流差異：
+// $ eta = (I_("sw")^+ - I_("sw")^-) / (I_("sw")^+ + I_("sw")^-) $
+// 可以量化 JDE 的強度，並與重構的 CPR 進行比對分析。
 
 
 == 二碲化鉑 ($"PtTe"_2$)：拓樸半金屬中的非傳統超導近接效應 <section-ptte2-properties>
@@ -443,3 +516,12 @@ h：電子束能量 70 eV 下的低能量電子衍射（Low-energy electron diff
 )
 <fig-S-DSM-S-Dirac-cone>
 向右（向左）移動之電子分別以藍色（紅色）標記。插圖顯示兩個狄拉克錐沿 $k_y$ 軸朝相反方向傾斜之示意。能量軸位於平面外。與費米能相交之狄拉克錐截面，分別以實線（電子）與虛線（空穴）所示之橢圓標示。狄拉克節點位於 $k_y$ 軸上的 $±k_D$。下方面板則示意在所示 $ζ$ 值下狄拉克錐的傾斜情形。
+
+
+=== 能階不匹配：狄拉克節點遠離費米能階，低能輸運以體相平庸能帶為主 <subsection-ptte2-energy-mismatch>
+
+雖然 $1T-"PtTe"_2$ 已由 ARPES 與第一性原理計算確認具有受晶體對稱性保護的 II 型狄拉克錐與相關表面態，但在「化學計量、未特別調控化學勢」的典型塊材條件下，其狄拉克節點能量 $E_D$ 往往位於費米能階 $E_F$ 的深束縛能處（文獻整理常見尺度為 $|E_D - E_F| approx 0.8 "eV"$），使得狄拉克節點附近的線性色散並不直接主宰 $E approx E_F$ 的低能激發與直流輸運。@yan_lorentz-violating_2017 @xu_nite2_typeii_dirac_2018
+
+因此，在本研究關心的「近接超導輸運／約瑟夫森超電流」能量尺度（以 $E_F$ 附近的準粒子為核心）下，實際參與傳輸的主要是多條穿越 $E_F$ 的三維體相能帶所形成之電子/電洞費米口袋；也就是說，$"PtTe"_2$ 的導電更接近「多能帶半金屬」情境，而非「由拓樸表面態主導」的單一通道輸運。此觀點也與磁輸運與量子震盪分析相一致：在 $"PtTe"_2$ 的 SdH 等訊號中，對應能帶的 Berry phase 常呈現平庸特徵，並顯示多能帶導電的行為。@fei_irptte2_band_perfection_2018 @pavlosiuk_ptte2_galvanomagnetic_2018
+
+*對本研究之意涵*：在未能提供「化學勢已被閘極/摻雜/界面電荷轉移有效拉近 $E_D$」的直接證據前，本論文在解讀 $"PtTe"_2$ 弱連結所呈現的非正弦 CPR 與可能的約瑟夫森二極體效應（JDE）時，將以「體相多能帶（含自旋軌道耦合、Zeeman 與軌域效應、介面透明度不均、非對稱 SQUID 幾何與自場等）」作為更保守且可檢驗的主導機制框架；拓樸表面態的主導貢獻則視為需額外驗證（例如：閘極可調之臨界電流/正常態電導、厚度依賴、或能譜/表面敏感量測）才能成立的進一步假說。@yan_lorentz-violating_2017

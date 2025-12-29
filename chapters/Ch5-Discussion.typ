@@ -9,33 +9,30 @@
 
 = 討論 <chapter-discussion>
 
-== $"PtTe"_2$ 超導量子干涉儀中非對稱夫朗和費圖樣的起源 <section-asymmetric-fraunhofer-origin>
+== 直接量測電流相位關係探討非對稱夫朗和費干涉圖樣的起源 <section-asymmetric-fraunhofer-origin>
 
-// Origin of Asymmetric Fraunhofer Patterns in PtTe₂ SQUIDs
-// 本節內容有待補充
-
-在$"PtTe"_2$基礎的超導量子干涉儀（Superconducting Quantum Interference Device, SQUID）中，非對稱夫朗和費（Fraunhofer）干涉圖樣的觀測提供了深入理解約瑟夫森接面（Josephson Junction）內在物理機制的重要線索。
+不同於使用量測正負向切換電流計算切換電流差 $Delta I_s$間接得出電流相位關係的方式，本研究使用$"PtTe"_2$構成的非對稱SQUID直接量測電流相位關係，從而提供了深入理解非對稱夫朗和費（Fraunhofer）干涉圖樣的起源內在物理機制的重要線索。
 
 // 待補充：具體的非對稱性分析、物理機制討論、與理論預測的比較
 
-== 非傳統電流-相位關係的性質與起源 <section-unconventional-cpr-nature>
+// == 非傳統電流-相位關係的性質與起源 <section-unconventional-cpr-nature>
 
-// Nature and Origin of Unconventional CPRs
-// 本節內容有待補充
+// // Nature and Origin of Unconventional CPRs
+// // 本節內容有待補充
 
-非傳統的電流-相位關係（Current-Phase Relation, CPR）的出現是第二類狄拉克半金屬（Type-II Dirac Semimetal）與超導性結合的重要表現。在$"PtTe"_2$約瑟夫森接面中，偏離標準正弦函數的CPR反映了其獨特的拓撲電子結構。
+// 非傳統的電流-相位關係（Current-Phase Relation, CPR）的出現是第二類狄拉克半金屬（Type-II Dirac Semimetal）與超導性結合的重要表現。在$"PtTe"_2$約瑟夫森接面中，偏離標準正弦函數的CPR反映了其獨特的拓撲電子結構。
 
-// 待補充：CPR的具體形式分析、高階諧波成分、與材料拓撲性質的關聯
+// // 待補充：CPR的具體形式分析、高階諧波成分、與材料拓撲性質的關聯
 
-== 與相關研究之比較 <section-comparison-related-work>
+// == 與相關研究之比較 <section-comparison-related-work>
 
-本文的研究結果與近期關於第二類狄拉克半金屬 Josephson 二極體效應的報導高度一致，特別是針對 $1T-"PtTe"_2$ 與同族材料 $"NiTe"_2$ 的研究。
+// 本文的研究結果與近期關於第二類狄拉克半金屬 Josephson 二極體效應的報導高度一致，特別是針對 $1T-"PtTe"_2$ 與同族材料 $"NiTe"_2$ 的研究。
 
-首先，我們觀察到的約瑟夫森二極體效應（JDE）與近期在 $1T-"PtTe"_2$ 單一接面中報導的現象 [arXiv:2403.19445] 相呼應。相關研究同樣發現了可透過磁場調控的二階 Josephson 效應（$phi_0$-junction behavior），並將其歸因於螺旋自旋-動量鎖定的表面態。我們的 SQUID 量測進一步提供了電流-相位關係（CPR）的直接相位敏感證據，確認了高階諧波 ($I_2$) 的存在及其相位偏移 ($delta$) 是導致二極體效應的微觀根源。
+// 首先，我們觀察到的約瑟夫森二極體效應（JDE）與近期在 $1T-"PtTe"_2$ 單一接面中報導的現象 [arXiv:2403.19445] 相呼應。相關研究同樣發現了可透過磁場調控的二階 Josephson 效應（$phi_0$-junction behavior），並將其歸因於螺旋自旋-動量鎖定的表面態。我們的 SQUID 量測進一步提供了電流-相位關係（CPR）的直接相位敏感證據，確認了高階諧波 ($I_2$) 的存在及其相位偏移 ($delta$) 是導致二極體效應的微觀根源。
 
-其次，與 $"NiTe"_2$ 的研究相比，我們同樣觀察到了二極體效率隨面內磁場的振盪與反轉行為。這被認為是有限動量庫柏對（Finite-momentum Cooper pairing）機制的特徵。然而，我們的角度依賴性測量顯示出獨特的對稱性特徵，這可能反映了 $"PtTe"_2$ 表面態具體的自旋織構差異。
+// 其次，與 $"NiTe"_2$ 的研究相比，我們同樣觀察到了二極體效率隨面內磁場的振盪與反轉行為。這被認為是有限動量庫柏對（Finite-momentum Cooper pairing）機制的特徵。然而，我們的角度依賴性測量顯示出獨特的對稱性特徵，這可能反映了 $"PtTe"_2$ 表面態具體的自旋織構差異。
 
-總體而言，本研究採用非對稱 SQUID 技術，不僅驗證了先前基於傳輸測量（Transport）的發現，更提供了關於超導電流相位動力學的細緻資訊，補充了現有文獻在相位敏感性測量方面的不足。
+// 總體而言，本研究採用非對稱 SQUID 技術，不僅驗證了先前基於傳輸測量（Transport）的發現，更提供了關於超導電流相位動力學的細緻資訊，補充了現有文獻在相位敏感性測量方面的不足。
 
 == 製備技術挑戰 <section-fabrication-challenges>
 
@@ -70,3 +67,15 @@
 磁控濺鍍（Magnetron Sputtering）製程中的側壁沉積問題會影響電極圖案的精確度與電學特性。特別是在製備細線寬的超導電極時，側壁效應可能導致短路或產生非預期的電流路徑。
 
 // 待補充：側壁問題的具體表現、對元件性能的影響、解決方案與改進建議
+
+=== SQUID環路面積與接面尺寸的匹配 <subsection-squid-area-flake-size>
+
+// SQUID Ring Area and Flake Size
+
+在製備非對稱SQUID時，SQUID環路面積與接面尺寸的匹配是影響量測精度的重要因素，較大的SQUID環路面積與接面尺寸比可以得到較佳的參考接面相位鎖定效果，但對磁場的控制精度要求較高。本研究提供了一個初步結果，為後續研究與樣品幾何設計提供了重要的參考。
+
+=== 長接面與高面內磁場下的顯著二階諧波分量與相位差 <subsection-long-flake-high-field>
+
+// Long Flake and High-Field Second Harmonic Component and Phase Difference
+
+在長接面與高面內磁場下，我們觀察到顯著的二階諧波分量與相位差，這隱含約瑟夫森二極體效應出現的可能，但在高面內磁場下，接面臨界電流密度分布的不均勻性造成夫浪和斐干涉圖樣已經嚴重扭曲，此時原始的二極體效率定義是否適用值得商榷。
