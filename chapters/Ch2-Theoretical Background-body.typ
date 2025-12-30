@@ -1,25 +1,49 @@
+#import "@preview/typsium:0.3.1": ce
+#import "@preview/physica:0.9.3": *
 = 理論背景 <chapter-theoretical-background>
 
-本章節旨在建立理解本研究核心物理現象所需的理論框架。我們將從約瑟夫森效應的基本原理出發，接著介紹作為其關鍵應用的超導量子干涉儀（SQUID），並特別強調非對稱SQUID如何成為探測非傳統電流-相位關係（CPR）的有力工具。最後，我們將聚焦於本研究的核心材料——第二類狄拉克半金屬(type-II Dirac semimetal)二碲化鉑（$"PtTe"_2$），闡述其獨特的材料性質為何預期會產生可被SQUID所量測的非單一簡諧態CPR。
+本章旨在建立理解本研究核心物理現象所需之理論框架。首先回顧約瑟夫森效應的基本原理；其次介紹其關鍵應用——超導量子干涉儀（superconducting quantum interference device, SQUID）；並進一步說明非對稱 SQUID（asymmetric SQUID, aSQUID）如何作為量測非傳統電流–相位關係（current–phase relation, CPR）的有效工具。最後，本章聚焦於本研究之核心材料：第二類狄拉克半金屬（type-II Dirac semimetal）二碲化鉑（#ce[PtTe2]），並闡述其材料特性為何可能導致偏離單一正弦形式的 CPR（包含可觀的高階諧波），且此類訊號可由 SQUID 架構直接擷取。
 
 == 超導體中的宏觀量子現象基礎 Foundations of Macroscopic Quantum Phenomena in Superconductors <section-superconductivity>
-超導性 (superconductivity)為超導量子元件的基石。本章節將介紹超導體的基本性質，並解釋約瑟夫森效應如何在超導體中產生宏觀量子現象。
+超導性（superconductivity）為超導量子元件的基礎。本節將概述超導體的主要性質，並說明約瑟夫森效應如何奠基於超導體中的宏觀量子相干。
 
 === 庫柏對凝聚與宏觀波函數 The Cooper Pair Condensate and the Macroscopic Wavefunction <subsection-cooper-pairs>
 
-當一種材料冷卻到其特有的臨界溫度 $T_C$ 以下，進入超導狀態時，這代表了在凝聚態物理中觀察到的最引人注目的相變之一。此現象的微觀起源由巴丁-庫柏-施里弗 (Bardeen-Cooper-Schrieffer, BCS) 理論在 1957 年闡明，至今仍是我們理解傳統超導性的基石@bardeen_theory_1955 @bardeen_microscopic_1957 @bardeen_theory_1957 @schrieffer_theory_1999。根據 BCS 理論，在溫度低於 $T_C$ 時，電子之間一種有效的、儘管微弱的吸引力可以克服它們之間的庫倫排斥力。這種吸引力是由材料的晶格振動，即聲子 (phonons)，所介導的。一個電子穿過晶格時會使正離子晶格變形，產生一個瞬時的正電荷區域，從而吸引第二個電子。這種聲子介導的交互作用導致兩個動量與自旋相反的電子形成束縛態，這個量子力學實體被稱為庫柏對 (Cooper pair)。
+當溫度降至臨界溫度 $T_c$ （critical temperature）以下時，金屬可由常態轉變為超導態（superconducting state），並呈現零電阻（zero resistance）與完全抗磁性（perfect diamagnetism）等宏觀量子現象（macroscopic quantum phenomena）。傳統超導（conventional superconductivity）的微觀機制由巴丁–庫柏–施里弗理論（Bardeen–Cooper–Schrieffer theory, BCS theory）建立，並於 1957 年獲得系統化闡述；其核心觀點為：費米面（Fermi surface）附近的電子在有效吸引交互作用（effective attractive interaction）下形成配對，進而產生凝聚。@bardeen_microscopic_1957 @bardeen_theory_1957 @schrieffer_theory_1999
 
-庫柏對的束縛能雖然與典型的電子能量尺度相比很小，但卻至關重要。對於溫度 $T < T_C$ 的情況，此束縛能大於可用於散射的熱能，使得庫柏對能夠保持穩定。由於庫柏對由兩個費米子 (fermions)（電子）組成，它們擁有整數自旋，因此表現得像複合玻色子 (bosons)。這種玻色子性質是宏觀量子現象出現的關鍵。在一個類似於玻色-愛因斯坦凝聚 (Bose-Einstein condensation) 的現象中，材料中一大部分的庫柏對會「凝聚」到單一的集體量子基態。這種凝聚意味著處於此狀態的所有庫柏對共享相同的量子力學相位並協同運動，不會與雜質或晶格振動發生散射，這就是零電阻的微觀起源。
+在典型金屬中，電子–聲子耦合（electron–phonon coupling）會導致具有延遲效應（retardation）的有效電子–電子作用。該作用主要在費米能級 $E_F$ （Fermi energy）附近、能量寬度約為 $planck omega_D$ 的能窗內顯著，其中 $omega_D$ 為德拜頻率（Debye frequency）。在此能窗中，有效作用可呈現吸引性，並在屏蔽（screening）後的庫倫排斥（Coulomb repulsion）背景下引發費米海（Fermi sea）的配對不穩定性（pairing instability）。因此，時間反演共軛（time-reversal conjugate）的兩個電子態會產生配對關聯；在傳統 $s$-wave 自旋單態（spin singlet）情況下，常以 $k arrow.t$ 與 $k arrow.b$ 表示。此類配對關聯稱為庫柏對（Cooper pair）。需要強調的是，此處所稱的「束縛」更精確地對應於費米海背景下的「庫柏不穩定性」（Cooper instability），而非真空中緊束縛的二體束縛態。
 
-這種凝聚最有力的結果是，整個庫柏對系綜（在一個宏觀樣本中數量可達數萬億）可以用一個單一的、複數值的宏觀波函數 (macroscopic wavefunction) 來描述。這個波函數，通常表示為 $Psi(arrow(r))$，其形式類似於單一量子粒子：
-$ Psi(arrow(r)) = sqrt(n_s(arrow(r))) e^(i phi(arrow(r))) $
-此處，$n_s(arrow(r))$ 代表庫柏對的局域密度，使得 $abs(Psi(arrow(r)))^2 = n_s(arrow(r))$，而 $phi(arrow(r))$ 是宏觀量子相位，在沒有電流或磁場的情況下，它在單一連續的超導體中是均勻的。這個單一波函數的存在，在宏觀距離上擁有明確定義的相位，是推導出超導體定義特徵以及 SQUID 運作原理的核心統一原則。它標誌著一種物質狀態，其中通常僅限於原子尺度的量子相位相關性，在實驗室尺度的維度上得以展現。
+在 $T < T_c$ 時，大量庫柏對凝聚並建立長程相位同調（long-range phase coherence），同時形成能隙（energy gap）與相位剛性（phase stiffness）。這些特徵能有效抑制造成耗散（dissipation）的低能激發，並支持無耗散超流（dissipationless superflow），其在電荷系統中對應為無耗散超電流（dissipationless supercurrent）。此凝聚態可由複數序參量（order parameter；亦常稱為宏觀波函數，macroscopic wavefunction）$Psi (arrow(r))$ 描述：
+$
+  Psi (arrow(r)) = sqrt(n_s (arrow(r))) e^(i phi (arrow(r))),
+$<macroscopic-wavefunction>
+
+其中 $n_s (arrow(r))$ 為超流密度（superfluid density），滿足 $abs(Psi (arrow(r)))^2 = n_s (arrow(r))$ ； $phi (arrow(r))$ 為為宏觀量子相位（macroscopic quantum phase）。在理想均勻且無外加電流與磁場時， $phi(arrow(r))$ 可近似視為空間常數。相位的可定義性構成約瑟夫森關係（Josephson relations）與超導量子干涉儀（superconducting quantum interference device, SQUID）干涉物理的共同出發點。
+
+// 當一種材料冷卻到其特有的臨界溫度 $T_c$ 以下，進入超導狀態時，這代表了在凝聚態物理中觀察到的最引人注目的相變之一。此現象的微觀起源由巴丁-庫柏-施里弗 (Bardeen-Cooper-Schrieffer, BCS) 理論在 1957 年闡明，至今仍是我們理解傳統超導性的基石@bardeen_theory_1955 @bardeen_microscopic_1957 @bardeen_theory_1957 @schrieffer_theory_1999。根據 BCS 理論，在溫度低於 $T_c$ 時，電子之間一種有效的、儘管微弱的吸引力可以克服它們之間的庫倫排斥力。這種吸引力是由材料的晶格振動，即聲子 (phonons)，所介導的。一個電子穿過晶格時會使正離子晶格變形，產生一個瞬時的正電荷區域，從而吸引第二個電子。這種聲子介導的交互作用導致兩個動量與自旋相反的電子形成束縛態，這個量子力學實體被稱為庫柏對 (Cooper pair)。
+
+// 庫柏對的束縛能雖然與典型的電子能量尺度相比很小，但卻至關重要。對於溫度 $T < T_c$ 的情況，此束縛能大於可用於散射的熱能，使得庫柏對能夠保持穩定。由於庫柏對由兩個費米子 (fermions)（電子）組成，它們擁有整數自旋，因此表現得像複合玻色子 (bosons)。這種玻色子性質是宏觀量子現象出現的關鍵。在一個類似於玻色-愛因斯坦凝聚 (Bose-Einstein condensation) 的現象中，材料中一大部分的庫柏對會「凝聚」到單一的集體量子基態。這種凝聚意味著處於此狀態的所有庫柏對共享相同的量子力學相位並協同運動，不會與雜質或晶格振動發生散射，這就是零電阻的微觀起源。
+
+// 這種凝聚最有力的結果是，整個庫柏對系綜（在一個宏觀樣本中數量可達數萬億）可以用一個單一的、複數值的宏觀波函數 (macroscopic wavefunction) 來描述。這個波函數，通常表示為 $Psi(arrow(r))$，其形式類似於單一量子粒子：
+// $ Psi(arrow(r)) = sqrt(n_s(arrow(r))) e^(i phi(arrow(r))) $
+// 此處，$n_s(arrow(r))$ 代表庫柏對的局域密度，使得 $abs(Psi(arrow(r)))^2 = n_s(arrow(r))$，而 $phi(arrow(r))$ 是宏觀量子相位，在沒有電流或磁場的情況下，它在單一連續的超導體中是均勻的。這個單一波函數的存在，在宏觀距離上擁有明確定義的相位，是推導出超導體定義特徵以及 SQUID 運作原理的核心統一原則。它標誌著一種物質狀態，其中通常僅限於原子尺度的量子相位相關性，在實驗室尺度的維度上得以展現。
 
 === 邁斯納效應 The Meissner Effect <subsection-meissner-effect>
 
-超導體最主要的特性之一，是它能主動將磁通量從其內部排出，此現象稱為邁斯納效應 (Meissner effect)@callaway_remarkable_1990 @bardeen_microscopic_1957 @hirsch_origin_2012。這將超導體與假設的「完美導體」（僅具零電阻的材料）區分開來。當一個材料在外部磁場存在下被冷卻至其臨界溫度 $T_C$ 以下時，它不僅僅是像完美導體那樣捕獲已存在的磁通線，而是會在表面產生持久的、無耗散的電流，稱為屏蔽電流 (screening currents)。
+超導體最主要的特性之一，是它能主動將磁通量從其內部排出，此現象稱為邁斯納效應（Meissner effect）@callaway_remarkable_1990 @bardeen_microscopic_1957 @hirsch_origin_2012。這也使超導體與假設的「完美導體」（perfect conductor；僅具零電阻的材料）區分開來：當材料在外部磁場下被冷卻至臨界溫度 $T_c$ 以下，超導體並非僅把原先存在的磁通「凍結」在內部，而是會在樣品表面附近形成持久且無耗散的屏蔽超電流（screening supercurrents），以排斥外加磁場。
 
-這些屏蔽電流的流動方向和大小恰到好處，能夠產生一個內部磁場，完全抵銷外部施加的磁場。結果是，超導體內部各處的總磁場 $arrow(B)$ 變為零。這種行為表明，超導性是一種真正的熱力學基態，而不僅僅是無限導電的狀態。從宏觀電磁學的角度來看，超導體表現為完美的抗磁體 (diamagnet)。磁化強度 $arrow(M)$ 與外加磁場強度 $arrow(H)$ 的關係為 $arrow(B) = mu_0(arrow(H) + arrow(M))$。由於超導體內部 $arrow(B) = 0$，因此 $arrow(M) = -arrow(H)$，這意味著磁化率 (magnetic susceptibility) $chi = -1$。邁斯納效應是宏觀量子態對抗外部磁場擾動的剛性的直接結果；系統消耗能量產生屏蔽電流，以維持其相位相關基態的完整性。
+更精確地說，外加磁場並非在邊界處突變為零，而是只會在一個有限厚度的表層內滲入；其特徵尺度由倫敦穿透深度（London penetration depth）$lambda_L$ 決定，使磁感應強度 $vb(B)$ 自表面向內呈指數衰減。對於厚塊材且外場低於相應的臨界範圍時，超導體體內（距表面多個 $lambda_L$ ​以上）可近似視為 $vb(B) tilde.equiv 0$。若考慮第二類超導體（type-II superconductor），上述近似尤其對外加磁場小於下臨界磁場（lower critical field）$vb(H_"c1")$ 時最為合適；一旦外場超過 $vb(H_"c1")$，磁通將以量子化渦旋進入而不再是完全排斥。
+
+從宏觀電磁學的角度來看，理想邁斯納狀態下超導體表現為完美抗磁體（perfect diamagnet）。在 SI 制中
+$
+  vb(B) = mu_0(vb(H) + vb(M)),
+$
+
+因此在樣品體內若 $vb(B) tilde.equiv 0$，可得 $vb(M) tilde.equiv -vb(H)$，對應磁化率（magnetic susceptibility）$chi tilde.equiv -1$。需要注意的是， $vb(H)$ 應理解為樣品內部的磁場強度；由於樣品形狀會透過去磁因子（demagnetization factor）$N$ 使「外加場」與「內部場」有所差異，上述關係在實作上通常採用長柱/環形等可使去磁效應較小的幾何（或等效地視為 $N tilde.equiv 1$） 來理解。總結而言，邁斯納效應反映超導態具有相位剛性（phase stiffness）並對外加磁場做出平衡態的回應：系統透過建立屏蔽超電流以最小化自由能，維持其宏觀相干基態。
+
+// 超導體最主要的特性之一，是它能主動將磁通量從其內部排出，此現象稱為邁斯納效應 (Meissner effect)@callaway_remarkable_1990 @bardeen_microscopic_1957 @hirsch_origin_2012。這將超導體與假設的「完美導體」（僅具零電阻的材料）區分開來。當一個材料在外部磁場存在下被冷卻至其臨界溫度 $T_c$ 以下時，它不僅僅是像完美導體那樣捕獲已存在的磁通線，而是會在表面產生持久的、無耗散的電流，稱為屏蔽電流 (screening currents)。
+
+// 這些屏蔽電流的流動方向和大小恰到好處，能夠產生一個內部磁場，完全抵銷外部施加的磁場。結果是，超導體內部各處的總磁場 $arrow(B)$ 變為零。這種行為表明，超導性是一種真正的熱力學基態，而不僅僅是無限導電的狀態。從宏觀電磁學的角度來看，超導體表現為完美的抗磁體 (diamagnet)。磁化強度 $arrow(M)$ 與外加磁場強度 $arrow(H)$ 的關係為 $arrow(B) = mu_0(arrow(H) + arrow(M))$。由於超導體內部 $arrow(B) = 0$，因此 $arrow(M) = -arrow(H)$，這意味著磁化率 (magnetic susceptibility) $chi = -1$。邁斯納效應是宏觀量子態對抗外部磁場擾動的剛性的直接結果；系統消耗能量產生屏蔽電流，以維持其相位相關基態的完整性。
 
 == 約瑟夫森效應與電流-相位關係 Josephson Effect and Current-Phase Relation <section-josephson-effect>
 

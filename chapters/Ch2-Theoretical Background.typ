@@ -6,7 +6,7 @@
 #import "../lib.typ": *
 #import "../info.typ": info
 #import "@preview/unify:0.7.1": *
-#import "@preview/typsium:0.3.0": ce
+#import "@preview/typsium:0.3.1": *
 #import "@preview/physica:0.9.3": *
 #import "@preview/equate:0.3.2": equate
 
