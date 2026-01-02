@@ -37,7 +37,7 @@
 
 
 
-== 基礎溫度下的 I-V 特性 <subsection-iv-characteristics>
+== 基礎溫度下的 I-V 特性 <subsection-iv-characteristics-base>
 
 為了鑑定元件的基本直流 (DC) 輸運特性，我們在極低溫環境（恆定溫度 $T = 40 "mK"$）下量測了其電流-電壓 ($I$-$V$) 特性曲線。該數據是透過對偏壓電流 ($I_"bias"$) 進行連續掃描並同步紀錄接面兩端電壓降 ($V$) 所獲得。
 #figure(

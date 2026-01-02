@@ -1,0 +1,29 @@
+# 實驗方法 {#chapter-experimental-methods}
+
+## 元件製備流程 (Fabrication) {#section-fabrication-flow}
+
+- **材料來源**：1T-PtTe$_2$ 單晶 (助熔劑法生長)。
+- **關鍵製程**
+    1.  **機械剝離 (Exfoliation)**：製備原子級厚度薄片。
+    2.  **電子束微影 (EBL)**：定義奈米級電極圖案。
+    3.  **原位離子銑削 (In-situ Ion Milling)**：確保低阻抗介面接觸。
+    4.  **超導電極沉積**：濺鍍 **NbTi** (70-120 nm)。
+
+## 極低溫精密量測系統 (Measurement Setup) {#section-measurement-setup}
+
+::: {.columns}
+::: {.column width="60%"}
+- **環境**：Bluefors 稀釋制冷機 ($T \approx 40$ mK)。
+- **磁場**：3D 向量超導磁鐵 (9-1-1 T) $\rightarrow$ 任意方向磁場。
+- **訊號處理**
+    - **多級濾波**：QDevil (mK段) + IR Filter，抑制熱噪聲。
+    - **低雜訊量測**：BPI 低噪聲放大器 + IVVI-rack (電池供電)。
+:::
+::: {.column width="40%"}
+<!-- 這裡可以放一張 Setup 的示意圖，如果有的話，目前先留白或放通用圖 -->
+**關鍵特點**：
+極低電子溫度
+高訊雜比
+任意磁場向量
+:::
+:::

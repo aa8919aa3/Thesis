@@ -1,0 +1,102 @@
+# 實驗結果 {#chapter-results}
+
+## 基礎電性特徵：高品質擴散型接面 {#section-basic-iv}
+
+::: {.columns}
+::: {.column width="50%"}
+![](Images/run_33_expert_vis.svg){width="100%"}
+:::
+::: {.column width="50%"}
+- **典型 I-V 曲線**
+    - 清晰的超電流 ($I_c \approx 24 \mu A$)。
+    - 顯著遲滯 (Hysteresis) $\rightarrow$ 欠阻尼狀態。
+- **多重安德烈夫反射 (MAR)**
+    - 觀測到次諧波能隙結構 ($V_n = 2\Delta/ne$)。
+    - 推導參數：$\Delta \approx 0.97$ meV, $\tau \approx 0.63$ (高透明度)。
+:::
+:::
+
+## 零面內場特性：均勻的超電流分佈 {#section-fraunhofer-zero-field}
+
+::: {.columns}
+::: {.column width="50%"}
+![](Images/Ic_Norm_354_408.png){width="100%"}
+:::
+::: {.column width="50%"}
+- **類夫朗和費干涉 (Fraunhofer-like)**
+    - $B_{in-plane} = 0$ 時呈現高度對稱。
+    - 形式接近 $|\text{sinc}(\Phi)|$。
+- **物理意義**
+    - 證實接面內部超電流密度分佈 **高度均勻**。
+    - 無明顯缺陷或不均勻性。
+:::
+:::
+
+## 面內磁場效應 I：干涉圖樣畸變 {#section-fraunhofer-distortion}
+
+::: {.columns}
+::: {.column width="50%"}
+![](Images/fraunhofer_evolution_60mT_filtered_linear.svg){width="100%"}
+:::
+::: {.column width="50%"}
+- **現象**：施加 $B_{in-plane}$ 後，干涉圖樣 **不再對稱**。
+    - 極小值位置偏移 (Node Shift)。
+    - 包絡線形狀改變 (Envelope Distortion)。
+    - $I_c^+ \neq |I_c^-|$ (潛在的二極體效應訊號)。
+- **推論**：面內磁場改變了內部的 **電流-相位關係 (CPR)**。
+:::
+:::
+
+## 座標系效應：角度依賴性 {#section-angle-dependence}
+
+::: {.columns}
+::: {.column width="40%"}
+- **各向異性 (Anisotropy)**
+    - $B_{in-plane}$ 的效應顯著依賴於角度 $\theta$。
+    - 需考慮實驗室座標與樣品座標的轉換 ($\alpha \approx 121^\circ$)。
+:::
+::: {.column width="60%"}
+![](Images/coordinate_system_schematic_003_2.png){width="80%"}
+:::
+:::
+
+## CPR 重構 I：模型選擇 {#section-cpr-model}
+
+::: {.columns}
+::: {.column width="50%"}
+![](Images/CPR_Harmonics_vs_Tau.png){width="100%"}
+:::
+::: {.column width="50%"}
+- **為何不選純透明度模型？**
+    - 實驗觀測到顯著的高階諧波 ($I_2/I_1 \approx 0.25$)。
+    - 若用純透明度解釋，需 $\tau > 0.9$ (不符實驗值 $\approx 0.6$)。
+- **採用模型：諧波展開 (Harmonic Series)**
+    - $I(\varphi) \approx I_1 \sin(\varphi) + I_2 \sin(2\varphi + \delta)$
+    - 引入相位差 $\delta$ 以描述 TRS 破缺。
+:::
+:::
+
+## CPR 重構 II：高面內場下的二階諧波 {#section-cpr-fit-508}
+
+::: {.columns}
+::: {.column width="60%"}
+![](Images/cpr_fit_508.svg){width="100%"}
+:::
+::: {.column width="40%"}
+- **擬合結果 ($B_{in} \approx 180$ mT)**
+    - 二階諧波相位可調模型完美擬合實驗數據。
+    - **關鍵發現**：
+        - $I_2$ 分量顯著增強。
+        - 相位差 $\delta$ 非零。
+:::
+:::
+
+## 關鍵發現總結：磁場調控 CPR {#section-result-summary}
+
+- **磁場作為「調控旋鈕」**
+    - $B_{in-plane}$ 直接耦合到接面中的安德烈夫束縛態。
+- **主要證據**
+    - 夫朗和費圖樣的對稱性破缺。
+    - CPR 中 **二階諧波 ($I_2$)** 與 **相位差 ($\delta$)** 的顯著演化。
+- **結論**
+    - 證實 PtTe$_2$ 接面具備 **高度可調的非正弦 CPR**。

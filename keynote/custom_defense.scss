@@ -1,0 +1,35 @@
+/*-- scss:defaults --*/
+// 定義學校品牌色 (以 NCKU 紅為例，若為中山大學可調整為其代表色，此處沿用白皮書範例)
+$theme-color: #B00000;
+$link-color: $theme-color;
+$selection-bg: rgba(176, 0, 0, 0.2);
+
+// 字體設定：標題使用襯線體展現學術感，內文無襯線體
+$font-family-sans-serif: "Helvetica Neue", "Microsoft JhengHei", sans-serif;
+$presentation-heading-font: "Helvetica Neue", "Microsoft JhengHei", sans-serif;
+
+// 字級設定：確保後排委員能看清
+$presentation-font-size-root: 32px;
+
+/*-- scss:rules --*/
+// 調整頁碼樣式
+.reveal .slide-number {
+  font-size: 20px;
+  color: $theme-color;
+  background-color: transparent;
+}
+
+// 定義「定理」區塊樣式 (Theorem Block)
+.theorem {
+  border-left: 6px solid $theme-color;
+  background-color: rgba(0, 0, 0, 0.03);
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 0 5px 5px 0;
+}
+
+// 強調重點的樣式
+.highlight-text {
+  color: $theme-color;
+  font-weight: bold;
+}

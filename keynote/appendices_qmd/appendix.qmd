@@ -1,0 +1,217 @@
+# 附錄 A：詳細實驗數據 {#appendix-detailed-data}
+
+## 完整實驗結果 {#section-complete-results}
+
+本附錄提供了主要實驗的詳細數據和補充分析。
+
+### 樣品詳細資訊 {#subsection-sample-details}
+
+<table>
+<caption><p>樣品詳細資訊</p></caption>
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+</colgroup>
+<tbody>
+<tr>
+<td style="text-align: center;"><p><strong>樣品編號</strong></p></td>
+<td style="text-align: center;"><p><strong>厚度(nm)</strong></p></td>
+<td style="text-align: center;"><p><strong>接面寬度(μm)</strong></p></td>
+<td style="text-align: center;"><p><strong>參考接面長度(μm)</strong></p></td>
+<td style="text-align: center;"><p><strong>目標接面長度(μm)</strong></p></td>
+<td style="text-align: center;"><p><strong>臨界電流(μA)</strong></p></td>
+<td style="text-align: center;"><p><strong>重捕電流(μA)</strong></p></td>
+<td style="text-align: center;"><p><strong>正常態電阻(Ω)</strong></p></td>
+<td style="text-align: center;"><p><strong><span class="math inline"><em>I</em><sub><em>c</em></sub><em>R</em><sub><em>n</em></sub></span><br />
+<span class="math inline">(<em>μ</em><em>V</em>)</span></strong></p></td>
+<td style="text-align: center;"><p><strong>二極體效率(η)</strong></p></td>
+<td style="text-align: center;"><p><strong>鈮鈦厚度(nm)</strong></p></td>
+<td style="text-align: center;"><p><strong>備註</strong></p></td>
+</tr>
+<tr>
+<td style="text-align: center;"><p>003-2</p></td>
+<td style="text-align: center;"><p>21.17</p></td>
+<td style="text-align: center;"><p>1.16</p></td>
+<td style="text-align: center;"><p>0.40</p></td>
+<td style="text-align: center;"><p>0.73</p></td>
+<td style="text-align: center;"><p>19.1</p></td>
+<td style="text-align: center;"><p>3</p></td>
+<td style="text-align: center;"><p>1.92</p></td>
+<td style="text-align: center;"><p>36.6</p></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><p>150</p></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"><p>003-3</p></td>
+<td style="text-align: center;"><p>27.79</p></td>
+<td style="text-align: center;"><p>0.88</p></td>
+<td style="text-align: center;"><p>0.33</p></td>
+<td style="text-align: center;"><p>0.65</p></td>
+<td style="text-align: center;"><p>14.5</p></td>
+<td style="text-align: center;"><p>1.5</p></td>
+<td style="text-align: center;"><p>3.24</p></td>
+<td style="text-align: center;"><p>46.9</p></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><p>150</p></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"><p>004-1</p></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><p>1.26</p></td>
+<td style="text-align: center;"><p>0.26</p></td>
+<td style="text-align: center;"><p>0.68</p></td>
+<td style="text-align: center;"><p>19.4</p></td>
+<td style="text-align: center;"><p>16</p></td>
+<td style="text-align: center;"><p>11.17</p></td>
+<td style="text-align: center;"><p>217.1</p></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><p>70</p></td>
+<td style="text-align: center;"><p>Only Ref. JJ</p></td>
+</tr>
+<tr>
+<td style="text-align: center;"><p>004-2</p></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><p>0.56</p></td>
+<td style="text-align: center;"><p>0.17</p></td>
+<td style="text-align: center;"><p>0.67</p></td>
+<td style="text-align: center;"><p>32.5</p></td>
+<td style="text-align: center;"><p>30</p></td>
+<td style="text-align: center;"><p>22.29</p></td>
+<td style="text-align: center;"><p>725.1</p></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><p>70</p></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"><p>004-3</p></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><p>1.34</p></td>
+<td style="text-align: center;"><p>0.24</p></td>
+<td style="text-align: center;"><p>0.70</p></td>
+<td style="text-align: center;"><p>44.5</p></td>
+<td style="text-align: center;"><p>33</p></td>
+<td style="text-align: center;"><p>35.93</p></td>
+<td style="text-align: center;"><p>1600.4</p></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><p>70</p></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"><p>005-1</p></td>
+<td style="text-align: center;"><p>63.5</p></td>
+<td style="text-align: center;"><p>1.15</p></td>
+<td style="text-align: center;"><p>0.42</p></td>
+<td style="text-align: center;"><p>0.87</p></td>
+<td style="text-align: center;"><p>88.4</p></td>
+<td style="text-align: center;"><p>28</p></td>
+<td style="text-align: center;"><p>0.30</p></td>
+<td style="text-align: center;"><p>26.5</p></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><p>70</p></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"><p>005-2</p></td>
+<td style="text-align: center;"><p>24.2</p></td>
+<td style="text-align: center;"><p>1.57</p></td>
+<td style="text-align: center;"><p>0.41</p></td>
+<td style="text-align: center;"><p>0.88</p></td>
+<td style="text-align: center;"><p>33.9</p></td>
+<td style="text-align: center;"><p>6</p></td>
+<td style="text-align: center;"><p>1.07</p></td>
+<td style="text-align: center;"><p>36.2</p></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><p>70</p></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"><p>019-1</p></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><p>2.59</p></td>
+<td style="text-align: center;"><p>1.53</p></td>
+<td style="text-align: center;"><p>2.26</p></td>
+<td style="text-align: center;"><p>13.8</p></td>
+<td style="text-align: center;"><p>1.5</p></td>
+<td style="text-align: center;"><p>0.70</p></td>
+<td style="text-align: center;"><p>9.7</p></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><p>120</p></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"><p>019-3</p></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><p>1.73</p></td>
+<td style="text-align: center;"><p>1.52</p></td>
+<td style="text-align: center;"><p>2.36</p></td>
+<td style="text-align: center;"><p>13.3</p></td>
+<td style="text-align: center;"><p>0.8</p></td>
+<td style="text-align: center;"><p>1.25</p></td>
+<td style="text-align: center;"><p>16.7</p></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><p>120</p></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"><p>019-5</p></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><p>3.42</p></td>
+<td style="text-align: center;"><p>1.79</p></td>
+<td style="text-align: center;"><p>6.09</p></td>
+<td style="text-align: center;"><p>14.8</p></td>
+<td style="text-align: center;"><p>6</p></td>
+<td style="text-align: center;"><p>0.26</p></td>
+<td style="text-align: center;"><p>3.9</p></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><p>120</p></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+
+### PtTe2、NbTi量子輸運參數表 {#subsection-quantum-transport-parameters-table}
+
++------------------------------------+---------------------------------------------------------+--------------------+----------------------+-------------+
+| **參數**                           | **符號**                                                | **NbTi**           | **PtTe2**            | **單位**    |
++:==================================:+:=======================================================:+:==================:+:====================:+:===========:+
+| **費米速度\                        | $v_{F}$                                                 | ≈ 1.25--1.55       | $3.3 \times 10^{-5}$ | m/s         |
+| Fermi velocity**                   |                                                         |                    |                      |             |
++------------------------------------+---------------------------------------------------------+--------------------+----------------------+-------------+
+| **平均碰撞時間\                    | $\tau$                                                  | ≈ 10⁻¹²--10⁻¹¹     | ≈ 10⁻¹²--10⁻¹¹       | s           |
+| Mean free time**                   |                                                         |                    |                      |             |
++------------------------------------+---------------------------------------------------------+--------------------+----------------------+-------------+
+| **擴散係數\                        | $D = v_{F}^{2}\frac{\tau}{2}$                           | ≈ 5.6×10²--5.6×10³ | ≈ 1.5×10²--2.4×10³   | cm²/s       |
+| Diffusion coefficient**            |                                                         |                    |                      |             |
++------------------------------------+---------------------------------------------------------+--------------------+----------------------+-------------+
+| **電阻率\                          | $\rho = \left\lbrack n_{s}e\mu_{e} \right\rbrack^{- 1}$ | ≈ 0.001--0.01      | ≈ 0.0002--0.002      | kΩ (per □)  |
+| Resistivity** ¹                    |                                                         |                    |                      |             |
++------------------------------------+---------------------------------------------------------+--------------------+----------------------+-------------+
+| **費米波長\                        | $\lambda_{F} = 2\frac{\pi}{k_{F}}$                      | ≈ 0.32 nm          | ≈ 7--11 nm           | nm          |
+| Fermi wavelength**                 |                                                         |                    |                      |             |
++------------------------------------+---------------------------------------------------------+--------------------+----------------------+-------------+
+| **平均自由路徑\                    | $l_{e} = v_{F}\tau$                                     | 80--800            | 180                  | nm          |
+| Mean-free path**                   |                                                         |                    |                      |             |
++------------------------------------+---------------------------------------------------------+--------------------+----------------------+-------------+
+| **載子遷移率\                      | $\mu_{e} = \frac{v_{F}}{l_{e}}$                         | ≈ 1.25--1.55       | ≈ 6.5--7.5           | cm²/Vs      |
+| Electron mobility**                |                                                         |                    |                      |             |
++------------------------------------+---------------------------------------------------------+--------------------+----------------------+-------------+
+| **狄拉克點\                        | $E_{D}$                                                 | ≈ 0.32 eV          | ≈ 0.32 eV            | eV          |
+| Dirac point**                      |                                                         |                    |                      |             |
++------------------------------------+---------------------------------------------------------+--------------------+----------------------+-------------+
+| **超導相干長度\                    | $\xi$                                                   | ≈ 10 nm            | ≈ 10 nm              | nm          |
+| Superconducting coherence length** |                                                         |                    |                      |             |
++------------------------------------+---------------------------------------------------------+--------------------+----------------------+-------------+
+
+: PtTe2、NbTi量子輸運參數表

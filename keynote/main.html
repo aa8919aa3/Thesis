@@ -1,0 +1,2527 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="main_files/libs/clipboard/clipboard.min.js"></script>
+<script src="main_files/libs/quarto-html/tabby.min.js"></script>
+<script src="main_files/libs/quarto-html/popper.min.js"></script>
+<script src="main_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="main_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="main_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="main_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.26">
+
+  <meta name="author" content="徐道宜 (指導教授：邱奎霖 博士)">
+  <meta name="dcterms.date" content="2026-01-02">
+  <title>面內磁場下1T相二碲化鉑約瑟夫森接面之電流-相位關係研究</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="main_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="main_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="main_files/libs/revealjs/dist/theme/quarto-313b0129176d400197404bcafa272300.css">
+  <link href="main_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="main_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="main_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="main_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="main_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="main_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">面內磁場下1T相二碲化鉑約瑟夫森接面之電流-相位關係研究</h1>
+  <p class="subtitle">碩士學位論文口試</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+徐道宜 (指導教授：邱奎霖 博士) 
+</div>
+        <p class="quarto-title-affiliation">
+            國立中山大學 物理學系
+          </p>
+    </div>
+</div>
+
+  <p class="date">2026-01-02</p>
+</section>
+<section id="緒論" class="title-slide slide level1 center">
+<h1>緒論</h1>
+
+</section>
+
+<section>
+<section id="chapter-introduction" class="title-slide slide level1 center">
+<h1>緒論</h1>
+
+</section>
+<section id="section-motivation" class="slide level2">
+<h2>研究背景與動機</h2>
+<p>在凝聚態物理的前沿研究中，一項關鍵驅動力來自於將具備非平庸電子結構的新興量子材料，與成熟的宏觀量子平台（如超導電路）加以整合，以揭示新穎的量子輸運現象並發展功能更強的量子元件。本文系統性報告以過渡金屬二硫族化物（transition metal dichalcogenides, TMDs）家族之第二類狄拉克半金屬 1T 相二碲化鉑（platinum ditelluride, PtTe2）為弱連結之超導量子干涉儀（superconducting quantum interference device, SQUID）的設計、微／奈米製程與極低溫精密電性量測結果。</p>
+<p>本研究的核心動機在於補足既有文獻中的關鍵缺口。儘管先前已在多種材料系統中觀測到偏離單一正弦形式的電流–相位關係（current–phase relation, CPR），但針對第二類狄拉克半金屬，尤其是 PtTe2，目前研究多著重於約瑟夫森二極體效應（Josephson diode effect, JDE），並常藉由正、反向臨界電流不對稱等衍生量來間接推估二階諧波分量。相較之下，對 CPR 諧波成分的直接量測，以及其與面內磁場之可連續調控行為之間的定量連結，迄今仍缺乏以非對稱超導量子干涉儀（asymmetric SQUID, aSQUID）為核心的系統性實驗架構加以建立。基於此，本文建置整合性實驗平台以深入探測 PtTe2 約瑟夫森元件中的 CPR，並以外加磁通量作為相位調控旋鈕，實現對此基本量子特性的可控調變。</p>
+<p>為達成上述目標，我們建立完整的元件製備流程，並搭利用低雜訊低溫量測平台，對 CPR 及其磁場依賴行為的進行量測。透過系統化的實驗資料與分析，我們旨在釐清第二類狄拉克半金屬於超導近接條件下的關鍵電性特徵，並進一步評估其作為可調式超導量子元件材料平台之潛力。</p>
+</section>
+<section id="section-objectives" class="slide level2">
+<h2>研究目的</h2>
+<p>為回應上述研究動機，本研究設定以下具體目標：</p>
+<ol type="1">
+<li><p>直接重構並定量化 1T-PtTe2 約瑟夫森接面的電流–相位關係（CPR），並著重解析其高階諧波成分及其相位差。</p></li>
+<li><p>系統性釐清 CPR 的形貌如何受外加磁通量調控，特別探討面內磁場下的連續演化行為。</p></li>
+<li><p>綜合上述結果，建立更完整的物理圖像，以描述狄拉克半金屬中的超導近接效應及其所導致的宏觀量子輸運現象</p></li>
+</ol>
+</section>
+<section id="section-research-method" class="slide level2">
+<h2>研究方法</h2>
+<p>本研究採用以下研究方法：</p>
+<ul>
+<li><p>文獻回顧與關鍵問題辨識</p></li>
+<li><p>理論建模與可量測量之推導</p></li>
+<li><p>實驗設計、元件製備與低溫量測</p></li>
+<li><p>資料處理、結果分析與物理討論</p></li>
+</ul>
+</section>
+<section id="section-thesis-structure" class="slide level2">
+<h2>論文架構</h2>
+<p>本論文共分為六章：</p>
+<ul>
+<li><p>第一章：研究背景、動機、研究目標與研究方法</p></li>
+<li><p>第二章：相關文獻回顧與理論基礎</p></li>
+<li><p>第三章：實驗方法與量測系統（含元件製備與特性鑑定）</p></li>
+<li><p>第四章：實驗結果呈現與分析</p></li>
+<li><p>第五章：研究結果之物理意涵、限制與挑戰</p></li>
+<li><p>第六章：結論與未來展望</p></li>
+</ul>
+</section></section>
+<section id="理論背景" class="title-slide slide level1 center">
+<h1>理論背景</h1>
+
+</section>
+
+<section>
+<section id="chapter-theoretical-background" class="title-slide slide level1 center">
+<h1>理論背景</h1>
+<p>本章旨在建立理解本研究核心物理現象所需之理論框架。首先回顧約瑟夫森效應的基本原理；其次介紹其關鍵應用——超導量子干涉儀（superconducting quantum interference device, SQUID）；並進一步說明非對稱 SQUID（asymmetric SQUID, aSQUID）如何作為量測非傳統電流–相位關係（current–phase relation, CPR）的有效工具。最後，本章聚焦於本研究之核心材料：第二類狄拉克半金屬（type-II Dirac semimetal）二碲化鉑（PtTe2），並闡述其材料特性為何可能導致偏離單一正弦形式的 CPR（包含可觀的高階諧波），且此類訊號可由 SQUID 架構直接擷取。</p>
+</section>
+<section id="section-superconductivity" class="slide level2">
+<h2>超導體中的宏觀量子現象基礎 Foundations of Macroscopic Quantum Phenomena in Superconductors</h2>
+<p>超導性（superconductivity）為超導量子元件的基礎。本節將概述超導體的主要性質，並說明約瑟夫森效應如何奠基於超導體中的宏觀量子相干。</p>
+<h3 id="subsection-cooper-pairs">庫柏對凝聚與宏觀波函數 The Cooper Pair Condensate and the Macroscopic Wavefunction</h3>
+<p>當溫度降至臨界溫度 <span class="math inline">\(T_{c}\)</span> （critical temperature）以下時，金屬可由常態轉變為超導態（superconducting state），並呈現零電阻（zero resistance）與完全抗磁性（perfect diamagnetism）等宏觀量子現象（macroscopic quantum phenomena）。傳統超導（conventional superconductivity）的微觀機制由巴丁–庫柏–施里弗理論（Bardeen–Cooper–Schrieffer theory, BCS theory）建立，並於 1957 年獲得系統化闡述；其核心觀點為：費米面（Fermi surface）附近的電子在有效吸引交互作用（effective attractive interaction）下形成配對，進而產生凝聚。<span class="citation" data-cites="bardeen_microscopic_1957 bardeen_theory_1957 schrieffer_theory_1999">(<a href="#/參考文獻" role="doc-biblioref" onclick="">Bardeen, Cooper, and Schrieffer 1957a</a>, <a href="#/參考文獻" role="doc-biblioref" onclick="">1957b</a>; <a href="#/參考文獻" role="doc-biblioref" onclick="">Schrieffer 1999</a>)</span></p>
+<p>在典型金屬中，電子–聲子耦合（electron–phonon coupling）會導致具有延遲效應（retardation）的有效電子–電子作用。該作用主要在費米能級 <span class="math inline">\(E_{F}\)</span> （Fermi energy）附近、能量寬度約為 <span class="math inline">\(h\omega_{D}\)</span> 的能窗內顯著，其中 <span class="math inline">\(\omega_{D}\)</span> 為德拜頻率（Debye frequency）。在此能窗中，有效作用可呈現吸引性，並在屏蔽（screening）後的庫倫排斥（Coulomb repulsion）背景下引發費米海（Fermi sea）的配對不穩定性（pairing instability）。因此，時間反演共軛（time-reversal conjugate）的兩個電子態會產生配對關聯；在傳統 <span class="math inline">\(s\)</span>-wave 自旋單態（spin singlet）情況下，常以 <span class="math inline">\(k \uparrow\)</span> 與 <span class="math inline">\(k \downarrow\)</span> 表示。此類配對關聯稱為庫柏對（Cooper pair）。需要強調的是，此處所稱的「束縛」更精確地對應於費米海背景下的「庫柏不穩定性」（Cooper instability），而非真空中緊束縛的二體束縛態。</p>
+<p>在 <span class="math inline">\(T &lt; T_{c}\)</span> 時，大量庫柏對凝聚並建立長程相位同調（long-range phase coherence），同時形成能隙（energy gap）與相位剛性（phase stiffness）。這些特徵能有效抑制造成耗散（dissipation）的低能激發，並支持無耗散超流（dissipationless superflow），其在電荷系統中對應為無耗散超電流（dissipationless supercurrent）。此凝聚態可由複數序參量（order parameter；亦常稱為宏觀波函數，macroscopic wavefunction）<span class="math inline">\(\Psi\left( \overset{\rightarrow}{r} \right)\)</span> 描述： <span class="math display">\[\Psi\left( \overset{\rightarrow}{r} \right) = \sqrt{n_{s}\left( \overset{\rightarrow}{r} \right)}e^{i\varphi\left( \overset{\rightarrow}{r} \right)},\]</span><span id="macroscopic-wavefunction"></span></p>
+<p>其中 <span class="math inline">\(n_{s}\left( \overset{\rightarrow}{r} \right)\)</span> 為超流密度（superfluid density），滿足 <span class="math inline">\(\left| {\Psi\left( \overset{\rightarrow}{r} \right)} \right|^{2} = n_{s}\left( \overset{\rightarrow}{r} \right)\)</span> ； <span class="math inline">\(\varphi\left( \overset{\rightarrow}{r} \right)\)</span> 為為宏觀量子相位（macroscopic quantum phase）。在理想均勻且無外加電流與磁場時， <span class="math inline">\(\varphi(\overset{\rightarrow}{r})\)</span> 可近似視為空間常數。相位的可定義性構成約瑟夫森關係（Josephson relations）與超導量子干涉儀（superconducting quantum interference device, SQUID）干涉物理的共同出發點。</p>
+<h3 id="subsection-meissner-effect">邁斯納效應 The Meissner Effect</h3>
+<p>超導體最主要的特性之一，是它能主動將磁通量從其內部排出，此現象稱為邁斯納效應（Meissner effect）<span class="citation" data-cites="callaway_remarkable_1990 bardeen_microscopic_1957 hirsch_origin_2012">(<a href="#/參考文獻" role="doc-biblioref" onclick="">Callaway 1990</a>; <a href="#/參考文獻" role="doc-biblioref" onclick="">Bardeen, Cooper, and Schrieffer 1957a</a>; <a href="#/參考文獻" role="doc-biblioref" onclick="">Hirsch 2012</a>)</span>。這也使超導體與假設的「完美導體」（perfect conductor；僅具零電阻的材料）區分開來：當材料在外部磁場下被冷卻至臨界溫度 <span class="math inline">\(T_{c}\)</span> 以下，超導體並非僅把原先存在的磁通「凍結」在內部，而是會在樣品表面附近形成持久且無耗散的屏蔽超電流（screening supercurrents），以排斥外加磁場。</p>
+<p>更精確地說，外加磁場並非在邊界處突變為零，而是只會在一個有限厚度的表層內滲入；其特徵尺度由倫敦穿透深度（London penetration depth）<span class="math inline">\(\lambda_{L}\)</span> 決定，使磁感應強度 <span class="math inline">\(\mathbf{B}\)</span> 自表面向內呈指數衰減。對於厚塊材且外場低於相應的臨界範圍時，超導體體內（距表面多個 <span class="math inline">\(\lambda_{L}\)</span> ​以上）可近似視為 <span class="math inline">\(\mathbf{B} \cong 0\)</span>。若考慮第二類超導體（type-II superconductor），上述近似尤其對外加磁場小於下臨界磁場（lower critical field）<span class="math inline">\(\mathbf{H_{c1}}\)</span> 時最為合適；一旦外場超過 <span class="math inline">\(\mathbf{H_{c1}}\)</span>，磁通將以量子化渦旋進入而不再是完全排斥。</p>
+<p>從宏觀電磁學的角度來看，理想邁斯納狀態下超導體表現為完美抗磁體（perfect diamagnet）。在 SI 制中 <span class="math display">\[\mathbf{B} = \mu_{0}\left( \mathbf{H} + \mathbf{M} \right),\]</span></p>
+<p>因此在樣品體內若 <span class="math inline">\(\mathbf{B} \cong 0\)</span>，可得 <span class="math inline">\(\mathbf{M} \cong - \mathbf{H}\)</span>，對應磁化率（magnetic susceptibility）<span class="math inline">\(\chi \cong - 1\)</span>。需要注意的是， <span class="math inline">\(\mathbf{H}\)</span> 應理解為樣品內部的磁場強度；由於樣品形狀會透過去磁因子（demagnetization factor）<span class="math inline">\(N\)</span> 使「外加場」與「內部場」有所差異，上述關係在實作上通常採用長柱/環形等可使去磁效應較小的幾何（或等效地視為 <span class="math inline">\(N \cong 1\)</span>） 來理解。總結而言，邁斯納效應反映超導態具有相位剛性（phase stiffness）並對外加磁場做出平衡態的回應：系統透過建立屏蔽超電流以最小化自由能，維持其宏觀相干基態。</p>
+</section>
+<section id="section-josephson-effect" class="slide level2">
+<h2>約瑟夫森效應與電流-相位關係 Josephson Effect and Current-Phase Relation</h2>
+<p>約瑟夫森接面 (Josephson Junction, JJ) 是由一個「弱連結 (weak link)」隔開的兩個超導體所構成的量子元件。此弱連結可以是絕緣層 (superconductor–insulator–superconductor, S-I-S)、正常金屬 (superconductor-normal-metal-superconductor, S-N-S)，或如本研究中的狄拉克半金屬 (superconductor-Dirac semimetal-superconductor, S-DSM-S)。1962年，Brian Josephson預測，庫柏對（Cooper pairs）可以應因近接效應 (proximity effect)透過量子穿隧(quantum tunneling)的方式，在弱連結區域建立起相干的超導電流的超導電流的宏觀量子現象。此效應由 Brian Josephson 於 1962 年預測<span class="citation" data-cites="JOSEPHSON1962251">(<a href="#/參考文獻" role="doc-biblioref" onclick="">Josephson 1962</a>)</span> ，由兩個基本關係式描述<span class="citation" data-cites="barone1982physics feynman_feynman_2011">(<a href="#/參考文獻" role="doc-biblioref" onclick="">Barone and Paternò 1982</a>; <a href="#/參考文獻" role="doc-biblioref" onclick="">Feynman 2011</a>)</span>：</p>
+<p>第一約瑟夫森關係式（first Josephson relation）闡述了流經接面的無耗散超導電流 <span class="math inline">\(I_{s}\)</span> 與兩端超導體波函數的相位差 <span class="math inline">\(\varphi\)</span> 之間的關係，這便是電流-相位關係 (Current-Phase Relation, CPR)。它指出，在無任何電壓的情況下，超導電流<span class="math inline">\(I_{s}\)</span>仍可流過接面，其驅動力完全來自於兩個超導電極中序參數 (order parameters) 的宏觀量子相位差<span class="math inline">\(\varphi\)</span>，對於傳統的SIS穿隧接面，此關係呈現為一簡單的正弦形式，即直流約瑟夫森效應（The DC Josephson effect）： <span class="math display">\[I_{s(\varphi)} = I_{c}\sin(\varphi)\]</span> <span id="eq-1st-josephson"></span> 其中<span class="math inline">\(\varphi = \varphi_{2} - \varphi_{1}\)</span>為金兹堡-朗道序參數（Ginzburg–Landau order parameter）在接面處的相位差，即約瑟夫森相位（Josephson phase）， <span class="math inline">\(I_{s}\)</span> 是接面的切換電流（有時也稱跳躍電流）為外加偏壓超過某一門檻時，元件由超導態跳變至電阻態時的電流值，而 <span class="math inline">\(I_{c}\)</span> 是接面在完全維持超導態（無電阻）時所能承受的最大電流，即臨界電流 (critical current)，其取決於超導體的性質，亦會受到溫度以及外加磁場等環境因素的影響。</p>
+<p>標準正弦電流-相位關係 <span class="math inline">\(I_{s} = I_{c}\sin(\varphi)\)</span> 是理想 S-I-S 穿隧接面的典型形式，並作為理解基本 SQUID 操作的基礎模型。此形式源於單一庫柏對穿隧障壁的最低階量子力學過程。然而，隨著材料科學和奈米製造技術的進步，已開發出多種多樣的約瑟夫森接面，每種都展現出獨特的 CPR 特性。</p>
+<p>一個通用的 CPR 可以表示為傅立葉級數 (Fourier series)： <span class="math display">\[I_{s(\varphi)} = \sum_{n = 1}^{\infty}A_{n}\sin(n\varphi) + B_{n}\cos(n\varphi)\]</span> 高次諧波 (<span class="math inline">\(n &gt; 1\)</span>) 或餘弦項的存在，意味著偏離了簡單的 S-I-S 模型，並指向更複雜的基礎物理。不同接面類型展現出不同的 CPR 特性：</p>
+<p><strong>高透明度接面 (High-Transparency Junctions, S-N-S)</strong>：在弱連結是正常金屬 (N)、半導體 (Sm) 或石墨烯等材料的接面中，庫柏對傳輸的障壁遠低於 S-I-S 接面。在這些系統中，一種稱為安德烈夫反射 (Andreev reflection) 的過程主導電荷傳輸。多個庫柏對的相干傳輸同時變得可能，從而在 CPR 中產生高次諧波。這導致 CPR 呈非正弦且常被描述為「偏斜」(skewed) 或「鋸齒狀」(saw-toothed)。</p>
+<p><strong>鐵磁性接面 (Ferromagnetic Junctions, S-F-S)</strong>：當弱連結是鐵磁性材料時，鐵磁體內的交換場 (exchange field) 會與庫柏對中電子的自旋相互作用。根據 F 層的厚度和交換場的強度，波函數的相位在穿過接面時可能會移動 <span class="math inline">\(\pi\)</span>。這會產生一個「<span class="math inline">\(\pi\)</span>-接面」，其 CPR 形式為 <span class="math inline">\(I_{s} = I_{c}\sin(\varphi + \pi) = - I_{c}\sin(\varphi)\)</span>。</p>
+<p>第二約瑟夫森關係式（second Josephson relation）或超導相演變方程式（superconducting phase evolution equation）<span class="citation" data-cites="barone1982physics">(<a href="#/參考文獻" role="doc-biblioref" onclick="">Barone and Paternò 1982</a>)</span>，描述了在接面兩端存在電壓<span class="math inline">\(V\)</span>時，相位差的演化，即交流約瑟夫森效應（The AC Josephson effect）：</p>
+<p><span class="math display">\[\frac{\partial\varphi}{\partial t} = \frac{2eV(t)}{ħ}\text{ , }\]</span> <span id="eq-2nd-josephson"></span></p>
+<p>其中<span class="math inline">\(e\)</span>是基本電荷<span class="math inline">\(1.602176634 \times 10^{- 19}C\)</span>（庫倫）<span class="citation" data-cites="jeckelmann_elementary_2019 mohr_codata_2024">(<a href="#/參考文獻" role="doc-biblioref" onclick="">Jeckelmann and Piquemal 2019</a>; <a href="#/參考文獻" role="doc-biblioref" onclick="">Mohr et al. 2024</a>)</span>，<span class="math inline">\(ħ\)</span>是約化普朗克常數（reduced Planck constant） <span class="math inline">\(1.054571817\ldots \times 10^{- 34}J \cdot s\)</span>（焦耳<span class="math inline">\(\cdot\)</span>秒）<span class="citation" data-cites="mohr_codata_2024">(<a href="#/參考文獻" role="doc-biblioref" onclick="">Mohr et al. 2024</a>)</span>。</p>
+<p>對一個恆定電壓 V 積分此方程式可得 <span class="math inline">\(\varphi(t) = \varphi_{0} + \frac{2eV}{ħ}t\)</span>。將這個隨時間變化的相位代入第一約瑟夫森關係，會發現超導電流以一個高頻振盪，稱為約瑟夫森頻率 (Josephson frequency)，<span class="math inline">\(f_{J} = \frac{2e}{h}V\)</span>。對於 1 微伏 (microvolt) 的外加電壓，此頻率約為 483.6 MHz。其電壓和頻率之間的關係僅依賴於基本常數，為國際電壓標準的來源。</p>
+<p>約瑟夫森常數（Josephson constant）的定義為<span class="math inline">\(K_{J} = \frac{2e}{h}\)</span>，其倒數則為磁通量子（magnetic flux quantum）<span class="math inline">\(\Phi_{0} = \frac{h}{2e} = 2\pi\frac{ħ}{2e}\)</span>。則超導相變化方程式<a href="#/eq-2nd-josephson" class="ref">[eq-2nd-josephson]</a> 可以重新表達為：</p>
+<p><span class="math display">\[\frac{\partial\varphi}{\partial t} = 2\pi\left\lbrack K_{J}V(t) \right\rbrack = \frac{2\pi}{\Phi_{0}}V(t)\text{, }\]</span> <span id="eq-sc-phase-evolution"></span> 此時定義<span class="math inline">\(\Phi = \Phi_{0}\frac{\varphi}{2\pi}\)</span>，則接面兩端的電壓為：</p>
+<p><span class="math display">\[V = \frac{\Phi_{0}}{2\pi}\frac{\partial\varphi}{\partial t} = \frac{d\Phi}{dt}\text{ , }\]</span></p>
+<p>換句話說，即在接面處施加固定電壓<span class="math inline">\(V_{DC}\)</span>時，相位將隨時間線性變化，而電流則為幅度為<span class="math inline">\(I_{c}\)</span>、頻率<span class="math inline">\(f\)</span>為<span class="math inline">\(K_{J}V_{DC}\)</span>的正弦交流電。 此現象與法拉第感應定律的形式非常相似。但此電壓並非來自磁能，因為超導體中沒有磁場；相反地，此電壓來自載體的動能（即庫珀對）。此現象也稱為動態電感（Kinetic inductance）。 當電流與約瑟夫森相位隨時間變化時，接面兩端的電壓降也會隨之變化；如下方導出所示，約瑟夫森關係確定此行為可由一個名為約瑟夫森電感（Josephson inductance）之動態電感來描述。<span class="citation" data-cites="devoret_superconducting_2004">(<a href="#/參考文獻" role="doc-biblioref" onclick="">Devoret, Wallraff, and Martinis 2004</a>)</span> 將約瑟夫森關係式<a href="#/eq-1st-josephson" class="ref">[eq-1st-josephson]</a>，<a href="#/eq-sc-phase-evolution" class="ref">[eq-sc-phase-evolution]</a> 改寫為：</p>
+<p><span class="math display">\[\begin{array}{rlr}
+\frac{\partial I}{\partial\varphi} = &amp; I_{c}\cos\varphi,\frac{\begin{array}{r}
+\\
+(\partial\varphi)
+\end{array}}{\partial t} = &amp; \frac{2\pi}{\Phi_{0}}V.
+\end{array}\]</span></p>
+<p>接著，應用連鎖律（chain rule）計算電流的時間導數：</p>
+<p><span class="math display">\[\begin{array}{rlr}
+\frac{\partial I}{\partial t} = &amp; \frac{\partial I}{\partial\varphi}\frac{\partial\varphi}{\partial t} = &amp; I_{c}\cos\varphi \cdot \frac{2\pi}{\Phi_{0}}V,
+\end{array}\]</span></p>
+<p>將上述結果整理為電感器的電流-電壓特性形式： <span class="math display">\[V = \frac{\Phi_{0}}{2\pi I_{c}\cos\varphi}\frac{\partial I}{\partial t} = L(\varphi)\frac{\partial I}{\partial t}.\]</span> 這便得到動態電感的表達式，其為約瑟夫森相位的函數： <span class="math display">\[L(\varphi) = \frac{\Phi_{0}}{2\pi I_{c}\cos\varphi} = \frac{L_{J}}{\cos\varphi}.\]</span> 其中<span class="math inline">\(L_{J} = L(0) = \frac{\Phi_{0}}{2\pi I_{c}}\)</span>為約瑟夫森接面的一個特性參數，稱為約瑟夫森電感。 基於約瑟夫森接面與非線性電感的相似性，當超流經約瑟夫森接面時，其儲存的能量可以計算<span class="citation" data-cites="tinkham_introduction_2015">(<a href="#/參考文獻" role="doc-biblioref" onclick="">Tinkham 2015</a>)</span>。 超導相位演進方程式類似於法拉第定律：</p>
+<p><span class="math display">\[V = \frac{d\Phi}{dt}.\]</span> 假設在時間 <span class="math inline">\(t_{1}\)</span> 時，約瑟夫森相位為 <span class="math inline">\(\varphi_{1}\)</span> ；在較晚的時間 <span class="math inline">\(t_{2}\)</span> ，約瑟夫森相位演變為 <span class="math inline">\(\varphi_{2}\)</span> 。接面的能量增加等於對面點所做的功：</p>
+<p><span class="math display">\[\Delta E = \int\limits_{t_{1}}^{t_{2}}VIdt = \int\limits_{t_{1}}^{t_{2}}VId\Phi = \int\limits_{\varphi_{1}}^{\varphi_{2}}I_{c}\sin\varphi d\left( \Phi_{0}\frac{\varphi}{2\pi} \right) = \frac{- \left( \Phi_{0}I_{c} \right)}{2\pi}\Delta\cos\varphi.\]</span></p>
+<p>這表明約瑟夫森接面中能量的變化僅取決於接面的初始狀態和最終狀態，而與路徑無關。因此，約瑟夫森接面中儲存的能量是一種狀態函數，其定義如下：</p>
+<p><span class="math display">\[E(\varphi) = \frac{- \left( \Phi_{0}I_{c} \right)}{2\pi}\cos\varphi ＝ - E_{J}\cos\varphi.\]</span></p>
+<p><span class="math inline">\(E_{J} = \left| {E(0)} \right| = \frac{\Phi_{0}I_{c}}{2\pi}\)</span>是約瑟夫森接面的特徵參數，稱為約瑟夫森能量（Josephson energy）。且如<span class="math inline">\(E_{J} = L_{J}I_{c}^{2}\)</span>所示，它與約瑟夫森電感有關。此外，也常用另一個等價的定義<span class="math inline">\(E(\varphi) = E_{J}\left( 1 - \cos\varphi \right)\)</span>。 與非線性磁場線圈電感在電流通過時在其磁場中積累潛在能量不同，在約瑟夫森接面的情況下，超導電流並不產生磁場其儲存的能量來自於載荷載體的動能。</p>
+<h3 id="subsection-RCSJ-model">電阻電容並聯連接模型 Resistively and Capacitively Shunted Junction Model</h3>
+<p>阻電容並聯連接模型（Resistively and Capacitively Shunted Junction, RCSJ model）或簡稱為並聯連接模型<span class="citation" data-cites="mccumber_effect_1968 chakravarty_quantum_1988">(<a href="#/參考文獻" role="doc-biblioref" onclick="">McCumber 1968</a>; <a href="#/參考文獻" role="doc-biblioref" onclick="">Chakravarty et al. 1988</a>)</span>，是描述約瑟夫森接面的經典模型之一。該模型將約瑟夫森接面視為一個具有電阻（<span class="math inline">\(R\)</span>）、電容（<span class="math inline">\(C\)</span>）和約瑟夫森電感（<span class="math inline">\(L_{J}\)</span>）的並聯電路，除了基本約瑟夫森關係<a href="#/eq-1st-josephson" class="ref">[eq-1st-josephson]</a>，<a href="#/eq-sc-phase-evolution" class="ref">[eq-sc-phase-evolution]</a> 外，還包含了實際約瑟夫連接的交流阻抗效應。這個模型能夠捕捉到接面在不同操作條件下的動態行為，特別是在存在外部電壓和噪聲時的響應。</p>
+<p>依據戴維寧定理（Thévenin’s theorem）<span class="citation" data-cites="johnson_origins_2003">(<a href="#/參考文獻" role="doc-biblioref" onclick="">Johnson 2003</a>)</span>， 接面的交流阻抗可由一個電容與一個並聯電阻來表示，這兩者均與理想約瑟夫森接面並聯<span class="citation" data-cites="barone_physics_1996">(<a href="#/參考文獻" role="doc-biblioref" onclick="">Barone and Paternò 1996</a>)</span>。電流驅動的完整表達式 <span class="math inline">\(I_{\text{ext}}\)</span>變為：</p>
+<p><span class="math display">\[I_{\text{ext}} = I_{s} + I_{R} + I_{C} = I_{c}\sin(\varphi) + \frac{V}{R} + C_{J}\frac{dV}{dt}.\]</span></p>
+<p>其中<span class="math inline">\(I_{C}\)</span>項為接面等效電容（effective capacitance）<span class="math inline">\(C_{J}\)</span>帶有的位移電流（displacement current），<span class="math inline">\(I_{R}\)</span>項為接面等效電阻（effective resistance）<span class="math inline">\(R\)</span>帶有的正常電流（normal current）。</p>
+<p>根據克希荷夫電路定律（Kirchhoff Circuit Laws），流過接面的總電流 <span class="math display">\[I\]</span> 可寫為： <span class="math display">\[I = I_{s} + I_{R} + I_{C}\]</span>. <span id="eq-rcsj-kcl"></span></p>
+<p>其中 <span class="math display">\[I_{s} = I_{c}\sin(\varphi)\]</span> 為超導電流，<span class="math display">\[I_{R} = \frac{V}{R}\]</span> 為流過電阻的電流，<span class="math display">\[I_{C} = C\frac{dV}{dt}\]</span> 為流過電容的電流。將 <span class="math display">\[V = \frac{ħ}{2e}\frac{d\varphi}{dt}\]</span> 代入，得到 RCSJ 模型核心方程：</p>
+<p><span class="math display">\[I = I_{c}\sin(\varphi) + \frac{ħ}{2eR}\frac{d\varphi}{dt} + \frac{ħC}{2e}\frac{d^{2}\varphi}{dt^{2}}\]</span>. <span id="eq-rcsj-core"></span></p>
+<p>此方程為非線性微分方程，描述約瑟夫森接面在施加電流下的動態行為。RCSJ 模型能良好解釋約瑟夫森接面的 I–V 特性，包括遲滯（hysteresis）與電壓跳變（voltage jumps）。</p>
+<p><strong>物理意義：</strong></p>
+<ul>
+<li><p><strong><span class="math inline">\(I_{c}\sin(\varphi)\)</span>項：</strong>代表超導電流，是約瑟夫森效應的量子本質；使得接面在零電壓下亦能傳輸電流，直至電流達臨界值<span class="math inline">\(I_{c}\)</span>。</p></li>
+<li><p><strong><span class="math inline">\(\frac{ħ}{2eR}\frac{d\varphi}{dt}\)</span>項：</strong> 代表正常電流，描述接面在電壓態下的耗散；電阻<span class="math inline">\(R\)</span>反映準粒子激發與能量耗散。</p></li>
+<li><p><strong><span class="math inline">\(\frac{ħC}{2e}\frac{d^{2}\varphi}{dt^{2}}\)</span>項：</strong> 代表電容電流，描述接面的電容效應；電容<span class="math inline">\(C\)</span>決定接面對電壓變化的響應速度，並在某些情況下導致 I–V 特性的遲滯。</p></li>
+</ul>
+<p>RCSJ 模型是理解 DC SQUID 工作原理的基礎，因 SQUID 的響應直接取決於內部約瑟夫森接面的動態行為。透過分析此模型，可預測 SQUID 的電壓響應、臨界電流調製與雜訊特性。</p>
+<h3 id="subsection-josephson-penetration-depth">約瑟夫森穿透深度 Josephson Penetration Depth</h3>
+<p>約瑟夫森穿透深度(Josephson penetration depth)描述了外加磁場穿透長約瑟夫森接面之典型長度。它通常以<span class="math inline">\(\lambda_{J}\)</span> 表示，並由下列公式給出：</p>
+<p><span class="math display">\[\lambda_{J} = \sqrt{\frac{\Phi_{0}}{2\pi\mu_{0}d'j_{c}}},\]</span></p>
+<p>其中<span class="math inline">\(\Phi_{0}\)</span>為磁通量量子，<span class="math inline">\(j_{c}\)</span>為臨界超導電流密度（critical supercurrent density, <span class="math inline">\(\frac{A}{m^{2}}\)</span> ），而<span class="math inline">\(d'\)</span>則代表超導電極的電感<span class="citation" data-cites="weihnacht_influence_1969">(<a href="#/參考文獻" role="doc-biblioref" onclick="">Weihnacht 1969</a>)</span>：</p>
+<p><span class="math display">\[d' = d_{I} + \lambda_{1}\tanh(\frac{d_{1}}{2\lambda_{1}}) + \lambda_{2}\tanh(\frac{d_{2}}{2\lambda_{2}})\]</span></p>
+<p>其中<span class="math inline">\(d_{I}\)</span>為約瑟夫森勢壘（Josephson barrier）的厚度（通常為絕緣體），<span class="math inline">\(d_{1}\)</span> 和<span class="math inline">\(d_{2}\)</span> 分別為超導電極的厚度，而<span class="math inline">\(\lambda_{1}\)</span>和 <span class="math inline">\(\lambda_{2}\)</span>則為其倫敦穿透深度（London penetration depths）。若臨界電流密度非常低，約瑟夫森穿透深度通常在數微米至數毫米之間<span class="citation" data-cites="buckel_supraleitung__2004">(<a href="#/參考文獻" role="doc-biblioref" onclick="">Buckel and Kleiner 2004</a>)</span>。</p>
+</section>
+<section id="section-squid-as-probe" class="slide level2">
+<h2>超導量子干涉儀作為CPR探測工具 SQUID as a Probe for CPR</h2>
+<p>超導量子干涉儀（Superconducting Quantum Interference Device, SQUID），是應用約瑟夫森效應最成功的元件之一，其對磁通量具有極高的靈敏度，其運作不僅僅是受到量子效應的影響，而是在宏觀、可測量的尺度上由這些效應所根本定義。它作為磁通量偵測器，具有無與倫比的靈敏度，能夠測量到僅有幾個飛特斯拉 (femtotesla) 的微弱磁場，這在從生物磁學 (biomagnetism) 和地球物理探測 (geophysical surveying) 到基礎物理和量子計算等領域開闢了新的前沿。</p>
+<p>本章節將從SQUID的基本原理開始，探討其在CPR（臨界電流-相位關係）測量中的應用。</p>
+<h3 id="subsection-flux-quantization">超導環中的磁通量量子化 Fluxoid Quantization in a Superconducting Ring</h3>
+<p>當超導體被製成閉合迴路或環形時，量子相位 <span class="math inline">\(\varphi(\overset{\rightarrow}{r})\)</span> 的宏觀性質引出了另一個深刻的結果。宏觀波函數 <span class="math inline">\(\Psi(\overset{\rightarrow}{r})\)</span> 在空間中任何一點都必須是單值的 (single-valued) 這一基本要求意味著，如果沿著超導體內的任何閉合路徑 C 繞行並回到起點，波函數的相位只能改變 <span class="math inline">\(2\pi\)</span> 的整數倍。在數學上，此條件表示為： <span class="math display">\[\oint_{C}\nabla\varphi \cdot d\overset{\rightarrow}{l} = 2\pi n\]</span> 其中 n 為任意整數。這是由波函數結構所施加的拓撲約束。</p>
+<p>這個相位約束可以透過庫柏對（電荷 <span class="math inline">\(q = 2e\)</span>）的正則動量 (canonical momentum) 的表達式與電磁場聯繫起來，該表達式包含來自磁向量位 (magnetic vector potential) <span class="math inline">\(\overset{\rightarrow}{A}\)</span> 的貢獻。超導電流的速度與相位的梯度及向量位有關。將此關係沿閉合迴路 C 積分，可導出一個稱為磁通量 (magnetic fluxoid) 的量的量子化： <span class="math display">\[\oint_{C}\left( \Lambda{\overset{\rightarrow}{J}}_{s} + \overset{\rightarrow}{A} \right) \cdot d\overset{\rightarrow}{l} = n\frac{h}{2e} = n\Phi_{0}\]</span> 其中，<span class="math inline">\({\overset{\rightarrow}{J}}_{s}\)</span> 是超導電流密度 (supercurrent density)，<span class="math inline">\(\Lambda\)</span> 是一個與材料性質相關的常數，而 <span class="math inline">\(\Phi_{0} = \frac{h}{2e} \approx 2.07 \times 10^{- 15}\text{ Wb}\)</span> 是磁通量量子 (magnetic flux quantum)。磁通量量子分母中出現電荷 2e，是庫柏對理論最早且最直接的證明之一。</p>
+<p>對於一個厚的超導環（其厚度遠大於磁穿透深度 (magnetic penetration depth)），積分路徑 C 可以選擇在超導材料深處，那裡的屏蔽電流已衰減為零，即 <span class="math inline">\({\overset{\rightarrow}{J}}_{s} = 0\)</span>。在這個重要的極限下，磁通量量子化條件簡化為穿過迴路的磁通量 <span class="math inline">\(\Phi\)</span> 本身的量子化。對向量位項應用斯托克斯定理 (Stokes” theorem) (<span class="math inline">\(\oint_{C}\overset{\rightarrow}{A} \cdot d\overset{\rightarrow}{l} = \int_{S}\left( \nabla \times \overset{\rightarrow}{A} \right) \cdot d\overset{\rightarrow}{S} = \int_{S}\overset{\rightarrow}{B} \cdot d\overset{\rightarrow}{S} = \Phi\)</span>)，條件變為： <span class="math display">\[\Phi = n\Phi_{0},\text{  }n = \pm 1, \pm 2,\ldots\]</span> 此結果指出，困在超導環內的磁通量不能取任意值，而是被限制為基本通量量子的整數倍。這個宏觀量子約束與約瑟夫森效應一起，是所有 SQUID 運作所依據的核心物理原理。</p>
+<h3 id="subsection-dc-squid">直流超導量子干涉儀 DC SQUID</h3>
+<p>SQUID 主要有兩種類型：直流（DC）和射頻（RF）。RF SQUID 只需要一個約瑟夫森接面（超導穿隧接面），這可能使其生產成本較低，但靈敏度較低。直流SQUID（DC SQUID）的基本結構是在一個超導環路中並聯兩個約瑟夫森接面，如 <a href="#/fig-squid-schematic" class="ref">[fig-squid-schematic]</a> 所示。</p>
+<figure>
+<p>
+<img src="Images/SQUID_schematic.png" style="width:70.0%">
+</p>
+<figcaption>
+<p>
+DC SQUID示意圖：兩個約瑟夫森接面（以叉號表示）並聯於一個電感為 L 的超導環上。偏置電流（bias current） <span class="math inline"><em>I</em></span> 分流通過兩個臂，外加磁通量 <span class="math inline"><em>Φ</em><sub>ext</sub></span> 穿過環路。 圖片來源：IMS, KIT<span class="citation" data-cites="kit_squid_schematic">[kit_squid_schematic]</span>
+</p>
+</figcaption>
+</figure>
+<p><span id="fig-squid-schematic"></span></p>
+<p>直流超導量子干涉儀（DC SQUID）於 1964 年由福特研究實驗室（Ford Research Labs）的 Robert Jaklevic、John J. Lambe、James Mercereau 和 Arnold Silver 所發明，此後於 1962 年由 Brian Josephson 提出約瑟夫森效應，並於 1963 年由 John Rowell 和 Philip Anderson 在貝爾實驗室（Bell Labs）製造了第一個約瑟夫森接面<span class="citation" data-cites="anderson_probable_1963">(<a href="#/參考文獻" role="doc-biblioref" onclick="">Anderson and Rowell 1963</a>)</span>。SQUID的運作基於兩個宏觀量子現象：超導環路中的磁通量量子化，以及流經兩個接面的超導電流的量子干涉。</p>
+<p>而超導迴路中若並聯兩個約瑟夫森接面，基於直流約瑟夫森效應，在沒有任何外部磁場的情況下，輸入電流（input current）<span class="math inline">\(I_{\text{input}}\)</span>會平均分佈到兩個分支。若對超導迴路施加一個小的外部磁場，則會開始在迴路中循環一個屏蔽電流（screening current）<span class="math inline">\(I_{s}\)</span>，該電流會產生一個抵銷外加磁通量的磁場，並創造一個與外部磁通量成正比的額外約瑟夫森相位。感應電流（induced current）的方向與<span class="math inline">\(I\)</span>在超導迴路的一個分支中相同，而在另一個分支中與 <span class="math inline">\(I\)</span> 相反；總電流變為 <span class="math inline">\(\frac{1}{2}I_{\text{input}} + I_{s}\)</span> 在某一分支，而<span class="math inline">\(\frac{1}{2}I_{\text{input}} - I_{s}\)</span> 在另一分支。一旦任一分支中的電流超過約瑟夫森接面的臨界電流<span class="math inline">\(I_{c}\)</span>，則在接面上會出現電壓。</p>
+<p>現在假設外部磁通量進一步增加，直到超過<span class="math inline">\(\Phi_{0}\)</span>，即磁通量量子的一半。由於超導迴路所包圍的磁通量必須是磁通量量子的整數倍，因此 SQUID 不再顯著屏蔽磁通量，而是能量上更傾向於將其增加到<span class="math inline">\(\Phi_{1}\)</span>。此時電流反向流動，抵禦了所容許的磁通量<span class="math inline">\(\Phi_{2}\)</span> 與略超過 <span class="math inline">\(\Phi_{3}\)</span> 的外部磁場之間的差異。隨著外部磁場的增加，電流逐漸減小，當磁通量剛好為 <span class="math inline">\(\Phi_{4}\)</span> 時電流為零，並且當外部磁場進一步增加時，電流再次反向。因此，電流的方向會週期性地改變，每當磁通量增加半整數倍數的 <span class="math inline">\(\Phi_{5}\)</span> 時就會改變一次，在最大電流時每增加半整數加整數倍數的 <span class="math inline">\(\Phi_{6}\)</span> 時會改變一次，而在整數倍數時電流為零。</p>
+<p>若輸入電流大於<span class="math inline">\(I_{c}\)</span>，則 SQUID 始終運作於電阻模式。此時，電壓即為外加磁場的函數，且週期等於<span class="math inline">\(\Phi_{0}\)</span>。由於直流 SQUID 的電流-電壓特性（current-voltage characteristic）具有遲滯現象（hysteretic），故在接面間連接一個並聯電阻<span class="math inline">\(R\)</span>以消除遲滯（在內稟電阻（intrinsic resistance）足夠的情況下）。屏蔽電流為應用磁通量除以環路的自感。因此<span class="math inline">\(\Delta\Phi\)</span>可估算為<span class="math inline">\(\Delta V\)</span>磁通量至電壓轉換器）<span class="citation" data-cites="de_lacheisserie_magnetism__2002 clarke_squid_2004">(<a href="#/參考文獻" role="doc-biblioref" onclick="">De Lacheisserie, Gignoux, and Schlenker 2002</a>; <a href="#/參考文獻" role="doc-biblioref" onclick="">Clarke and Braginski 2004</a>)</span> ，如下所示：</p>
+<p><span class="math display">\[\begin{array}{r}
+\Delta V = R \cdot \Delta I, \\
+2 \cdot \Delta I = 2 \cdot \frac{\Delta\Phi}{L}, \\
+\Delta V = \frac{R}{L} \cdot \Delta\Phi.
+\end{array}\]</span> 其中 <span class="math inline">\(L\)</span> 為超導環路的自感（self inductance），本節的討論假設迴路中存在完美的磁通量量子化。然而，這僅對具有較大自感的較大迴路才成立。根據上述關係，這也意味著電流和電壓變化較小。實際上，迴路的自感<span class="math inline">\(L\)</span>並不這麼大。一般情況可通過引入一個參數</p>
+<p><span class="math display">\[\lambda = \frac{i_{c}L}{\Phi_{0}}\]</span></p>
+<p>其中<span class="math inline">\(i_{c}\)</span>為SQUID的臨界電流。通常<span class="math inline">\(\lambda\)</span>為一個數量級<span class="citation" data-cites="de_waele_quantum-interference_1969">(<a href="#/參考文獻" role="doc-biblioref" onclick="">De Waele and De Bruyn Ouboter 1969</a>)</span>。</p>
+<h3 id="subsection-symmetric-dc-squid">對稱直流 SQUID 的理論模型 Theoretical Model of Symmetric DC SQUIDs</h3>
+<p>直流 SQUID，如<a href="#/fig-squid-schematic" class="ref">[fig-squid-schematic]</a> 示意圖所示，由一個幾何自感為 L 的閉合超導迴路組成，該迴路被兩個並聯的約瑟夫森接面 JJ1 和 JJ2 中斷。偏置電流 <span class="math inline">\(I_{b}\)</span> 從迴路一側注入，從另一側導出，導致電流分流並流經包含接面的兩個臂。</p>
+<p>對於一個理想的對稱SQUID（即兩個接面完全相同），具體來說，假設滿足以下條件：</p>
+<ol type="1">
+<li><p><strong>相同的接面</strong>：兩個約瑟夫森接面具有相同的臨界電流 (<span class="math inline">\(I_{c1} = I_{c2} = I_{c}\)</span>)、正常態電阻 (<span class="math inline">\(R_{N1} = R_{N2} = R_{N}\)</span>) 和電容 (<span class="math inline">\(C_{1} = C_{2} = C\)</span>)。</p></li>
+<li><p><strong>對稱的電感</strong>：總迴路電感 <span class="math inline">\(L\)</span> 被認為在干涉儀的兩個臂之間平均分配，因此臂 1 的電感為 <span class="math inline">\(L_{1} = \frac{L}{2}\)</span>，臂 2 的電感為 <span class="math inline">\(L_{2} = \frac{L}{2}\)</span>。</p></li>
+</ol>
+<h3 id="subsection-total-cpr-derivation">總電流-相位關係的推導 Derivation of the Total Current- Phase Relation</h3>
+<p>直流 SQUID 的核心特性是其總電流-相位關係，它描述了總超導電流如何同時依賴於一個有效相位差和磁通量。推導過程始於對對稱 SQUID 迴路應用克希荷夫電流定律 (Kirchhoff’s current law) 和磁通量量子化條件。</p>
+<p>假設接面具有標準的正弦 CPR，則通過兩個臂的超導電流 <span class="math inline">\(I_{1}\)</span> 和 <span class="math inline">\(I_{2}\)</span> 為： <span class="math display">\[I_{1} = I_{c}\sin(\varphi_{1})\]</span> <span class="math display">\[I_{2} = I_{c}\sin(\varphi_{2})\]</span> 其中 <span class="math inline">\(\varphi_{1}\)</span> 和 <span class="math inline">\(\varphi_{2}\)</span> 分別是 JJ1 和 JJ2 兩端的規範不變相位差。流經 SQUID 的總超導電流 <span class="math inline">\(I_{s}\)</span> 是兩個並聯支路電流的總和： <span class="math display">\[I_{s} = I_{1} + I_{2} = I_{c}\left( \sin\varphi_{1} + \sin\varphi_{2} \right)\]</span></p>
+<p>相位差 <span class="math inline">\(\varphi_{1}\)</span> 和 <span class="math inline">\(\varphi_{2}\)</span> 並非獨立，它們透過穿過迴路的磁通量 <span class="math inline">\(\Phi\)</span> 耦合。宏觀波函數的單值性要求，沿任何閉合超導迴路積分的總相位變化必須是 <span class="math inline">\(2\pi\)</span> 的整數倍。當應用於通過兩個接面的 SQUID 迴路時，這個拓撲約束直接導致規範不變相位之間的以下關係： <span class="math display">\[\varphi_{2} - \varphi_{1} = \frac{2\pi\Phi}{\Phi_{0}} + 2n\pi\]</span></p>
+<p>使用三角恆等式 <span class="math inline">\(\sin A + \sin B = 2\sin(\frac{A + B}{2})\cos(\frac{A - B}{2})\)</span>，可得： <span class="math display">\[I_{s} = 2I_{c}\sin(\frac{\varphi_{1} + \varphi_{2}}{2})\cos(\frac{\varphi_{2} - \varphi_{1}}{2})\]</span> 將磁通約束代入餘弦項，得到： <span class="math display">\[\begin{aligned}
+I_{s} = &amp; 2I_{c}\sin(\frac{\varphi_{1} + \varphi_{2}}{2})\cos(\frac{\pi\Phi}{\Phi_{0}}) \\
+= &amp; 2I_{c}\sin(\varphi_{1} + \frac{\pi\Phi}{\Phi_{0}})\cos(\frac{\pi\Phi}{\Phi_{0}})
+\end{aligned}\]</span></p>
+<p>這個方程式是對稱直流 SQUID的總電流-相位關係。</p>
+<h3 id="subsection-squid-critical-current-modulation">SQUID 臨界電流的磁通調變 Flux Modulation of SQUID Critical Current</h3>
+<p>整個 SQUID 的臨界電流，我們表示為 <span class="math inline">\(I_{\max(\Phi)}\)</span>，是在給定磁通量 <span class="math inline">\(\Phi\)</span> 下，總超導電流 <span class="math inline">\(I_{s}\)</span> 能達到的最大值。從總 CPR 中，我們可以直接寫出 SQUID 臨界電流的表達式： <span class="math display">\[I_{\max(\Phi)} = 2I_{c}\left| {\cos(\frac{\pi\Phi}{\Phi_{0}})} \right|\]</span> 其中 <span class="math inline">\(\Phi_{0} = \frac{h}{2e}\)</span> 是磁通量量子。此調變是庫柏對波函數通過兩條路徑發生建設性與破壞性干涉的直接結果。 這個基本方程式描述了 SQUID 臨界電流作為穿過迴路的磁通量的函數的週期性調變。此關係的關鍵特徵是：</p>
+<ul>
+<li><p><strong>週期性</strong>：臨界電流是磁通量 <span class="math inline">\(\Phi\)</span> 的週期函數，週期恰好為一個磁通量量子 <span class="math inline">\(\Phi_{0}\)</span>。測得的臨界電流每次振盪對應於磁通量變化一個 <span class="math inline">\(\Phi_{0}\)</span>。</p></li>
+<li><p><strong>建設性干涉</strong>：當磁通量是磁通量量子的整數倍，即 <span class="math inline">\(\Phi = n\Phi_{0}\)</span>（n 為整數）時，臨界電流達到其絕對最大值 <span class="math inline">\(2I_{c}\)</span>。在這些磁通值下，餘弦項為 <span class="math inline">\(\pm 1\)</span>。</p></li>
+<li><p><strong>破壞性干涉</strong>：當磁通量是磁通量量子的半整數倍，即 <span class="math inline">\(\Phi = \left( n + \frac{1}{2} \right)\Phi_{0}\)</span> 時，臨界電流達到其最小值 0。在這些點上，餘弦項為 0。</p></li>
+</ul>
+<p>這種行為是宏觀量子干涉的直接而明確的體現。SQUID 作為庫柏對的量子干涉儀，其功能類似於邁克生 (Michelson) 或馬赫-曾德 (Mach-Zehnder) 干涉儀對光子的作用。</p>
+</section>
+<section id="section-non-idealities-impact" class="slide level2">
+<h2>非理想性對 SQUID 性能的影響 (Impact of Non-Idealities on SQUID Performance)</h2>
+<p>真實世界中 SQUID 的性能和行為受到非理想因素的顯著影響，其中最主要的是超導迴路的有限電感和熱漲落 (thermal fluctuations) 的效應。</p>
+<h3 id="subsection-finite-loop-inductance">有限迴路電感：屏蔽參數 <span class="math inline">\(\beta_{L}\)</span> Finite Loop Inductance: The Screening Parameter <span class="math inline">\(\beta_{L}\)</span></h3>
+<p>在任何物理 SQUID 中，連接兩個約瑟夫森接面的超導迴路都具有非零的幾何自感 L。此電感對裝置對外部磁通量 <span class="math inline">\(\Phi_{\text{ext}}\)</span> 的響應有深遠的影響。當施加外部磁通時，SQUID 會根據冷次定律 (Lenz’s law) 和磁通量量子化原理，在迴路中感應出一個持久的、循環的屏蔽電流 <span class="math inline">\(I_{\text{cir}}\)</span>，以抵抗變化。</p>
+<p>循環電流可以用個別接面電流表示為 <span class="math inline">\(I_{\text{cir}} = \frac{I_{2} - I_{1}}{2}\)</span>。對於具有正弦 CPR 的相同接面，這變為： <span class="math display">\[I_{\text{cir}} = - I_{c}\cos(\varphi_{1} + \frac{\pi\Phi}{\Phi_{0}})\sin(\frac{\pi\Phi}{\Phi_{0}})\]</span></p>
+<p>這揭示了一個自洽的回饋迴路：總磁通量 <span class="math inline">\(\Phi\)</span> 決定了相位差，相位差決定了循環電流 <span class="math inline">\(I_{\text{cir}}\)</span>，而循環電流又反過來貢獻於總磁通量 <span class="math inline">\(\Phi\)</span>。這種內在回饋的強度由無因次的<strong>屏蔽參數</strong> <span class="math inline">\(\beta_{L}\)</span> 量化： <span class="math display">\[\beta_{L} \equiv \frac{2LI_{c}}{\Phi_{0}}\]</span></p>
+<p>參數 <span class="math inline">\(\beta_{L}\)</span> 的值對 SQUID 的行為至關重要：</p>
+<ul>
+<li><p><strong>可忽略的屏蔽 (<span class="math inline">\(\beta_{L} \ll 1\)</span>)</strong>：當電感或臨界電流很小時，自感應磁通量與磁通量量子相比可以忽略不計。在此極限下，<span class="math inline">\(\Phi \approx \Phi_{\text{ext}}\)</span>，SQUID 的行為符合理想模型。</p></li>
+<li><p><strong>強屏蔽 (<span class="math inline">\(\beta_{L} \gg 1\)</span>)</strong>：當電感很大時，屏蔽效應佔主導地位。循環電流會調整以幾乎完全抵消外部磁通的任何變化，使總內部磁通 <span class="math inline">\(\Phi\)</span> 固定在最接近 <span class="math inline">\(\Phi_{0}\)</span> 整數倍的位置。</p></li>
+<li><p><strong>最佳區域 (<span class="math inline">\(\beta_{L} \approx 1\)</span>)</strong>：對於大多數應用，特別是作為靈敏磁力計，需要達到最佳平衡。</p></li>
+</ul>
+<h3 id="subsection-dynamic-behavior-thermal-fluctuations">動態行為與熱漲落 Dynamic Behavior and Thermal Fluctuations</h3>
+<p>當 SQUID 被偏置電流 <span class="math inline">\(I_{b}\)</span> 驅動，且該電流超過其依賴於磁通的臨界電流 <span class="math inline">\(I_{\max(\Phi)}\)</span> 時，它會轉變為電阻態，並在其端點出現有限電壓。為了模擬這種動態、耗散的行為，我們採用<strong>電阻與電容並聯接面 (RCSJ) 模型</strong>。</p>
+<p>在此模型中，每個理想的約瑟夫森元件（由其 CPR 描述）與一個電阻 <span class="math inline">\(R_{N}\)</span>（代表準粒子穿隧）和一個電容 C（代表接面的幾何電容）並聯。通過 SQUID 每個臂的總電流是超導電流、正常（歐姆）電流和位移電流的總和。</p>
+<p>最終的運動方程式是一組耦合的郎之萬方程式 (Langevin equations)： <span class="math display">\[\frac{\Phi_{0}}{2\pi}C\frac{d^{2}\varphi_{1}}{dt^{2}} + \frac{\Phi_{0}}{2\pi R_{N}}\frac{d\varphi_{1}}{dt} + I_{c}\sin\varphi_{1} = \frac{I_{b}}{2} - I_{\text{cir}} + I_{N1}(t)\]</span> <span class="math display">\[\frac{\Phi_{0}}{2\pi}C\frac{d^{2}\varphi_{2}}{dt^{2}} + \frac{\Phi_{0}}{2\pi R_{N}}\frac{d\varphi_{2}}{dt} + I_{c}\sin\varphi_{2} = \frac{I_{b}}{2} + I_{\text{cir}} + I_{N2}(t)\]</span></p>
+<p>這些方程式通過循環電流 <span class="math inline">\(I_{\text{cir}}\)</span> 耦合，完全描述了在存在熱雜訊的情況下 SQUID 的古典動力學。</p>
+<p>然而，真實世界的SQUID往往存在非對稱性（例如 <span class="math inline">\(I_{c1} \neq I_{c2}\)</span> 或環路電感分配不均）。這種非對稱性雖然在傳統應用中常被視為缺陷，卻能將SQUID轉變為一個強大的分析工具。特別是對於一個高度非對稱的SQUID（例如 <span class="math inline">\(I_{c1} \gg I_{c2}\)</span>），其總臨界電流的磁通調變曲線的形狀，會直接反映較弱接面（weak junction）的電流-相位關係。透過精密量測SQUID的臨界電流 <span class="math inline">\(I_{\text{max}}\)</span> 隨外部磁通量 <span class="math inline">\(\Phi_{\text{ext}}\)</span> 的完整調變曲線，我們可以直接重構出弱連結的CPR，<span class="math inline">\(I_{\text{s,weak}}(\varphi)\)</span> <span class="citation" data-cites="Babich2023_LimitationsCPR_NanoLett">(<a href="#/參考文獻" role="doc-biblioref" onclick="">Babich et al. 2023</a>)</span>。這正是本研究採用非對稱SQUID來探測PtTe₂接面非傳統CPR的核心方法學基礎。</p>
+</section>
+<section id="section-asymmetric-squid" class="slide level2">
+<h2>非對稱 SQUID：理論與應用 Asymmetric SQUIDs: Theory and Applications</h2>
+<p>雖然完全對稱的 SQUID 行為提供了量子干涉的基礎理解，但非對稱性的引入卻開啟了更豐富且更複雜的物理現象景觀。無論非對稱性是來自於不可避免的製程缺陷還是有意設計的工程考量，它都能將 SQUID 從簡單的干涉儀轉變為可調式、非互易的量子元件。</p>
+<h3 id="subsection-asymmetry-sources">非對稱性的來源與分類 Sources and Classification of Asymmetry</h3>
+<p>SQUID 的非對稱性主要體現在兩個方面：</p>
+<p><strong>接面非對稱性 (Junction Asymmetry)</strong>：接面非對稱性是指兩個接面的電學參數不同，包括：</p>
+<ol type="1">
+<li><p>臨界電流的差異：<span class="math inline">\(I_{c1} \neq I_{c2}\)</span>，這是最常見的非對稱性形式。</p></li>
+<li><p>正常態電阻的差異：<span class="math inline">\(R_{N1} \neq R_{N2}\)</span>，影響接面的動態行為。</p></li>
+<li><p>接面電容的差異：<span class="math inline">\(C_{1} \neq C_{2}\)</span>，決定接面的響應速度。</p></li>
+</ol>
+<p><strong>迴路非對稱性 (Loop Asymmetry)</strong>：迴路非對稱性是指兩個接面在超導迴路中的位置不同，導致：</p>
+<ol type="1">
+<li><p>迴路電感分配不均：<span class="math inline">\(L_{1} \neq L_{2}\)</span>，其中 <span class="math inline">\(L_{1} + L_{2} = L_{\text{total}}\)</span>。</p></li>
+<li><p>磁通耦合的差異：兩個接面對外部磁場的響應不同。</p></li>
+</ol>
+<h3 id="subsection-asymmetric-squid-theoretical-analysis">非對稱 SQUID 的理論分析 Theoretical Analysis of Asymmetric SQUIDs</h3>
+<p>對於一個非對稱 SQUID，其總電流-相位關係可以表示為： <span class="math display">\[I_{s} = I_{c1}\sin(\varphi_{1}) + I_{c2}\sin(\varphi_{2})\]</span></p>
+<p>考慮接面參數的非對稱性，我們可以引入非對稱參數 <span class="math inline">\(\alpha\)</span>： <span class="math display">\[\alpha = \frac{I_{c1} - I_{c2}}{I_{c1} + I_{c2}}\]</span></p>
+<p>當 <span class="math inline">\(\alpha = 0\)</span> 時，系統退化為對稱 SQUID；當 <span class="math inline">\(\alpha \neq 0\)</span> 時，系統表現出非對稱行為。</p>
+<p>對於中等非對稱性 (<span class="math inline">\(|\alpha| &lt; 1\)</span>)，總臨界電流可以近似表示為： <span class="math display">\[I_{\text{max}(\Phi)} = \left( I_{c1} + I_{c2} \right)\sqrt{\cos^{2}\left( \frac{\pi\Phi}{\Phi_{0}} \right) + \alpha^{2}\sin^{2}\left( \frac{\pi\Phi}{\Phi_{0}} \right)}\]</span></p>
+<h3 id="subsection-highly-asymmetric-squid">高度非對稱 SQUID：相位偏置探測器</h3>
+<p>當一個接面的臨界電流遠大於另一個時（<span class="math inline">\(I_{c}^{\text{Ref }} \gg I_{c}^{\text{Tgt}}\)</span>），非對稱 dc-SQUID 會進入「<strong>相位偏置探測器</strong>（phase-biased detector）」的工作模式：強接面提供近似固定的相位參考，使弱接面（待測接面）的相位幾乎由外加磁通線性掃描，因而能由量測到的 <span class="math inline">\(I_{s}(\Phi)\)</span> 反推較弱接面的電流-相位關係（Current-Phase Relation, CPR）。</p>
+<h4 id="subsubsection-physics-picture">物理圖像與基本假設</h4>
+<p>在高度非對稱極限中，我們將兩接面分別稱為：</p>
+<ul>
+<li><p><strong>參考接面（Reference Junction）</strong>：臨界電流大、CPR 接近正弦或已知，近似呈現相位鎖定。</p></li>
+<li><p><strong>目標接面（Target Junction / Junction-under-test）</strong>：臨界電流小，其 CPR 即為欲分析之對象。</p></li>
+</ul>
+<p>本節先採用最常見、也最利於建立直覺的近似：</p>
+<ol type="1">
+<li><p><strong>忽略迴路電感</strong>（small-inductance limit）：迴路屏蔽效應可忽略，磁通-相位約束為 <span class="math inline">\(\varphi_{1} - \varphi_{2} = 2\pi\frac{\Phi}{\Phi_{0}}\)</span>。</p></li>
+<li><p><strong>參考接面 CPR 近似正弦</strong>：<span class="math inline">\(I_{s}^{\text{Ref }}\left( \varphi_{1} \right) = I_{c}^{\text{Ref }}\sin(\varphi_{1})\)</span>。</p></li>
+<li><p><strong>高度非對稱</strong>：<span class="math inline">\(I_{c}^{\text{Ref }} \gg I_{c}^{\text{Tgt}}\)</span>，且參考接面在臨界附近的斜率足以主導最大化條件，使其相位被「鎖住」。</p></li>
+</ol>
+<h4 id="subsubsection-constraint">總超電流與磁通-相位約束</h4>
+<p>令參考接面相位為 <span class="math inline">\(\varphi_{1}\)</span>、目標接面相位為 <span class="math inline">\(\varphi_{2}\)</span>，則總超電流可寫為</p>
+<p><span class="math display">\[I_{s}\left( \varphi_{1},\varphi_{2} \right) = I_{c}^{\text{Ref }}\left( \varphi_{1} \right) + I_{c}^{\text{Tgt }}\left( \varphi_{2} \right)\]</span></p>
+<p>其中 <span class="math inline">\(I_{c}^{\text{Tgt }}\left( \varphi_{2} \right)\)</span> 是目標接面的 CPR（未知）。在忽略迴路電感的近似下，有</p>
+<p><span class="math display">\[\varphi_{1} - \varphi_{2} = 2\pi\frac{\Phi}{\Phi_{0}} \Rightarrow \varphi_{2} = \varphi_{1} - 2\pi\frac{\Phi}{\Phi_{0}}\]</span></p>
+<p>因此，對每個外加磁通 <span class="math inline">\(\Phi\)</span>，SQUID 的臨界電流（或在準靜態量測下的切換電流近似）可視為一個「最大化問題」：</p>
+<p><span class="math display">\[I_{s}(\Phi) = \max\limits_{\varphi_{1}}\left\lbrack I_{c}^{\text{Ref }}\left( \varphi_{1} \right) + I_{c}^{\text{Tgt }}\left( \varphi_{1} - 2\pi\frac{\Phi}{\Phi_{0}} \right) \right\rbrack\]</span></p>
+<h4 id="subsubsection-phase-lock">高度非對稱極限下的「相位鎖定」與線性掃描</h4>
+<p>若 <span class="math inline">\(I_{c}^{\text{Ref }} \gg I_{c}^{\text{Tgt}}\)</span>，則最大化主要由參考接面決定。對正弦 CPR 的參考接面而言，最大值發生在</p>
+<p><span class="math display">\[\varphi_{1} \approx \frac{\pi}{2}\left( \operatorname{mod}2\pi \right)\]</span></p>
+<p>此時目標接面的相位近似為</p>
+<p><span class="math display">\[\varphi_{2} \approx \frac{\pi}{2} - 2\pi\frac{\Phi}{\Phi_{0}}\]</span></p>
+<p>因此測得的臨界電流可近似寫成「大偏置直流 + 目標 CPR」：</p>
+<p><span class="math display">\[I_{s}(\Phi) \approx I_{c}^{\text{Ref }}\left( \frac{\pi}{2} \right) + I_{c}^{\text{Tgt }}\left( \frac{\pi}{2} - 2\pi\frac{\Phi}{\Phi_{0}} \right)\]</span></p>
+<p>這個近似揭示了相位偏置探測器的核心：外加磁通 <span class="math inline">\(\Phi\)</span> 等效地線性掃描目標接面相位 <span class="math inline">\(\varphi_{2}\)</span>，使得 <span class="math inline">\(I_{s}(\Phi)\)</span> 的磁通依賴形狀直接攜帶 <span class="math inline">\(I_{c}^{\text{Tgt }}(\varphi)\)</span> 的資訊。</p>
+<h4 id="subsubsection-direct-readout">量測切換電流與目標接面 CPR 的對應關係</h4>
+<p>在上式近似成立時，可建立一個簡潔的對應：</p>
+<ol type="1">
+<li><p>定義相位映射 <span class="math display">\[\varphi \equiv \varphi_{2} \approx \frac{\pi}{2} - 2\pi\frac{\Phi}{\Phi_{0}}\]</span></p></li>
+<li><p>用量測得到的臨界電流扣除參考接面的 DC 偏置 <span class="math display">\[I_{c}^{\text{Tgt}(\varphi)} \approx I_{s}(\Phi) - I_{c}^{\text{Ref }}\left( \frac{\pi}{2} \right)\]</span></p></li>
+</ol>
+<p>實作時常見做法是：先以 <span class="math inline">\(\max I_{s}(\Phi)\)</span> 估計 <span class="math inline">\(I_{c}^{\text{Ref }}\left( \frac{\pi}{2} \right)\)</span>（或以獨立量測校準參考接面），再將 <span class="math inline">\(I_{s}(\Phi)\)</span> 平移並重新標定橫軸為相位 <span class="math inline">\(\varphi\)</span>，即可得到目標接面的 CPR 之第一版重建。</p>
+<h4 id="subsubsection-validity">適用條件與常見偏差來源</h4>
+<p>雖然「直讀」非常直觀，但在高精度 CPR 量測中，以下因素會使 <span class="math inline">\(\varphi_{1} \approx \frac{\pi}{2}\)</span> 的鎖定條件失效，導致兩接面 CPR 混疊：</p>
+<ul>
+<li><p><strong>導數鎖定條件不足</strong>：最大化條件與 <span class="math inline">\(\partial\frac{I}{\partial}\varphi\)</span> 有關；若參考接面在臨界附近的斜率不夠主導，則 <span class="math inline">\(\varphi_{1}\)</span> 會偏離 <span class="math inline">\(\frac{\pi}{2}\)</span>，使得 <span class="math inline">\(I_{c}^{\text{Tgt}}\)</span> 的映射失真。</p></li>
+<li><p><strong>非零迴路電感與額外電感</strong>：一旦迴路屏蔽不可忽略，約束關係需加入 <span class="math inline">\(L\)</span> 與循環電流，<span class="math inline">\(\varphi_{1} - \varphi_{2}\)</span> 不再等於 <span class="math inline">\(2\pi\frac{\Phi}{\Phi_{0}}\)</span>。</p></li>
+<li><p><strong>參考接面 CPR 非正弦</strong>：例如 nanobridge 或長接面可能呈現 sawtooth/高諧波，會改變鎖定相位位置與映射規則。</p></li>
+</ul>
+<p>因此，嚴謹的 CPR 萃取通常會以「forward model」方式：保留 <span class="math inline">\(I_{c}^{\text{Tgt }}(\varphi)\)</span> 的參數化（如傅立葉展開）並在每個 <span class="math inline">\(\Phi\)</span> 上做最大化以產生 <span class="math inline">\(I_{c}^{\text{pred }}(\Phi)\)</span>，再對量測曲線做全域擬合，能同時納入電感與參考接面非理想性。</p>
+</section>
+<section id="section-ptte2-properties" class="slide level2">
+<h2>二碲化鉑 (<span class="math inline">\(\text{PtTe}_{2}\)</span>)：拓樸半金屬中的非傳統超導近接效應</h2>
+<p>二碲化鉑（Platinum ditelluride, <span class="math inline">\(\text{PtTe}_{2}\)</span>）是一種過渡金屬二硫屬化物（Transition Metal Dichalcogenide, TMD），屬於通式為 MX₂ 的材料家族，近年來因其豐富的物理內涵而備受關注。在結構上，二碲化鉑結晶為1T相 (CdI₂-type)，呈現出一種由鉑（Platinum, <span class="math inline">\({}_{78}\mathrm{\text{Pt}}\)</span>）原子層夾在兩層碲（Tellurium, <span class="math inline">\({}_{52}\mathrm{\text{Te}}\)</span>）原子層之間的八面體配位層狀結構。這種層狀特性使其可以透過機械剝離法，輕易地獲得從塊材到幾個原子層甚至單原子層厚度的二維薄片，為構建凡德瓦爾異質結構 (van der Waals heterostructures) 和平面型奈米元件提供了極大的可能性。 在電子特性方面，二碲化鉑最引人注目的特徵是它已被理論預測並由角解析光電子能譜 (ARPES) 等實驗技術證實為一種第二類狄拉克半金屬 (Type-II Dirac Semimetal)。與傳統的第一類狄拉克半金屬（如石墨烯 Graphene）中點狀的費米面不同，第二類狄拉克半金屬擁有極度傾斜的狄拉克錐，使得電子和電洞口袋在狄拉克點處相切接觸。這些受晶體對稱性保護的狄拉克點，賦予了二碲化鉑獨特的低能電子態和輸運性質。特別是其拓樸保護的表面態，具有螺旋自旋-動量鎖定（helical spin-momentum locking）的特性，這意味著電子的動量與其自旋方向是鎖定的，賦予了二碲化鉑獨特的低能電子態和輸運性質，使其成為研究拓撲物理與超導性之間交互作用的理想材料平台。</p>
+<figure id="fig-Characterization-of-PtTe2">
+<p>
+<img src="Images/Fig2-Characterization of PtTe2.png" style="width:100.0%">
+</p>
+<figcaption>
+<p>
+II型狄拉克半金屬的二碲化鉑表徵。Ref.<span class="citation" data-cites="yan_lorentz-violating_2017">[yan_lorentz-violating_2017]</span>
+</p>
+</figcaption>
+</figure>
+<p>a, b：I型與II型狄拉克費米子的示意圖。 c, d：二碲化鉑晶體結構的側視圖與頂視圖。綠色球體代表 Pt 原子，紅色球體代表 Te 原子，黑色虛線標示單位晶胞。 e：(001) 平面的體相與投影表面(Brillouin Zone）。紅點（標記 D）顯示三維狄拉克點的位置。 f：室溫下測得的拉曼光譜（Raman spectroscopy）。 g：室溫下二碲化鉑的 X 射線繞射（X-ray diffractometer, XRD）圖譜，插圖為邊長數毫米的單晶樣品照片。 h：電子束能量 70 eV 下的低能量電子衍射（Low-energy electron diffraction, LEED）圖樣。</p>
+<p>值得注意的是，塊材二碲化鉑本身並沒有超導性，然而，在本研究所探討的約瑟夫森接面元件中，二碲化鉑作為「弱連結 (weak link)」區域，其局部超導性主要是透過與具有更高超導轉變溫度的電極（如鈮鈦合金 Niobium–titanium, Nb-Ti）接觸，經由超導近接效應 (superconducting proximity effect) 所誘導產生。這就構成了一個超導體-狄拉克半金屬-超導體 (superconductor-Dirac semimetal-superconductor, S-DSM-S) 的混合結構。</p>
+<p>在這個S-DSM-S混合結構中，超導電流的傳輸是由由二碲化鉑內部獨特的狄拉克費米子所中介的。理論預測，這種由拓樸表面態主導的傳輸機制，會促進多重安德烈夫反射(multiple Andreev reflections, MAR))過程，從而導致一個偏離標準正弦函數的非傳統電流-相位關係<span class="citation" data-cites="Cuozzo2024_MW_Tunable_Diode_PRResearch">(<a href="#/參考文獻" role="doc-biblioref" onclick="">Cuozzo et al. 2024</a>)</span>。此外，外加磁場可以與表面態的自旋相互作用，進而調控CPR的形式，甚至產生約瑟夫森二極體效應（Josephson Diode Effect, JDE），即正反方向的臨界電流不相等（<span class="math inline">\(I_{c}^{+} \neq I_{c}^{-}\)</span>），深入研究二碲化鉑約瑟夫森接面的電學特性，對於理解拓撲半金屬中的近接超導物理，以及探索其在未來量子技術中的應用潛力，具有至關重要的意義。</p>
+<p>因此，本研究的理論假說是：透過將PtTe₂作為弱連結整合進一個非對稱SQUID中，我們不僅能夠直接觀測到其預期中的非正弦CPR，還能利用外部磁場作為調控手段，系統性地研究其拓樸性質如何體現在宏觀的量子輸運現象上。</p>
+<figure>
+<p>
+<img src="Images/Fig3-S-DSM-S.png" style="width:90.0%">
+</p>
+<figcaption>
+<p>
+S-DSM-S約瑟夫森接面示意圖(Type-I)。Ref.<span class="citation" data-cites="li_4-periodic_2018">[li_4-periodic_2018]</span>
+</p>
+</figcaption>
+</figure>
+<p><span id="fig-S-DSM-S"></span> 其中安德烈夫束縛態將超電流從一端超導電極 (S) 傳送到另一端超導電極。在DSM夾層中，沿其中一個狄拉克錐(Dirac cone)錐向右移動的電子（藍色 e）在右側介面可被安德烈夫反射成同一狄拉克錐中向左移動的電洞（橙色 h）。該電洞又可在左側介面被反射回電子。</p>
+<figure>
+<p>
+<img src="Images/Fig4-S-DSM-S Andreev reflections.png" style="width:90.0%">
+</p>
+<figcaption>
+<p>
+狄拉克錐由I型傾斜轉變到II型。Ref.<span class="citation" data-cites="PhysRevB">[PhysRevB]</span>.101.214508
+</p>
+</figcaption>
+</figure>
+<p><span id="fig-S-DSM-S-Dirac-cone"></span> 向右（向左）移動之電子分別以藍色（紅色）標記。插圖顯示兩個狄拉克錐沿 <span class="math inline">\(k_{y}\)</span> 軸朝相反方向傾斜之示意。能量軸位於平面外。與費米能相交之狄拉克錐截面，分別以實線（電子）與虛線（空穴）所示之橢圓標示。狄拉克節點位於 <span class="math inline">\(k_{y}\)</span> 軸上的 <span class="math inline">\(\pm k_{D}\)</span>。下方面板則示意在所示 <span class="math inline">\(\zeta\)</span> 值下狄拉克錐的傾斜情形。</p>
+<h3 id="subsection-ptte2-energy-mismatch">能階不匹配：狄拉克節點遠離費米能階，低能輸運以體相平庸能帶為主</h3>
+<p>雖然 <span class="math inline">\(1T - \text{PtTe}_{2}\)</span> 已由 ARPES 與第一性原理計算確認具有受晶體對稱性保護的 II 型狄拉克錐與相關表面態，但在「化學計量、未特別調控化學勢」的典型塊材條件下，其狄拉克節點能量 <span class="math inline">\(E_{D}\)</span> 往往位於費米能階 <span class="math inline">\(E_{F}\)</span> 的深束縛能處（文獻整理常見尺度為 <span class="math inline">\(|E_{D} - E_{F}| \approx 0.8\text{ eV}\)</span>），使得狄拉克節點附近的線性色散並不直接主宰 <span class="math inline">\(E \approx E_{F}\)</span> 的低能激發與直流輸運。<span class="citation" data-cites="yan_lorentz-violating_2017 xu_nite2_typeii_dirac_2018">(<a href="#/參考文獻" role="doc-biblioref" onclick="">Yan et al. 2017</a>; <a href="#/參考文獻" role="doc-biblioref" onclick="">Xu et al. 2018</a>)</span></p>
+<p>因此，在本研究關心的「近接超導輸運／約瑟夫森超電流」能量尺度（以 <span class="math inline">\(E_{F}\)</span> 附近的準粒子為核心）下，實際參與傳輸的主要是多條穿越 <span class="math inline">\(E_{F}\)</span> 的三維體相能帶所形成之電子/電洞費米口袋；也就是說，<span class="math inline">\(\text{PtTe}_{2}\)</span> 的導電更接近「多能帶半金屬」情境，而非「由拓樸表面態主導」的單一通道輸運。此觀點也與磁輸運與量子震盪分析相一致：在 <span class="math inline">\(\text{PtTe}_{2}\)</span> 的 SdH 等訊號中，對應能帶的 Berry phase 常呈現平庸特徵，並顯示多能帶導電的行為。<span class="citation" data-cites="fei_irptte2_band_perfection_2018 pavlosiuk_ptte2_galvanomagnetic_2018">(<a href="#/參考文獻" role="doc-biblioref" onclick="">Fei et al. 2018</a>; <a href="#/參考文獻" role="doc-biblioref" onclick="">Pavlosiuk and Kaczorowski 2018</a>)</span></p>
+<p><strong>對本研究之意涵</strong>：在未能提供「化學勢已被閘極/摻雜/界面電荷轉移有效拉近 <span class="math inline">\(E_{D}\)</span>」的直接證據前，本論文在解讀 <span class="math inline">\(\text{PtTe}_{2}\)</span> 弱連結所呈現的非正弦 CPR 與可能的約瑟夫森二極體效應（JDE）時，將以「體相多能帶（含自旋軌道耦合、Zeeman 與軌域效應、介面透明度不均、非對稱 SQUID 幾何與自場等）」作為更保守且可檢驗的主導機制框架；拓樸表面態的主導貢獻則視為需額外驗證（例如：閘極可調之臨界電流/正常態電導、厚度依賴、或能譜/表面敏感量測）才能成立的進一步假說。<span class="citation" data-cites="yan_lorentz-violating_2017">(<a href="#/參考文獻" role="doc-biblioref" onclick="">Yan et al. 2017</a>)</span></p>
+</section></section>
+<section id="實驗方法" class="title-slide slide level1 center">
+<h1>實驗方法</h1>
+
+</section>
+
+<section>
+<section id="chapter-experimental-methods" class="title-slide slide level1 center">
+<h1>實驗方法</h1>
+<p>本章詳細闡述本研究所使用的完整實驗流程與設備，涵蓋了從二維材料的取得、奈米元件的製備，到極低溫電學量測系統的架設與操作。</p>
+</section>
+<section id="元件製備-device-fabrication" class="slide level2">
+<h2>元件製備 (Device Fabrication)</h2>
+<p>本節詳述使用機械剝離法得到二碲化鉑薄片，並透過多道微影與沉積步驟完成SQUID元件的完整流程。</p>
+<h3 id="助熔劑生長法-selfflux-method">助熔劑生長法 (Self‐Flux Method)</h3>
+<p>本實驗所使用之二碲化鉑為國立成功大學凝態物理實驗室呂欽山教授所提供<span class="citation" data-cites="hsueh_investigating_2024">(<a href="#/參考文獻" role="doc-biblioref" onclick="">Hsueh et al. 2024</a>)</span>，其使用助熔劑法生長而成。助熔劑法是一種功能強大且廣泛使用的技術，將欲生長晶體的成分（溶質）溶解於合適的溶劑（助熔劑）中，再藉由緩慢冷卻溶液來引發單晶結晶。</p>
+<figure>
+<p>
+<img src="Images/topological_materials.png" style="width:100.0%">
+</p>
+<figcaption>
+<p>
+拓樸材料晶體。Ref.<span class="citation" data-cites="topological_materials">[topological_materials]</span>
+</p>
+</figcaption>
+</figure>
+<p><span id="fig-topological_materials"></span></p>
+</section>
+<section id="機械剝離法-mechanical-exfoliation-method" class="slide level2">
+<h2>機械剝離法 (Mechanical Exfoliation Method)</h2>
+<p>本章將詳細說明本實驗使用機械剝離法 (Mechanical Exfoliation Method) 得到原子級厚度的二維材料層狀薄片 (Flake) 的完整流程與方法，包括基板預處理、膠帶黏貼剝離。</p>
+<h3 id="基板準備-substrate-preparation">基板準備 (Substrate Preparation)</h3>
+<p>本實驗使用的基板為低電阻重參雜 P 型單面矽/熱氧化二氧化矽基板 (NOVA electronics #HS39626-OX：4”, P-type, <span id="100"></span>, 1.0∼ 5.0 × 10−3Ω· 𝑐𝑚 Resistivity, 2850 A°±5% Dry Thermal Oxide)。</p>
+<ol type="1">
+<li><p>將 7×7mm 大小的破片放入 140 °C 的二甲基亞碸 (DMSO, Dimethyl sulfoxide) 溶劑中靜置 1 小時，以去除基板上保護用的正型光阻（MICROPOSIT™ S1813 G2 Photoresists）薄膜。</p></li>
+<li><p>將破片放入 40 °C 的丙酮（Acetone）溶劑中去除 DMSO，約 1 分鐘後再放入異丙醇 (IPA) 溶劑中進行潤洗後取出，接著使用氮氣槍吹乾基板表面。</p></li>
+<li><p>使用Henniker plasma HPT-100電漿處理系統，以氧電漿（<span class="math inline">\(O_{2}\)</span> Plasma）進行基板表面清潔，使用前用100% 運轉功率、50 標準立方公分每分（Standard Cubic Centimeter per Minute, SCCM），進行5分鐘的腔體清潔，過程中需觀察腔體內電漿顏色，以確保管路中沒有氧氣以外的其他氣體。腔體清潔結束後使用100%運轉功率、40 SCCM，進行10分鐘的基板表面清潔。完成後儘速將基板放置於手套箱內開始進行剝離以避免水氣附著。</p></li>
+</ol>
+<h3 id="二維材料剝離-2d-materials-exfoliation">二維材料剝離 (2D Materials Exfoliation)</h3>
+<p>本實驗使用的膠帶為 Nitto SPV-224PR-MJ，以下簡稱藍膠。</p>
+<ol type="1">
+<li><p>確認手套箱內水氧值皆小於 0.5ppm，將零號藍膠 (Tape 0) 膠面朝上固定於平面，用鑷子將夾取二碲化鉑塊材（Bulk）放置於 Tape 0 上。</p></li>
+<li><p>一號藍膠 (Tape 1) 膠面朝下覆蓋於 Tape 0 後使用棉棒輕推表面確保確實兩膠面接觸，撕開兩片膠帶實現層與層的分離。</p></li>
+<li><p>重複步驟 2，直到塊材佈滿大於 7×7mm 大小的面積範圍後將 Tape 0 用另一片藍膠覆蓋後收納備用。</p></li>
+<li><p>將 Tape 1 膠面朝上固定於平面，二號藍膠 (Tape 2) 膠面朝下覆蓋於 Tape 1 後使用棉棒輕推表面確保確實兩膠面接觸，撕開兩片膠帶實現層與層的分離後將 Tape 1 用另一片藍膠覆蓋後收納備用。</p></li>
+<li><p>重複步驟 4，直到塊材分布密度合適，以二碲化鉑為例通常為 Tape 4 或 5。</p></li>
+<li><p>使用電磁加熱烤盤以 120 °C 加熱基板 10 分鐘後靜置 1 分鐘。</p></li>
+<li><p>將基板放置於平面，藍膠膠面朝下並傾斜一小角度使其一側接觸基板後使用棉棒輕推表面，確保膠面與基板表面確實接觸且無氣泡後靜置 5 分鐘。</p></li>
+<li><p>撕開膠帶實現層與層的分離後將基板置於可重複使用真空密封食品壓縮袋，使用手持式真空保鮮機抽真空後拿出手套箱。</p></li>
+<li><p>儘速將基板移動至旋轉塗佈機 (Spin Coater) 使用聚甲基丙烯酸甲酯（Poly(methyl methacrylate), PMMA A6）正向抗蝕劑以 500 rpm 旋轉 5 秒, 以高加速度升速至最終轉速 4000 rpm，此旋塗步驟總時長為 55 秒。</p></li>
+<li><p>使用 180 °C 預烤 (Prebake) 基板 3 分鐘即完成機械剝離流程。</p></li>
+</ol>
+<h3 id="電子束微影-e-beam-lithography-ebl">電子束微影 (E-Beam Lithography, EBL)</h3>
+<p>本研究中所有奈米級圖案的定義，例如對準標記與元件電極，均是透過電子束微影技術完成。整個流程在一台 Raith PIONEER Two 掃描式電鏡/電子束微影系統上執行。以下將詳述其製備、曝光與顯影的具體步驟。</p>
+<h4 id="抗蝕劑準備-resist-preparation">抗蝕劑準備 (Resist Preparation)</h4>
+<p>在進行圖案定義之前，首先須在樣品表面旋塗一層電子束抗蝕劑。本實驗選用聚甲基丙烯酸甲酯 (Poly-methyl methacrylate), PMMA) A6 等級作為正向抗蝕劑。旋塗程序分為兩階段：首先以 500 rpm 的低速旋轉 5 秒，以確保抗蝕劑均勻散佈，隨後以 4000 rpm 的高速旋轉 55 秒，以達到最終所需的厚度。旋塗完成後，樣品被放置於 180°C 的熱板上烘烤 180 秒，目的是為了完全去除抗蝕劑中的溶劑並使其固化。</p>
+<h4 id="圖案曝光-pattern-exposure">圖案曝光 (Pattern Exposure)</h4>
+<p>抗蝕劑準備完成後，樣品被送入 EBL 系統的真空腔體中進行圖案曝光。所有的曝光步驟均在 20 kV 的加速電壓下進行。此流程同樣分為兩步：</p>
+<ol type="1">
+<li><p><strong>對準標記 (Alignment Markers)</strong>：第一步是在樣品上定義大面積的對準標記 (alignment markers)，這些標記將作為後續高精度圖案疊對的基準。為實現快速曝光，此步驟選用了 120 µm 的大光圈 (aperture) 以獲得約 12 nA 的較大電子束流，並採用 370 μC/cm² 的面積劑量 (area dose) 進行寫入。</p></li>
+<li><p><strong>接觸電極 (Contact Electrodes)</strong>：在系統通過對準標記精確鎖定 PtTe₂ 薄片的位置後，進行第二步高解析度的接觸電極圖案曝光。為確保圖案的精細度與邊緣的陡峭度，此步驟換用 30 µm 的小光圈，將束流精細地控制在約 0.3 nA，並以 375 μC/cm² 的劑量進行寫入。</p></li>
+</ol>
+<h4 id="顯影-development">顯影 (Development)</h4>
+<p>曝光完成後，將樣品從系統中取出進行化學顯影，以溶解經電子束照射後分子鏈斷裂的 PMMA 區域。樣品被沉浸於甲基異丁基酮 (MIBK) 與異丙醇 (IPA) 體積比為 1:3 的混合溶液中。整個顯影過程在 23°C 的恆溫環境下精確控制 50 秒。隨後，為終止顯影反應，樣品被迅速轉移至純 IPA 溶液中浸泡 20 秒，以沖洗並去除殘留的顯影劑。完成此步驟後，樣品表面即形成了所需圖案的抗蝕劑模板，可供後續的金屬沉積與舉離 (lift-off) 製程使用。</p>
+</section>
+<section id="金屬沉積與舉離-metal-deposition-and-lift-off" class="slide level2">
+<h2>金屬沉積與舉離 (Metal Deposition and Lift-off)</h2>
+<p>本實驗涉及兩種金屬沉積：</p>
+<ol type="1">
+<li><p><strong>對準標記 (Cr/Au)</strong>：使用一般金屬作為後續製程的定位基準。</p></li>
+<li><p><strong>超導電極 (NbTi)</strong>： 用於與<span class="math inline">\(\text{PtTe}_{2}\)</span>薄片形成接觸。</p></li>
+</ol>
+<h3 id="一般金屬熱蒸鍍沉積與舉離-thermal-evaporation-deposition-and-lift-off-of-normal-metals">一般金屬熱蒸鍍沉積與舉離 (Thermal Evaporation Deposition and Lift-off of Normal Metals)</h3>
+<p>為了能夠在後續的電子束微影 (EBL) 步驟中，將奈米級的電極圖案精確地疊對 (align) 到目標 PtTe₂ 薄片上，我們首先在 SiO₂/Si 基板上製作了一組金屬材質的全域對準標記 (global alignment markers)。</p>
+<p>標記的圖案首先透過 EBL 技術被定義在抗蝕劑層上。在完成顯影後，樣品被送入一台 <strong>Korvus HEX 桌上型物理氣相沉積 (PVD) 系統</strong>中進行金屬沉積。該系統的核心是一個四腔電子束蒸發器，其原理是利用高能電子束在真空環境下直接轟擊並加熱裝有源材料的坩堝，使材料蒸發形成物理氣相沉積。</p>
+<p>為確保標記的穩定性與高對比度，我們採用了雙層金屬結構。在腔體被抽至高真空環境後，依序蒸鍍：</p>
+<ol type="1">
+<li><p><strong>附著層 (Adhesion Layer)</strong>：一層約 10 nm 厚的<strong>鉻 (Cr)</strong>，用以增強標記與基板的附著力。</p></li>
+<li><p><strong>對比層 (Contrast Layer)</strong>：一層約 50 nm 厚的<strong>金 (Au)</strong>，其較高的原子序數能夠在掃描式電子顯微鏡 (SEM) 下提供清晰的二次電子或背向散射電子圖像，從而利於 EBL 系統進行自動識別和對位。</p></li>
+</ol>
+<p>金屬沉積完成後，透過在丙酮中進行<strong>舉離 (lift-off)</strong>，移除抗蝕劑，最終在基板表面留下永久性的 Cr/Au 金屬對準標記。這些標記為所有後續的材料轉移和微影製程提供了一個固定的、高精度的參考坐標系。</p>
+<h3 id="超導金屬的濺鍍沉積與舉離-sputter-deposition-of-superconducting-metals-and-lift-off">超導金屬的濺鍍沉積與舉離 (Sputter Deposition of Superconducting Metals and Lift-off)</h3>
+<p>最終用以連接<span class="math inline">\(\text{PtTe}_{2}\)</span>元件的超導電極，是透過一套包含原位 (in-situ) 介面清潔與磁控濺鍍 (magnetron sputtering) 的整合性製程完成。所有步驟均在 Aja Orion 8 物理氣相沉積 (PVD) 系統中執行，以確保最佳的介面品質。</p>
+<h3 id="介面清潔原位離子銑削-interface-cleaning-in-situ-ion-milling">介面清潔：原位離子銑削 (Interface Cleaning: In-situ Ion Milling)</h3>
+<p>在沉積超導金屬之前，為了確保金屬與<span class="math inline">\(\text{PtTe}_{2}\)</span>材料之間形成一個潔淨、低電阻的歐姆接觸 (Ohmic contact) 介面，我們對樣品進行了一道原位的離子束蝕刻處理。該過程在氬氣（Ar）流量控制在0.4 mTorr的腔體壓力環境下進行，離子源以 600 V 的加速電壓產生離子束，對樣品表面進行持續 30 秒的輕微離子銑削（Ion Milling）。此步驟旨在有效去除先前 EBL 製程中可能殘留的任何抗蝕劑殘渣或樣品表面的自然污染物。</p>
+<h3 id="超導金屬的濺鍍沉積-sputter-deposition-of-superconducting-metals">超導金屬的濺鍍沉積 (Sputter Deposition of Superconducting Metals)</h3>
+<p>介面清潔完成後，樣品維持在高真空環境中，不破壞真空，立即進行超導薄膜的沉積。我們選擇<strong>鈮鈦 (NbTi)</strong> 合金作為超導接觸電極材料。濺鍍製程在 3 mTorr 的氬氣工作壓力下進行。一個 300 W 的直流 (DC) 電源被施加於 NbTi 靶材上，使其原子被濺射並沉積到樣品表面，最終形成一層厚度為 70-120 nm 的均勻薄膜。</p>
+<h3 id="接觸點的舉離-lift-off-for-contacts">接觸點的舉離 (Lift-off for Contacts)</h3>
+<p>完成濺鍍後，樣品從真空系統中取出，並執行最後的舉離步驟以定義出最終的電極圖案。樣品浸泡於丙酮中，以溶解下層的 PMMA 抗蝕劑，並移除覆蓋其上的多餘 NbTi 薄膜。此步驟完成後，僅留下在 EBL 步驟中定義的、且與<span class="math inline">\(\text{PtTe}_{2}\)</span>直接接觸的超導電極結構。</p>
+<h3 id="顯微鏡檢測-microscopy">顯微鏡檢測 (Microscopy)</h3>
+<p>在製程的各個階段，我們使用多種顯微鏡進行檢測與定位：</p>
+<ul>
+<li><strong>光學顯微鏡 (KEYENCE VHX-7000N)</strong>：</li>
+</ul>
+<ol type="1">
+<li><p><strong>尋找與定位二維材料層狀薄片 (Flake)</strong>：完成機械剝離流程後，透過光學顯微鏡 (OM, Optical Microscope) 初步判斷是否有 二碲化鉑 薄片，並使用 VHX-7000N 的連續拍攝功能拍攝基板的四個角落及薄片照片，並得到座標。</p></li>
+<li><p><strong>確認曝光後顯影結果</strong>：完成顯影流程後，透過 OM 判斷曝光結果，確認線寬與曝光劑量是否正確，並使用「量測與標尺」功能拍攝照片並標注量測結果。</p></li>
+<li><p><strong>確認 Markers 蒸鍍後舉離結果</strong>：完成舉離流程後，透過 OM 判斷 Markers 蒸鍍結果，確認 Markers 是否確實舉離無相連部分，並用適當倍率拍攝 Markers 與目標薄片同框的照片以供後續數位化流程使用。</p></li>
+<li><p><strong>確認 Contacts 濺鍍後舉離結果</strong>：完成舉離流程後，透過 OM 判斷 Contacts 濺鍍結果，確認小線寬部分是否確實舉離無相連部分，並使用「量測與標尺」功能拍攝照片並標注量測結果。</p></li>
+<li><p><strong>確認打線結果</strong>：完成打線流程後，透過 OM 判斷打線結果，確認基板上供接線轉接用之銲墊 (Bonding Pad) 和 PCB 上金銲線連接指 (Bonding Finger) 與鋁銲線頭是否確實相連，並檢查鋁銲線無相互接觸以避免短路或形成預期外的電路通路。使用「圖片連接」功能用適當倍率拍攝所有金打線板與基板的照片，以供後續量測時作為線路參考。</p></li>
+</ol>
+<ul>
+<li><strong>原子力顯微鏡 (Park systems NX10)</strong>：在非接觸模式下，用來精確量測PtTe₂薄片的厚度（從而推算層數）以及確認沉積金屬的厚度與表面形貌。</li>
+</ul>
+<p>AFM 在此研究中扮演了兩個關鍵角色：(1) 鑑定機械剝離 (mechanically exfoliated) 的 PtTe₂ 薄片的厚度與層數；(2) 確認蒸鍍金屬電極的厚度、表面粗糙度與邊緣形貌。</p>
+<p>所有 AFM 量測均在<strong>非接觸模式 (non-contact mode)</strong> 下進行，以最小化探針與樣品表面之間的交互作用，從而保護脆弱的二維材料薄片與金屬結構不被物理損傷。</p>
+<p>首先，對於 PtTe₂ 薄片，我們透過量測其表面與周圍 SiO₂ 基板之間的<strong>步階高度 (step height)</strong> 來確定其物理厚度。基於已知的 PtTe₂ 材料層間距，我們可以從量測到的厚度推算出薄片的原子層數。這一步驟對於篩選出符合實驗需求的特定層數（例如單層或少層）的樣品至關重要。</p>
+<p>其次，在完成電極蒸鍍製程後，我們利用 AFM 對接觸金屬 NbTi 的形貌進行檢測。分析的重點包括金屬膜的表面粗糙度 (surface roughness)、顆粒大小 (grain size) 以及電極圖案的邊緣清晰度。同時，透過量測金屬與基板的步階高度，我們可以驗證其實際沉積厚度是否與蒸鍍儀器設定的目標值一致。此項表徵是確保元件具備良好歐姆接觸與電氣性能的關鍵品質控制環節。</p>
+</section>
+<section id="元件特性分析系統-device-characterization-setup" class="slide level2">
+<h2>元件特性分析系統 (Device Characterization Setup)</h2>
+<p>本研究旨在探討特定樣品在低溫環境及外加磁場下的電運輸性質 (Electrical Transport Properties)。為此，我們搭建了一套基於四端點量測法 (Four-Point Probe Method) 又名開爾文測量法（Kelvin sensing）的直流電學量測系統。本章節將詳述其量測原理、實驗架構與操作步驟。</p>
+</section>
+<section id="量測裝置-measurement-setup" class="slide level2">
+<h2>量測裝置 (Measurement Setup)</h2>
+<h3 id="稀釋制冷機-dilution-refrigerator">稀釋制冷機 (Dilution Refrigerator)</h3>
+<p>為實現對樣品在毫開爾文 (milli-Kelvin, mK）溫度區間的量子現象觀測，本研究採用了一套 Bluefors 公司製造的 LD-400 型濕式稀釋制冷系統（Wet Dilution Refrigerator System）。該系統能夠提供約40 mK的穩定基礎溫度（Base Temperature）。提供如此低的實驗環境至關重要，其主要目的有二：第一，確保樣品溫度遠低於其超導轉變溫度 (Tc)10K，使樣品能完全進入並穩定維持在超導態；第二，有效抑制因熱能 (<span class="math inline">\(k_{B}T\)</span>)引起的熱擾動（Thermal Fluctuations），從而降低量子退相干（Quantum Decoherence） 效應，使得如電流-相位關係（Current-Phase Relation） 等微弱的宏觀量子現象（macroscopic quantum effects)）得以被精確地量測。為進一步提升實驗效率，本系統配備了底部裝載快速樣品更換（Bottom-Loading Fast Sample Exchange, FSE） 機構。該機構允許在主制冷系統各級冷盤（如 4K plate 與 Still plate）皆保持在低溫狀態的情況下，獨立地將樣品載台（Sample Holder） 取出更換。相較於需要數日才能完成一次完整熱循環（升溫至室溫再降溫）的傳統方式，FSE 系統將更換樣品所需的週期縮短至14小時 。此功能極大地提高了樣品測試的效率，對於需要進行多輪製程參數迭代與多個元件篩選及特性比對的研究工作至關重要。</p>
+<h3 id="超導磁鐵系統-superconducting-magnet-system">超導磁鐵系統 (Superconducting Magnet System)</h3>
+<p>為研究樣品在不同磁場強度與方向下的物理特性，本實驗系統集成了一套 Bluefors 製造的三維向量磁鐵 (3D Vector Magnet)。該磁鐵系統的核心由三組相互正交的超導線圈構成，能夠在主軸 (Z-axis) 方向上產生最高達 9 特斯拉 (Tesla) 的磁場，並在與之垂直的兩個次軸 (X-axis and Y-axis) 方向上分別產生最高 1 T 的磁場，此即為一組 9-1-1 T 組態。這種三軸向量能力使得我們可以在三維空間中產生任意方向的磁場向量，從而對樣品的各向異性 (anisotropy) 或需要精確磁場對位的現象進行深入探討。</p>
+<p>整個磁鐵系統的驅動與控制由一套 American Magnetics, Inc.&nbsp;(AMI) 的整合式電源供應系統負責。該系統包含三組獨立的磁鐵電源，其輸出電流由一台 AMI Model 430 電源程式控制器進行精密調控。此控制器不僅確保了各軸磁場的穩定性，更允許我們透過電腦程式自動化地控制磁場向量的大小、方向以及場掃描速率 (ramp rate)，以執行複雜的磁場掃描序列。</p>
+<h3 id="低溫線路與客製化-pcb-樣品座-cryogenic-wiring-and-custom-pcb-sample-holder">低溫線路與客製化 PCB 樣品座 (Cryogenic Wiring and Custom PCB Sample Holder)</h3>
+<p>為了在將直流與射頻 (RF) 信號從室溫儀器傳導至毫開爾文溫區的量子元件時，最大程度地抑制傳導熱負載 (conducted heat load) 與電磁雜訊，本實驗搭建了一套多級濾波與熱錨方案。此方案的核心在於混合使用了商業化的低溫濾波器模組與客製化的終端樣品電路板。</p>
+<h4 id="直流低頻線路濾波-dclow-frequency-line-filtering">直流/低頻線路濾波 (DC/Low-Frequency Line Filtering)</h4>
+<p>所有通往樣品的直流與低頻控制線路，都經過一套 QDevil 公司生產的 QFilter 模組進行濾波。此模組被牢固地安裝於稀釋制冷機的混合腔冷盤 (Mixing Chamber plate) 上，以確保信號線及濾波器元件本身都能與 mK 溫區達到充分的熱平衡。我們採用的是標準的雙級濾波組態，將一個 24 通道的低頻 RC 濾波板與一個 24 通道的高頻 LC 濾波板進行串聯。RC 濾波級的衰減起始於 65 kHz，而 LC 濾波級則針對 225 MHz 以上的射頻雜訊提供有效衰減。</p>
+<h4 id="客製化樣品座與高密度線路-custom-sample-holder-and-high-density-wiring">客製化樣品座與高密度線路 (Custom Sample Holder and High-Density Wiring)</h4>
+<p>經過主濾波級後，信號透過一套高密度、模組化的線路連接至安裝有兩個樣品 (2 X PCB) 的客製化樣品座。該線路方案利用了多芯數的 Micro-D 連接器（如 51-pin 及 100-pin）對多達 48 個獨立的信號通道進行整合與管理。在制冷機內部，這些信號透過多組（例如 4 組 12 對）磷青銅雙絞線 (Twisted Pair) 進行傳輸。最終，在室溫端的接口面板，線路被轉換為 Fischer 24-pin 連接器，以便與外部的量測儀器相連。整個信號路徑的設計旨在確保信號完整性、最小化串擾 (crosstalk)，並提供穩固可靠的連接。</p>
+<h4 id="高頻線路濾波-high-frequency-line-filtering">高頻線路濾波 (High-Frequency Line Filtering)</h4>
+<p>對於 RF 控制線路，則採用了不同的濾波策略。在同軸線路中，我們安裝了 Low-loss Infrared (IR) Filter，其主要功能是阻擋來自較高溫級的紅外光子直接輻射到樣品，以降低對量子態的干擾。該濾波器在有效阻擋紅外輻射的同時，對 DC 至 6 GHz 的工作信號僅有小於 1 dB 的插入損耗。</p>
+<h3 id="電流-電壓-i-v-量測系統-current-voltagei-v-measurement-system">電流-電壓 (I-V) 量測系統 (Current-Voltage(I-V) Measurement System)</h3>
+<p>為了全面性地鑑定元件的電學特性，本研究建立的 I-V 量測系統涵蓋了兩個關鍵階段：(1) 在室溫下對大量元件進行快速的初步篩選；(2) 在極低溫環境中對通過初篩的元件進行高精度的特性量測。</p>
+<h4 id="室溫初步特性鑑定-room-temperature-pre-characterization">室溫初步特性鑑定 (Room-Temperature Pre-characterization)</h4>
+<p>在此測試組態中，激勵電流 (stimulus current) 由一台 Keithley 2400 源-量測單元 (SMU) 提供，該儀器被設定於電壓源模式，其輸出經過一個 100 kΩ 的串聯電阻轉換為電流源。此電流隨後被路由至待測元件，而元件上的響應電壓則由一台 Basel Precision Instruments (BPI) Model SP1004 低噪聲差動放大器進行放大，並由 Keithley DMM6500 萬用電錶讀取。為了能對晶片上的大量元件進行高效的自動化測試，整個信號的路由與切換由兩台 Quantum Machines 生產的 24 通道 QDAC 模組構成的矩陣交換器進行管理。</p>
+<h4 id="極低溫-i-v-特性精細量測-cryogenic-i-v-characterization">極低溫 I-V 特性精細量測 (Cryogenic I-V Characterization)</h4>
+<p>低溫下的高精度 I-V 量測，其核心由一套由台夫特理工大學 (Delft University of Technology) 設計與製造、專為低溫量子測量開發的、電池供電的 <strong>IVVI-DAC2-rack</strong> 系統執行。採用電池供電是為了實現與外部儀器電源的電氣隔離 (galvanic isolation)，從根本上消除接地迴路 (ground loops) 和來自電力線的雜訊。</p>
+<p><strong>信號路由與儀器配置 (Signal Routing and Instrument Configuration)</strong> 從低溫恆溫器引出的主線纜，其信號首先被轉換至四個 24-pin 的 Fischer 接口面板。實驗時，根據待測元件的位置，我們從中選取兩路 Fischer 插頭，將其連接至兩台 24 通道的 <strong>Matrix-rack</strong> 模組化跳線盤。這個 Matrix-rack 作為連接低溫世界與室溫儀器的中樞，其內部的 MCX 連接器跳線面板允許我們對每一條獨立的信號線進行靈活、精確的配置。對於一組特定的四端點量測，指定的線路通過 MCX-to-LEMO 轉接線，被分別連接至 IVVI-rack 中的功能模組：</p>
+<ul>
+<li><p><strong>電流源 (Current Source)</strong>: 負責施加偏壓的線路 (I+,I−) 被連接至一個 <strong>S4m 電流源模組</strong>。該模組的輸出電流量程可手動設置，而其精確的電流大小則由 IVVI-rack 內建的 DAC 進行掃描控制。我們採用此模組的<strong>對稱 (symmetric)</strong> 輸出模式進行量測。在此模式下，模組同時提供正、負兩路相對於地電位對稱的電壓輸出，其主要優點是能夠最小化樣品上可能出現的共模電壓 (common-mode voltage)，並有效倍增電壓源的輸出擺幅 (output swing)。</p></li>
+<li><p><strong>電壓量測 (Voltage Measurement)</strong>: 負責感測電壓的線路 (V+,V−) 被連接至一個 <strong>M2b 電壓量測模組</strong>。此模組是專為實現極低的 1/f 噪聲而優化的 JFET 輸入級差動放大器，其輸入電壓噪聲密度在 10 Hz 以上時低至 2 nV/√Hz。</p></li>
+</ul>
+<p>經過 M2b 模組放大後，類比電壓信號從機架的隔離環境中被輸出，並最終由一台 Keithley DMM6500 6½-Digit 數位萬用電錶進行高精度數位化及數據記錄。</p>
+<h3 id="射頻信號產生器-rf-signal-generator">射頻信號產生器 (RF Signal Generator)</h3>
+<p>為了對元件進行射頻下的特性分析，例如 Shapiro steps 量測，本實驗系統整合了一台 Rohde &amp; Schwarz (R&amp;S) SGS100A 射頻信號產生器。該儀器能夠產生頻率範圍從 1 MHz 至 20 GHz 的高穩定度、低相位雜訊的正弦波信號。</p>
+<p>信號的輸出功率可在大範圍內進行精密調控。在送入低溫恆溫器之前，RF 信號會經過一系列的同軸衰減器 (coaxial attenuators) 進行大幅衰減，以確保最終施加於樣品上的功率處於適當的微弱範圍，避免過大的 RF 功率對樣品造成過熱或破壞其超導態。整個 RF 信號路徑的校準與衰減值的計算是確保量測結果準確性的關鍵步驟。</p>
+<h3 id="數據擷取框架qcodes-data-acquisition-framework-qcodes">數據擷取框架：QCoDeS (Data Acquisition Framework: QCoDeS)</h3>
+<p>本研究的所有實驗控制、儀器協調與數據擷取流程，均基於 <strong>QCoDeS</strong> (Quantum Code and Data acquisition System) 軟體框架實現。QCoDeS 是一個基於 Python 的開源框架，由哥本哈根/代爾夫特量子計算聯盟等機構開發，旨在為量子計算與凝聚態物理實驗提供一個標準化、模組化的軟體基礎設施。我們選用此框架的核心原因在於其強大的儀器抽象能力與結構化的數據管理模型，這使得複雜的實驗流程得以簡化，並確保了數據的高度可追溯性。</p>
+<p>在我們的具體實現中，所有實驗儀器（如 IVVI-rack 模組、信號產生器、數位電錶等）均被分別封裝為 QCoDeS 的 <code>Instrument</code> 物件，其可控屬性則對應為 <code>Parameter</code>。整個實驗裝置由一個 <code>Station</code> 物件進行統一管理，其詳細配置透過 YAML 檔案進行定義與載入，確保了實驗設置的靈活性與可重現性。所有的量測序列，無論是簡單的線性掃描還是複雜的多維掃描，都透過 QCoDeS 的 <code>Measurement</code> 上下文管理器執行。在每次量測運行 (<code>run</code>) 開始時，系統會自動擷取所有儀器參數的<strong>快照 (snapshot)</strong>，並與實驗數據一同儲存。</p>
+<p>所有實驗數據都被結構化地儲存於一個以 SQLite 為後端的本地數據庫中。每一個 <code>DataSet</code> 實例都包含完整的元數據、儀器快照以及量測結果，並被賦予一個<strong>全域唯一識別碼 (GUID)</strong>，極大地增強了數據的可追溯性、完整性與共享便利性。</p>
+</section>
+<section id="實驗實現-experimental-realization" class="slide level2">
+<h2>實驗實現 (Experimental Realization)</h2>
+<h3 id="坐標系與磁場定義-coordinate-system-and-magnetic-field-definitions">坐標系與磁場定義 (Coordinate System and Magnetic Field Definitions)</h3>
+<p>在本研究中，我們先定義樣品座標系如下：樣品平面為 <span class="math inline">\(x\)</span>–<span class="math inline">\(y\)</span> 平面， <span class="math inline">\(x\)</span> 軸沿約瑟夫森接面中的電流傳輸方向（從一側超導電極指向另一側）， <span class="math inline">\(y\)</span> 軸沿接面寬度方向，<span class="math inline">\(z\)</span> 軸則垂直於樣品平面，由基板指向探針。</p>
+<p>實驗所使用的三軸向量磁鐵可以在三個互相正交的方向產生磁場分量 <span class="math inline">\(B_{x}\)</span>, <span class="math inline">\(B_{y}\)</span>, <span class="math inline">\(B_{z}\)</span>，其定義如下：</p>
+<ul>
+<li><p><span class="math inline">\(B_{x}\)</span>：平行於電流方向、位於樣品平面內的磁場分量（沿 <span class="math inline">\(x\)</span> 軸）。</p></li>
+<li><p><span class="math inline">\(B_{y}\)</span>：垂直於電流方向、位於樣品平面內的磁場分量（沿 <span class="math inline">\(y\)</span> 軸）。</p></li>
+<li><p><span class="math inline">\(B_{z}\)</span>：垂直於樣品平面的磁場分量（沿 <span class="math inline">\(z\)</span> 軸）。</p></li>
+</ul>
+<p>除非另有特別說明，本文中提到的面內（in-plane）磁場係指由 <span class="math inline">\(\left( B_{x},B_{y} \right)\)</span> 組合而成的平面內磁場，而面外（out-of-plane）磁場則專指 <span class="math inline">\(B_{z}\)</span>。</p>
+<h3 id="i-v-特性-i-v-characteristics">I-V 特性 (I-V Characteristics)</h3>
+<p>元件的基礎直流傳輸特性，是透過在恆定溫度下，量測其電壓-電流 (I-V) 特性曲線來進行鑑定。一條具代表性的 I-V 曲線，是透過緩慢掃描偏壓電流 (<span class="math inline">\(I_{\text{bias}}\)</span>) 並同時記錄元件兩端的電壓降 (V) 而獲得的。</p>
+<p>當偏壓電流從零開始增加時，元件首先展現出零電壓的狀態 (V=0)，此即為直流約瑟夫森效應 (DC Josephson effect) 所導致的無耗散超導電流分支。此超導態可一直維持，直到偏壓電流超過一個臨界閾值，此時接面會突然切換 (switch) 至一個具有有限電壓的電阻態。實驗上觀測到的這個切換點，我們定義為<strong>切換電流 (<span class="math inline">\(I_{\text{sw}}\)</span>)</strong>。</p>
+<p>在切換至電阻態後，I-V 特性遵循一個線性的歐姆關係，其斜率 (<span class="math inline">\(d\frac{V}{d}I\)</span>) 即為接面的<strong>正常態電阻 (<span class="math inline">\(R_{N}\)</span>)</strong>。</p>
+<p>當偏壓電流反向掃描（從高電流向零點掃描）時，我們觀察到顯著的<strong>遲滯現象 (hysteretic behavior)</strong>。接面並不會在 <span class="math inline">\(I_{\text{sw}}\)</span> 處立即返回超導態，而是維持在電阻分支上，直到電流降低至一個更小的值，即<strong>回滯電流 (<span class="math inline">\(I_{r}\)</span>)</strong> 時，才重新「掉落」回零電壓的超導態。</p>
+<p>這種由切換電流與回滯電流之間巨大差異 (<span class="math inline">\(I_{r} \ll I_{\text{sw}}\)</span>) 所構成的遲滯迴線，是<strong>欠阻尼 (underdamped)</strong> 約瑟夫森接面的典型特徵。此行為可由 Stewart-McCumber 模型進行描述，其遲滯程度由無因次的史都華-麥肯柏參數 <span class="math inline">\(\beta_{c} = \left( 2\frac{e}{ħ} \right)I_{c}R_{N}^{2}C\)</span> 所決定。觀測到的顯著遲滯意味著此接面的 <span class="math inline">\(\beta_{c} &gt; 1\)</span>。</p>
+<h3 id="夫朗和斐干涉圖樣-fraunhofer-interference-patterns">夫朗和斐干涉圖樣 (Fraunhofer Interference Patterns)</h3>
+<p>為了進一步探測接面內部超導電流的空間分佈特性，我們量測其臨界電流 <span class="math inline">\(I_{c}\)</span> 對外加磁場的依賴關係。實驗中，我們利用三軸向量磁鐵施加一個沿樣品法向（<span class="math inline">\(z\)</span> 軸）的磁場 <span class="math inline">\(B_{z}\)</span>，並在每一個固定的磁場值下，量測其 I–V 特性曲線。藉由將接面從超導態驅動至電阻態所對應的切換電流 <span class="math inline">\(I_{\text{sw}}\)</span>，我們將其視為該磁場下的臨界電流，即 <span class="math inline">\(I_{c\left( B_{z} \right)} = I_{\text{sw}}\left( B_{z} \right)\)</span>。</p>
+<p>量測結果清楚顯示臨界電流隨 <span class="math inline">\(B_{z}\)</span> 變化的干涉圖樣。在零磁場 (<span class="math inline">\(B_{z} = 0\)</span>) 時，臨界電流達到最大值 <span class="math inline">\(I_{c,0}\)</span>；隨著 <span class="math inline">\(|B_{z}|\)</span> 的增加，<span class="math inline">\(I_{c\left( B_{z} \right)}\)</span> 呈現近似週期性的振盪，並在特定磁場值處壓低至接近零。整體包絡線與光學中的單狹縫夫朗和斐繞射 (Fraunhofer diffraction) 圖樣高度相似，因此我們將此 <span class="math inline">\(I_{c}\)</span>–<span class="math inline">\(B_{z}\)</span> 依賴稱為<strong>夫朗和斐干涉圖樣</strong>。</p>
+<p>在理想的、超導電流沿接面寬度方向均勻分佈的短接面模型中，臨界電流與穿過接面有效面積 <span class="math inline">\(A_{\text{eff}}\)</span> 的磁通量 <span class="math inline">\(\Phi\)</span> 之間的關係可寫成 <span class="math display">\[I_{c}\left( B_{z} \right) = I_{c,0}\left| \frac{\sin(\pi\frac{\Phi}{\Phi_{0}})}{\pi\frac{\Phi}{\Phi_{0}}} \right|,\]</span> 其中 <span class="math inline">\(\Phi = B_{z} \cdot A_{\text{eff}}\)</span> 為穿越接面的磁通量，而 <span class="math inline">\(\Phi_{0} = \frac{h}{2e}\)</span> 為超導磁通量量子。此關係式預測，當 <span class="math inline">\(\Phi = n\Phi_{0}\)</span>（<span class="math inline">\(n\)</span> 為非零整數）時，<span class="math inline">\(I_{c}\)</span> 會出現一系列極小值，其間距直接反映出 <span class="math inline">\(A_{\text{eff}}\)</span> 的大小。</p>
+<p>從實驗數據中，我們觀察到第一個極小值出現在約 <span class="math inline">\(B_{z} \approx 5\)</span> mT 的磁場處。更重要的是，整個干涉圖樣呈現高度的左右對稱性，且在極小值處臨界電流被明顯抑制。這些特徵強烈指向一個結論：本研究中製備的約瑟夫森接面具有相當<strong>均勻的超導電流密度分佈</strong>。進一步地，我們可以利用第一個極小值位置 <span class="math inline">\(B_{\text{min},1}\)</span>，透過 <span class="math display">\[A_{\text{eff}} = \frac{\Phi_{0}}{B_{\text{min},1}}\]</span> 來反推出接面的有效磁學面積，並與其幾何設計尺寸作定量比較。</p>
+</section></section>
+<section id="實驗結果" class="title-slide slide level1 center">
+<h1>實驗結果</h1>
+
+</section>
+
+<section>
+<section id="chapter-results" class="title-slide slide level1 center">
+<h1>實驗結果</h1>
+<p>本章呈現基於 1T-PtTe₂ 的超導量子干涉儀的核心實驗結果。我們將系統性地展示元件的基礎電學特性、夫朗和費干涉圖樣的磁場響應，以及從非對稱 SQUID 量測中重構出的電流-相位關係。這些結果不僅驗證了 PtTe₂ 中存在非傳統的超導行為，更展示了利用外部磁通量對其進行主動調控的可行性。</p>
+</section>
+<section id="section-basic-characterization" class="slide level2">
+<h2>基礎元件表徵</h2>
+<p>約瑟夫森效應（Josephson Effect）自1962年由布賴恩·約瑟夫森（Brian Josephson）預測以來，已成為超導電子學、量子計算及精密計量學的基石 1。該效應描述了當兩塊超導體被一薄層弱連結（Weak Link，如絕緣體、正常金屬或幾何收縮）隔開時，宏觀量子波函數能夠發生穿隧或耦合的現象。這種耦合導致了超電流（Supercurrent）在無電壓降的情況下流過接面，其大小取決於兩側超導體之間的量子相位差 <span class="math inline">\(\varphi\)</span>。</p>
+<p>在理想的理論模型中，約瑟夫森接面的電流-相位關係（Current-Phase Relation, CPR）通常被假定為正弦形式 <span class="math inline">\(I_{s} = I_{c}\sin(\varphi)\)</span>，其中 <span class="math inline">\(I_{c}\)</span> 為臨界電流（Critical Current），代表了接面所能承載的最大無耗散電流。然而，在實際的實驗操作與測量中，我們所觀測到的並非單一且固定的 <span class="math inline">\(I_{c}\)</span>，而是一個受制於熱漲落、電路阻抗、掃描速率及接面內在動力學特性的動態變量。特別是在欠阻尼（Underdamped）接面中，電流—電壓（Current-Voltage, I-V）特性曲線呈現顯著的遲滯迴圈（Hysteresis Loop），導致系統從超導態（Superconducting State）進入電壓態（Voltage State）的電流閾值——即「切換電流」（Switching Current），與從電壓態返回超導態的電流閾值——即「重捕電流」（Re-trapping Current），在數值上並不重合。</p>
+<p>釐清這些電流參數的操作型定義（Operational Definitions），不僅是基礎物理測量的需求，更是理解非互易傳輸（Non-reciprocal transport）、開發超導整流元件（Superconducting Diodes）以及優化超導量子位元（Qubits）讀取機制的基礎。特別是當系統存在磁場、自旋軌道耦合（Spin-Orbit Coupling, SOC）或磁性雜質時，正向與負向偏壓下的電流閾值可能不再對稱，這使得嚴格區分正負方向的切換與重捕電流變得尤為重要。</p>
+<p>本章將從微觀理論模型出發，逐步推導這些電流參數的物理起源，並詳細闡述在實驗上如何通過特定的掃描協定來定義與測量 <span class="math inline">\(I_{\text{sw}}^{+},I_{\text{sw}}^{-},I_{r}^{+},I_{r}^{-}\)</span>。我們將特別關注偏壓電流方向對這些參數的影響，以及它們在絕對值上的對稱或不對稱關係，這些關係直接揭示了系統的時間反演對稱性（Time-Reversal Symmetry, TRS）的破缺情況。</p>
+</section>
+<section id="subsection-iv-characteristics" class="slide level2">
+<h2>四大電流參數的詳盡操作型定義</h2>
+<p>基於上述物理圖像，並結合實驗測量中的掃描程序，我們以下對四個關鍵電流參數進行嚴格的操作型定義。這些定義不僅描述了物理現象，還規範了測量條件。</p>
+<ul>
+<li>正向切換電流 (Positive Switching Current, <span class="math inline">\(I_{\text{sw}}^{+}\)</span>)</li>
+</ul>
+<p>在電流控制模式下，當偏壓電流 <span class="math inline">\(I\)</span> 從零開始向正方向（<span class="math inline">\(I &gt; 0\)</span>）單調增加（即絕對值增加）時，接面從零電壓態（超導態）突變至有限電壓態（電阻態）瞬間所記錄到的電流值。</p>
+<ul>
+<li>負向切換電流 (Negative Switching Current, <span class="math inline">\(I_{\text{sw}}^{-}\)</span>)</li>
+</ul>
+<p>在電流控制模式下，當偏壓電流 <span class="math inline">\(I\)</span> 從零開始向負方向（<span class="math inline">\(I &lt; 0\)</span>）單調減少（即絕對值增加）時，接面從超導態突變至有限負電壓態瞬間所記錄到的電流值。為了方便與 <span class="math inline">\(I_{\text{sw}}^{+}\)</span> 比較，文獻常取其絕對值 <span class="math inline">\(|I_{\text{sw}}^{-}|\)</span> 進行討論。</p>
+<ul>
+<li>正向重捕電流 (Positive Re-trapping Current, <span class="math inline">\(I_{r}^{+}\)</span>)</li>
+</ul>
+<p>當接面處於正向電壓態（<span class="math inline">\(V &gt; 0,I &gt; 0\)</span>）時，將偏壓電流從高值逐漸降低，直到接面重新回到超導態（<span class="math inline">\(V = 0\)</span>）或進入低電壓擴散分支瞬間所對應的電流值。</p>
+<ul>
+<li>負向重捕電流 (Negative Re-trapping Current, <span class="math inline">\(I_{r}^{-}\)</span>)</li>
+</ul>
+<p>當接面處於負向電壓態（<span class="math inline">\(V &lt; 0,I &lt; 0\)</span>）時，將偏壓電流絕對值逐漸降低（即 <span class="math inline">\(I\)</span> 從負值向零增加），直到接面重新回到超導態（<span class="math inline">\(V = 0\)</span>）瞬間所對應的電流值。</p>
+</section>
+<section id="subsection-iv-characteristics" class="slide level2">
+<h2>基礎溫度下的 I-V 特性</h2>
+<p>為了鑑定元件的基本直流 (DC) 輸運特性，我們在極低溫環境（恆定溫度 <span class="math inline">\(T = 40\text{ mK}\)</span>）下量測了其電流-電壓 (<span class="math inline">\(I\)</span>-<span class="math inline">\(V\)</span>) 特性曲線。該數據是透過對偏壓電流 (<span class="math inline">\(I_{\text{bias}}\)</span>) 進行連續掃描並同步紀錄接面兩端電壓降 (<span class="math inline">\(V\)</span>) 所獲得。</p>
+<figure>
+<p>
+<img src="Images/iv_run20.svg" style="width:80.0%">
+</p>
+<figcaption>
+<p>
+樣品003-2之負向重捕電流及正負向切換電流 I-V 特性曲線
+</p>
+</figcaption>
+</figure>
+<p><span id="fig-iv-characteristics"></span> <a href="#/fig-iv-characteristics" class="ref">[fig-iv-characteristics]</a> 中清晰地顯示了零電壓的超導區域、急劇的電阻性切換（切換電流 <span class="math inline">\(I_{s} \approx 40\text{ µA}\)</span>）以及顯著的遲滯行為（重捕電流 <span class="math inline">\(I_{r} \approx 4\text{ µA}\)</span>），反映了該接面處於欠阻尼 (Underdamped) 狀態，使用正常電阻區域數據線性擬合得出正常電阻 <span class="math inline">\(R_{n}\)</span> 約為 <span class="math inline">\(1.87\text{ Ω}\)</span>。</p>
+<figure>
+<p>
+<img src="Images/iv_dvdi_comparison_354_408.svg" style="width:80.0%">
+</p>
+<figcaption>
+<p>
+樣品003-2之正負向切換電流 I-V 特性曲線
+</p>
+</figcaption>
+</figure>
+<p><span id="fig-iv-dvdi-comparison"></span> <a href="#/fig-iv-dvdi-comparison" class="ref">[fig-iv-dvdi-comparison]</a> 是由正負偏壓量測拼接而成的正負向切換電流 I-V 特性曲線。正向切換電流 <span class="math inline">\(I_{s}^{+} \approx 27\text{ µA}\)</span>，負向切換電流 <span class="math inline">\(I_{s}^{-} \approx - 33.5\text{ µA}\)</span>， <span class="math inline">\(\Delta I_{s} \approx - 6.5\text{ µA}\)</span>，<span class="math inline">\(\eta \approx 10.7\%\)</span>。雖出現 <span class="math inline">\(I_{s}^{+} \neq \left| I_{s}^{-} \right|\)</span>，但此為SQUID樣品003-2的參考接面及目標接面並聯的結果。可能因熱擾動或接面間的微小相位差異所導致，無法直接斷定為約瑟夫森二極體效應。需由之後的電流電壓磁場掃描測量來驗證。</p>
+<figure>
+<p>
+<img src="Images/run_33_expert_vis.svg" style="width:100.0%">
+</p>
+<figcaption>
+<p>
+<span class="math inline">PtTe<sub>2</sub></span> 約瑟夫森接面的直流傳輸特性與多重安德烈夫反射 (MAR)。 (a) 在基溫 (<span class="math inline"><em>T</em> ≈ 40, mK</span>) 下量測之電流-電壓 (<span class="math inline"><em>I</em></span>-<span class="math inline"><em>V</em></span>) 特性曲線。接面展現出清晰的超電流分支 (Supercurrent branch)，其切換電流 (Switching current) <span class="math inline"><em>I</em><sub><em>c</em></sub> ≈ 24, <em>μ</em> A</span>。高偏壓處的過剩電流 (<span class="math inline"><em>I</em><sub>exc</sub></span>，灰色虛線所示) 顯示該接面具有中透明度的介面特性。 (b) 微分電阻 (<span class="math inline"><em>d</em><em>V</em>/<em>d</em><em>I</em></span>) 隨量測電壓 <span class="math inline"><em>V</em></span> 的變化曲線。頻譜中展現一系列對應於次諧波能隙結構 (Sub-harmonic gap structures) 的電阻峰。垂直虛線標示了 MAR 特徵峰的理論預期位置 (<span class="math inline"><em>V</em><sub><em>n</em></sub> = 2<em>Δ</em>/ n<em>e</em></span>，其中 <span class="math inline"><em>n</em> = 1, 2, 3</span>)，由此推算出超導能隙 <span class="math inline"><em>Δ</em> ≈ 0.9725 meV</span>。並以 OBTK 模型的最佳擬合曲線，提取出的介面阻抗參數 <span class="math inline"><em>Z</em> ≈ 0.7587</span> 與穿透率 <span class="math inline"><em>τ</em> ≈ 0.6347</span>並以<span class="math inline"><em>β</em> ≈ 1.1956</span>表示<span class="math inline"><em>e</em><em>I</em><sub>exc </sub><em>R</em><sub><em>n</em></sub>/<em>Δ</em></span>。
+</p>
+</figcaption>
+</figure>
+<p><span id="fig-MAR"></span> <a href="#/fig-MAR" class="ref">[fig-MAR]</a> 展示的多重安德烈夫反射（Multiple Andreev Reflection, MAR）特性，為樣品接面品質優良的有力證據，然而因超電流（Supercurrent）過大，無法直接量測到線性電阻區域，即大於 <span class="math inline">\(2\Delta\)</span>的範圍。圖中標示的過電流(Excess Current) <span class="math inline">\(I_{\text{excess}}^{+} \approx 42.3\text{ µA}\)</span> 僅能作為大致估計，實際的過電流按趨勢應大於此值。同時，由自熱效應引起的溫升也需加以考慮。 我們在微分電阻 (<span class="math inline">\(dV/dI\)</span>) 頻譜 [圖 1(b)] 中觀察到顯著的次諧波能隙結構，這提供了電荷傳輸是由多重安德烈夫反射 (MAR) 主導的直接證據。電阻谷的位置與理論公式 <span class="math inline">\(V_{n} = 2\Delta/ne\)</span> 高度吻合，使我們得以確立超導能隙為 <span class="math inline">\(\Delta \approx 0.97\text{ meV}\)</span>。為了定量分析介面透明度，我們針對高偏壓數據進行了 Octavio-Tinkham-Blonder-Klapwijk (OBTK) 模型擬合。分析結果顯示介面阻抗參數 <span class="math inline">\(Z \approx 0.76\)</span>，對應之穿透率 <span class="math inline">\(\tau \approx 0.63\)</span>。此高透明度意味著超電流的限制因素並非來自介面阻障，而是主要源於 <span class="math inline">\(\text{PtTe}_{2}\)</span> 通道內部的擴散散射過程。</p>
+<p>值得注意的是，量測所得的 <span class="math inline">\(I_{c}R_{n}\)</span> 積約為 <span class="math inline">\(0.70\text{ mV}\)</span>，此數值低於短彈道接面 (Short ballistic junction) 的理論極限 (<span class="math inline">\(I_{c}R_{n} \approx \pi\Delta/2e \approx 1.52\text{ mV}\)</span>)。為了釐清此數值的物理起源，我們檢視了元件的特徵長度尺度。給定接面長度 <span class="math inline">\(L = 260\text{ nm}\)</span>，我們發現實驗數據與擴散極限 (Diffusive limit) 高度吻合。利用長接面理論公式 <span class="math inline">\(eI_{c}R_{n} \approx 10.82E_{\text{Th}}\)</span> [Dubos et al., PRB 2001]，我們提取出的 Thouless 能為 <span class="math inline">\(E_{\text{Th }} \approx 65\mu\text{ eV}\)</span>。</p>
+<p>由此推算的擴散係數 <span class="math inline">\(D = E_{\text{Th }}L^{2}/h \approx 0.0067\text{ m}^{2}/\text{ s}\)</span>，在費米速度 <span class="math inline">\(v_{F} \approx 0.65 \times 10^{6}\text{ m/s}\)</span> 的估算下，對應之平均自由徑 <span class="math inline">\(l_{e} = 3D/v_{F} \approx 31\text{ nm}\)</span>。這表明比值 <span class="math inline">\(L/l_{e} \approx 8.4\)</span>，確認元件運作於明確的擴散區間 (<span class="math inline">\(L \gg l_{e}\)</span>)。此外，擴散相干長度估算為 <span class="math inline">\(\xi_{\text{diff }} = \sqrt{hD/\Delta} \approx 67\text{ nm}\)</span>，使得 <span class="math inline">\(L/\xi_{\text{diff }} \approx 4\)</span>。這證實了我們的 <span class="math inline">\(\text{PtTe}_{2}\)</span> 接面屬於「長擴散約瑟夫森接面」類別，其超電流大小受限於電子穿越接面所需的擴散時間 (即 Thouless 能)，而非超導能隙。此結果成功解釋了為何在高介面透明度 (<span class="math inline">\(\tau \approx 0.63\)</span>) 下，<span class="math inline">\(I_{c}R_{n}\)</span> 數值仍小於短接面理論極限的主因，並展示了 <span class="math inline">\(\text{PtTe}_{2}\)</span> 在擴散長度尺度下仍保有良好的相位同調性。</p>
+<p>在高於超導能隙 (<span class="math inline">\(eV &gt; 2\Delta\)</span>) 的偏壓區間，我們觀察到微分電阻 (<span class="math inline">\(dV/dI\)</span>) 並未如 BCS 理論預期飽和至恆定的正常態電阻 <span class="math inline">\(R_{n}\)</span>，而是呈現隨電壓單調上升的趨勢 [圖 1(b)]。此現象主要歸因於接面處的焦耳熱效應 (Joule Heating) 累積導致的電子溫度 (<span class="math inline">\(T_{e}\)</span>) 升高。在極低溫 (<span class="math inline">\(T \approx 20\text{ mK}\)</span>) 環境下，電子-聲子耦合 (electron-phonon coupling) 極弱，導致熱電子難以將能量耗散至晶格。</p>
+<p>此外，為了濾除高頻雜訊以優化低溫量測，我們的樣品PCB載台配置了 RC 濾波電路。串聯電阻元件在高注入電流下產生的額外熱量，可能進一步透過基板傳導或準粒子擴散影響接面溫度。這種由熱效應引起的電阻上翹是介觀超導元件測量中常見的非本徵效應 (extrinsic effect)。</p>
+</section>
+<section id="section-coordinate-system" class="slide level2">
+<h2>座標系定義與轉換 (Coordinate System Definition and Transformation)</h2>
+<p>為了精確描述外部磁場與樣品超導特性的關係，我們必須建立實驗室座標系 (Lab Frame) 與樣品座標系 (Sample Frame) 之間的轉換關係。這對於分析非對稱 SQUID 的夫朗和費圖樣以及電流-相位關係 (CPR) 至關重要。</p>
+<h3 id="subsection-frames-definition">實驗室與樣品座標系定義</h3>
+<ol type="1">
+<li><p><strong>實驗室座標系 (Lab Frame)</strong>：<span class="math inline">\((X,Y,Z)\)</span></p>
+<p><span class="math inline">\(X,Y,Z\)</span> 軸由固定於低溫量測系統的由三維向量磁鐵的磁場指向定義。</p>
+<ul>
+<li><p><span class="math inline">\(X\)</span> 軸沿水平方向指向右。</p></li>
+<li><p><span class="math inline">\(Y\)</span> 軸沿水平方向且垂直於 <span class="math inline">\(X\)</span> 軸指向外側。</p></li>
+<li><p><span class="math inline">\(Z\)</span> 軸垂直於 <span class="math inline">\(X\)</span> 軸且指向上方軸則與 <span class="math inline">\(X,Y\)</span> 軸共同形成右手座標系。</p></li>
+<li><p>磁場大小表示為<span class="math inline">\(B_{\text{lab }} = \left( B_{x},B_{y},B_{z} \right)\)</span></p></li>
+</ul></li>
+<li><p><strong>樣品座標系 (Sample Frame)</strong>：<span class="math inline">\((X',Y',Z')\)</span></p>
+<p><span class="math inline">\(X',Y',Z'\)</span> 軸由樣品本身的幾何與樣品接面電流方向定義。</p>
+<ul>
+<li><p><span class="math inline">\(X'\)</span> 軸(Longitudinal)：沿樣品長軸方向，即樣品接面內超導電流 <span class="math inline">\(I\)</span> 的流動方向。</p></li>
+<li><p><span class="math inline">\(Y'\)</span> 軸(Transverse)：沿樣品寬度方向，位於樣品平面內且垂直於電流。</p></li>
+<li><p><span class="math inline">\(Z'\)</span> 軸(Normal)：垂直於樣品平面的法向量方向。</p></li>
+<li><p>磁場大小表示為<span class="math inline">\(B_{\text{sample }} = \left( B_{x'},B_{y'},B_{z'} \right)\)</span></p></li>
+</ul></li>
+</ol>
+<h3 id="subsection-transformation-logic">幾何配置與旋轉角定義</h3>
+<p>在本實驗中，樣品被水平放置於實驗室的 <span class="math inline">\(X - Z\)</span> 平面內，因此樣品平面（<span class="math inline">\(X' - Y'\)</span> 平面）與實驗室 <span class="math inline">\(X - Z\)</span> 平面共面，而樣品法向量 <span class="math inline">\(Z'\)</span> 軸平行於實驗室 <span class="math inline">\(Y\)</span> 軸。</p>
+<p>由於樣品在平面內的放置角度並非總是與實驗室主軸對齊，因此引入旋轉角 <span class="math inline">\(\alpha\)</span> 以描述平面內的偏轉。</p>
+<p>定義旋轉角 <span class="math inline">\(\alpha\)</span> 為：在實驗室 <span class="math inline">\(X - Z\)</span> 平面中，從實驗室 <span class="math inline">\(+ X\)</span> 軸逆時針旋轉至樣品電流方向（<span class="math inline">\(X'\)</span> 軸）的角度。</p>
+<h3 id="subsection-rotation-matrix">基底向量與旋轉矩陣</h3>
+<p>依據上述幾何配置，樣品座標系三個基底向量在實驗室座標系中的表示如下：</p>
+<p><span class="math display">\[\begin{array}{r}
+\hat{z'} = (0,1,0) \\
+\hat{x'} = \left( \cos(\alpha),0,\sin(\alpha) \right) \\
+\hat{y'} = \hat{z'} \times \hat{x'} = \left( \sin(\alpha),0, - \cos(\alpha) \right)
+\end{array}\]</span></p>
+<p>因此，旋轉矩陣 <span class="math inline">\(R\)</span>（由實驗室座標系轉換至樣品座標系）可寫為：</p>
+<p><span class="math display">\[R = \begin{pmatrix}
+\cos(\alpha) &amp; 0 &amp; \sin(\alpha) \\
+\sin(\alpha) &amp; 0 &amp; - \cos(\alpha) \\
+0 &amp; 1 &amp; 0
+\end{pmatrix}\]</span> 此旋轉矩陣 <span class="math inline">\(R\)</span> 滿足正交條件 <span class="math inline">\(RR^{T} = I\)</span>，且 <span class="math inline">\(\det(R) = 1\)</span>，確保此為遵循右手定則。</p>
+<h3 id="subsection-field-component-transform">磁場分量轉換</h3>
+<p>實驗室座標系中的磁場 <span class="math inline">\(\mathbf{B_{\text{lab}}} = \left( B_{x},B_{y},B_{z} \right)\)</span> 轉換至樣品座標系之表示式為：</p>
+<p><span class="math display">\[\begin{pmatrix}
+B_{x'} \\
+B_{y'} \\
+B_{z'}
+\end{pmatrix} = R\begin{pmatrix}
+B_{x} \\
+B_{y} \\
+B_{z}
+\end{pmatrix} = \begin{pmatrix}
+\cos(\alpha) &amp; 0 &amp; \sin(\alpha) \\
+\sin(\alpha) &amp; 0 &amp; - \cos(\alpha) \\
+0 &amp; 1 &amp; 0
+\end{pmatrix}\begin{pmatrix}
+B_{x} \\
+B_{y} \\
+B_{z}
+\end{pmatrix}\]</span></p>
+<p>展開後得：</p>
+<p><span class="math display">\[\begin{array}{r}
+B_{x'} = B_{x}\cos(\alpha) + B_{z}\sin(\alpha) \\
+B_{y'} = B_{x}\sin(\alpha) - B_{z}\cos(\alpha) \\
+B_{z'} = B_{y}
+\end{array}\]</span></p>
+<p>其中，<span class="math inline">\(B_{z'}\)</span> 代表面外磁場 (Out-of-plane field)，而面內磁場 (In-plane field) 的強度 <span class="math inline">\(B_{\text{In-Plane}}\)</span> 與角度 <span class="math inline">\(\theta\)</span> 則可由 <span class="math inline">\(B_{x'}\)</span> 與 <span class="math inline">\(B_{y'}\)</span> 計算得出：</p>
+<p><span class="math display">\[\begin{array}{r}
+B_{\text{in-plane }} = \sqrt{B_{x'}^{2} + B_{y'}^{2}} \\
+\theta = \arctan(\frac{B_{y'}}{B_{x'}})
+\end{array}\]</span></p>
+<figure>
+<p>
+<img src="Images/coordinate_transform_diagram.png" style="width:60.0%">
+</p>
+<figcaption>
+<p>
+實驗室座標系 <span class="math inline">(<em>X</em>, <em>Y</em>, <em>Z</em>)</span>（藍色）與樣品座標系 <span class="math inline">(<em>X</em><sup>′</sup>, <em>Y</em><sup>′</sup>, <em>Z</em><sup>′</sup>)</span>（紅色）之幾何關係。 樣品平面（粉色矩形）位於 <span class="math inline"><em>X</em></span>-<span class="math inline"><em>Z</em></span> 平面內，電流方向 <span class="math inline"><em>X</em><sup>′</sup></span> 與 <span class="math inline"><em>X</em></span> 軸夾角為 <span class="math inline"><em>α</em></span>。
+</p>
+</figcaption>
+</figure>
+<p><span id="fig-coordinate-system"></span></p>
+<h3 id="subsection-example-003-2">實例說明：Sample 003-2</h3>
+<p>以本章主要分析的樣品 <strong>Sample 003-2</strong> 為例，其安裝角度經校準為 <span class="math inline">\(\alpha = 121.3^{{^\circ}}\)</span>。這意味著樣品的電流方向與實驗室 <span class="math inline">\(X\)</span> 軸與 <span class="math inline">\(Z\)</span> 軸之間存在特定的幾何關係，而非單純的平行或垂直。</p>
+<p>當我們在實驗室座標系中施加一個磁場向量 <span class="math inline">\(\left( B_{x},B_{y},B_{z} \right)\)</span> 時，其實際作用於樣品的效果必須透過上述轉換關係進行解析。例如，若僅施加實驗室 <span class="math inline">\(X\)</span> 方向的磁場，在樣品座標系中將同時產生沿電流方向（<span class="math inline">\(B_{x'}\)</span>）與垂直電流方向（<span class="math inline">\(B_{y'}\)</span>）的分量，從而對夫朗和費干涉圖樣與電流相位關係產生複合影響。此一精確的座標轉換對於正確解讀後續章節中的各向異性磁場響應至關重要。</p>
+<figure>
+<p>
+<img src="Images/coordinate_system_schematic_003_2.png" style="width:60.0%">
+</p>
+<figcaption>
+<p>
+Sample 003-2 的座標系配置示意圖。樣品位於實驗室 <span class="math inline"><em>X</em> − <em>Z</em></span> 平面，逆時針旋轉角度 <span class="math inline"><em>α</em> = 121.3<sup><sup>∘</sup></sup></span>。綠色矩形代表樣品，藍色箭頭指示沿長軸的電流方向（<span class="math inline"><em>x</em><sup>′</sup></span> axis）。
+</p>
+</figcaption>
+</figure>
+<p><span id="fig-coordinate-system"></span></p>
+<h3 id="subsection-standard-fraunhofer">夫朗和費圖樣 (<span class="math inline">\(B_{\text{in-plane }} = 0\)</span>)</h3>
+<p>為了探測接面內部超導電流的空間分佈特性，我們量測了切換電流 <span class="math inline">\(I_{s}\)</span> 作為面外磁場 (<span class="math inline">\(B_{z}'\)</span>) 函數的調變行為。<a href="#/fig-fraunhofer-heatmap" class="ref">[fig-fraunhofer-heatmap]</a> 展示了原始的電壓-電流-磁場 (V-I-B) 掃描熱圖，其中深色區域代表零電阻的超導態。接著，我們從中提取出切換電流 <span class="math inline">\(I_{s}\)</span>，如 <a href="#/fig-fraunhofer-standard" class="ref">[fig-fraunhofer-standard]</a> 所示。這構成了在沒有面內磁場 (<span class="math inline">\(B_{\text{in-plane }} = 0\)</span>) 時的類夫朗和費干涉圖樣。</p>
+<figure>
+<p>
+<img src="Images/Thesis_Fig_Fraunhofer_Heatmap.png" style="width:90.0%">
+</p>
+<figcaption>
+<p>
+夫朗和費干涉圖樣的原始量測數據熱圖 (<span class="math inline"><em>V</em></span> vs <span class="math inline"><em>I</em>, <em>B</em><sub><em>z</em></sub><sup>′</sup></span>)。
+</p>
+</figcaption>
+</figure>
+<p><span id="fig-fraunhofer-heatmap"></span> <a href="#/fig-fraunhofer-heatmap" class="ref">[fig-fraunhofer-heatmap]</a> 由003-2樣品的正偏壓（Run 354）與負偏壓（Run 408） 數據合成，展示了清晰的超導區間(白色區域)隨磁場的調變。</p>
+<figure>
+<p>
+<img src="Images/Ic_Norm_354_408.png" style="width:80.0%">
+</p>
+<figcaption>
+<p>
+正規化切換電流 (<span class="math inline"><em>I</em><sub><em>s</em></sub></span>) 隨面外磁場 (<span class="math inline"><em>B</em><sub><em>z</em></sub><sup>′</sup></span>) 的變化。
+</p>
+</figcaption>
+</figure>
+<p><span id="fig-fraunhofer-standard"></span> 從原始數據中提取的切換電流 (<span class="math inline">\(I_{s}\)</span>) 隨面外磁場 (<span class="math inline">\(B_{z}'\)</span>) 的變化，已對 Run 354 最大值進行正規化。灰色垂直虛線標示偏移中心與第一個週期節點，水平箭頭指示週期 <span class="math inline">\(B_{\text{period }} \approx 2.15\text{ mT}\)</span>。 類夫朗和費干涉圖樣 (<span class="math inline">\(B_{\text{in-plane }} = 0\)</span>)。臨界電流隨面外磁場 (<span class="math inline">\(B_{z}'\)</span>) 的變化呈現出類 <span class="math inline">\(|\frac{\sin(\pi\frac{\Phi}{\Phi_{0}})}{\pi\frac{\Phi}{\Phi_{0}}}|\)</span> 的形式。</p>
+<p>實驗結果顯示在面外磁場<span class="math inline">\(B_{z}'\)</span>約為 0.25 mT 時，切換電流達到最大值 <span class="math inline">\(I_{\text{s, max}}\)</span>，第一個極小值節點出現在面外磁場<span class="math inline">\(B_{z}'\)</span>約為 1.9 mT 處，但有顯著的節點抬升現象，整個干涉圖樣呈現高度的左右對稱性，且正向切換電流 <span class="math inline">\(I_{c}^{+}\)</span> 與負向切換電流絕對值 <span class="math inline">\(|I_{c}^{-}|\)</span> 的行為幾乎完全重合。</p>
+<p>這些特徵表明接面具有均勻的超導電流密度分佈。根據第一個節點的位置，我們可以估算出樣品接面的有效磁學面積： <span class="math display">\[A_{\text{eff }} = \frac{\Phi_{0}}{B_{\text{period }}} \approx 2.07 \times \frac{10^{- 15}}{2.15 \times 10^{- 3}} \approx 9.63 \times 10^{- 13}\text{ m}^{2} = 0.963\text{ μm}^{2}\]</span> 這與由光學顯微鏡測量及AutoCAD軟體計算的樣品接面的幾何面積0.8502675 <span class="math inline">\(\text{μm}^{2}\)</span>相當。</p>
+<h3 id="subsection-fraunhofer-angle-evolution">夫朗和費圖樣隨面內磁場角度的演化</h3>
+<p>當施加固定面內磁場 (<span class="math inline">\(B_{\text{In-Plane}}\)</span>) 時，夫朗和費圖樣隨面內磁場角度發生顯著變化。</p>
+<figure>
+<p>
+<img src="Images/fraunhofer_evolution_60mT_filtered_linear.svg" style="width:90.0%">
+</p>
+<figcaption>
+<p>
+樣品003-2在面內磁場<span class="math inline"><em>B</em><sub>In-Plane</sub></span>固定在 <span class="math inline">60 mT</span> 時，夫朗和費圖樣隨角度 <span class="math inline"><em>θ</em></span> 的演化。
+</p>
+</figcaption>
+</figure>
+<p><span id="fig-fraunhofer-evolution"></span></p>
+<p><a href="#/fig-fraunhofer-evolution" class="ref">[fig-fraunhofer-evolution]</a> 展示了在不同 <span class="math inline">\(\theta\)</span> 值下的干涉圖樣演化，隨著 <span class="math inline">\(\theta\)</span> 的增加，原本對稱的干涉圖樣逐漸變得不對稱，對稱軸位置發生偏移，包絡函數形狀也隨之改變。</p>
+<figure>
+<p>
+<img src="Images/fraunhofer_heatmap_005-1_60mT_linear.svg" style="width:90.0%">
+</p>
+<figcaption>
+<p>
+樣品005-1在面內磁場<span class="math inline"><em>B</em><sub>In-Plane</sub></span>固定在 <span class="math inline">60 mT</span> 時，夫朗和費圖樣隨角度 <span class="math inline"><em>θ</em></span> 的演化熱圖。
+</p>
+</figcaption>
+</figure>
+<p><span id="fig-fraunhofer-evolution-heatmap"></span></p>
+<h3 id="subsection-fraunhofer-field-evolution">夫朗和費圖樣隨面內磁場強度的演化</h3>
+<p>當施加固定角度的面內磁場 (<span class="math inline">\(B_{\text{In-Plane}}\)</span>) 時，夫朗和費圖樣隨面內磁場強度發生顯著變化。</p>
+<figure>
+<p>
+<img src="Images/fraunhofer_evolution_27_log.svg" style="width:90.0%">
+</p>
+<figcaption>
+<p>
+樣品003-2在面內磁場角度<span class="math inline"><em>θ</em></span>固定在 <span class="math inline">27.4<sup>∘</sup></span> 時，夫朗和費圖樣隨磁場強度<span class="math inline"><em>B</em><sub>In-Plane</sub></span>的演化。
+</p>
+</figcaption>
+</figure>
+<p><span id="fig-fraunhofer-field-evolution-27"></span></p>
+<figure>
+<p>
+<img src="Images/fraunhofer_heatmap_27_log.svg" style="width:90.0%">
+</p>
+<figcaption>
+<p>
+樣品003-2在面內磁場角度<span class="math inline"><em>θ</em></span>固定在 <span class="math inline">27.4<sup>∘</sup></span> 時，夫朗和費圖樣隨磁場強度<span class="math inline"><em>B</em><sub>In-Plane</sub></span>的演化熱圖。
+</p>
+</figcaption>
+</figure>
+<p><span id="fig-fraunhofer-field-evolution-27-heatmap"></span></p>
+<figure>
+<p>
+<img src="Images/fraunhofer_evolution_297_log.svg" style="width:90.0%">
+</p>
+<figcaption>
+<p>
+樣品003-2在面內磁場角度<span class="math inline"><em>θ</em></span>固定在 <span class="math inline">297.4<sup>∘</sup></span> 時，夫朗和費圖樣隨磁場強度<span class="math inline"><em>B</em><sub>In-Plane</sub></span>的演化。
+</p>
+</figcaption>
+</figure>
+<p><span id="fig-fraunhofer-field-evolution-297"></span></p>
+<figure>
+<p>
+<img src="Images/fraunhofer_heatmap_297_log.svg" style="width:90.0%">
+</p>
+<figcaption>
+<p>
+樣品003-2在面內磁場角度<span class="math inline"><em>θ</em></span>固定在 <span class="math inline">297.4<sup>∘</sup></span> 時，夫朗和費圖樣隨磁場強度<span class="math inline"><em>B</em><sub>In-Plane</sub></span>的演化熱圖。
+</p>
+</figcaption>
+</figure>
+<p><span id="fig-fraunhofer-field-evolution-297-heatmap"></span></p>
+<table class="caption-top">
+<caption>垂直/平行電流方向磁場下夫朗和費圖樣的演化</caption>
+<colgroup>
+<col style="width: 51%">
+<col style="width: 48%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td colspan="2"><img data-src="Images/003-2_Finite_Perpendicular_IVB_raw_data.svg"> | <img data-src="Images/003-2_Finite_Parallel_IVB_raw_data.svg"> |</td>
+</tr>
+</tbody>
+</table>
+<p><span id="fig-fraunhofer-perpendicular-parallel"></span></p>
+<table class="caption-top">
+<caption>垂直/平行電流方向磁場下夫朗和費圖樣的演化熱圖</caption>
+<colgroup>
+<col style="width: 51%">
+<col style="width: 48%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td colspan="2"><img data-src="Images/003-2_Finite_Perpendicular_IVB_raw_heatmap.svg"> | <img data-src="Images/003-2_Finite_Parallel_IVB_raw_heatmap.svg"> |</td>
+</tr>
+</tbody>
+</table>
+<p><span id="fig-fraunhofer-perpendicular-parallel-heatmap"></span></p>
+<p>主要觀察結果包括：</p>
+<ol type="1">
+<li><p><strong>圖樣不對稱性增加</strong>：隨著 <span class="math inline">\(B_{\text{In-Plane}}\)</span> 的增加，原本高度對稱的夫朗和費圖樣逐漸變得不對對稱</p></li>
+<li><p><strong>極小值位置偏移</strong>：干涉圖樣的極小值不再出現在對稱的磁場位置，而是向正或負磁場方向偏移</p></li>
+<li><p><strong>包絡函數調變</strong>：整體包絡函數的形狀發生變化，不再嚴格遵循 <span class="math inline">\(\operatorname{sinc}\)</span> 函數</p></li>
+<li><p><strong>振幅調變</strong>：不同極小值的深度出現差異，破壞了原有的週期性</p></li>
+</ol>
+<p>這些變化強烈暗示平面內磁場改變了 PtTe₂ 接面的電流-相位關係，可能產生時間反演對稱性破缺。</p>
+</section>
+<section id="section-cpr-analysis" class="slide level2">
+<h2>電流-相位關係分析</h2>
+<h3 id="subsection-cpr-model-selection">CPR 模型選擇：諧波展開與透明度模型之比較</h3>
+<p>最原始的S-I-S約瑟夫森接面的電流相位關係為 <span class="math inline">\(I_{s(\varphi)} = I_{c}\sin(\varphi)\)</span>，但在實際的S-N-S系統中可能出現多通道與高階諧波分量，導致 CPR 呈現非純正弦特徵。我們可以用最一般的傅立葉級數展開來描述 CPR，其中包含當時間反演對稱被打破時系統中可能存在的高階諧波和附加相位偏移<span class="math inline">\(\left( \varphi_{n} \right)\)</span>： <span class="math display">\[I_{s}(\varphi) = \sum_{n = 1}^{\infty}I_{n}\sin(n\varphi + \varphi_{n})\]</span></p>
+<p>這是最廣義的 CPR 表達式。任何週期為 2π 的 CPR 都可以展開成這種傅立葉正弦級數。<span class="math inline">\(I_{n}\)</span> 為第 n 階諧波的振幅。<span class="math inline">\(\varphi_{n}\)</span> 為第 n 階諧波的相位偏移。在時間反演對稱下，所有 <span class="math inline">\(\varphi_{n}\)</span> 為零；非零的 <span class="math inline">\(\varphi_{n}\)</span> 是時間反演對稱破缺的表現。選擇正弦函數是因為約瑟夫森效應的基本關係是正弦型的。高階諧波（n≥2）對應於多重安德烈夫反射過程，即庫珀對（或四重態）的「高階」隧穿。我們選擇將這個 CPR 展開到二階，因為更高階的超電流對總電流的貢獻可以忽略不計。這給出： <span class="math display">\[I(\varphi) = I_{1}\sin(\varphi + \varphi_{1}) + I_{2}\sin(2\varphi + \varphi_{2})\]</span><span id="CPR-general-form"></span> 可以從這個通用 CPR 推導出某些眾所周知的非傳統 CPR 案例。例如令 <span class="math inline">\(\varphi_{1} = \varphi_{2} = 0\)</span>，會得到一個僅包含一階和二階諧波項而無任何附加相位的 CPR，對應於典型的 <span class="math inline">\(\varphi\)</span> 接面。在<a href="#/CPR-general-form" class="ref">[CPR-general-form]</a> 中令 <span class="math inline">\(I_{2} = 0\)</span> 的情況，則會產生具有正弦電流-相位關係的異常約瑟夫森接面或 <span class="math inline">\(\varphi_{0}\)</span> 接面，其相位從零偏移了 <span class="math inline">\(\varphi_{1}\)</span>。</p>
+<p>現在，不失一般性，<span class="math inline">\(\varphi\)</span> 可以被 <span class="math inline">\(\left( \varphi - \varphi_{1} \right)\)</span> 替換，CPR 可以重寫為：</p>
+<p><span class="math display">\[I(\varphi) = I_{1}\sin\varphi + I_{2}\sin(2\varphi + \delta)\]</span> <span id="CPR-with-delta"></span></p>
+<p>其中引入了 <span class="math inline">\(\delta = \varphi_{2} - 2\varphi_{1}\)</span>，即一階和二階諧波項之間的相對相位。我們將把具有如<a href="#/CPR-with-delta" class="ref">[CPR-with-delta]</a> 所示 CPR 的約瑟夫森接面稱為「二階諧波相位差可調<span class="math inline">\(\varphi_{0}\)</span>接面」。</p>
+<p>在分析電流-相位關係時，我們選擇採用截斷的傅立葉級數模型 (<a href="#/CPR-with-delta" class="ref">[CPR-with-delta]</a>)，而非Kulik-Omelyanchuk模型 (<span class="math inline">\(I(\varphi) \propto \frac{\sin(\varphi)}{\sqrt{1 - \tau\sin^{2}\left( \frac{\varphi}{2} \right)}}\)</span>)。此選擇基於以下兩個主要考量：</p>
+<ol type="1">
+<li><strong>極高的透明度要求</strong>：如 <a href="#/fig-cpr-harmonics-tau" class="ref">[fig-cpr-harmonics-tau]</a> 所示，若要僅透過透明度模型來解釋我們觀察到的顯著二階諧波分量（<span class="math inline">\(\frac{I_{2}}{I_{1}} \approx 0.25\)</span>），接面的透明度 <span class="math inline">\(\tau\)</span> 必須達到約 0.90。這是一個非常嚴格的物理條件，通常僅在完美的單原子接觸或極高品質的界面中才能實現。</li>
+</ol>
+<figure>
+<p>
+<img src="Images/CPR_Harmonics_vs_Tau.png" style="width:70.0%">
+</p>
+<figcaption>
+<p>
+二階與三階諧波分量隨透明度 <span class="math inline"><em>τ</em></span> 的變化。為了產生 <span class="math inline"><span class="math inline">\(\frac{I_{2}}{I_{1}} = 0.25\)</span></span> 的二階分量，透明度必須高達 <span class="math inline"><em>τ</em> ≈ 0.90</span>。
+</p>
+</figcaption>
+</figure>
+<p><span id="fig-cpr-harmonics-tau"></span></p>
+<ol start="2" type="1">
+<li><strong>時間反演對稱性的破缺</strong>：標準的Kulik-Omelyanchuk模型通常假設時間反演對稱性，導致 <span class="math inline">\(I_{c}^{+} = |I_{c}^{-}|\)</span>（如 <a href="#/fig-cpr-diode-comparison" class="ref">[fig-cpr-diode-comparison]</a> 綠色曲線所示）。然而，我們的實驗數據顯示明顯的時間反演對稱性的破缺 (<span class="math inline">\(I_{c}^{+} \neq |I_{c}^{-}|\)</span>)。為了描述這種時間反演對稱性的破缺，必須引入高階諧波的相位偏移 <span class="math inline">\(\delta\)</span>。然而標準的Kulik-Omelyanchuk模型隱含對高階諧波的相位偏移 <span class="math inline">\(\delta\)</span> 的限制，<span class="math inline">\(\delta\)</span>必須固定於0。反而簡單的諧波展開模型多了這種自由度（如 <a href="#/fig-cpr-diode-comparison" class="ref">[fig-cpr-diode-comparison]</a> 紫色曲線所示），能夠靈活地描述此系統。</li>
+</ol>
+<figure>
+<p>
+<img src="Images/CPR_Diode_Comparison.png" style="width:70.0%">
+</p>
+<figcaption>
+<p>
+透明度模型與諧波模型的比較。
+</p>
+</figcaption>
+</figure>
+<p><span id="fig-cpr-diode-comparison"></span> 標準Kulik-Omelyanchuk模型 (綠線) 雖然能產生偏斜的波形，但仍保持 <span class="math inline">\(I_{c}^{+} = |I_{c}^{-}|\)</span> 的對稱性。含有相位偏移的諧波模型 (紫線) 則能自然描述 <span class="math inline">\(I_{c}^{+} \neq |I_{c}^{-}|\)</span> 的約瑟夫森二極體效應。 基於上述理由，採用包含相位自由度的諧波展開模型，是對本系統非傳統超導電流特性的更合適描述。</p>
+<figure>
+<p>
+<img src="Images/KO-1_cpr_fit_127.svg" style="width:80.0%">
+</p>
+<figcaption>
+<p>
+使用Kulik-Omelyanchuk模型擬合典型 PtTe₂ 約瑟夫森接面的電流相位關係特性曲線
+</p>
+</figcaption>
+</figure>
+<p><span id="fig-OK-1-cpr-fit"></span> 使用Kulik-Omelyanchuk模型擬合典型 PtTe₂ 約瑟夫森接面的電流相位關係特性曲線。</p>
+<p>在無面內磁場時，使用Kulik-Omelyanchuk模型擬合典型 PtTe₂ 約瑟夫森接面的電流相位關係特性曲線。得出介面透明度為 <span class="math inline">\(\tau \approx 0.6\)</span>，屬於中高透明度接面。</p>
+<figure>
+<p>
+<img src="Images/delta_cpr_fit_127.svg" style="width:80.0%">
+</p>
+<figcaption>
+<p>
+使用二階諧波相位差可調模型擬合典型 PtTe₂ 約瑟夫森接面的電流相位關係特性曲線
+</p>
+</figcaption>
+</figure>
+<p><span id="fig-delta-cpr-fit"></span> 使用二階諧波相位差可調模型擬合典型 PtTe₂ 約瑟夫森接面的電流相位關係特性曲線。</p>
+<figure>
+<p>
+<img src="Images/cpr_fit_508.svg" style="width:80.0%">
+</p>
+<figcaption>
+<p>
+樣品003-2在面內磁場強度為<span class="math inline">180 mT</span>，角度為<span class="math inline">297.4<sup>∘</sup></span>的二階諧波相位差可調模型擬合結果
+</p>
+</figcaption>
+</figure>
+<p><span id="fig-cpr-fit-508"></span> <a href="#/fig-cpr-fit-508" class="ref">[fig-cpr-fit-508]</a> 顯示在高面內磁場強度時，二階諧波相位差可調模型能夠很好地擬合實驗數據且二階諧波分量顯著。</p>
+<h3 id="subsection-icrn-product"><span class="math inline">\(I_{c}R_{N}\)</span> 乘積估算</h3>
+<p><span class="math inline">\(I_{c}R_{N}\)</span> 乘積是表徵約瑟夫森接面品質的重要參數，它反映了接面的超導能隙與傳輸特性。<a href="#/tab-icrn-statistics" class="ref">[tab-icrn-statistics]</a> 總結了多個元件的 <span class="math inline">\(I_{c}R_{N}\)</span> 乘積統計資料。</p>
+<table class="caption-top" style="width:98%;">
+<caption>多個 PtTe₂ 約瑟夫森接面的 <span class="math inline">\(I_{c}R_{N}\)</span> 乘積統計</caption>
+<colgroup>
+<col style="width: 9%">
+<col style="width: 19%">
+<col style="width: 15%">
+<col style="width: 11%">
+<col style="width: 22%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><strong>元件編號</strong></th>
+<th style="text-align: center;"><strong><span class="math inline">\(I_{c}^{\text{Ref}}\)</span> (µA)</strong></th>
+<th style="text-align: center;"><strong><span class="math inline">\(I_{c}^{(1)}\)</span> (µA)</strong></th>
+<th style="text-align: center;"><strong><span class="math inline">\(R_{N}\)</span> (Ω)</strong></th>
+<th style="text-align: center;"><strong><span class="math inline">\(I_{c}^{\text{Ref}}R_{N}\)</span> (µV)</strong></th>
+<th style="text-align: center;"><strong><span class="math inline">\(I_{c}^{(1)}R_{N}\)</span> (µV)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">003-2</td>
+<td style="text-align: center;">29.459</td>
+<td style="text-align: center;">3.935</td>
+<td style="text-align: center;">1.848</td>
+<td style="text-align: center;">54.439</td>
+<td style="text-align: center;">7.272</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">003-3</td>
+<td style="text-align: center;">19.111</td>
+<td style="text-align: center;">3.133</td>
+<td style="text-align: center;">3.161</td>
+<td style="text-align: center;">60.403</td>
+<td style="text-align: center;">9.903</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">004-1</td>
+<td style="text-align: center;">24.0</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">29.3</td>
+<td style="text-align: center;">703.2</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">004-2</td>
+<td style="text-align: center;">44.0</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">33.953</td>
+<td style="text-align: center;">1493.931</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">004-3</td>
+<td style="text-align: center;">64.0</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">34.105</td>
+<td style="text-align: center;">2182.72</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">005-1</td>
+<td style="text-align: center;">121.496</td>
+<td style="text-align: center;">3.305</td>
+<td style="text-align: center;">0.297</td>
+<td style="text-align: center;">36.11</td>
+<td style="text-align: center;">0.982</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">005-2</td>
+<td style="text-align: center;">44.275</td>
+<td style="text-align: center;">3.203</td>
+<td style="text-align: center;">1.049</td>
+<td style="text-align: center;">46.435</td>
+<td style="text-align: center;">3.359</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">019-1</td>
+<td style="text-align: center;">22.834</td>
+<td style="text-align: center;">2.583</td>
+<td style="text-align: center;">0.662</td>
+<td style="text-align: center;">15.106</td>
+<td style="text-align: center;">1.709</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">019-3</td>
+<td style="text-align: center;">19.2</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1.238</td>
+<td style="text-align: center;">23.765</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">019-5</td>
+<td style="text-align: center;">22.0</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">2.971</td>
+<td style="text-align: center;">65.364</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>平均值</strong></td>
+<td style="text-align: center;"><strong>41.038</strong></td>
+<td style="text-align: center;"><strong>3.232</strong></td>
+<td style="text-align: center;"><strong>10.858</strong></td>
+<td style="text-align: center;"><strong>468.147</strong></td>
+<td style="text-align: center;"><strong>4.645</strong></td>
+</tr>
+</tbody>
+</table>
+<p><span id="tab-icrn-statistics"></span></p>
+<h4 id="squid-環路電感與自我屏蔽效應評估">SQUID 環路電感與自我屏蔽效應評估</h4>
+<p>為了驗證模型的適用性，我們估算了 SQUID 環路的幾何電感 <span class="math inline">\(L\)</span>。對於面積約 <span class="math inline">\(250\text{ µm}^{2}\)</span> 的環路，幾何電感估計為 <span class="math inline">\(L \approx 3\)</span> pH。考量最大臨界電流 <span class="math inline">\(I_{c}^{\text{max }} \approx 100\)</span> µA，計算出的屏蔽參數 <span class="math inline">\(\beta_{L} = 2\pi L\frac{I_{c}}{\Phi_{0}} \approx 0.001\)</span>。由於 <span class="math inline">\(\beta_{L} &lt; &lt; 1\)</span>，自我屏蔽效應可以忽略，這證實了我們採用顯式 CPR 模型 (<span class="math inline">\(I_{s(\varphi)}\)</span>) 而忽略迴路電感影響的合理性。</p>
+<h3 id="subsection-cpr-evolution-003-2">CPR 參數隨面內磁場的各向異性演化</h3>
+<p>為了探究不同晶體方向上的磁場響應差異，我們針對 Sample 003-2 在兩個特定角度 (<span class="math inline">\(\theta = 27.4^{{^\circ}}\)</span> 與 <span class="math inline">\(297.4^{{^\circ}}\)</span>) 進行了細緻的磁場掃描。</p>
+<table class="caption-top">
+<caption>樣品003-2 在特定角度<span class="math inline">\(\theta\)</span>下的參數演化 (<span class="math inline">\(27.4^{{^\circ}}\)</span> vs <span class="math inline">\(297.4^{{^\circ}}\)</span>)。(左) <span class="math inline">\(\theta = 27.4^{{^\circ}}\)</span>。(右) <span class="math inline">\(\theta = 297.4^{{^\circ}}\)</span>。</caption>
+<colgroup>
+<col style="width: 49%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td colspan="2"><img data-src="Images/CPR_evolution_27_log_offset_corrected.svg" style="width:95.0%"> | <img data-src="Images/CPR_evolution_297_log_offset_corrected.svg" style="width:95.0%"> |</td>
+</tr>
+</tbody>
+</table>
+<p><span id="fig-angle-cpr-evolution"></span></p>
+<figure>
+<p>
+<img src="Images/compare_combined.svg" style="width:100.0%">
+</p>
+<figcaption>
+<p>
+CPR擬合參數隨面內磁場的演化。
+</p>
+</figcaption>
+</figure>
+<p><span id="fig-cpr-fit-parameters-evolution"></span></p>
+<p><a href="#/fig-cpr-fit-parameters-evolution" class="ref">[fig-cpr-fit-parameters-evolution]</a> 展示了關鍵數參 (<span class="math inline">\(I_{\text{c, ref}},I_{c1},I_{c2},\frac{I_{c2}}{I_{c1}},\delta,\chi^{2}\)</span>) 隨面內磁場強度的演化。從擬合參數的演化可以觀察到參考接面臨界電流 <span class="math inline">\(I_{\text{c,ref}}\)</span>、<span class="math inline">\(I_{c1}\)</span>、<span class="math inline">\(I_{c2}\)</span> 在不同夾角<span class="math inline">\(\theta\)</span>下的面內場<span class="math inline">\(B_{\text{In-Plane}}\)</span>作用下的下降趨勢有別，因此可能需要考慮參考介面的面內磁場作用，所以此參數演化統計的可靠性值得商榷，但依然可以從中提取出一些有用的物理現象。在低面內場時，<span class="math inline">\(\frac{I_{c2}}{I_{c1}}\)</span> 與 <span class="math inline">\(\delta\)</span> 的數值較低，擬合誤差也較大，需要提升量測精度，以獲得更準確的結果。然而在高面內場時，<span class="math inline">\(\frac{I_{c2}}{I_{c1}}\)</span> 與 <span class="math inline">\(\delta\)</span> 的數值較高，擬合誤差也較小，二階諧波相位可調模型可以很好地描述現象，但固定夾角<span class="math inline">\(\theta\)</span>時的面內場<span class="math inline">\(B_{\text{In-Plane}}\)</span>強度與<span class="math inline">\(\frac{I_{c2}}{I_{c1}}\)</span> 和 <span class="math inline">\(\delta\)</span> 的關係並非簡單的線性關係，這可能暗示了更複雜的物理現象，並非完全如 <span class="citation" data-cites="sivakumar_long-range_2024">(<a href="#/參考文獻" role="doc-biblioref" onclick="">Sivakumar et al. 2024</a>)</span> 所述使用Rashba效應與SOC效應造成的自旋-動量耦合現象即可描述，因此樣品目標接面長度更長，面內場<span class="math inline">\(B_{\text{In-Plane}}\)</span>更強，需要考慮更多因素。</p>
+</section>
+<section id="section-results-summary" class="slide level2">
+<h2>結果總結</h2>
+<p>本章的實驗結果確立了以下重要發現：</p>
+<ol type="1">
+<li><p><strong>高品質的 PtTe₂ 約瑟夫森接面</strong>：成功製備了具有清晰超導特性和良好電學性能的元件。</p></li>
+<li><p><strong>非傳統的電流-相位關係</strong>：直接觀測到包含顯著二階諧波分量的非純正弦 CPR。</p></li>
+<li><p><strong>高面內磁場下的顯著二階諧波分量與相位差</strong>：觀察到高面內磁場下的 CPR 中二階諧波分量與相位差的顯著變化，這表明了磁場對 CPR 的調控作用。</p></li>
+</ol>
+<p>這些結果為理解 PtTe₂ 中的非傳統的電流-相位關係提供了直接的實驗證據，並展示了利用外部磁場調控量子元件特性的巨大潛力。</p>
+</section></section>
+<section id="討論" class="title-slide slide level1 center">
+<h1>討論</h1>
+
+</section>
+
+<section>
+<section id="chapter-discussion" class="title-slide slide level1 center">
+<h1>討論</h1>
+
+</section>
+<section id="section-asymmetric-fraunhofer-origin" class="slide level2">
+<h2>直接量測電流相位關係探討非對稱夫朗和費干涉圖樣的起源</h2>
+<p>不同於使用量測正負向切換電流計算切換電流差 <span class="math inline">\(\Delta I_{s}\)</span>間接得出電流相位關係的方式，本研究使用<span class="math inline">\(\text{PtTe}_{2}\)</span>構成的非對稱SQUID直接量測電流相位關係，從而提供了深入理解非對稱夫朗和費（Fraunhofer）干涉圖樣的起源內在物理機制的重要線索。</p>
+</section>
+<section id="section-fabrication-challenges" class="slide level2">
+<h2>製備技術挑戰</h2>
+<p>在<span class="math inline">\(\text{PtTe}_{2}\)</span>基礎超導元件的製備過程中，遇到了多項技術挑戰，這些挑戰直接影響了最終元件的電學特性與量測結果的可靠性。</p>
+<h3 id="subsection-flake-size-thickness">薄片尺寸與厚度控制</h3>
+<p>二維材料薄片（Flake）的尺寸與厚度控制是影響元件性能的關鍵因素。機械剝離法（Mechanical Exfoliation）獲得的<span class="math inline">\(\text{PtTe}_{2}\)</span>薄片在尺寸分佈和厚度均勻性方面存在固有的變異性。</p>
+<h3 id="subsection-tmd-surface-protection">過渡金屬二硫屬化物表面保護與殘留物清除</h3>
+<p>過渡金屬二硫屬化物（Transition Metal Dichalcogenide, TMD）材料表面的保護與清潔是確保高品質歐姆接觸（Ohmic Contact）的重要步驟。在電子束微影（Electron Beam Lithography, EBL）與後續製程中，如何有效保護材料表面並完全清除製程殘留物是製備成功的關鍵。</p>
+<h3 id="subsection-sputtered-leads-sidewall">濺鍍超導電極的側壁問題</h3>
+<p>磁控濺鍍（Magnetron Sputtering）製程中的側壁沉積問題會影響電極圖案的精確度與電學特性。特別是在製備細線寬的超導電極時，側壁效應可能導致短路或產生非預期的電流路徑。</p>
+<h3 id="subsection-squid-area-flake-size">SQUID環路面積與接面尺寸的匹配</h3>
+<p>在製備非對稱SQUID時，SQUID環路面積與接面尺寸的匹配是影響量測精度的重要因素，較大的SQUID環路面積與接面尺寸比可以得到較佳的參考接面相位鎖定效果，但對磁場的控制精度要求較高。本研究提供了一個初步結果，為後續研究與樣品幾何設計提供了重要的參考。</p>
+<h3 id="subsection-long-flake-high-field">長接面與高面內磁場下的顯著二階諧波分量與相位差</h3>
+<p>在長接面與高面內磁場下，我們觀察到顯著的二階諧波分量與相位差，這隱含約瑟夫森二極體效應出現的可能，但在高面內磁場下，接面臨界電流密度分布的不均勻性造成夫浪和斐干涉圖樣已經嚴重扭曲，此時原始的二極體效率定義是否適用值得商榷。</p>
+</section></section>
+<section id="結論與展望" class="title-slide slide level1 center">
+<h1>結論與展望</h1>
+
+</section>
+
+<section>
+<section id="chapter-conclusion-prospect" class="title-slide slide level1 center">
+<h1>結論與展望</h1>
+
+</section>
+<section id="section-conclusion" class="slide level2">
+<h2>結論</h2>
+<p>本研究成功地實現了對第二類狄拉克半金屬 (Type-II Dirac Semimetal) 1T-PtTe₂ 基超導量子干涉儀 (Superconducting Quantum Interference Device, SQUID) 中磁通量控制電流-相位關係 (flux-controlled current-phase relation) 的深入探索。透過結合精密的元件製備技術、極低溫量測平台以及先進的數據分析方法，我們獲得了以下重要的研究成果：</p>
+<h3 id="subsection-main-achievements">主要研究成果</h3>
+<ol type="1">
+<li><p><strong>高品質的介面接觸</strong>：</p>
+<ul>
+<li>成功製備了高品質的金屬-半金屬接觸界面，實現了超導量子干涉儀元件的高可靠性</li>
+</ul></li>
+<li><p><strong>非傳統電流-相位關係的直接觀測</strong>：</p>
+<ul>
+<li><p>成功製備了基於 1T-PtTe₂ 的平面型超導量子干涉儀元件</p></li>
+<li><p>透過非對稱 SQUID 量測技術，直接重構出 PtTe₂ 約瑟夫森接面 (Josephson Junction) 的電流-相位關係</p></li>
+<li><p>確認了電流-相位關係顯著偏離傳統的正弦函數形式 <span class="math inline">\(I_{s} = I_{c}\sin(\varphi)\)</span>，展現出明顯的高階諧波分量</p></li>
+</ul></li>
+<li><p><strong>磁通量調控特性的系統性研究</strong>：</p>
+<ul>
+<li><p>展示了外部磁通量對電流-相位關係形式的連續調控能力</p></li>
+<li><p>實現了「可調控的 <span class="math inline">\(\varphi_{0}\)</span>-約瑟夫森接面」功能，其中 <span class="math inline">\(\varphi_{0}\)</span> 相位偏移可透過磁場進行原位調節</p></li>
+<li><p>驗證了元件作為磁通量可調諧超導量子元件的應用潛力</p></li>
+</ul></li>
+</ol>
+<h3 id="subsection-technical-innovations">技術創新與方法學貢獻</h3>
+<ol type="1">
+<li><p><strong>精密製備技術</strong>：</p>
+<ul>
+<li><p>建立了完整的二維材料機械剝離 (mechanical exfoliation) 到超導元件製備的技術流程</p></li>
+<li><p>開發了有效的介面清潔與原位離子束蝕刻 (in-situ ion milling) 技術，確保高品質的金屬-半金屬接觸</p></li>
+<li><p>實現了奈米級精度的電子束微影 (electron beam lithography) 圖案定義</p></li>
+</ul></li>
+<li><p><strong>量測方法學</strong>：</p>
+<ul>
+<li><p>搭建了整合式的毫開爾文溫度極低溫量測平台</p></li>
+<li><p>改良基於 QCoDeS 框架的自動化數據擷取與分析系統以實現正負向電流與平面內磁場的控制與量測</p></li>
+<li><p>發展了從非對稱 SQUID 干涉圖樣重構電流-相位關係的分析方法</p></li>
+</ul></li>
+</ol>
+</section>
+<section id="section-prospect" class="slide level2">
+<h2>展望</h2>
+<p>基於本研究的重要發現和建立的技術基礎，未來的研究方向具有廣闊的發展空間：</p>
+<h3 id="subsection-short-term-prospects">短期研究方向</h3>
+<ol type="1">
+<li><p><strong>元件性能優化</strong>：</p>
+<ul>
+<li><p>進一步優化製備工藝，提高接面的均勻性和可重現性</p></li>
+<li><p>探索不同厚度 PtTe₂ 薄片對電流-相位關係的影響</p></li>
+<li><p>改良樣品幾何結構設計以取得量測精度與速度的平衡</p></li>
+<li><p>替換參考接面材料以排除其對目標接面電流-相位關係的影響</p></li>
+</ul></li>
+<li><p><strong>物理機制深入研究</strong>：</p>
+<ul>
+<li><p>透過溫度依賴性量測深入理解拓撲表面態與超導配對的競爭與協作關係</p></li>
+<li><p>研究磁場方向性對約瑟夫森二極體效應的影響</p></li>
+<li><p>探索閘極電壓對接面電流-相位關係的影響</p></li>
+</ul></li>
+<li><p><strong>量測技術拓展</strong>：</p>
+<ul>
+<li>加入夏皮羅階梯 (Shapiro steps) 量測技術以研究接面的量子漲落機制</li>
+</ul></li>
+</ol>
+<h3 id="subsection-long-term-prospects">中長期研究方向</h3>
+<ol type="1">
+<li><p><strong>新型量子元件開發</strong>：</p>
+<ul>
+<li><p>基於可調控 <span class="math inline">\(\varphi_{0}\)</span>-接面開發拓撲保護的量子位元 (topologically protected qubits)</p></li>
+<li><p>設計具有內建相位偏移的超導量子干涉元件，實現免磁場的量子態操控</p></li>
+<li><p>探索 PtTe₂ 基約瑟夫森接面在超導量子計算中的應用潛力</p></li>
+</ul></li>
+<li><p><strong>材料體系拓展</strong>：</p>
+<ul>
+<li><p>探索其他狄拉克/外爾半金屬 (如 WTe₂、MoTe₂) 中的類似現象</p></li>
+<li><p>研究異質結構 (如 PtTe₂/石墨烯) 中的介面超導與拓撲效應</p></li>
+<li><p>開發基於范德瓦耳斯異質結構 (van der Waals heterostructures) 的可調控超導元件</p></li>
+</ul></li>
+</ol>
+<h3 id="subsection-scientific-impact">科學影響與意義</h3>
+<p>本研究不僅在基礎物理層面揭示了拓撲材料與超導性的深刻交互作用，更為未來量子技術的發展提供了重要的材料平台和物理基礎。隨著量子計算、量子感測等領域的快速發展，具有內稟拓撲保護和可調控特性的超導元件將發揮越來越重要的作用。</p>
+</section>
+<section id="section-concluding-remarks" class="slide level2">
+<h2>結語</h2>
+<p>本研究成功地展示了 1T-PtTe₂ 基超導量子干涉儀中磁通量控制電流-相位關係的豐富物理內涵。所獲得的非傳統電流-相位關係和約瑟夫森二極體效應，不僅加深了我們對拓撲超導物理的理解，也為開發新一代量子元件奠定了重要基礎。</p>
+<p>這項研究體現了材料科學、凝聚態物理和量子工程等多學科交叉融合的力量。透過將新興拓撲量子材料與成熟的超導技術相結合，我們不僅發現了新的物理現象，更開闢了通向未來量子技術的新途徑。</p>
+<p>隨著相關研究的不斷深入和技術的持續發展，相信基於拓撲材料的超導量子元件將在推動量子科技革命中發揮關鍵作用，為人類社會帶來前所未有的技術變革和應用可能。</p>
+</section></section>
+<section id="備用投影片-backup-slides" class="title-slide slide level1 center">
+<h1>備用投影片 (Backup Slides)</h1>
+
+</section>
+
+<section>
+<section id="appendix-detailed-data" class="title-slide slide level1 center">
+<h1>附錄 A：詳細實驗數據</h1>
+
+</section>
+<section id="section-complete-results" class="slide level2">
+<h2>完整實驗結果</h2>
+<p>本附錄提供了主要實驗的詳細數據和補充分析。</p>
+<h3 id="subsection-sample-details">樣品詳細資訊</h3>
+<table>
+<caption>
+<p>
+樣品詳細資訊
+</p>
+</caption>
+<colgroup>
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+</colgroup>
+<tbody>
+<tr>
+<td style="text-align: center;">
+<p>
+<strong>樣品編號</strong>
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+<strong>厚度(nm)</strong>
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+<strong>接面寬度(μm)</strong>
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+<strong>參考接面長度(μm)</strong>
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+<strong>目標接面長度(μm)</strong>
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+<strong>臨界電流(μA)</strong>
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+<strong>重捕電流(μA)</strong>
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+<strong>正常態電阻(Ω)</strong>
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+<strong><span class="math inline"><em>I</em><sub><em>c</em></sub><em>R</em><sub><em>n</em></sub></span><br> <span class="math inline">(<em>μ</em><em>V</em>)</span></strong>
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+<strong>二極體效率(η)</strong>
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+<strong>鈮鈦厚度(nm)</strong>
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+<strong>備註</strong>
+</p>
+</td>
+</tr>
+<tr>
+<td style="text-align: center;">
+<p>
+003-2
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+21.17
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+1.16
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+0.40
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+0.73
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+19.1
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+3
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+1.92
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+36.6
+</p>
+</td>
+<td style="text-align: center;">
+</td>
+<td style="text-align: center;">
+<p>
+150
+</p>
+</td>
+<td style="text-align: center;">
+</td>
+</tr>
+<tr>
+<td style="text-align: center;">
+<p>
+003-3
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+27.79
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+0.88
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+0.33
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+0.65
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+14.5
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+1.5
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+3.24
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+46.9
+</p>
+</td>
+<td style="text-align: center;">
+</td>
+<td style="text-align: center;">
+<p>
+150
+</p>
+</td>
+<td style="text-align: center;">
+</td>
+</tr>
+<tr>
+<td style="text-align: center;">
+<p>
+004-1
+</p>
+</td>
+<td style="text-align: center;">
+</td>
+<td style="text-align: center;">
+<p>
+1.26
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+0.26
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+0.68
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+19.4
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+16
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+11.17
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+217.1
+</p>
+</td>
+<td style="text-align: center;">
+</td>
+<td style="text-align: center;">
+<p>
+70
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+Only Ref. JJ
+</p>
+</td>
+</tr>
+<tr>
+<td style="text-align: center;">
+<p>
+004-2
+</p>
+</td>
+<td style="text-align: center;">
+</td>
+<td style="text-align: center;">
+<p>
+0.56
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+0.17
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+0.67
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+32.5
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+30
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+22.29
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+725.1
+</p>
+</td>
+<td style="text-align: center;">
+</td>
+<td style="text-align: center;">
+<p>
+70
+</p>
+</td>
+<td style="text-align: center;">
+</td>
+</tr>
+<tr>
+<td style="text-align: center;">
+<p>
+004-3
+</p>
+</td>
+<td style="text-align: center;">
+</td>
+<td style="text-align: center;">
+<p>
+1.34
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+0.24
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+0.70
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+44.5
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+33
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+35.93
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+1600.4
+</p>
+</td>
+<td style="text-align: center;">
+</td>
+<td style="text-align: center;">
+<p>
+70
+</p>
+</td>
+<td style="text-align: center;">
+</td>
+</tr>
+<tr>
+<td style="text-align: center;">
+<p>
+005-1
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+63.5
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+1.15
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+0.42
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+0.87
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+88.4
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+28
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+0.30
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+26.5
+</p>
+</td>
+<td style="text-align: center;">
+</td>
+<td style="text-align: center;">
+<p>
+70
+</p>
+</td>
+<td style="text-align: center;">
+</td>
+</tr>
+<tr>
+<td style="text-align: center;">
+<p>
+005-2
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+24.2
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+1.57
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+0.41
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+0.88
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+33.9
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+6
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+1.07
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+36.2
+</p>
+</td>
+<td style="text-align: center;">
+</td>
+<td style="text-align: center;">
+<p>
+70
+</p>
+</td>
+<td style="text-align: center;">
+</td>
+</tr>
+<tr>
+<td style="text-align: center;">
+<p>
+019-1
+</p>
+</td>
+<td style="text-align: center;">
+</td>
+<td style="text-align: center;">
+<p>
+2.59
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+1.53
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+2.26
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+13.8
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+1.5
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+0.70
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+9.7
+</p>
+</td>
+<td style="text-align: center;">
+</td>
+<td style="text-align: center;">
+<p>
+120
+</p>
+</td>
+<td style="text-align: center;">
+</td>
+</tr>
+<tr>
+<td style="text-align: center;">
+<p>
+019-3
+</p>
+</td>
+<td style="text-align: center;">
+</td>
+<td style="text-align: center;">
+<p>
+1.73
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+1.52
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+2.36
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+13.3
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+0.8
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+1.25
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+16.7
+</p>
+</td>
+<td style="text-align: center;">
+</td>
+<td style="text-align: center;">
+<p>
+120
+</p>
+</td>
+<td style="text-align: center;">
+</td>
+</tr>
+<tr>
+<td style="text-align: center;">
+<p>
+019-5
+</p>
+</td>
+<td style="text-align: center;">
+</td>
+<td style="text-align: center;">
+<p>
+3.42
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+1.79
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+6.09
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+14.8
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+6
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+0.26
+</p>
+</td>
+<td style="text-align: center;">
+<p>
+3.9
+</p>
+</td>
+<td style="text-align: center;">
+</td>
+<td style="text-align: center;">
+<p>
+120
+</p>
+</td>
+<td style="text-align: center;">
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="subsection-quantum-transport-parameters-table">PtTe2、NbTi量子輸運參數表</h3>
+<table class="caption-top" style="width:98%;">
+<caption>PtTe2、NbTi量子輸運參數表</caption>
+<colgroup>
+<col style="width: 23%">
+<col style="width: 37%">
+<col style="width: 13%">
+<col style="width: 14%">
+<col style="width: 8%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><strong>參數</strong></th>
+<th style="text-align: center;"><strong>符號</strong></th>
+<th style="text-align: center;"><strong>NbTi</strong></th>
+<th style="text-align: center;"><strong>PtTe2</strong></th>
+<th style="text-align: center;"><strong>單位</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>費米速度<br>
+Fermi velocity</strong></td>
+<td style="text-align: center;"><span class="math inline">\(v_{F}\)</span></td>
+<td style="text-align: center;">≈ 1.25–1.55</td>
+<td style="text-align: center;"><span class="math inline">\(3.3 \times 10^{-5}\)</span></td>
+<td style="text-align: center;">m/s</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>平均碰撞時間<br>
+Mean free time</strong></td>
+<td style="text-align: center;"><span class="math inline">\(\tau\)</span></td>
+<td style="text-align: center;">≈ 10⁻¹²–10⁻¹¹</td>
+<td style="text-align: center;">≈ 10⁻¹²–10⁻¹¹</td>
+<td style="text-align: center;">s</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>擴散係數<br>
+Diffusion coefficient</strong></td>
+<td style="text-align: center;"><span class="math inline">\(D = v_{F}^{2}\frac{\tau}{2}\)</span></td>
+<td style="text-align: center;">≈ 5.6×10²–5.6×10³</td>
+<td style="text-align: center;">≈ 1.5×10²–2.4×10³</td>
+<td style="text-align: center;">cm²/s</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>電阻率<br>
+Resistivity</strong> ¹</td>
+<td style="text-align: center;"><span class="math inline">\(\rho = \left\lbrack n_{s}e\mu_{e} \right\rbrack^{- 1}\)</span></td>
+<td style="text-align: center;">≈ 0.001–0.01</td>
+<td style="text-align: center;">≈ 0.0002–0.002</td>
+<td style="text-align: center;">kΩ (per □)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>費米波長<br>
+Fermi wavelength</strong></td>
+<td style="text-align: center;"><span class="math inline">\(\lambda_{F} = 2\frac{\pi}{k_{F}}\)</span></td>
+<td style="text-align: center;">≈ 0.32 nm</td>
+<td style="text-align: center;">≈ 7–11 nm</td>
+<td style="text-align: center;">nm</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>平均自由路徑<br>
+Mean-free path</strong></td>
+<td style="text-align: center;"><span class="math inline">\(l_{e} = v_{F}\tau\)</span></td>
+<td style="text-align: center;">80–800</td>
+<td style="text-align: center;">180</td>
+<td style="text-align: center;">nm</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>載子遷移率<br>
+Electron mobility</strong></td>
+<td style="text-align: center;"><span class="math inline">\(\mu_{e} = \frac{v_{F}}{l_{e}}\)</span></td>
+<td style="text-align: center;">≈ 1.25–1.55</td>
+<td style="text-align: center;">≈ 6.5–7.5</td>
+<td style="text-align: center;">cm²/Vs</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>狄拉克點<br>
+Dirac point</strong></td>
+<td style="text-align: center;"><span class="math inline">\(E_{D}\)</span></td>
+<td style="text-align: center;">≈ 0.32 eV</td>
+<td style="text-align: center;">≈ 0.32 eV</td>
+<td style="text-align: center;">eV</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>超導相干長度<br>
+Superconducting coherence length</strong></td>
+<td style="text-align: center;"><span class="math inline">\(\xi\)</span></td>
+<td style="text-align: center;">≈ 10 nm</td>
+<td style="text-align: center;">≈ 10 nm</td>
+<td style="text-align: center;">nm</td>
+</tr>
+</tbody>
+</table>
+</section></section>
+<section id="參考文獻" class="title-slide slide level1 smaller scrollable">
+<h1>參考文獻</h1>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-anderson_probable_1963" class="csl-entry" role="listitem">
+Anderson, P. W., and J. M. Rowell. 1963. <span>“Probable <span>Observation</span> of the <span>Josephson</span> <span>Superconducting</span> <span>Tunneling</span> <span>Effect</span>.”</span> <em>Physical Review Letters</em> 10 (6): 230–32. <a href="https://doi.org/10.1103/PhysRevLett.10.230">https://doi.org/10.1103/PhysRevLett.10.230</a>.
+</div>
+<div id="ref-Babich2023_LimitationsCPR_NanoLett" class="csl-entry" role="listitem">
+Babich, Ian, Andrei Kudriashov, Denis Baranov, and Vasily Stolyarov. 2023. <span>“Limitations of the Current–Phase Relation Measurements by an Asymmetric Dc-<span>SQUID</span>.”</span> <em>Nano Letters</em> 23 (14). <a href="https://doi.org/10.1021/acs.nanolett.3c01970">https://doi.org/10.1021/acs.nanolett.3c01970</a>.
+</div>
+<div id="ref-bardeen_microscopic_1957" class="csl-entry" role="listitem">
+Bardeen, J., L. N. Cooper, and J. R. Schrieffer. 1957a. <span>“Microscopic <span>Theory</span> of <span>Superconductivity</span>.”</span> <em>Physical Review</em> 106 (1): 162–64. <a href="https://doi.org/10.1103/PhysRev.106.162">https://doi.org/10.1103/PhysRev.106.162</a>.
+</div>
+<div id="ref-bardeen_theory_1957" class="csl-entry" role="listitem">
+———. 1957b. <span>“Theory of <span>Superconductivity</span>.”</span> <em>Physical Review</em> 108 (5): 1175–1204. <a href="https://doi.org/10.1103/PhysRev.108.1175">https://doi.org/10.1103/PhysRev.108.1175</a>.
+</div>
+<div id="ref-barone1982physics" class="csl-entry" role="listitem">
+Barone, Antonio, and Gianfranco Paternò. 1982. <em>Physics and <span>Applications</span> of the <span>Josephson</span> <span>Effect</span></em>. 1st ed. Wiley. <a href="https://doi.org/10.1002/352760278X">https://doi.org/10.1002/352760278X</a>.
+</div>
+<div id="ref-barone_physics_1996" class="csl-entry" role="listitem">
+———. 1996. <em>Physics and Applications of the <span>Josephson</span> Effect</em>. Authoriz. facs., New York [u.a.] Wiley, 1982. <span>UMI</span> Books on Demand. Ann Arbor, Mich: UMI.
+</div>
+<div id="ref-buckel_supraleitung__2004" class="csl-entry" role="listitem">
+Buckel, Werner, and Reinhold Kleiner. 2004. <em>Supraleitung: <span>Grundlagen</span> Und <span>Anwendungen</span></em>. 6., vollständig überarbeitete und erw. Aufl (Online-Ausg.). Lehrbuch <span>Physik</span>. Wienheim: Wiley-VCH.
+</div>
+<div id="ref-callaway_remarkable_1990" class="csl-entry" role="listitem">
+Callaway, David J. E. 1990. <span>“On the Remarkable Structure of the Superconducting Intermediate State.”</span> <em>Nuclear Physics B</em> 344 (3): 627–45. <a href="https://doi.org/10.1016/0550-3213(90)90672-Z">https://doi.org/10.1016/0550-3213(90)90672-Z</a>.
+</div>
+<div id="ref-chakravarty_quantum_1988" class="csl-entry" role="listitem">
+Chakravarty, Sudip, Gert-Ludwig Ingold, Steven Kivelson, and Gergely Zimanyi. 1988. <span>“Quantum Statistical Mechanics of an Array of Resistively Shunted <span>Josephson</span> Junctions.”</span> <em>Physical Review B</em> 37 (7): 3283–94. <a href="https://doi.org/10.1103/PhysRevB.37.3283">https://doi.org/10.1103/PhysRevB.37.3283</a>.
+</div>
+<div id="ref-clarke_squid_2004" class="csl-entry" role="listitem">
+Clarke, John, and Alex I. Braginski, eds. 2004. <em>The <span>SQUID</span> <span>Handbook</span>: <span>Fundamentals</span> and <span>Technology</span> of <span>SQUIDs</span> and <span>SQUID</span> <span>Systems</span></em>. 1st ed. Wiley. <a href="https://doi.org/10.1002/3527603646">https://doi.org/10.1002/3527603646</a>.
+</div>
+<div id="ref-Cuozzo2024_MW_Tunable_Diode_PRResearch" class="csl-entry" role="listitem">
+Cuozzo, Joseph J., Wei Pan, Javad Shabani, and Enrico Rossi. 2024. <span>“Microwave-Tunable Diode Effect in Asymmetric <span>SQUID</span>s with Topological Josephson Junctions.”</span> <em>Physical Review Research</em> 6: 023011. <a href="https://doi.org/10.1103/PhysRevResearch.6.023011">https://doi.org/10.1103/PhysRevResearch.6.023011</a>.
+</div>
+<div id="ref-de_lacheisserie_magnetism__2002" class="csl-entry" role="listitem">
+De Lacheisserie, Étienne Du Trémolet, Damien Gignoux, and Michel Schlenker, eds. 2002. <em>Magnetism: <span>II</span>-<span>Materials</span> and <span>Applications</span></em>. Boston, MA: Springer US. <a href="https://doi.org/10.1007/978-1-4615-1129-8">https://doi.org/10.1007/978-1-4615-1129-8</a>.
+</div>
+<div id="ref-de_waele_quantum-interference_1969" class="csl-entry" role="listitem">
+De Waele, A.Th.A. M., and R. De Bruyn Ouboter. 1969. <span>“Quantum-Interference Phenomena in Point Contacts Between Two Superconductors.”</span> <em>Physica</em> 41 (2): 225–54. <a href="https://doi.org/10.1016/0031-8914(69)90116-5">https://doi.org/10.1016/0031-8914(69)90116-5</a>.
+</div>
+<div id="ref-devoret_superconducting_2004" class="csl-entry" role="listitem">
+Devoret, M. H., A. Wallraff, and J. M. Martinis. 2004. <span>“Superconducting <span>Qubits</span>: <span>A</span> <span>Short</span> <span>Review</span>.”</span> arXiv. <a href="https://doi.org/10.48550/ARXIV.COND-MAT/0411174">https://doi.org/10.48550/ARXIV.COND-MAT/0411174</a>.
+</div>
+<div id="ref-fei_irptte2_band_perfection_2018" class="csl-entry" role="listitem">
+Fei, Fucong et al. 2018. <span>“Band Structure Perfection and Superconductivity in Type-II Dirac Semimetal Ir1−xPtxTe2.”</span> <em>Advanced Materials</em> 30: 1801556. <a href="https://doi.org/10.1002/adma.201801556">https://doi.org/10.1002/adma.201801556</a>.
+</div>
+<div id="ref-feynman_feynman_2011" class="csl-entry" role="listitem">
+Feynman, Richard P. 2011. <span>“The <span>Feynman</span> Lectures on Physics. <span>Volume</span> 3: <span>Quantum</span> Mechanics.”</span> In, New millennium edition, paperback [edition]. New York: Basic Books.
+</div>
+<div id="ref-hirsch_origin_2012" class="csl-entry" role="listitem">
+Hirsch, J E. 2012. <span>“The Origin of the <span>Meissner</span> Effect in New and Old Superconductors.”</span> <em>Physica Scripta</em> 85 (3): 035704. <a href="https://doi.org/10.1088/0031-8949/85/03/035704">https://doi.org/10.1088/0031-8949/85/03/035704</a>.
+</div>
+<div id="ref-hsueh_investigating_2024" class="csl-entry" role="listitem">
+Hsueh, Jing-Wen, Lai-Hsiang Kuo, Po-Han Chen, Wan-Hsin Chen, Chi-Yao Chuang, Chia-Nung Kuo, Chin-Shan Lue, et al. 2024. <span>“Investigating the Role of Undercoordinated <span>Pt</span> Sites at the Surface of Layered <span>PtTe2</span> for Methanol Decomposition.”</span> <em>Nature Communications</em> 15 (1): 653. <a href="https://doi.org/10.1038/s41467-024-44840-z">https://doi.org/10.1038/s41467-024-44840-z</a>.
+</div>
+<div id="ref-jeckelmann_elementary_2019" class="csl-entry" role="listitem">
+Jeckelmann, Beat, and François Piquemal. 2019. <span>“The <span>Elementary</span> <span>Charge</span> for the <span>Definition</span> and <span>Realization</span> of the <span>Ampere</span>.”</span> <em>Annalen Der Physik</em> 531 (5): 1800389. <a href="https://doi.org/10.1002/andp.201800389">https://doi.org/10.1002/andp.201800389</a>.
+</div>
+<div id="ref-johnson_origins_2003" class="csl-entry" role="listitem">
+Johnson, D. H. 2003. <span>“Origins of the Equivalent Circuit Concept: The Voltage-Source Equivalent.”</span> <em>Proceedings of the IEEE</em> 91 (4): 636–40. <a href="https://doi.org/10.1109/JPROC.2003.811716">https://doi.org/10.1109/JPROC.2003.811716</a>.
+</div>
+<div id="ref-JOSEPHSON1962251" class="csl-entry" role="listitem">
+Josephson, B. D. 1962. <span>“Possible New Effects in Superconductive Tunnelling.”</span> <em>Physics Letters</em> 1 (7): 251–53. https://doi.org/<a href="https://doi.org/10.1016/0031-9163(62)91369-0">https://doi.org/10.1016/0031-9163(62)91369-0</a>.
+</div>
+<div id="ref-mccumber_effect_1968" class="csl-entry" role="listitem">
+McCumber, D. E. 1968. <span>“Effect of Ac <span>Impedance</span> on Dc <span>Voltage</span>-<span>Current</span> <span>Characteristics</span> of <span>Superconductor</span> <span>Weak</span>-<span>Link</span> <span>Junctions</span>.”</span> <em>Journal of Applied Physics</em> 39 (7): 3113–18. <a href="https://doi.org/10.1063/1.1656743">https://doi.org/10.1063/1.1656743</a>.
+</div>
+<div id="ref-mohr_codata_2024" class="csl-entry" role="listitem">
+Mohr, Peter, David Newell, Barry Taylor, and Eite Tiesinga. 2024. <span>“<span>CODATA</span> <span>Recommended</span> <span>Values</span> of the <span>Fundamental</span> <span>Physical</span> <span>Constants</span>: 2022.”</span> arXiv. <a href="https://doi.org/10.48550/ARXIV.2409.03787">https://doi.org/10.48550/ARXIV.2409.03787</a>.
+</div>
+<div id="ref-pavlosiuk_ptte2_galvanomagnetic_2018" class="csl-entry" role="listitem">
+Pavlosiuk, Orest, and Dariusz Kaczorowski. 2018. <span>“Galvanomagnetic Properties of the Putative Type-II Dirac Semimetal PtTe2.”</span> <em>Scientific Reports</em> 8: 11297. <a href="https://doi.org/10.1038/s41598-018-29545-w">https://doi.org/10.1038/s41598-018-29545-w</a>.
+</div>
+<div id="ref-schrieffer_theory_1999" class="csl-entry" role="listitem">
+Schrieffer, J. R. 1999. <em>Theory of Superconductivity</em>. Advanced Book Classics. Reading, Mass: Advanced Book Program, Perseus Books.
+</div>
+<div id="ref-sivakumar_long-range_2024" class="csl-entry" role="listitem">
+Sivakumar, Pranava K., Mostafa T. Ahari, Jae-Keun Kim, Yufeng Wu, Anvesh Dixit, George J. de Coster, Avanindra K. Pandeya, Matthew J. Gilbert, and Stuart S. P. Parkin. 2024. <span>“Long-Range Phase Coherence and Tunable Second Order Φ0-<span>Josephson</span> Effect in a <span>Dirac</span> Semimetal <span>1T</span>-<span>PtTe2</span>.”</span> <em>Communications Physics</em> 7 (1): 354. <a href="https://doi.org/10.1038/s42005-024-01825-0">https://doi.org/10.1038/s42005-024-01825-0</a>.
+</div>
+<div id="ref-tinkham_introduction_2015" class="csl-entry" role="listitem">
+Tinkham, Michael. 2015. <em>Introduction to Superconductivity</em>. 2 ed. Dover Books on Physics. Mineola, NY: Dover Publ.
+</div>
+<div id="ref-weihnacht_influence_1969" class="csl-entry" role="listitem">
+Weihnacht, M. 1969. <span>“Influence of <span>Film</span> <span>Thickness</span> on <span>D</span>. <span>C</span>. <span>Josephson</span> <span>Current</span>.”</span> <em>Physica Status Solidi (b)</em> 32 (2). <a href="https://doi.org/10.1002/pssb.19690320259">https://doi.org/10.1002/pssb.19690320259</a>.
+</div>
+<div id="ref-xu_nite2_typeii_dirac_2018" class="csl-entry" role="listitem">
+Xu, Chunqiang et al. 2018. <span>“Topological Type-II Dirac Fermions Approaching the Fermi Level in a Transition Metal Dichalcogenide NiTe2.”</span> <a href="https://arxiv.org/abs/1808.07610">https://arxiv.org/abs/1808.07610</a>.
+</div>
+<div id="ref-yan_lorentz-violating_2017" class="csl-entry" role="listitem">
+Yan, Mingzhe, Huaqing Huang, Kenan Zhang, Eryin Wang, Wei Yao, Ke Deng, Guoliang Wan, et al. 2017. <span>“Lorentz-Violating Type-<span>II</span> <span>Dirac</span> Fermions in Transition Metal Dichalcogenide <span>PtTe2</span>.”</span> <em>Nature Communications</em> 8 (1): 257. <a href="https://doi.org/10.1038/s41467-017-00280-6">https://doi.org/10.1038/s41467-017-00280-6</a>.
+</div>
+</div>
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="Images/logo_nsysu_thesis.jpg" class="slide-logo"></p>
+<div class="footer footer-default">
+<p>114學年度碩士論文口試</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="main_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="main_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="main_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="main_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="main_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="main_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="main_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="main_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="main_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="main_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="main_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1600,
+
+        height: 900,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

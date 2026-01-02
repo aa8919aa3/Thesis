@@ -1,0 +1,44 @@
+---
+title: "面內磁場下1T相二碲化鉑約瑟夫森接面之電流-相位關係研究"
+subtitle: "碩士學位論文口試"
+author: "徐道宜 (指導教授：邱奎霖 博士)"
+institute: "國立中山大學 物理學系"
+date: "2026-01-02"
+format:
+  revealjs:
+    # 簡報主題：採用雙主題策略，先載入預設，再載入自定義 SCSS
+    theme: [simple, custom_defense.scss]
+  pdf:
+    pdf-engine: xelatex
+    mainfont: "PingFang TC"
+    sansfont: "PingFang TC"
+    CJKmainfont: "PingFang TC"
+    slide-number: true
+    show-slide-number: all
+    logo: Images/logo_nsysu_thesis.jpg
+    footer: "114學年度碩士論文口試"
+  pptx:
+    slide-level: 2
+bibliography: references_sanitized.bib
+---
+
+{{< include chapters_qmd/Ch1-Introduction.qmd >}}
+
+{{< include chapters_qmd/Ch2-Theoretical_Background-body.qmd >}}
+
+{{< include chapters_qmd/Ch3-Experimental_Methods.qmd >}}
+
+{{< include chapters_qmd/Ch4-Results.qmd >}}
+
+{{< include chapters_qmd/Ch5-Discussion.qmd >}}
+
+{{< include chapters_qmd/Ch6-Conclusion_and_Prospect.qmd >}}
+
+# 備用投影片 (Backup Slides)
+
+{{< include appendices_qmd/appendix.qmd >}}
+
+# 參考文獻
+
+::: {#refs}
+:::

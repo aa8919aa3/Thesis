@@ -1,0 +1,26 @@
+# 理論背景 {#chapter-theoretical-background}
+
+## 核心理論架構：從材料到元件 {#section-core-theory}
+
+- **第二類狄拉克半金屬 (Type-II DSM, PtTe$_2$)**
+    - 具有受晶體對稱性保護的 **狄拉克錐 (Dirac Cone)** 與 **拓樸表面態**。
+    - 費米能階附近的 **多能帶 (Multiband)** 特性主導低能輸運。
+- **超導近接效應 (Proximity Effect)**
+    - **S-DSM-S 接面**：超導關聯透過 **安德烈夫反射 (Andreev Reflection)** 穿透半金屬。
+    - **非正弦 CPR**：高透明度接面或拓樸態可導致 $I(\varphi) = \sum A_n \sin(n\varphi)$。
+
+## 關鍵測量工具：非對稱 SQUID (aSQUID) {#section-asymmetric-squid-theory}
+
+::: {.columns}
+::: {.column width="60%"}
+- **操作原理**：$I_c^{Ref} \gg I_c^{Target}$
+    - 強參考接面 (Reference Junction) 鎖定相位 $\varphi_1 \approx \pi/2$。
+    - 外加磁通 $\Phi_{ext}$ 線性掃描目標接面相位 $\varphi_2$。
+- **核心優勢**
+    - **"相位偏置探測器" (Phase-Biased Detector)**。
+    - 可直接從 $I_c(\Phi)$ 調變曲線 **讀出 (Readout)** 目標接面的 CPR。
+:::
+::: {.column width="40%"}
+![](Images/SQUID_schematic.png){width="100%"}
+:::
+:::

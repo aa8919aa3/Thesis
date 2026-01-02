@@ -1,0 +1,27 @@
+# 緒論 {#chapter-introduction}
+
+## 研究背景與動機：為何選擇 PtTe$_2$？ {#section-motivation}
+
+- **新興量子材料與宏觀量子元件的結合**
+    - **PtTe$_2$ (Type-II Dirac Semimetal)**：具有極度傾斜的狄拉克錐與拓樸表面態。
+    - **SQUID (Superconducting Quantum Interference Device)**：極高靈敏度的磁通量測平台。
+- **關鍵缺口 (Research Gap)**
+    - 既有研究多聚焦於 **約瑟夫森二極體效應 (JDE)**。
+    - **缺乏** 對 **電流-相位關係 (CPR)** 及其 **磁場調控** 的直接、定量量測。
+- **核心策略**
+    - 利用 **非對稱 SQUID (aSQUID)** 作為相位探針。
+    - 解析 PtTe$_2$ 在超導近接效應下的 **高階諧波** 與 **輸運機制**。
+
+## 研究目的 (Research Objectives) {#section-objectives}
+
+1. **定量重構 CPR (Reconstruct CPR)**
+    - 直接量測 PtTe$_2$ 接面的電流-相位關係。
+    - 解析 **高階諧波 (Higher Harmonics)** 成分。
+
+2. **磁場調控機制 (Magnetic Tuning)**
+    - 探討 **面內磁場** 對 CPR 的連續調控行為。
+    - 連結微觀拓樸性質與宏觀輸運現象。
+
+3. **建立物理圖像 (Physical Picture)**
+    - 釐清 **體相多能帶 (Bulk Multiband)** vs. **拓樸表面態 (Surface States)** 的競爭機制。
+    - 評估 PtTe$_2$ 作為可調式量子元件的潛力。

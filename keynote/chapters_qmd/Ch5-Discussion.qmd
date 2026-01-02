@@ -1,0 +1,22 @@
+# 討論 {#chapter-discussion}
+
+## 物理機制探討：非對稱干涉圖樣的起源 {#section-origin-asymmetry}
+
+- **現象回顧**
+    - $B_{in-plane} \neq 0$ 時，夫朗和費圖樣嚴重扭曲。
+    - $I_c^+ \neq |I_c^-|$ (Time-Reversal Symmetry Breaking)。
+- **模型比較**
+    - **透明度模型 (Transparency Model)**：需極高 $\tau > 0.9$ 才能解釋 $I_2$，且無法解釋不對稱。
+    - **諧波展開 (Harmonic Series)**：引入相位 $\delta$，成功描述 TRS 破缺與高階諧波。
+- **結論**
+    - PtTe$_2$ 接面中存在 **各向異性** 的輸運機制。
+    - 面內磁場有效耦合到 **安德烈夫束縛態 (ABS)**，調控其相位。
+
+## 技術挑戰與優化方向 {#section-technical-challenges}
+
+- **製程挑戰**
+    - **側壁沉積 (Sidewall Deposition)**：可能導致額外並聯路徑。
+    - **表面氧化**：TMD 材料易氧化，需嚴格的原位清洗。
+- **對量測的影響**
+    - 接面均勻性影響干涉圖樣的對比度。
+    - 需進一步優化 **離子銑削** 參數與 **側壁保護** 製程。

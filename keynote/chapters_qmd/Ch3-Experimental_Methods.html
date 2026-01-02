@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>ch3-experimental_methods</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="Ch3-Experimental_Methods_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Ch3-Experimental_Methods_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="Ch3-Experimental_Methods_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="Ch3-Experimental_Methods_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="Ch3-Experimental_Methods_files/libs/quarto-html/popper.min.js"></script>
+<script src="Ch3-Experimental_Methods_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Ch3-Experimental_Methods_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Ch3-Experimental_Methods_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Ch3-Experimental_Methods_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Ch3-Experimental_Methods_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Ch3-Experimental_Methods_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Ch3-Experimental_Methods_files/libs/bootstrap/bootstrap-d6a003b94517c951b2d65075d42fb01b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+
+<section id="chapter-experimental-methods" class="level1">
+<h1>實驗方法</h1>
+<p>本章詳細闡述本研究所使用的完整實驗流程與設備，涵蓋了從二維材料的取得、奈米元件的製備，到極低溫電學量測系統的架設與操作。</p>
+<section id="元件製備-device-fabrication" class="level2">
+<h2 class="anchored" data-anchor-id="元件製備-device-fabrication">元件製備 (Device Fabrication)</h2>
+<p>本節詳述使用機械剝離法得到二碲化鉑薄片，並透過多道微影與沉積步驟完成SQUID元件的完整流程。</p>
+<section id="助熔劑生長法-selfflux-method" class="level3">
+<h3 class="anchored" data-anchor-id="助熔劑生長法-selfflux-method">助熔劑生長法 (Self‐Flux Method)</h3>
+<p>本實驗所使用之二碲化鉑為國立成功大學凝態物理實驗室呂欽山教授所提供<span class="citation" data-cites="hsueh_investigating_2024">[@hsueh_investigating_2024]</span>，其使用助熔劑法生長而成。助熔劑法是一種功能強大且廣泛使用的技術，將欲生長晶體的成分（溶質）溶解於合適的溶劑（助熔劑）中，再藉由緩慢冷卻溶液來引發單晶結晶。</p>
+<figure class="figure">
+<p>
+<img src="/Images/topological_materials.png" style="width:100.0%" class="figure-img">
+</p>
+<figcaption>
+<p>
+拓樸材料晶體。Ref.<span class="citation" data-cites="topological_materials">[topological_materials]</span>
+</p>
+</figcaption>
+</figure>
+<p><span id="fig-topological_materials"></span></p>
+</section>
+</section>
+<section id="機械剝離法-mechanical-exfoliation-method" class="level2">
+<h2 class="anchored" data-anchor-id="機械剝離法-mechanical-exfoliation-method">機械剝離法 (Mechanical Exfoliation Method)</h2>
+<p>本章將詳細說明本實驗使用機械剝離法 (Mechanical Exfoliation Method) 得到原子級厚度的二維材料層狀薄片 (Flake) 的完整流程與方法，包括基板預處理、膠帶黏貼剝離。</p>
+<section id="基板準備-substrate-preparation" class="level3">
+<h3 class="anchored" data-anchor-id="基板準備-substrate-preparation">基板準備 (Substrate Preparation)</h3>
+<p>本實驗使用的基板為低電阻重參雜 P 型單面矽/熱氧化二氧化矽基板 (NOVA electronics #HS39626-OX：4”, P-type, <span id="100"></span>, 1.0∼ 5.0 × 10−3Ω· 𝑐𝑚 Resistivity, 2850 A°±5% Dry Thermal Oxide)。</p>
+<ol type="1">
+<li><p>將 7×7mm 大小的破片放入 140 °C 的二甲基亞碸 (DMSO, Dimethyl sulfoxide) 溶劑中靜置 1 小時，以去除基板上保護用的正型光阻（MICROPOSIT™ S1813 G2 Photoresists）薄膜。</p></li>
+<li><p>將破片放入 40 °C 的丙酮（Acetone）溶劑中去除 DMSO，約 1 分鐘後再放入異丙醇 (IPA) 溶劑中進行潤洗後取出，接著使用氮氣槍吹乾基板表面。</p></li>
+<li><p>使用Henniker plasma HPT-100電漿處理系統，以氧電漿（<span class="math inline">\(O_{2}\)</span> Plasma）進行基板表面清潔，使用前用100% 運轉功率、50 標準立方公分每分（Standard Cubic Centimeter per Minute, SCCM），進行5分鐘的腔體清潔，過程中需觀察腔體內電漿顏色，以確保管路中沒有氧氣以外的其他氣體。腔體清潔結束後使用100%運轉功率、40 SCCM，進行10分鐘的基板表面清潔。完成後儘速將基板放置於手套箱內開始進行剝離以避免水氣附著。</p></li>
+</ol>
+</section>
+<section id="二維材料剝離-2d-materials-exfoliation" class="level3">
+<h3 class="anchored" data-anchor-id="二維材料剝離-2d-materials-exfoliation">二維材料剝離 (2D Materials Exfoliation)</h3>
+<p>本實驗使用的膠帶為 Nitto SPV-224PR-MJ，以下簡稱藍膠。</p>
+<ol type="1">
+<li><p>確認手套箱內水氧值皆小於 0.5ppm，將零號藍膠 (Tape 0) 膠面朝上固定於平面，用鑷子將夾取二碲化鉑塊材（Bulk）放置於 Tape 0 上。</p></li>
+<li><p>一號藍膠 (Tape 1) 膠面朝下覆蓋於 Tape 0 後使用棉棒輕推表面確保確實兩膠面接觸，撕開兩片膠帶實現層與層的分離。</p></li>
+<li><p>重複步驟 2，直到塊材佈滿大於 7×7mm 大小的面積範圍後將 Tape 0 用另一片藍膠覆蓋後收納備用。</p></li>
+<li><p>將 Tape 1 膠面朝上固定於平面，二號藍膠 (Tape 2) 膠面朝下覆蓋於 Tape 1 後使用棉棒輕推表面確保確實兩膠面接觸，撕開兩片膠帶實現層與層的分離後將 Tape 1 用另一片藍膠覆蓋後收納備用。</p></li>
+<li><p>重複步驟 4，直到塊材分布密度合適，以二碲化鉑為例通常為 Tape 4 或 5。</p></li>
+<li><p>使用電磁加熱烤盤以 120 °C 加熱基板 10 分鐘後靜置 1 分鐘。</p></li>
+<li><p>將基板放置於平面，藍膠膠面朝下並傾斜一小角度使其一側接觸基板後使用棉棒輕推表面，確保膠面與基板表面確實接觸且無氣泡後靜置 5 分鐘。</p></li>
+<li><p>撕開膠帶實現層與層的分離後將基板置於可重複使用真空密封食品壓縮袋，使用手持式真空保鮮機抽真空後拿出手套箱。</p></li>
+<li><p>儘速將基板移動至旋轉塗佈機 (Spin Coater) 使用聚甲基丙烯酸甲酯（Poly(methyl methacrylate), PMMA A6）正向抗蝕劑以 500 rpm 旋轉 5 秒, 以高加速度升速至最終轉速 4000 rpm，此旋塗步驟總時長為 55 秒。</p></li>
+<li><p>使用 180 °C 預烤 (Prebake) 基板 3 分鐘即完成機械剝離流程。</p></li>
+</ol>
+</section>
+<section id="電子束微影-e-beam-lithography-ebl" class="level3">
+<h3 class="anchored" data-anchor-id="電子束微影-e-beam-lithography-ebl">電子束微影 (E-Beam Lithography, EBL)</h3>
+<p>本研究中所有奈米級圖案的定義，例如對準標記與元件電極，均是透過電子束微影技術完成。整個流程在一台 Raith PIONEER Two 掃描式電鏡/電子束微影系統上執行。以下將詳述其製備、曝光與顯影的具體步驟。</p>
+<section id="抗蝕劑準備-resist-preparation" class="level4">
+<h4 class="anchored" data-anchor-id="抗蝕劑準備-resist-preparation">抗蝕劑準備 (Resist Preparation)</h4>
+<p>在進行圖案定義之前，首先須在樣品表面旋塗一層電子束抗蝕劑。本實驗選用聚甲基丙烯酸甲酯 (Poly-methyl methacrylate), PMMA) A6 等級作為正向抗蝕劑。旋塗程序分為兩階段：首先以 500 rpm 的低速旋轉 5 秒，以確保抗蝕劑均勻散佈，隨後以 4000 rpm 的高速旋轉 55 秒，以達到最終所需的厚度。旋塗完成後，樣品被放置於 180°C 的熱板上烘烤 180 秒，目的是為了完全去除抗蝕劑中的溶劑並使其固化。</p>
+</section>
+<section id="圖案曝光-pattern-exposure" class="level4">
+<h4 class="anchored" data-anchor-id="圖案曝光-pattern-exposure">圖案曝光 (Pattern Exposure)</h4>
+<p>抗蝕劑準備完成後，樣品被送入 EBL 系統的真空腔體中進行圖案曝光。所有的曝光步驟均在 20 kV 的加速電壓下進行。此流程同樣分為兩步：</p>
+<ol type="1">
+<li><p><strong>對準標記 (Alignment Markers)</strong>：第一步是在樣品上定義大面積的對準標記 (alignment markers)，這些標記將作為後續高精度圖案疊對的基準。為實現快速曝光，此步驟選用了 120 µm 的大光圈 (aperture) 以獲得約 12 nA 的較大電子束流，並採用 370 μC/cm² 的面積劑量 (area dose) 進行寫入。</p></li>
+<li><p><strong>接觸電極 (Contact Electrodes)</strong>：在系統通過對準標記精確鎖定 PtTe₂ 薄片的位置後，進行第二步高解析度的接觸電極圖案曝光。為確保圖案的精細度與邊緣的陡峭度，此步驟換用 30 µm 的小光圈，將束流精細地控制在約 0.3 nA，並以 375 μC/cm² 的劑量進行寫入。</p></li>
+</ol>
+</section>
+<section id="顯影-development" class="level4">
+<h4 class="anchored" data-anchor-id="顯影-development">顯影 (Development)</h4>
+<p>曝光完成後，將樣品從系統中取出進行化學顯影，以溶解經電子束照射後分子鏈斷裂的 PMMA 區域。樣品被沉浸於甲基異丁基酮 (MIBK) 與異丙醇 (IPA) 體積比為 1:3 的混合溶液中。整個顯影過程在 23°C 的恆溫環境下精確控制 50 秒。隨後，為終止顯影反應，樣品被迅速轉移至純 IPA 溶液中浸泡 20 秒，以沖洗並去除殘留的顯影劑。完成此步驟後，樣品表面即形成了所需圖案的抗蝕劑模板，可供後續的金屬沉積與舉離 (lift-off) 製程使用。</p>
+</section>
+</section>
+</section>
+<section id="金屬沉積與舉離-metal-deposition-and-lift-off" class="level2">
+<h2 class="anchored" data-anchor-id="金屬沉積與舉離-metal-deposition-and-lift-off">金屬沉積與舉離 (Metal Deposition and Lift-off)</h2>
+<p>本實驗涉及兩種金屬沉積：</p>
+<ol type="1">
+<li><p><strong>對準標記 (Cr/Au)</strong>：使用一般金屬作為後續製程的定位基準。</p></li>
+<li><p><strong>超導電極 (NbTi)</strong>： 用於與<span class="math inline">\(\text{PtTe}_{2}\)</span>薄片形成接觸。</p></li>
+</ol>
+<section id="一般金屬熱蒸鍍沉積與舉離-thermal-evaporation-deposition-and-lift-off-of-normal-metals" class="level3">
+<h3 class="anchored" data-anchor-id="一般金屬熱蒸鍍沉積與舉離-thermal-evaporation-deposition-and-lift-off-of-normal-metals">一般金屬熱蒸鍍沉積與舉離 (Thermal Evaporation Deposition and Lift-off of Normal Metals)</h3>
+<p>為了能夠在後續的電子束微影 (EBL) 步驟中，將奈米級的電極圖案精確地疊對 (align) 到目標 PtTe₂ 薄片上，我們首先在 SiO₂/Si 基板上製作了一組金屬材質的全域對準標記 (global alignment markers)。</p>
+<p>標記的圖案首先透過 EBL 技術被定義在抗蝕劑層上。在完成顯影後，樣品被送入一台 <strong>Korvus HEX 桌上型物理氣相沉積 (PVD) 系統</strong>中進行金屬沉積。該系統的核心是一個四腔電子束蒸發器，其原理是利用高能電子束在真空環境下直接轟擊並加熱裝有源材料的坩堝，使材料蒸發形成物理氣相沉積。</p>
+<p>為確保標記的穩定性與高對比度，我們採用了雙層金屬結構。在腔體被抽至高真空環境後，依序蒸鍍：</p>
+<ol type="1">
+<li><p><strong>附著層 (Adhesion Layer)</strong>：一層約 10 nm 厚的<strong>鉻 (Cr)</strong>，用以增強標記與基板的附著力。</p></li>
+<li><p><strong>對比層 (Contrast Layer)</strong>：一層約 50 nm 厚的<strong>金 (Au)</strong>，其較高的原子序數能夠在掃描式電子顯微鏡 (SEM) 下提供清晰的二次電子或背向散射電子圖像，從而利於 EBL 系統進行自動識別和對位。</p></li>
+</ol>
+<p>金屬沉積完成後，透過在丙酮中進行<strong>舉離 (lift-off)</strong>，移除抗蝕劑，最終在基板表面留下永久性的 Cr/Au 金屬對準標記。這些標記為所有後續的材料轉移和微影製程提供了一個固定的、高精度的參考坐標系。</p>
+</section>
+<section id="超導金屬的濺鍍沉積與舉離-sputter-deposition-of-superconducting-metals-and-lift-off" class="level3">
+<h3 class="anchored" data-anchor-id="超導金屬的濺鍍沉積與舉離-sputter-deposition-of-superconducting-metals-and-lift-off">超導金屬的濺鍍沉積與舉離 (Sputter Deposition of Superconducting Metals and Lift-off)</h3>
+<p>最終用以連接<span class="math inline">\(\text{PtTe}_{2}\)</span>元件的超導電極，是透過一套包含原位 (in-situ) 介面清潔與磁控濺鍍 (magnetron sputtering) 的整合性製程完成。所有步驟均在 Aja Orion 8 物理氣相沉積 (PVD) 系統中執行，以確保最佳的介面品質。</p>
+</section>
+<section id="介面清潔原位離子銑削-interface-cleaning-in-situ-ion-milling" class="level3">
+<h3 class="anchored" data-anchor-id="介面清潔原位離子銑削-interface-cleaning-in-situ-ion-milling">介面清潔：原位離子銑削 (Interface Cleaning: In-situ Ion Milling)</h3>
+<p>在沉積超導金屬之前，為了確保金屬與<span class="math inline">\(\text{PtTe}_{2}\)</span>材料之間形成一個潔淨、低電阻的歐姆接觸 (Ohmic contact) 介面，我們對樣品進行了一道原位的離子束蝕刻處理。該過程在氬氣（Ar）流量控制在0.4 mTorr的腔體壓力環境下進行，離子源以 600 V 的加速電壓產生離子束，對樣品表面進行持續 30 秒的輕微離子銑削（Ion Milling）。此步驟旨在有效去除先前 EBL 製程中可能殘留的任何抗蝕劑殘渣或樣品表面的自然污染物。</p>
+</section>
+<section id="超導金屬的濺鍍沉積-sputter-deposition-of-superconducting-metals" class="level3">
+<h3 class="anchored" data-anchor-id="超導金屬的濺鍍沉積-sputter-deposition-of-superconducting-metals">超導金屬的濺鍍沉積 (Sputter Deposition of Superconducting Metals)</h3>
+<p>介面清潔完成後，樣品維持在高真空環境中，不破壞真空，立即進行超導薄膜的沉積。我們選擇<strong>鈮鈦 (NbTi)</strong> 合金作為超導接觸電極材料。濺鍍製程在 3 mTorr 的氬氣工作壓力下進行。一個 300 W 的直流 (DC) 電源被施加於 NbTi 靶材上，使其原子被濺射並沉積到樣品表面，最終形成一層厚度為 70-120 nm 的均勻薄膜。</p>
+</section>
+<section id="接觸點的舉離-lift-off-for-contacts" class="level3">
+<h3 class="anchored" data-anchor-id="接觸點的舉離-lift-off-for-contacts">接觸點的舉離 (Lift-off for Contacts)</h3>
+<p>完成濺鍍後，樣品從真空系統中取出，並執行最後的舉離步驟以定義出最終的電極圖案。樣品浸泡於丙酮中，以溶解下層的 PMMA 抗蝕劑，並移除覆蓋其上的多餘 NbTi 薄膜。此步驟完成後，僅留下在 EBL 步驟中定義的、且與<span class="math inline">\(\text{PtTe}_{2}\)</span>直接接觸的超導電極結構。</p>
+</section>
+<section id="顯微鏡檢測-microscopy" class="level3">
+<h3 class="anchored" data-anchor-id="顯微鏡檢測-microscopy">顯微鏡檢測 (Microscopy)</h3>
+<p>在製程的各個階段，我們使用多種顯微鏡進行檢測與定位：</p>
+<ul>
+<li><strong>光學顯微鏡 (KEYENCE VHX-7000N)</strong>：</li>
+</ul>
+<ol type="1">
+<li><p><strong>尋找與定位二維材料層狀薄片 (Flake)</strong>：完成機械剝離流程後，透過光學顯微鏡 (OM, Optical Microscope) 初步判斷是否有 二碲化鉑 薄片，並使用 VHX-7000N 的連續拍攝功能拍攝基板的四個角落及薄片照片，並得到座標。</p></li>
+<li><p><strong>確認曝光後顯影結果</strong>：完成顯影流程後，透過 OM 判斷曝光結果，確認線寬與曝光劑量是否正確，並使用「量測與標尺」功能拍攝照片並標注量測結果。</p></li>
+<li><p><strong>確認 Markers 蒸鍍後舉離結果</strong>：完成舉離流程後，透過 OM 判斷 Markers 蒸鍍結果，確認 Markers 是否確實舉離無相連部分，並用適當倍率拍攝 Markers 與目標薄片同框的照片以供後續數位化流程使用。</p></li>
+<li><p><strong>確認 Contacts 濺鍍後舉離結果</strong>：完成舉離流程後，透過 OM 判斷 Contacts 濺鍍結果，確認小線寬部分是否確實舉離無相連部分，並使用「量測與標尺」功能拍攝照片並標注量測結果。</p></li>
+<li><p><strong>確認打線結果</strong>：完成打線流程後，透過 OM 判斷打線結果，確認基板上供接線轉接用之銲墊 (Bonding Pad) 和 PCB 上金銲線連接指 (Bonding Finger) 與鋁銲線頭是否確實相連，並檢查鋁銲線無相互接觸以避免短路或形成預期外的電路通路。使用「圖片連接」功能用適當倍率拍攝所有金打線板與基板的照片，以供後續量測時作為線路參考。</p></li>
+</ol>
+<ul>
+<li><strong>原子力顯微鏡 (Park systems NX10)</strong>：在非接觸模式下，用來精確量測PtTe₂薄片的厚度（從而推算層數）以及確認沉積金屬的厚度與表面形貌。</li>
+</ul>
+<p>AFM 在此研究中扮演了兩個關鍵角色：(1) 鑑定機械剝離 (mechanically exfoliated) 的 PtTe₂ 薄片的厚度與層數；(2) 確認蒸鍍金屬電極的厚度、表面粗糙度與邊緣形貌。</p>
+<p>所有 AFM 量測均在<strong>非接觸模式 (non-contact mode)</strong> 下進行，以最小化探針與樣品表面之間的交互作用，從而保護脆弱的二維材料薄片與金屬結構不被物理損傷。</p>
+<p>首先，對於 PtTe₂ 薄片，我們透過量測其表面與周圍 SiO₂ 基板之間的<strong>步階高度 (step height)</strong> 來確定其物理厚度。基於已知的 PtTe₂ 材料層間距，我們可以從量測到的厚度推算出薄片的原子層數。這一步驟對於篩選出符合實驗需求的特定層數（例如單層或少層）的樣品至關重要。</p>
+<p>其次，在完成電極蒸鍍製程後，我們利用 AFM 對接觸金屬 NbTi 的形貌進行檢測。分析的重點包括金屬膜的表面粗糙度 (surface roughness)、顆粒大小 (grain size) 以及電極圖案的邊緣清晰度。同時，透過量測金屬與基板的步階高度，我們可以驗證其實際沉積厚度是否與蒸鍍儀器設定的目標值一致。此項表徵是確保元件具備良好歐姆接觸與電氣性能的關鍵品質控制環節。</p>
+</section>
+</section>
+<section id="元件特性分析系統-device-characterization-setup" class="level2">
+<h2 class="anchored" data-anchor-id="元件特性分析系統-device-characterization-setup">元件特性分析系統 (Device Characterization Setup)</h2>
+<p>本研究旨在探討特定樣品在低溫環境及外加磁場下的電運輸性質 (Electrical Transport Properties)。為此，我們搭建了一套基於四端點量測法 (Four-Point Probe Method) 又名開爾文測量法（Kelvin sensing）的直流電學量測系統。本章節將詳述其量測原理、實驗架構與操作步驟。</p>
+</section>
+<section id="量測裝置-measurement-setup" class="level2">
+<h2 class="anchored" data-anchor-id="量測裝置-measurement-setup">量測裝置 (Measurement Setup)</h2>
+<section id="稀釋制冷機-dilution-refrigerator" class="level3">
+<h3 class="anchored" data-anchor-id="稀釋制冷機-dilution-refrigerator">稀釋制冷機 (Dilution Refrigerator)</h3>
+<p>為實現對樣品在毫開爾文 (milli-Kelvin, mK）溫度區間的量子現象觀測，本研究採用了一套 Bluefors 公司製造的 LD-400 型濕式稀釋制冷系統（Wet Dilution Refrigerator System）。該系統能夠提供約40 mK的穩定基礎溫度（Base Temperature）。提供如此低的實驗環境至關重要，其主要目的有二：第一，確保樣品溫度遠低於其超導轉變溫度 (Tc)10K，使樣品能完全進入並穩定維持在超導態；第二，有效抑制因熱能 (<span class="math inline">\(k_{B}T\)</span>)引起的熱擾動（Thermal Fluctuations），從而降低量子退相干（Quantum Decoherence） 效應，使得如電流-相位關係（Current-Phase Relation） 等微弱的宏觀量子現象（macroscopic quantum effects)）得以被精確地量測。為進一步提升實驗效率，本系統配備了底部裝載快速樣品更換（Bottom-Loading Fast Sample Exchange, FSE） 機構。該機構允許在主制冷系統各級冷盤（如 4K plate 與 Still plate）皆保持在低溫狀態的情況下，獨立地將樣品載台（Sample Holder） 取出更換。相較於需要數日才能完成一次完整熱循環（升溫至室溫再降溫）的傳統方式，FSE 系統將更換樣品所需的週期縮短至14小時 。此功能極大地提高了樣品測試的效率，對於需要進行多輪製程參數迭代與多個元件篩選及特性比對的研究工作至關重要。</p>
+</section>
+<section id="超導磁鐵系統-superconducting-magnet-system" class="level3">
+<h3 class="anchored" data-anchor-id="超導磁鐵系統-superconducting-magnet-system">超導磁鐵系統 (Superconducting Magnet System)</h3>
+<p>為研究樣品在不同磁場強度與方向下的物理特性，本實驗系統集成了一套 Bluefors 製造的三維向量磁鐵 (3D Vector Magnet)。該磁鐵系統的核心由三組相互正交的超導線圈構成，能夠在主軸 (Z-axis) 方向上產生最高達 9 特斯拉 (Tesla) 的磁場，並在與之垂直的兩個次軸 (X-axis and Y-axis) 方向上分別產生最高 1 T 的磁場，此即為一組 9-1-1 T 組態。這種三軸向量能力使得我們可以在三維空間中產生任意方向的磁場向量，從而對樣品的各向異性 (anisotropy) 或需要精確磁場對位的現象進行深入探討。</p>
+<p>整個磁鐵系統的驅動與控制由一套 American Magnetics, Inc.&nbsp;(AMI) 的整合式電源供應系統負責。該系統包含三組獨立的磁鐵電源，其輸出電流由一台 AMI Model 430 電源程式控制器進行精密調控。此控制器不僅確保了各軸磁場的穩定性，更允許我們透過電腦程式自動化地控制磁場向量的大小、方向以及場掃描速率 (ramp rate)，以執行複雜的磁場掃描序列。</p>
+</section>
+<section id="低溫線路與客製化-pcb-樣品座-cryogenic-wiring-and-custom-pcb-sample-holder" class="level3">
+<h3 class="anchored" data-anchor-id="低溫線路與客製化-pcb-樣品座-cryogenic-wiring-and-custom-pcb-sample-holder">低溫線路與客製化 PCB 樣品座 (Cryogenic Wiring and Custom PCB Sample Holder)</h3>
+<p>為了在將直流與射頻 (RF) 信號從室溫儀器傳導至毫開爾文溫區的量子元件時，最大程度地抑制傳導熱負載 (conducted heat load) 與電磁雜訊，本實驗搭建了一套多級濾波與熱錨方案。此方案的核心在於混合使用了商業化的低溫濾波器模組與客製化的終端樣品電路板。</p>
+<section id="直流低頻線路濾波-dclow-frequency-line-filtering" class="level4">
+<h4 class="anchored" data-anchor-id="直流低頻線路濾波-dclow-frequency-line-filtering">直流/低頻線路濾波 (DC/Low-Frequency Line Filtering)</h4>
+<p>所有通往樣品的直流與低頻控制線路，都經過一套 QDevil 公司生產的 QFilter 模組進行濾波。此模組被牢固地安裝於稀釋制冷機的混合腔冷盤 (Mixing Chamber plate) 上，以確保信號線及濾波器元件本身都能與 mK 溫區達到充分的熱平衡。我們採用的是標準的雙級濾波組態，將一個 24 通道的低頻 RC 濾波板與一個 24 通道的高頻 LC 濾波板進行串聯。RC 濾波級的衰減起始於 65 kHz，而 LC 濾波級則針對 225 MHz 以上的射頻雜訊提供有效衰減。</p>
+</section>
+<section id="客製化樣品座與高密度線路-custom-sample-holder-and-high-density-wiring" class="level4">
+<h4 class="anchored" data-anchor-id="客製化樣品座與高密度線路-custom-sample-holder-and-high-density-wiring">客製化樣品座與高密度線路 (Custom Sample Holder and High-Density Wiring)</h4>
+<p>經過主濾波級後，信號透過一套高密度、模組化的線路連接至安裝有兩個樣品 (2 X PCB) 的客製化樣品座。該線路方案利用了多芯數的 Micro-D 連接器（如 51-pin 及 100-pin）對多達 48 個獨立的信號通道進行整合與管理。在制冷機內部，這些信號透過多組（例如 4 組 12 對）磷青銅雙絞線 (Twisted Pair) 進行傳輸。最終，在室溫端的接口面板，線路被轉換為 Fischer 24-pin 連接器，以便與外部的量測儀器相連。整個信號路徑的設計旨在確保信號完整性、最小化串擾 (crosstalk)，並提供穩固可靠的連接。</p>
+</section>
+<section id="高頻線路濾波-high-frequency-line-filtering" class="level4">
+<h4 class="anchored" data-anchor-id="高頻線路濾波-high-frequency-line-filtering">高頻線路濾波 (High-Frequency Line Filtering)</h4>
+<p>對於 RF 控制線路，則採用了不同的濾波策略。在同軸線路中，我們安裝了 Low-loss Infrared (IR) Filter，其主要功能是阻擋來自較高溫級的紅外光子直接輻射到樣品，以降低對量子態的干擾。該濾波器在有效阻擋紅外輻射的同時，對 DC 至 6 GHz 的工作信號僅有小於 1 dB 的插入損耗。</p>
+</section>
+</section>
+<section id="電流-電壓-i-v-量測系統-current-voltagei-v-measurement-system" class="level3">
+<h3 class="anchored" data-anchor-id="電流-電壓-i-v-量測系統-current-voltagei-v-measurement-system">電流-電壓 (I-V) 量測系統 (Current-Voltage(I-V) Measurement System)</h3>
+<p>為了全面性地鑑定元件的電學特性，本研究建立的 I-V 量測系統涵蓋了兩個關鍵階段：(1) 在室溫下對大量元件進行快速的初步篩選；(2) 在極低溫環境中對通過初篩的元件進行高精度的特性量測。</p>
+<section id="室溫初步特性鑑定-room-temperature-pre-characterization" class="level4">
+<h4 class="anchored" data-anchor-id="室溫初步特性鑑定-room-temperature-pre-characterization">室溫初步特性鑑定 (Room-Temperature Pre-characterization)</h4>
+<p>在此測試組態中，激勵電流 (stimulus current) 由一台 Keithley 2400 源-量測單元 (SMU) 提供，該儀器被設定於電壓源模式，其輸出經過一個 100 kΩ 的串聯電阻轉換為電流源。此電流隨後被路由至待測元件，而元件上的響應電壓則由一台 Basel Precision Instruments (BPI) Model SP1004 低噪聲差動放大器進行放大，並由 Keithley DMM6500 萬用電錶讀取。為了能對晶片上的大量元件進行高效的自動化測試，整個信號的路由與切換由兩台 Quantum Machines 生產的 24 通道 QDAC 模組構成的矩陣交換器進行管理。</p>
+</section>
+<section id="極低溫-i-v-特性精細量測-cryogenic-i-v-characterization" class="level4">
+<h4 class="anchored" data-anchor-id="極低溫-i-v-特性精細量測-cryogenic-i-v-characterization">極低溫 I-V 特性精細量測 (Cryogenic I-V Characterization)</h4>
+<p>低溫下的高精度 I-V 量測，其核心由一套由台夫特理工大學 (Delft University of Technology) 設計與製造、專為低溫量子測量開發的、電池供電的 <strong>IVVI-DAC2-rack</strong> 系統執行。採用電池供電是為了實現與外部儀器電源的電氣隔離 (galvanic isolation)，從根本上消除接地迴路 (ground loops) 和來自電力線的雜訊。</p>
+<p><strong>信號路由與儀器配置 (Signal Routing and Instrument Configuration)</strong> 從低溫恆溫器引出的主線纜，其信號首先被轉換至四個 24-pin 的 Fischer 接口面板。實驗時，根據待測元件的位置，我們從中選取兩路 Fischer 插頭，將其連接至兩台 24 通道的 <strong>Matrix-rack</strong> 模組化跳線盤。這個 Matrix-rack 作為連接低溫世界與室溫儀器的中樞，其內部的 MCX 連接器跳線面板允許我們對每一條獨立的信號線進行靈活、精確的配置。對於一組特定的四端點量測，指定的線路通過 MCX-to-LEMO 轉接線，被分別連接至 IVVI-rack 中的功能模組：</p>
+<ul>
+<li><p><strong>電流源 (Current Source)</strong>: 負責施加偏壓的線路 (I+,I−) 被連接至一個 <strong>S4m 電流源模組</strong>。該模組的輸出電流量程可手動設置，而其精確的電流大小則由 IVVI-rack 內建的 DAC 進行掃描控制。我們採用此模組的<strong>對稱 (symmetric)</strong> 輸出模式進行量測。在此模式下，模組同時提供正、負兩路相對於地電位對稱的電壓輸出，其主要優點是能夠最小化樣品上可能出現的共模電壓 (common-mode voltage)，並有效倍增電壓源的輸出擺幅 (output swing)。</p></li>
+<li><p><strong>電壓量測 (Voltage Measurement)</strong>: 負責感測電壓的線路 (V+,V−) 被連接至一個 <strong>M2b 電壓量測模組</strong>。此模組是專為實現極低的 1/f 噪聲而優化的 JFET 輸入級差動放大器，其輸入電壓噪聲密度在 10 Hz 以上時低至 2 nV/√Hz。</p></li>
+</ul>
+<p>經過 M2b 模組放大後，類比電壓信號從機架的隔離環境中被輸出，並最終由一台 Keithley DMM6500 6½-Digit 數位萬用電錶進行高精度數位化及數據記錄。</p>
+</section>
+</section>
+<section id="射頻信號產生器-rf-signal-generator" class="level3">
+<h3 class="anchored" data-anchor-id="射頻信號產生器-rf-signal-generator">射頻信號產生器 (RF Signal Generator)</h3>
+<p>為了對元件進行射頻下的特性分析，例如 Shapiro steps 量測，本實驗系統整合了一台 Rohde &amp; Schwarz (R&amp;S) SGS100A 射頻信號產生器。該儀器能夠產生頻率範圍從 1 MHz 至 20 GHz 的高穩定度、低相位雜訊的正弦波信號。</p>
+<p>信號的輸出功率可在大範圍內進行精密調控。在送入低溫恆溫器之前，RF 信號會經過一系列的同軸衰減器 (coaxial attenuators) 進行大幅衰減，以確保最終施加於樣品上的功率處於適當的微弱範圍，避免過大的 RF 功率對樣品造成過熱或破壞其超導態。整個 RF 信號路徑的校準與衰減值的計算是確保量測結果準確性的關鍵步驟。</p>
+</section>
+<section id="數據擷取框架qcodes-data-acquisition-framework-qcodes" class="level3">
+<h3 class="anchored" data-anchor-id="數據擷取框架qcodes-data-acquisition-framework-qcodes">數據擷取框架：QCoDeS (Data Acquisition Framework: QCoDeS)</h3>
+<p>本研究的所有實驗控制、儀器協調與數據擷取流程，均基於 <strong>QCoDeS</strong> (Quantum Code and Data acquisition System) 軟體框架實現。QCoDeS 是一個基於 Python 的開源框架，由哥本哈根/代爾夫特量子計算聯盟等機構開發，旨在為量子計算與凝聚態物理實驗提供一個標準化、模組化的軟體基礎設施。我們選用此框架的核心原因在於其強大的儀器抽象能力與結構化的數據管理模型，這使得複雜的實驗流程得以簡化，並確保了數據的高度可追溯性。</p>
+<p>在我們的具體實現中，所有實驗儀器（如 IVVI-rack 模組、信號產生器、數位電錶等）均被分別封裝為 QCoDeS 的 <code>Instrument</code> 物件，其可控屬性則對應為 <code>Parameter</code>。整個實驗裝置由一個 <code>Station</code> 物件進行統一管理，其詳細配置透過 YAML 檔案進行定義與載入，確保了實驗設置的靈活性與可重現性。所有的量測序列，無論是簡單的線性掃描還是複雜的多維掃描，都透過 QCoDeS 的 <code>Measurement</code> 上下文管理器執行。在每次量測運行 (<code>run</code>) 開始時，系統會自動擷取所有儀器參數的<strong>快照 (snapshot)</strong>，並與實驗數據一同儲存。</p>
+<p>所有實驗數據都被結構化地儲存於一個以 SQLite 為後端的本地數據庫中。每一個 <code>DataSet</code> 實例都包含完整的元數據、儀器快照以及量測結果，並被賦予一個<strong>全域唯一識別碼 (GUID)</strong>，極大地增強了數據的可追溯性、完整性與共享便利性。</p>
+</section>
+</section>
+<section id="實驗實現-experimental-realization" class="level2">
+<h2 class="anchored" data-anchor-id="實驗實現-experimental-realization">實驗實現 (Experimental Realization)</h2>
+<section id="坐標系與磁場定義-coordinate-system-and-magnetic-field-definitions" class="level3">
+<h3 class="anchored" data-anchor-id="坐標系與磁場定義-coordinate-system-and-magnetic-field-definitions">坐標系與磁場定義 (Coordinate System and Magnetic Field Definitions)</h3>
+<p>在本研究中，我們先定義樣品座標系如下：樣品平面為 <span class="math inline">\(x\)</span>–<span class="math inline">\(y\)</span> 平面， <span class="math inline">\(x\)</span> 軸沿約瑟夫森接面中的電流傳輸方向（從一側超導電極指向另一側）， <span class="math inline">\(y\)</span> 軸沿接面寬度方向，<span class="math inline">\(z\)</span> 軸則垂直於樣品平面，由基板指向探針。</p>
+<p>實驗所使用的三軸向量磁鐵可以在三個互相正交的方向產生磁場分量 <span class="math inline">\(B_{x}\)</span>, <span class="math inline">\(B_{y}\)</span>, <span class="math inline">\(B_{z}\)</span>，其定義如下：</p>
+<ul>
+<li><p><span class="math inline">\(B_{x}\)</span>：平行於電流方向、位於樣品平面內的磁場分量（沿 <span class="math inline">\(x\)</span> 軸）。</p></li>
+<li><p><span class="math inline">\(B_{y}\)</span>：垂直於電流方向、位於樣品平面內的磁場分量（沿 <span class="math inline">\(y\)</span> 軸）。</p></li>
+<li><p><span class="math inline">\(B_{z}\)</span>：垂直於樣品平面的磁場分量（沿 <span class="math inline">\(z\)</span> 軸）。</p></li>
+</ul>
+<p>除非另有特別說明，本文中提到的面內（in-plane）磁場係指由 <span class="math inline">\(\left( B_{x},B_{y} \right)\)</span> 組合而成的平面內磁場，而面外（out-of-plane）磁場則專指 <span class="math inline">\(B_{z}\)</span>。</p>
+</section>
+<section id="i-v-特性-i-v-characteristics" class="level3">
+<h3 class="anchored" data-anchor-id="i-v-特性-i-v-characteristics">I-V 特性 (I-V Characteristics)</h3>
+<p>元件的基礎直流傳輸特性，是透過在恆定溫度下，量測其電壓-電流 (I-V) 特性曲線來進行鑑定。一條具代表性的 I-V 曲線，是透過緩慢掃描偏壓電流 (<span class="math inline">\(I_{\text{bias}}\)</span>) 並同時記錄元件兩端的電壓降 (V) 而獲得的。</p>
+<p>當偏壓電流從零開始增加時，元件首先展現出零電壓的狀態 (V=0)，此即為直流約瑟夫森效應 (DC Josephson effect) 所導致的無耗散超導電流分支。此超導態可一直維持，直到偏壓電流超過一個臨界閾值，此時接面會突然切換 (switch) 至一個具有有限電壓的電阻態。實驗上觀測到的這個切換點，我們定義為<strong>切換電流 (<span class="math inline">\(I_{\text{sw}}\)</span>)</strong>。</p>
+<p>在切換至電阻態後，I-V 特性遵循一個線性的歐姆關係，其斜率 (<span class="math inline">\(d\frac{V}{d}I\)</span>) 即為接面的<strong>正常態電阻 (<span class="math inline">\(R_{N}\)</span>)</strong>。</p>
+<p>當偏壓電流反向掃描（從高電流向零點掃描）時，我們觀察到顯著的<strong>遲滯現象 (hysteretic behavior)</strong>。接面並不會在 <span class="math inline">\(I_{\text{sw}}\)</span> 處立即返回超導態，而是維持在電阻分支上，直到電流降低至一個更小的值，即<strong>回滯電流 (<span class="math inline">\(I_{r}\)</span>)</strong> 時，才重新「掉落」回零電壓的超導態。</p>
+<p>這種由切換電流與回滯電流之間巨大差異 (<span class="math inline">\(I_{r} \ll I_{\text{sw}}\)</span>) 所構成的遲滯迴線，是<strong>欠阻尼 (underdamped)</strong> 約瑟夫森接面的典型特徵。此行為可由 Stewart-McCumber 模型進行描述，其遲滯程度由無因次的史都華-麥肯柏參數 <span class="math inline">\(\beta_{c} = \left( 2\frac{e}{ħ} \right)I_{c}R_{N}^{2}C\)</span> 所決定。觀測到的顯著遲滯意味著此接面的 <span class="math inline">\(\beta_{c} &gt; 1\)</span>。</p>
+</section>
+<section id="夫朗和斐干涉圖樣-fraunhofer-interference-patterns" class="level3">
+<h3 class="anchored" data-anchor-id="夫朗和斐干涉圖樣-fraunhofer-interference-patterns">夫朗和斐干涉圖樣 (Fraunhofer Interference Patterns)</h3>
+<p>為了進一步探測接面內部超導電流的空間分佈特性，我們量測其臨界電流 <span class="math inline">\(I_{c}\)</span> 對外加磁場的依賴關係。實驗中，我們利用三軸向量磁鐵施加一個沿樣品法向（<span class="math inline">\(z\)</span> 軸）的磁場 <span class="math inline">\(B_{z}\)</span>，並在每一個固定的磁場值下，量測其 I–V 特性曲線。藉由將接面從超導態驅動至電阻態所對應的切換電流 <span class="math inline">\(I_{\text{sw}}\)</span>，我們將其視為該磁場下的臨界電流，即 <span class="math inline">\(I_{c\left( B_{z} \right)} = I_{\text{sw}}\left( B_{z} \right)\)</span>。</p>
+<p>量測結果清楚顯示臨界電流隨 <span class="math inline">\(B_{z}\)</span> 變化的干涉圖樣。在零磁場 (<span class="math inline">\(B_{z} = 0\)</span>) 時，臨界電流達到最大值 <span class="math inline">\(I_{c,0}\)</span>；隨著 <span class="math inline">\(|B_{z}|\)</span> 的增加，<span class="math inline">\(I_{c\left( B_{z} \right)}\)</span> 呈現近似週期性的振盪，並在特定磁場值處壓低至接近零。整體包絡線與光學中的單狹縫夫朗和斐繞射 (Fraunhofer diffraction) 圖樣高度相似，因此我們將此 <span class="math inline">\(I_{c}\)</span>–<span class="math inline">\(B_{z}\)</span> 依賴稱為<strong>夫朗和斐干涉圖樣</strong>。</p>
+<p>在理想的、超導電流沿接面寬度方向均勻分佈的短接面模型中，臨界電流與穿過接面有效面積 <span class="math inline">\(A_{\text{eff}}\)</span> 的磁通量 <span class="math inline">\(\Phi\)</span> 之間的關係可寫成 <span class="math display">\[I_{c}\left( B_{z} \right) = I_{c,0}\left| \frac{\sin(\pi\frac{\Phi}{\Phi_{0}})}{\pi\frac{\Phi}{\Phi_{0}}} \right|,\]</span> 其中 <span class="math inline">\(\Phi = B_{z} \cdot A_{\text{eff}}\)</span> 為穿越接面的磁通量，而 <span class="math inline">\(\Phi_{0} = \frac{h}{2e}\)</span> 為超導磁通量量子。此關係式預測，當 <span class="math inline">\(\Phi = n\Phi_{0}\)</span>（<span class="math inline">\(n\)</span> 為非零整數）時，<span class="math inline">\(I_{c}\)</span> 會出現一系列極小值，其間距直接反映出 <span class="math inline">\(A_{\text{eff}}\)</span> 的大小。</p>
+<p>從實驗數據中，我們觀察到第一個極小值出現在約 <span class="math inline">\(B_{z} \approx 5\)</span> mT 的磁場處。更重要的是，整個干涉圖樣呈現高度的左右對稱性，且在極小值處臨界電流被明顯抑制。這些特徵強烈指向一個結論：本研究中製備的約瑟夫森接面具有相當<strong>均勻的超導電流密度分佈</strong>。進一步地，我們可以利用第一個極小值位置 <span class="math inline">\(B_{\text{min},1}\)</span>，透過 <span class="math display">\[A_{\text{eff}} = \frac{\Phi_{0}}{B_{\text{min},1}}\]</span> 來反推出接面的有效磁學面積，並與其幾何設計尺寸作定量比較。</p>
+</section>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

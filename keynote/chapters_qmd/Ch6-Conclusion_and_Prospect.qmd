@@ -1,0 +1,26 @@
+# 結論與展望 {#chapter-conclusion-prospect}
+
+## 總結 (Conclusion) {#section-conclusion}
+
+1.  **成功建立 PtTe$_2$ 量子元件平台**
+    - 結合機械剝離與非對稱 SQUID 技術。
+    - 實現高品質擴散型接面 ($L \gg l_e$)。
+
+2.  **發現非傳統電流-相位關係 (Non-sinusoidal CPR)**
+    - 直接觀測到顯著的 **二階諧波 ($I_2$)**。
+    - 證實 CPR 形式高度依賴於 **面內磁場**。
+
+3.  **磁通量調控 (Magnetic Tuning)**
+    - 實現了「**可調式 $\varphi_0$ 接面**」。
+    - 為拓撲超導元件的相位操控提供了新途徑。
+
+## 未來展望 (Future Work) {#section-prospect}
+
+- **短期目標：機制釐清**
+    - **溫度依賴性量測**：區分體相與表面態貢獻。
+    - **Shapiro Steps**：進一步驗證 AC 約瑟夫森效應。
+- **長期目標：量子應用**
+    - **超導二極體 (Superconducting Diode)**：零磁場下的非互易輸運。
+    - **拓撲量子位元 (Topological Qubits)**：利用 $\varphi_0$ 偏移實現免磁場操控。
+- **科學意義**
+    - 連結 **拓撲物理** 與 **宏觀量子元件** 的橋樑。
