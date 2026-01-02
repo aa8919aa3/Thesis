@@ -1,0 +1,210 @@
+---
+title: "面內磁場下 1T 相二碲化鉑約瑟夫森接面之電流-相位關係研究"
+subtitle: "Investigation of Current-Phase Relationship in 1T-Phase Platinum Ditelluride Josephson Junctions under In-Plane Magnetic Field"
+author: "徐道宜 (Tao-Yi Hsu)"
+date: "2024-06-20"
+institute: "國立中山大學 (National Sun Yat-sen University)"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    transition: slide
+    chalkboard: true
+    multiplex: false
+    width: 1920
+    height: 1080
+    logo: "Images/logo_nsysu_thesis.jpg" 
+    css: styles.css
+  beamer:
+    theme: metropolis
+    aspectratio: 169
+    mainfont: "Arial"
+    sansfont: "Arial"
+    monofont: "Courier New"
+    header-includes: |
+      \titlegraphic{\includegraphics[width=2cm]{Images/logo_nsysu_thesis.jpg}}
+bibliography: ../references.bib
+---
+
+# 緒論 (Introduction) {background-color="#40666e"}
+
+## 簡報大綱
+
+1.  **緒論**
+    *   研究動機
+    *   第二類狄拉克半金屬 (1T-PtTe$_2$)
+2.  **理論背景**
+    *   約瑟夫森效應與電流-相位關係 (CPR)
+    *   約瑟夫森二極體效應 (JDE)
+3.  **實驗方法**
+    *   元件製備流程
+    *   量測系統架設
+4.  **結果與討論**
+    *   基本電性鑑定
+    *   電流-相位關係 (CPR) 分析
+    *   磁場依賴性研究
+5.  **結論**
+
+## 研究動機
+
+*   **新興拓撲量子材料**: 
+    *   將 **第二類狄拉克半金屬** (如 1T-PtTe$_2$) 與超導體結合。
+    *   探索新穎的量子輸運現象 (例如：拓撲保護、螺旋邊緣態)。
+*   **電流-相位關係 (CPR) 物理**:
+    *   直接量測偏離標準正弦形式的 CPR 高階諧波 ($I(\phi)$)。
+    *   理解拓撲材料中的 **超導近接效應 (Proximity Effect)** 機制。
+*   **超導二極體效應 (SDE)**:
+    *   研究對稱/非對稱結構中的非互易傳輸現象 ($I_c^+ \neq I_c^-$)。
+    *   應用於零耗能超導電子元件的潛力。
+
+## 1T-PtTe$_2$: 第二類狄拉克半金屬
+
+:::: {.columns}
+
+::: {.column width="60%"}
+*   **晶體結構**:
+    *   層狀過渡金屬二硫族化物 (TMD)。
+    *   碘化鎘 (CdI$_2$) 型三角結構 ($P\bar{3}m1$)。
+    *   Te-Pt-Te 三層結構以范德瓦耳斯力結合。
+*   **電子特性**:
+    *   **第二類狄拉克費米子**: 破壞勞倫茲不變性的傾斜狄拉克錐。
+    *   高導電性與潛在的拓撲表面態 (TSS)。
+:::
+
+::: {.column width="40%"}
+![PtTe$_2$ 晶體結構](Images/topological_materials.png)
+:::
+
+::::
+
+# 實驗方法 (Experimental Methods) {background-color="#40666e"}
+
+## 元件製備流程
+
+1.  **晶體生長**: 助熔劑法 (由成功大學呂欽山教授提供)。
+2.  **機械剝離**: 將 PtTe$_2$ 薄片剝離至 SiO$_2$/Si 基板上。
+3.  **電子束微影 (EBL)**:
+    *   塗佈 PMMA 光阻。
+    *   定義電極接觸與 SQUID 環路圖案。
+4.  **金屬化製程**:
+    *   超導電極材料: **鋁 (Al)** 或 **鈮 (Nb)**。
+    *   *原位 (In-situ)* 氬離子蝕刻以確保介面高透明度。
+    *   電子束蒸鍍與掀離 (Liftoff)。
+5.  **元件設計**: 非對稱直流超導量子干涉儀 (Asymmetric dc-SQUID) 幾何結構，用於還原 CPR。
+
+## 量測系統架設
+
+*   **極低溫系統**: 稀釋製冷機 (DR)
+    *   基溫: **~40 mK**。
+*   **電子儀器**:
+    *   低雜訊濾波模組。
+    *   四端點量測 (電流偏壓，電壓讀取)。
+*   **磁場控制**:
+    *   三軸向量磁鐵。
+    *   精確校準 **面內磁場** ($B_{\parallel}$) 與 **垂直磁場** ($B_{\perp}$)。
+
+![量測座標系統示意圖](Images/coordinate_system_schematic.png){width=50%}
+
+# 結果：基本特性鑑定 (Basic Characterization) {background-color="#40666e"}
+
+## I-V 特性曲線 (直流傳輸)
+
+*   **典型 IV 曲線**:
+    *   明顯的超導分支 ($V=0$)。
+    *   開關電流 ($I_c$) 與重捕獲電流 ($I_r$)。
+    *   遲滯行為 (低阻尼接面)。
+
+:::: {.columns}
+::: {.column width="50%"}
+![基溫下之 I-V 曲線](Images/iv_run20.svg)
+:::
+::: {.column width="50%"}
+*   **觀察結果**:
+    *   轉變陡峭，顯示高品質接面特性。
+    *   正常態具有有限電阻 ($R_N$)。
+    *   高偏壓處觀察到 **過剩電流 (Excess Current)** $\rightarrow$ 顯示高介面透明度。
+:::
+::::
+
+## 夫朗和斐圖樣 (交流約瑟夫森效應)
+
+*   **磁場調變**:
+    *   $I_c$ 對 $B_{\perp}$ (垂直磁場) 的關係。
+*   **圖樣分析**:
+    *   規律的震盪顯示初始電流分佈均勻。
+    *   偏離現象暗示非均勻性或相位纏繞變化。
+
+![夫朗和斐圖樣 (Fraunhofer Pattern)](Images/fraunhofer_heatmap_005-1_60mT_linear.svg){width=70%}
+
+# 結果：電流-相位關係 (Current-Phase Relation) {background-color="#40666e"}
+
+## CPR 還原方法
+
+*   **非對稱 SQUID 技術**:
+    *   大接面 ($I_{ref}$) // 小接面 ($I_{test}$)。
+    *   $I_c(\Phi_{ext}) \approx I_{ref} + I_{test}(\phi)$.
+    *   假設 $I_{ref} \gg I_{test}$ 且 $I_{ref}(\phi)$ 為正弦形式。
+*   **數學模型**:
+    $$ I_s(\phi) = I_1 \sin(\phi) + I_2 \sin(2\phi + \delta) $$
+    *   $I_1$: 基頻分量 (傳統超導)。
+    *   $I_2$: 二倍頻分量 (4$\pi$-週期 / ABS)。
+
+## 量測 CPR 與擬合結果
+
+:::: {.columns}
+::: {.column width="50%"}
+![還原之 CPR 波形](Images/cpr_fit_127.svg)
+:::
+::: {.column width="50%"}
+*   **關鍵發現**:
+    *   **歪斜的 CPR**: 顯著偏離純弦波形式。
+    *   **高 $I_2/I_1$ 比值**: 偵測到顯著的二階諧波分量。
+    *   顯示存在高透明度的安德烈夫束縛態 (Andreev Bound States, ABS)。
+:::
+::::
+
+# 結果：面內磁場效應 (In-Plane Magnetic Field Effect) {background-color="#40666e"}
+
+## 面內磁場調控 CPR
+
+*   **觀察結果**:
+    *   施加 $B_{\parallel}$ 會改變 CPR 的形狀。
+    *   是否在二階諧波中誘導出 **相位偏移** ($\phi_0$)？
+    *   **約瑟夫森二極體效應 (JDE)** 的證據。
+
+![面內磁場下 CPR 之演化](Images/CPR_evolution_27_log_offset_corrected.svg)
+
+## 約瑟夫森二極體效應 (JDE)
+
+*   **定義**: 非互易臨界電流 ($I_c^+ \neq |I_c^-|$).
+*   **機制**:
+    *   反演對稱性破缺 (結構或場誘導)。
+    *   時間反演對稱性破缺 ($B$-field)。
+    *   有限動量庫柏對？
+*   **結果**:
+    *   二極體效率 $\eta = \frac{I_c^+ - |I_c^-|}{I_c^+ + |I_c^-|}$.
+    *   可透過磁場角度與大小進行調控。
+
+# 結論 (Conclusion) {background-color="#40666e"}
+
+## 總結
+
+1.  **成功製備**:
+    *   實現高品質 1T-PtTe$_2$ 約瑟夫森接面與 SQUID 元件。
+2.  **異常 CPR**:
+    *   觀測到顯著的 **二階諧波** ($I_2$) 貢獻。
+    *   高透明度傳輸模態的直接證據。
+3.  **磁場調控**:
+    *   面內磁場可有效調變 CPR 並誘導 **約瑟夫森二極體效應**。
+    *   證實其在 **可調控超導邏輯** 與 **相位電池** 應用的潛力。
+
+## 未來展望
+
+*   **優化製程**: 提升元件製備良率與介面控制能力。
+*   **材料探索**: 拓展至其他外爾 (Weyl) / 狄拉克 (Dirac) 半金屬。
+*   **量子資訊**: 整合至超導量子位元電路 (例如：作為非線性電感元件)。
+
+# 參考文獻 (References)
+
+::: {#refs}
+:::

@@ -1,27 +1,20 @@
-# 緒論 {#chapter-introduction}
+# 開場：面內磁場讓 PtTe$_2$ 接面成為可調式 CPR 平台 {#chapter-introduction}
 
-## 研究背景與動機：為何選擇 PtTe$_2$？ {#section-motivation}
+## 一分鐘摘要 (Executive Summary) {#section-exec-summary}
 
-- **新興量子材料與宏觀量子元件的結合**
-    - **PtTe$_2$ (Type-II Dirac Semimetal)**：具有極度傾斜的狄拉克錐與拓樸表面態。
-    - **SQUID (Superconducting Quantum Interference Device)**：極高靈敏度的磁通量測平台。
-- **關鍵缺口 (Research Gap)**
-    - 既有研究多聚焦於 **約瑟夫森二極體效應 (JDE)**。
-    - **缺乏** 對 **電流-相位關係 (CPR)** 及其 **磁場調控** 的直接、定量量測。
-- **核心策略**
-    - 利用 **非對稱 SQUID (aSQUID)** 作為相位探針。
-    - 解析 PtTe$_2$ 在超導近接效應下的 **高階諧波** 與 **輸運機制**。
+- **問題**：拓樸半金屬接面的 CPR 難以被「連續調控」，現有研究缺乏直接量測。
+- **方法**：以 **非對稱 SQUID** 作為相位偏壓探頭，量測 $I_c(\Phi)$ 並反推 CPR，掃描面內磁場向量。
+- **核心發現**：面內磁場會放大 **二階諧波 ($I_2$)** 並產生相位偏移 $\delta$，形成可調式 $\varphi_0$ 接面。
+- **意涵**：證實 PtTe$_2$ 可作為可程式化相位旋鈕，對超導二極體與拓樸量子元件具指標性。
 
-## 研究目的 (Research Objectives) {#section-objectives}
+## 研究問題與目標：回答「能否用磁場調控 CPR？」 {#section-objectives}
 
-1. **定量重構 CPR (Reconstruct CPR)**
-    - 直接量測 PtTe$_2$ 接面的電流-相位關係。
-    - 解析 **高階諧波 (Higher Harmonics)** 成分。
+1. **定量重構 CPR**：直接量測並拆解 $I(\varphi)$ 的諧波成分，確認高階諧波的權重。
+2. **磁場調控機制**：檢驗面內磁場對 CPR 形狀與相位的影響，建立可調旋鈕的實驗證據。
+3. **物理圖像**：釐清 **體相多能帶** 與 **拓樸表面態** 的競合，評估 PtTe$_2$ 作為可調式量子元件的潛力。
 
-2. **磁場調控機制 (Magnetic Tuning)**
-    - 探討 **面內磁場** 對 CPR 的連續調控行為。
-    - 連結微觀拓樸性質與宏觀輸運現象。
+## 簡報路線圖：先廣角掃描，再對關鍵發現深潛 {#section-roadmap}
 
-3. **建立物理圖像 (Physical Picture)**
-    - 釐清 **體相多能帶 (Bulk Multiband)** vs. **拓樸表面態 (Surface States)** 的競爭機制。
-    - 評估 PtTe$_2$ 作為可調式量子元件的潛力。
+- **Swath（前半）**：建構研究背景、缺口與方法論，交代量測與樣品品質。
+- **Dive（中段）**：聚焦兩個核心發現——干涉圖樣畸變與二階諧波增強，對應兩個主要質疑。
+- **收斂（後段）**：討論意涵與限制，提出未來工作與備用投影片，讓委員可即時查核。 

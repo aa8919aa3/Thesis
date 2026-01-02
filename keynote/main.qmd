@@ -34,7 +34,7 @@ bibliography: references_sanitized.bib
 
 {{< include chapters_qmd/Ch6-Conclusion_and_Prospect.qmd >}}
 
-# 備用投影片 (Backup Slides)
+# 備用投影片：Q&A 即時切換 (Backup Slides)
 
 {{< include appendices_qmd/appendix.qmd >}}
 

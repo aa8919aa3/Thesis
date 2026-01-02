@@ -1,29 +1,34 @@
-# 實驗方法 {#chapter-experimental-methods}
+# 研究設計：高透明 PtTe$_2$ 接面搭配低雜訊向量磁場 {#chapter-experimental-methods}
 
-## 元件製備流程 (Fabrication) {#section-fabrication-flow}
+## 製程關鍵：確保低阻抗與均勻度 {#section-fabrication-flow}
 
-- **材料來源**：1T-PtTe$_2$ 單晶 (助熔劑法生長)。
-- **關鍵製程**
-    1.  **機械剝離 (Exfoliation)**：製備原子級厚度薄片。
-    2.  **電子束微影 (EBL)**：定義奈米級電極圖案。
-    3.  **原位離子銑削 (In-situ Ion Milling)**：確保低阻抗介面接觸。
-    4.  **超導電極沉積**：濺鍍 **NbTi** (70-120 nm)。
+- **材料**：1T-PtTe$_2$ 單晶（助熔劑法生長）。
+- **流程**：
+    1. **機械剝離** 製得原子級厚度薄片。
+    2. **電子束微影 (EBL)** 定義奈米電極圖案。
+    3. **原位離子銑削** 清潔接面以降低接觸電阻。
+    4. **NbTi 濺鍍 (70–120 nm)** 形成超導電極並維持側壁品質。
 
-## 極低溫精密量測系統 (Measurement Setup) {#section-measurement-setup}
+## 量測設定：向量磁場 + 濾波管線支撐 CPR 讀取 {#section-measurement-setup}
 
 ::: {.columns}
 ::: {.column width="60%"}
-- **環境**：Bluefors 稀釋制冷機 ($T \approx 40$ mK)。
-- **磁場**：3D 向量超導磁鐵 (9-1-1 T) $\rightarrow$ 任意方向磁場。
-- **訊號處理**
-    - **多級濾波**：QDevil (mK段) + IR Filter，抑制熱噪聲。
-    - **低雜訊量測**：BPI 低噪聲放大器 + IVVI-rack (電池供電)。
+- **環境**：Bluefors 稀釋制冷機 ($T \approx 40$ mK)，穩定低電子溫度。
+- **磁場**：3D 向量超導磁鐵 (9-1-1 T)，可精確設定面內場方向。
+- **訊號鏈**：
+    - 多級濾波（QDevil + IR Filter）抑制熱雜訊。
+    - BPI 低雜訊放大器 + IVVI-rack（電池供電）確保高訊雜比。
 :::
 ::: {.column width="40%"}
-<!-- 這裡可以放一張 Setup 的示意圖，如果有的話，目前先留白或放通用圖 -->
-**關鍵特點**：
-極低電子溫度
-高訊雜比
-任意磁場向量
+**設計重點**  
+極低電子溫度  
+任意磁場向量  
+低噪訊讀出路徑
 :::
 :::
+
+## 數據品質控管：I\_c(Φ) → CPR 重構的可信度 {#section-quality-control}
+
+- **CPR 重構流程**：量測 $I_c(\Phi)$，以諧波展開模型擬合，提取 $I_1$, $I_2$, $\delta$。
+- **交叉驗證**：多重安德烈夫反射 (MAR) 分析得到 $\Delta \approx 0.97$ meV、$\tau \approx 0.63$，與 CPR 擬合所需透明度一致。
+- **錯誤防範**：控制磁場與樣品座標角度（$\alpha \approx 121^\circ$），避免投影誤差，符合白皮書「方法論防禦」要求。 

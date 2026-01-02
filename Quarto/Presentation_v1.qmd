@@ -1,0 +1,210 @@
+---
+title: "Investigation of Current-Phase Relationship in 1T-Phase Platinum Ditelluride Josephson Junctions under In-Plane Magnetic Field"
+subtitle: "面內磁場下 1T 相二碲化鉑約瑟夫森接面之電流-相位關係研究"
+author: "Tao-Yi Hsu (徐道宜)"
+date: "2024-06-20"
+institute: "National Sun Yat-sen University"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    transition: slide
+    chalkboard: true
+    multiplex: false
+    width: 1920
+    height: 1080
+    logo: "Images/logo_nsysu_thesis.jpg" 
+    css: styles.css
+  beamer:
+    theme: metropolis
+    aspectratio: 169
+    mainfont: "Arial"
+    sansfont: "Arial"
+    monofont: "Courier New"
+    header-includes: |
+      \titlegraphic{\includegraphics[width=2cm]{Images/logo_nsysu_thesis.jpg}}
+bibliography: ../references.bib
+---
+
+# Introduction {background-color="#40666e"}
+
+## Outline
+
+1.  **Introduction**
+    *   Research Motivation
+    *   Type-II Dirac Semimetal (1T-PtTe$_2$)
+2.  **Theoretical Background**
+    *   Josephson Effect & CPR
+    *   Josephson Diode Effect (JDE)
+3.  **Experimental Methods**
+    *   Device Fabrication
+    *   Measurement Setup
+4.  **Results & Discussion**
+    *   Basic Characterization
+    *   Current-Phase Relation (CPR) Analysis
+    *   Magnetic Field Dependence
+5.  **Conclusion**
+
+## Research Motivation
+
+*   **Emerging Topological Materials**: 
+    *   Integration of **Type-II Dirac Semimetals** (e.g., PtTe$_2$) with superconductors.
+    *   Exploring novel quantum transport phenomena (e.g., topological protection, helical edge states).
+*   **Current-Phase Relation (CPR) Physics**:
+    *   Direct measurement of CPR harmonics ($I(\phi)$) beyond standard sinusoidal form.
+    *   Understanding the role of **superconducting proximity effect** in topological materials.
+*   **Superconducting Diode Effect**:
+    *   Investigating non-reciprocal transport ($I_c^+ \neq I_c^-$) in symmetric/asymmetric structures.
+    *   Potential for dissipationless superconducting electronics.
+
+## 1T-PtTe$_2$: A Type-II Dirac Semimetal
+
+:::: {.columns}
+
+::: {.column width="60%"}
+*   **Crystal Structure**:
+    *   Layered Transition Metal Dichalcogenide (TMD).
+    *   CdI$_2$-type trigonal structure ($P\bar{3}m1$).
+    *   Te-Pt-Te tri-layers bound by van der Waals forces.
+*   **Electronic Properties**:
+    *   **Type-II Dirac Fermions**: Lorentz-invariance violating tilted Dirac cones.
+    *   High conductivity and potential topological surface states (TSS).
+:::
+
+::: {.column width="40%"}
+![Crystal structure of PtTe$_2$.](Images/topological_materials.png)
+:::
+
+::::
+
+# Experimental Methods {background-color="#40666e"}
+
+## Device Fabrication Flow
+
+1.  **Crystal Growth**: Self-flux method (provided by Prof. C.S. Lue, NCKU).
+2.  **Exfoliation**: Mechanical exfoliation of PtTe$_2$ flakes onto SiO$_2$/Si substrates.
+3.  **E-beam Lithography (EBL)**:
+    *   PMMA resist coating.
+    *   Pattern definition for contacts and SQUID loops.
+4.  **Metallization**:
+    *   Superconducting electrodes: **Al (Aluminum)** or **Nb (Niobium)**.
+    *   *In-situ* Ar ion milling to ensure transparent interfaces.
+    *   E-beam evaporation & Liftoff.
+5.  **Design**: Asymmetric dc-SQUID geometry for CPR retrieval.
+
+## Measurement Setup
+
+*   **Cryogenic System**: Dilution Refrigerator (DR)
+    *   Base temperature: **~40 mK**.
+*   **Electronics**:
+    *   Low-noise filtering.
+    *   4-terminal measurement (Current bias, Voltage readout).
+*   **Magnetic Field Control**:
+    *   3-axis vector magnet.
+    *   Precision alignment of **In-plane field** ($B_{\parallel}$) and **Perpendicular field** ($B_{\perp}$).
+
+![Measurement Schematic](Images/coordinate_system_schematic.png){width=50%}
+
+# Results: Basic Characterization {background-color="#40666e"}
+
+## I-V Characteristics (DC Transport)
+
+*   **Typical IV Curve**:
+    *   Clear Superconducting branch ($V=0$).
+    *   Switching Current ($I_c$) and Retrapping Current ($I_r$).
+    *   Hysteretic behavior (underdamped junction).
+
+:::: {.columns}
+::: {.column width="50%"}
+![I-V Curve at Base Temp.](Images/iv_run20.svg)
+:::
+::: {.column width="50%"}
+*   **Observation**:
+    *   Sharp transition indicates high-quality junction.
+    *   Finite resistance in normal state ($R_N$).
+    *   **Excess Current** observed at high bias $\rightarrow$ High transparency interface.
+:::
+::::
+
+## Fraunhofer Pattern (AC Josephson Effect)
+
+*   **Magnetic Field Modulation**:
+    *   $I_c$ vs. $B_{\perp}$ (Out-of-plane field).
+*   **Pattern Analysis**:
+    *   Regular oscillation indicates uniform current distribution initially.
+    *   Deviations suggest non-uniformity or phase winding changes.
+
+![Fraunhofer Pattern](Images/fraunhofer_heatmap_005-1_60mT_linear.svg){width=70%}
+
+# Results: Current-Phase Relation {background-color="#40666e"}
+
+## CPR Retrieval Method
+
+*   **Asymmetric SQUID Technique**:
+    *   Large junction ($I_{ref}$) // Small junction ($I_{test}$).
+    *   $I_c(\Phi_{ext}) \approx I_{ref} + I_{test}(\phi)$.
+    *   Assumes $I_{ref} \gg I_{test}$ and sinusoidal $I_{ref}(\phi)$.
+*   **Math Model**:
+    $$ I_s(\phi) = I_1 \sin(\phi) + I_2 \sin(2\phi + \delta) $$
+    *   $I_1$: Fundamental component (conventional).
+    *   $I_2$: Second harmonic (4$\pi$-periodic / ABS).
+
+## Measured CPR & Fitting
+
+:::: {.columns}
+::: {.column width="50%"}
+![Extracted CPR Waveforms](Images/cpr_fit_127.svg)
+:::
+::: {.column width="50%"}
+*   **Key Findings**:
+    *   **Skewed CPR**: Deviation from pure sine wave.
+    *   **High $I_2/I_1$ ratio**: Significant second harmonic component detected.
+    *   Indicates presence of highly transparent Andreev Bound States (ABS).
+:::
+::::
+
+# Results: In-Plane Magnetic Field Effect {background-color="#40666e"}
+
+## Tunable CPR with In-Plane Field
+
+*   **Observation**:
+    *   Applying $B_{\parallel}$ modifies the CPR shape.
+    *   Induces a **phase shift** ($\phi_0$) in the second harmonic?
+    *   Evidence of **Josephson Diode Effect (JDE)**.
+
+![CPR Evolution under In-Plane Field](Images/CPR_evolution_27_log_offset_corrected.svg)
+
+## Josephson Diode Effect (JDE)
+
+*   **Definition**: Non-reciprocal critical current ($I_c^+ \neq |I_c^-|$).
+*   **Mechanism**:
+    *   Inversion symmetry breaking (structural or field-induced).
+    *   Time-reversal symmetry breaking ($B$-field).
+    *   Finite momentum Cooper pairs?
+*   **Result**:
+    *   Efficiency $\eta = \frac{I_c^+ - |I_c^-|}{I_c^+ + |I_c^-|}$.
+    *   Tunable by magnetic field angle and magnitude.
+
+# Conclusion {background-color="#40666e"}
+
+## Summary
+
+1.  **Successful Fabrication**:
+    *   High-quality 1T-PtTe$_2$ Josephson junctions and SQUIDs realized.
+2.  **Anomalous CPR**:
+    *   Observed significant **second harmonic** ($I_2$) contribution.
+    *   Direct evidence of high-transparency transport modes.
+3.  **Magnetic Tuning**:
+    *   In-plane magnetic field effectively modulates the CPR and induces **Josephson Diode Effect**.
+    *   Demonstrates potential for **tunable superconducting logic** and **phase batteries**.
+
+## Future Outlook
+
+*   **Optimization**: Improving fabrication yield and interface control.
+*   **Material Exploration**: Extending to other Weyl/Dirac semimetals.
+*   **Quantum Information**: Integration into superconducting qubit circuits (e.g., as non-linear inductive elements).
+
+# References
+
+::: {#refs}
+:::

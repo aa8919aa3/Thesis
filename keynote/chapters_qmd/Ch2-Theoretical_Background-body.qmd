@@ -1,24 +1,26 @@
-# 理論背景 {#chapter-theoretical-background}
+# 研究脈絡：缺乏可調式 CPR 的直接證據 {#chapter-theoretical-background}
 
-## 核心理論架構：從材料到元件 {#section-core-theory}
+## Gap 與重要性：需要能被操控的 CPR 來驅動量子元件 {#section-gap}
 
-- **第二類狄拉克半金屬 (Type-II DSM, PtTe$_2$)**
-    - 具有受晶體對稱性保護的 **狄拉克錐 (Dirac Cone)** 與 **拓樸表面態**。
-    - 費米能階附近的 **多能帶 (Multiband)** 特性主導低能輸運。
-- **超導近接效應 (Proximity Effect)**
-    - **S-DSM-S 接面**：超導關聯透過 **安德烈夫反射 (Andreev Reflection)** 穿透半金屬。
-    - **非正弦 CPR**：高透明度接面或拓樸態可導致 $I(\varphi) = \sum A_n \sin(n\varphi)$。
+- **拓樸半金屬 + 超導近接** 被視為實現超導二極體與拓樸量子位元的候選平台，但 **可連續調控的 CPR** 實驗證據稀少。
+- 既有研究多聚焦於 **約瑟夫森二極體效應 (JDE)**，缺乏針對 **高階諧波與相位偏移** 的直接量測與模型驗證。
+- 本工作以 **面內磁場** 作為控制參數，驗證 PtTe$_2$ 接面 CPR 是否具備工程化的可調性。
 
-## 關鍵測量工具：非對稱 SQUID (aSQUID) {#section-asymmetric-squid-theory}
+## 理論支撐：Type-II DSM 與超導近接效應預期非正弦 CPR {#section-core-theory}
+
+- **第二類狄拉克半金屬 (Type-II DSM, PtTe$_2$)**  
+    - 受晶體對稱性保護的 **狄拉克錐** 與 **拓樸表面態**，伴隨 **多能帶 (Multiband)** 輸運。
+- **超導近接效應 (Proximity Effect)**  
+    - 在 **S-DSM-S 接面** 中，安德烈夫反射促成超導關聯穿透半金屬。
+    - 高透明度或拓樸態可導致 **非正弦 CPR**：$I(\varphi) = \sum A_n \sin(n\varphi)$，高階諧波反映內部相位結構。
+
+## 量測策略：非對稱 SQUID 直接讀取 CPR {#section-asymmetric-squid-theory}
 
 ::: {.columns}
 ::: {.column width="60%"}
-- **操作原理**：$I_c^{Ref} \gg I_c^{Target}$
-    - 強參考接面 (Reference Junction) 鎖定相位 $\varphi_1 \approx \pi/2$。
-    - 外加磁通 $\Phi_{ext}$ 線性掃描目標接面相位 $\varphi_2$。
-- **核心優勢**
-    - **"相位偏置探測器" (Phase-Biased Detector)**。
-    - 可直接從 $I_c(\Phi)$ 調變曲線 **讀出 (Readout)** 目標接面的 CPR。
+- **操作原理**：設定 $I_c^{Ref} \gg I_c^{Target}$，以強參考接面鎖定 $\varphi_1 \approx \pi/2$。
+- **相位掃描**：外加磁通 $\Phi_{ext}$ 線性掃描目標接面相位 $\varphi_2$，$I_c(\Phi)$ 即為 CPR 的映射。
+- **優勢**：充當 **相位偏壓探測器**，以單次量測取得完整 CPR，符合白皮書「視覺化優先」與「快速定錨」原則。
 :::
 ::: {.column width="40%"}
 ![](Images/SQUID_schematic.png){width="100%"}

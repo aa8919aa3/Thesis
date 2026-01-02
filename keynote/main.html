@@ -1,378 +1,371 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-<meta name="author" content="徐道宜 (指導教授：邱奎霖 博士)">
-<meta name="dcterms.date" content="2026-01-02">
-
-<title>面內磁場下1T相二碲化鉑約瑟夫森接面之電流-相位關係研究</title>
-<style>
-code{white-space: pre-wrap;}
-span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
-div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
-ul.task-list li input[type="checkbox"] {
-  width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-  vertical-align: middle;
-}
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
-
-
+<html lang="en"><head>
 <script src="main_files/libs/clipboard/clipboard.min.js"></script>
-<script src="main_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="main_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="main_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="main_files/libs/quarto-html/tabby.min.js"></script>
 <script src="main_files/libs/quarto-html/popper.min.js"></script>
 <script src="main_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="main_files/libs/quarto-html/anchor.min.js"></script>
 <link href="main_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="main_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="main_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="main_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="main_files/libs/bootstrap/bootstrap-d6a003b94517c951b2d65075d42fb01b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="main_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="main_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.26">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
+  <meta name="author" content="徐道宜 (指導教授：邱奎霖 博士)">
+  <meta name="dcterms.date" content="2026-01-02">
+  <title>面內磁場下1T相二碲化鉑約瑟夫森接面之電流-相位關係研究</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="main_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="main_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
     }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="main_files/libs/revealjs/dist/theme/quarto-313b0129176d400197404bcafa272300.css">
+  <link href="main_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="main_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="main_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="main_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
 </head>
-
 <body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="main.html"><i class="bi bi-file-slides"></i>RevealJS</a></li><li><a href="../main.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="main.pptx"><i class="bi bi-file-slides"></i>Powerpoint</a></li></ul></div></div>
-<main class="content" id="quarto-document-content">
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">面內磁場下1T相二碲化鉑約瑟夫森接面之電流-相位關係研究</h1>
+  <p class="subtitle">碩士學位論文口試</p>
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">面內磁場下1T相二碲化鉑約瑟夫森接面之電流-相位關係研究</h1>
-<p class="subtitle lead">碩士學位論文口試</p>
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+徐道宜 (指導教授：邱奎霖 博士) 
 </div>
-
-
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Author</div>
-  <div class="quarto-title-meta-heading">Affiliation</div>
-  
-    <div class="quarto-title-meta-contents">
-    <p class="author">徐道宜 (指導教授：邱奎霖 博士) </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
+        <p class="quarto-title-affiliation">
             國立中山大學 物理學系
           </p>
-      </div>
-  </div>
-
-<div class="quarto-title-meta">
-
-      
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">January 2, 2026</p>
     </div>
-  </div>
-  
-    
-  </div>
-  
+</div>
 
+  <p class="date">2026-01-02</p>
+</section>
+<section>
+<section id="chapter-introduction" class="title-slide slide level1 center">
+<h1>開場：面內磁場讓 PtTe<span class="math inline">\(_2\)</span> 接面成為可調式 CPR 平台</h1>
 
-</header>
-
-
-<section id="chapter-introduction" class="level1">
-<h1>緒論</h1>
-<section id="section-motivation" class="level2">
-<h2 class="anchored" data-anchor-id="section-motivation">研究背景與動機：為何選擇 PtTe<span class="math inline">\(_2\)</span>？</h2>
+</section>
+<section id="section-exec-summary" class="slide level2">
+<h2>一分鐘摘要 (Executive Summary)</h2>
 <ul>
-<li><strong>新興量子材料與宏觀量子元件的結合</strong>
-<ul>
-<li><strong>PtTe<span class="math inline">\(_2\)</span> (Type-II Dirac Semimetal)</strong>：具有極度傾斜的狄拉克錐與拓樸表面態。</li>
-<li><strong>SQUID (Superconducting Quantum Interference Device)</strong>：極高靈敏度的磁通量測平台。</li>
-</ul></li>
-<li><strong>關鍵缺口 (Research Gap)</strong>
-<ul>
-<li>既有研究多聚焦於 <strong>約瑟夫森二極體效應 (JDE)</strong>。</li>
-<li><strong>缺乏</strong> 對 <strong>電流-相位關係 (CPR)</strong> 及其 <strong>磁場調控</strong> 的直接、定量量測。</li>
-</ul></li>
-<li><strong>核心策略</strong>
-<ul>
-<li>利用 <strong>非對稱 SQUID (aSQUID)</strong> 作為相位探針。</li>
-<li>解析 PtTe<span class="math inline">\(_2\)</span> 在超導近接效應下的 <strong>高階諧波</strong> 與 <strong>輸運機制</strong>。</li>
-</ul></li>
+<li><strong>問題</strong>：拓樸半金屬接面的 CPR 難以被「連續調控」，現有研究缺乏直接量測。</li>
+<li><strong>方法</strong>：以 <strong>非對稱 SQUID</strong> 作為相位偏壓探頭，量測 <span class="math inline">\(I_c(\Phi)\)</span> 並反推 CPR，掃描面內磁場向量。</li>
+<li><strong>核心發現</strong>：面內磁場會放大 <strong>二階諧波 (<span class="math inline">\(I_2\)</span>)</strong> 並產生相位偏移 <span class="math inline">\(\delta\)</span>，形成可調式 <span class="math inline">\(\varphi_0\)</span> 接面。</li>
+<li><strong>意涵</strong>：證實 PtTe<span class="math inline">\(_2\)</span> 可作為可程式化相位旋鈕，對超導二極體與拓樸量子元件具指標性。</li>
 </ul>
 </section>
-<section id="section-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="section-objectives">研究目的 (Research Objectives)</h2>
+<section id="section-objectives" class="slide level2">
+<h2>研究問題與目標：回答「能否用磁場調控 CPR？」</h2>
 <ol type="1">
-<li><strong>定量重構 CPR (Reconstruct CPR)</strong>
-<ul>
-<li>直接量測 PtTe<span class="math inline">\(_2\)</span> 接面的電流-相位關係。</li>
-<li>解析 <strong>高階諧波 (Higher Harmonics)</strong> 成分。</li>
-</ul></li>
-<li><strong>磁場調控機制 (Magnetic Tuning)</strong>
-<ul>
-<li>探討 <strong>面內磁場</strong> 對 CPR 的連續調控行為。</li>
-<li>連結微觀拓樸性質與宏觀輸運現象。</li>
-</ul></li>
-<li><strong>建立物理圖像 (Physical Picture)</strong>
-<ul>
-<li>釐清 <strong>體相多能帶 (Bulk Multiband)</strong> vs.&nbsp;<strong>拓樸表面態 (Surface States)</strong> 的競爭機制。</li>
-<li>評估 PtTe<span class="math inline">\(_2\)</span> 作為可調式量子元件的潛力。</li>
-</ul></li>
+<li><strong>定量重構 CPR</strong>：直接量測並拆解 <span class="math inline">\(I(\varphi)\)</span> 的諧波成分，確認高階諧波的權重。</li>
+<li><strong>磁場調控機制</strong>：檢驗面內磁場對 CPR 形狀與相位的影響，建立可調旋鈕的實驗證據。</li>
+<li><strong>物理圖像</strong>：釐清 <strong>體相多能帶</strong> 與 <strong>拓樸表面態</strong> 的競合，評估 PtTe<span class="math inline">\(_2\)</span> 作為可調式量子元件的潛力。</li>
 </ol>
 </section>
+<section id="section-roadmap" class="slide level2">
+<h2>簡報路線圖：先廣角掃描，再對關鍵發現深潛</h2>
+<ul>
+<li><strong>Swath（前半）</strong>：建構研究背景、缺口與方法論，交代量測與樣品品質。</li>
+<li><strong>Dive（中段）</strong>：聚焦兩個核心發現——干涉圖樣畸變與二階諧波增強，對應兩個主要質疑。</li>
+<li><strong>收斂（後段）</strong>：討論意涵與限制，提出未來工作與備用投影片，讓委員可即時查核。</li>
+</ul>
+</section></section>
+<section>
+<section id="chapter-theoretical-background" class="title-slide slide level1 center">
+<h1>研究脈絡：缺乏可調式 CPR 的直接證據</h1>
+
 </section>
-<section id="chapter-theoretical-background" class="level1">
-<h1>理論背景</h1>
-<section id="section-core-theory" class="level2">
-<h2 class="anchored" data-anchor-id="section-core-theory">核心理論架構：從材料到元件</h2>
+<section id="section-gap" class="slide level2">
+<h2>Gap 與重要性：需要能被操控的 CPR 來驅動量子元件</h2>
+<ul>
+<li><strong>拓樸半金屬 + 超導近接</strong> 被視為實現超導二極體與拓樸量子位元的候選平台，但 <strong>可連續調控的 CPR</strong> 實驗證據稀少。</li>
+<li>既有研究多聚焦於 <strong>約瑟夫森二極體效應 (JDE)</strong>，缺乏針對 <strong>高階諧波與相位偏移</strong> 的直接量測與模型驗證。</li>
+<li>本工作以 <strong>面內磁場</strong> 作為控制參數，驗證 PtTe<span class="math inline">\(_2\)</span> 接面 CPR 是否具備工程化的可調性。</li>
+</ul>
+</section>
+<section id="section-core-theory" class="slide level2">
+<h2>理論支撐：Type-II DSM 與超導近接效應預期非正弦 CPR</h2>
 <ul>
 <li><strong>第二類狄拉克半金屬 (Type-II DSM, PtTe<span class="math inline">\(_2\)</span>)</strong>
 <ul>
-<li>具有受晶體對稱性保護的 <strong>狄拉克錐 (Dirac Cone)</strong> 與 <strong>拓樸表面態</strong>。</li>
-<li>費米能階附近的 <strong>多能帶 (Multiband)</strong> 特性主導低能輸運。</li>
+<li>受晶體對稱性保護的 <strong>狄拉克錐</strong> 與 <strong>拓樸表面態</strong>，伴隨 <strong>多能帶 (Multiband)</strong> 輸運。</li>
 </ul></li>
 <li><strong>超導近接效應 (Proximity Effect)</strong>
 <ul>
-<li><strong>S-DSM-S 接面</strong>：超導關聯透過 <strong>安德烈夫反射 (Andreev Reflection)</strong> 穿透半金屬。</li>
-<li><strong>非正弦 CPR</strong>：高透明度接面或拓樸態可導致 <span class="math inline">\(I(\varphi) = \sum A_n \sin(n\varphi)\)</span>。</li>
+<li>在 <strong>S-DSM-S 接面</strong> 中，安德烈夫反射促成超導關聯穿透半金屬。</li>
+<li>高透明度或拓樸態可導致 <strong>非正弦 CPR</strong>：<span class="math inline">\(I(\varphi) = \sum A_n \sin(n\varphi)\)</span>，高階諧波反映內部相位結構。</li>
 </ul></li>
 </ul>
 </section>
-<section id="section-asymmetric-squid-theory" class="level2">
-<h2 class="anchored" data-anchor-id="section-asymmetric-squid-theory">關鍵測量工具：非對稱 SQUID (aSQUID)</h2>
+<section id="section-asymmetric-squid-theory" class="slide level2">
+<h2>量測策略：非對稱 SQUID 直接讀取 CPR</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
 <ul>
-<li><strong>操作原理</strong>：<span class="math inline">\(I_c^{Ref} \gg I_c^{Target}\)</span>
-<ul>
-<li>強參考接面 (Reference Junction) 鎖定相位 <span class="math inline">\(\varphi_1 \approx \pi/2\)</span>。</li>
-<li>外加磁通 <span class="math inline">\(\Phi_{ext}\)</span> 線性掃描目標接面相位 <span class="math inline">\(\varphi_2\)</span>。</li>
-</ul></li>
-<li><strong>核心優勢</strong>
-<ul>
-<li><strong>“相位偏置探測器” (Phase-Biased Detector)</strong>。</li>
-<li>可直接從 <span class="math inline">\(I_c(\Phi)\)</span> 調變曲線 <strong>讀出 (Readout)</strong> 目標接面的 CPR。</li>
-</ul></li>
+<li><strong>操作原理</strong>：設定 <span class="math inline">\(I_c^{Ref} \gg I_c^{Target}\)</span>，以強參考接面鎖定 <span class="math inline">\(\varphi_1 \approx \pi/2\)</span>。</li>
+<li><strong>相位掃描</strong>：外加磁通 <span class="math inline">\(\Phi_{ext}\)</span> 線性掃描目標接面相位 <span class="math inline">\(\varphi_2\)</span>，<span class="math inline">\(I_c(\Phi)\)</span> 即為 CPR 的映射。</li>
+<li><strong>優勢</strong>：充當 <strong>相位偏壓探測器</strong>，以單次量測取得完整 CPR，符合白皮書「視覺化優先」與「快速定錨」原則。</li>
 </ul>
 </div><div class="column" style="width:40%;">
-<p><img src="Images/SQUID_schematic.png" class="img-fluid" style="width:100.0%"></p>
-</div>
-</div>
+<p><img data-src="Images/SQUID_schematic.png" style="width:100.0%"></p>
+</div></div>
+</section></section>
+<section>
+<section id="chapter-experimental-methods" class="title-slide slide level1 center">
+<h1>研究設計：高透明 PtTe<span class="math inline">\(_2\)</span> 接面搭配低雜訊向量磁場</h1>
+
 </section>
-</section>
-<section id="chapter-experimental-methods" class="level1">
-<h1>實驗方法</h1>
-<section id="section-fabrication-flow" class="level2">
-<h2 class="anchored" data-anchor-id="section-fabrication-flow">元件製備流程 (Fabrication)</h2>
+<section id="section-fabrication-flow" class="slide level2">
+<h2>製程關鍵：確保低阻抗與均勻度</h2>
 <ul>
-<li><strong>材料來源</strong>：1T-PtTe<span class="math inline">\(_2\)</span> 單晶 (助熔劑法生長)。</li>
-<li><strong>關鍵製程</strong>
+<li><strong>材料</strong>：1T-PtTe<span class="math inline">\(_2\)</span> 單晶（助熔劑法生長）。</li>
+<li><strong>流程</strong>：
 <ol type="1">
-<li><strong>機械剝離 (Exfoliation)</strong>：製備原子級厚度薄片。</li>
-<li><strong>電子束微影 (EBL)</strong>：定義奈米級電極圖案。</li>
-<li><strong>原位離子銑削 (In-situ Ion Milling)</strong>：確保低阻抗介面接觸。</li>
-<li><strong>超導電極沉積</strong>：濺鍍 <strong>NbTi</strong> (70-120 nm)。</li>
+<li><strong>機械剝離</strong> 製得原子級厚度薄片。</li>
+<li><strong>電子束微影 (EBL)</strong> 定義奈米電極圖案。</li>
+<li><strong>原位離子銑削</strong> 清潔接面以降低接觸電阻。</li>
+<li><strong>NbTi 濺鍍 (70–120 nm)</strong> 形成超導電極並維持側壁品質。</li>
 </ol></li>
 </ul>
 </section>
-<section id="section-measurement-setup" class="level2">
-<h2 class="anchored" data-anchor-id="section-measurement-setup">極低溫精密量測系統 (Measurement Setup)</h2>
+<section id="section-measurement-setup" class="slide level2">
+<h2>量測設定：向量磁場 + 濾波管線支撐 CPR 讀取</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
 <ul>
-<li><strong>環境</strong>：Bluefors 稀釋制冷機 (<span class="math inline">\(T \approx 40\)</span> mK)。</li>
-<li><strong>磁場</strong>：3D 向量超導磁鐵 (9-1-1 T) <span class="math inline">\(\rightarrow\)</span> 任意方向磁場。</li>
-<li><strong>訊號處理</strong>
+<li><strong>環境</strong>：Bluefors 稀釋制冷機 (<span class="math inline">\(T \approx 40\)</span> mK)，穩定低電子溫度。</li>
+<li><strong>磁場</strong>：3D 向量超導磁鐵 (9-1-1 T)，可精確設定面內場方向。</li>
+<li><strong>訊號鏈</strong>：
 <ul>
-<li><strong>多級濾波</strong>：QDevil (mK段) + IR Filter，抑制熱噪聲。</li>
-<li><strong>低雜訊量測</strong>：BPI 低噪聲放大器 + IVVI-rack (電池供電)。</li>
+<li>多級濾波（QDevil + IR Filter）抑制熱雜訊。</li>
+<li>BPI 低雜訊放大器 + IVVI-rack（電池供電）確保高訊雜比。</li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:40%;">
-<!-- 這裡可以放一張 Setup 的示意圖，如果有的話，目前先留白或放通用圖 -->
-<p><strong>關鍵特點</strong>： 極低電子溫度 高訊雜比 任意磁場向量</p>
-</div>
-</div>
+<p><strong>設計重點</strong><br>
+極低電子溫度<br>
+任意磁場向量<br>
+低噪訊讀出路徑</p>
+</div></div>
 </section>
+<section id="section-quality-control" class="slide level2">
+<h2>數據品質控管：I_c(Φ) → CPR 重構的可信度</h2>
+<ul>
+<li><strong>CPR 重構流程</strong>：量測 <span class="math inline">\(I_c(\Phi)\)</span>，以諧波展開模型擬合，提取 <span class="math inline">\(I_1\)</span>, <span class="math inline">\(I_2\)</span>, <span class="math inline">\(\delta\)</span>。</li>
+<li><strong>交叉驗證</strong>：多重安德烈夫反射 (MAR) 分析得到 <span class="math inline">\(\Delta \approx 0.97\)</span> meV、<span class="math inline">\(\tau \approx 0.63\)</span>，與 CPR 擬合所需透明度一致。</li>
+<li><strong>錯誤防範</strong>：控制磁場與樣品座標角度（<span class="math inline">\(\alpha \approx 121^\circ\)</span>），避免投影誤差，符合白皮書「方法論防禦」要求。</li>
+</ul>
+</section></section>
+<section>
+<section id="chapter-results" class="title-slide slide level1 center">
+<h1>核心結果：面內磁場重塑 PtTe<span class="math inline">\(_2\)</span> CPR</h1>
+
 </section>
-<section id="chapter-results" class="level1">
-<h1>實驗結果</h1>
-<section id="section-basic-iv" class="level2">
-<h2 class="anchored" data-anchor-id="section-basic-iv">基礎電性特徵：高品質擴散型接面</h2>
+<section id="section-basic-iv" class="slide level2">
+<h2>基線確認：I-V 與 MAR 顯示高透明接面</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><img src="Images/run_33_expert_vis.svg" class="img-fluid" style="width:100.0%"></p>
+<p><img data-src="Images/run_33_expert_vis.svg" style="width:100.0%"></p>
 </div><div class="column" style="width:50%;">
 <ul>
-<li><strong>典型 I-V 曲線</strong>
-<ul>
-<li>清晰的超電流 (<span class="math inline">\(I_c \approx 24 \mu A\)</span>)。</li>
-<li>顯著遲滯 (Hysteresis) <span class="math inline">\(\rightarrow\)</span> 欠阻尼狀態。</li>
-</ul></li>
-<li><strong>多重安德烈夫反射 (MAR)</strong>
-<ul>
-<li>觀測到次諧波能隙結構 (<span class="math inline">\(V_n = 2\Delta/ne\)</span>)。</li>
-<li>推導參數：<span class="math inline">\(\Delta \approx 0.97\)</span> meV, <span class="math inline">\(\tau \approx 0.63\)</span> (高透明度)。</li>
-</ul></li>
+<li><strong>I-V</strong>：清晰超電流 (<span class="math inline">\(I_c \approx 24 \mu A\)</span>)，遲滯顯示欠阻尼。</li>
+<li><strong>MAR</strong>：次諧波能隙結構 (<span class="math inline">\(V_n = 2\Delta/ne\)</span>) 清楚，推得 <span class="math inline">\(\Delta \approx 0.97\)</span> meV, <span class="math inline">\(\tau \approx 0.63\)</span>，支撐高透明度假設。</li>
 </ul>
-</div>
-</div>
+</div></div>
 </section>
-<section id="section-fraunhofer-zero-field" class="level2">
-<h2 class="anchored" data-anchor-id="section-fraunhofer-zero-field">零面內場特性：均勻的超電流分佈</h2>
+<section id="section-fraunhofer-zero-field" class="slide level2">
+<h2>零場干涉：對稱 Fraunhofer 顯示均勻 CPR</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><img src="Images/Ic_Norm_354_408.png" class="img-fluid" style="width:100.0%"></p>
+<p><img data-src="Images/Ic_Norm_354_408.png" style="width:100.0%"></p>
 </div><div class="column" style="width:50%;">
 <ul>
-<li><strong>類夫朗和費干涉 (Fraunhofer-like)</strong>
-<ul>
-<li><span class="math inline">\(B_{in-plane} = 0\)</span> 時呈現高度對稱。</li>
-<li>形式接近 <span class="math inline">\(|\text{sinc}(\Phi)|\)</span>。</li>
-</ul></li>
-<li><strong>物理意義</strong>
-<ul>
-<li>證實接面內部超電流密度分佈 <strong>高度均勻</strong>。</li>
-<li>無明顯缺陷或不均勻性。</li>
-</ul></li>
+<li><strong>干涉型態</strong>：<span class="math inline">\(B_{in-plane} = 0\)</span> 時高度對稱，形式接近 <span class="math inline">\(|\text{sinc}(\Phi)|\)</span>。</li>
+<li><strong>意義</strong>：證實接面內部超電流密度分佈 <strong>均勻</strong>，排除結構缺陷干擾後續磁場實驗。</li>
 </ul>
-</div>
-</div>
+</div></div>
 </section>
-<section id="section-fraunhofer-distortion" class="level2">
-<h2 class="anchored" data-anchor-id="section-fraunhofer-distortion">面內磁場效應 I：干涉圖樣畸變</h2>
+<section id="section-fraunhofer-distortion" class="slide level2">
+<h2>Deep Dive 1：面內磁場扭曲干涉 → CPR 變形</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><img src="Images/fraunhofer_evolution_60mT_filtered_linear.svg" class="img-fluid" style="width:100.0%"></p>
+<p><img data-src="Images/fraunhofer_evolution_60mT_filtered_linear.svg" style="width:100.0%"></p>
 </div><div class="column" style="width:50%;">
 <ul>
-<li><strong>現象</strong>：施加 <span class="math inline">\(B_{in-plane}\)</span> 後，干涉圖樣 <strong>不再對稱</strong>。
+<li><strong>觀察</strong>：施加 <span class="math inline">\(B_{in-plane}\)</span> 後，干涉圖樣失去對稱。
 <ul>
-<li>極小值位置偏移 (Node Shift)。</li>
-<li>包絡線形狀改變 (Envelope Distortion)。</li>
-<li><span class="math inline">\(I_c^+ \neq |I_c^-|\)</span> (潛在的二極體效應訊號)。</li>
+<li>節點偏移 (Node Shift)、包絡線畸變。</li>
+<li><span class="math inline">\(I_c^+ \neq |I_c^-|\)</span>，出現二極體式非互易訊號。</li>
 </ul></li>
-<li><strong>推論</strong>：面內磁場改變了內部的 <strong>電流-相位關係 (CPR)</strong>。</li>
+<li><strong>推論</strong>：面內磁場正在改變 <strong>CPR 形狀與相位</strong>，需要模型化驗證。</li>
 </ul>
-</div>
-</div>
+</div></div>
 </section>
-<section id="section-angle-dependence" class="level2">
-<h2 class="anchored" data-anchor-id="section-angle-dependence">座標系效應：角度依賴性</h2>
+<section id="section-angle-dependence" class="slide level2">
+<h2>角度掃描：各向異性證實磁場耦合</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
 <ul>
-<li><strong>各向異性 (Anisotropy)</strong>
-<ul>
-<li><span class="math inline">\(B_{in-plane}\)</span> 的效應顯著依賴於角度 <span class="math inline">\(\theta\)</span>。</li>
-<li>需考慮實驗室座標與樣品座標的轉換 (<span class="math inline">\(\alpha \approx 121^\circ\)</span>)。</li>
-</ul></li>
+<li><span class="math inline">\(B_{in-plane}\)</span> 效應顯著依賴於角度 <span class="math inline">\(\theta\)</span>。</li>
+<li>實驗室座標與樣品座標需校正（<span class="math inline">\(\alpha \approx 121^\circ\)</span>），確保相位掃描正確。</li>
 </ul>
 </div><div class="column" style="width:60%;">
-<p><img src="Images/coordinate_system_schematic_003_2.png" class="img-fluid" style="width:80.0%"></p>
-</div>
-</div>
+<p><img data-src="Images/coordinate_system_schematic_003_2.png" style="width:80.0%"></p>
+</div></div>
 </section>
-<section id="section-cpr-model" class="level2">
-<h2 class="anchored" data-anchor-id="section-cpr-model">CPR 重構 I：模型選擇</h2>
+<section id="section-cpr-model" class="slide level2">
+<h2>模型選擇：諧波展開優於純透明度模型</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><img src="Images/CPR_Harmonics_vs_Tau.png" class="img-fluid" style="width:100.0%"></p>
+<p><img data-src="Images/CPR_Harmonics_vs_Tau.png" style="width:100.0%"></p>
 </div><div class="column" style="width:50%;">
 <ul>
-<li><strong>為何不選純透明度模型？</strong>
-<ul>
-<li>實驗觀測到顯著的高階諧波 (<span class="math inline">\(I_2/I_1 \approx 0.25\)</span>)。</li>
-<li>若用純透明度解釋，需 <span class="math inline">\(\tau &gt; 0.9\)</span> (不符實驗值 <span class="math inline">\(\approx 0.6\)</span>)。</li>
-</ul></li>
-<li><strong>採用模型：諧波展開 (Harmonic Series)</strong>
-<ul>
-<li><span class="math inline">\(I(\varphi) \approx I_1 \sin(\varphi) + I_2 \sin(2\varphi + \delta)\)</span></li>
-<li>引入相位差 <span class="math inline">\(\delta\)</span> 以描述 TRS 破缺。</li>
-</ul></li>
+<li><strong>排除純透明度模型</strong>：觀測到 <span class="math inline">\(I_2/I_1 \approx 0.25\)</span>，若以透明度解釋需 <span class="math inline">\(\tau &gt; 0.9\)</span>，與 MAR 得到的 <span class="math inline">\(\approx 0.6\)</span> 不符。</li>
+<li><strong>選擇諧波展開</strong>：<span class="math inline">\(I(\varphi) \approx I_1 \sin(\varphi) + I_2 \sin(2\varphi + \delta)\)</span>，以 <span class="math inline">\(\delta\)</span> 描述 TRS 破缺並量化二階諧波。</li>
 </ul>
-</div>
-</div>
+</div></div>
 </section>
-<section id="section-cpr-fit-508" class="level2">
-<h2 class="anchored" data-anchor-id="section-cpr-fit-508">CPR 重構 II：高面內場下的二階諧波</h2>
+<section id="section-cpr-fit-508" class="slide level2">
+<h2>Deep Dive 2：高面內場下二階諧波與相位差的崛起</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p><img src="Images/cpr_fit_508.svg" class="img-fluid" style="width:100.0%"></p>
+<p><img data-src="Images/cpr_fit_508.svg" style="width:100.0%"></p>
 </div><div class="column" style="width:40%;">
 <ul>
-<li><strong>擬合結果 (<span class="math inline">\(B_{in} \approx 180\)</span> mT)</strong>
+<li><strong>擬合 (<span class="math inline">\(B_{in} \approx 180\)</span> mT)</strong>：諧波相位可調模型貼合 <span class="math inline">\(I_c(\Phi)\)</span>。</li>
+<li><strong>關鍵發現</strong>
 <ul>
-<li>二階諧波相位可調模型完美擬合實驗數據。</li>
-<li><strong>關鍵發現</strong>：
-<ul>
-<li><span class="math inline">\(I_2\)</span> 分量顯著增強。</li>
-<li>相位差 <span class="math inline">\(\delta\)</span> 非零。</li>
-</ul></li>
+<li><span class="math inline">\(I_2\)</span> 顯著增強，支持非正弦 CPR。</li>
+<li>相位差 <span class="math inline">\(\delta \neq 0\)</span>，對應 <span class="math inline">\(\varphi_0\)</span> 偏移，與干涉畸變一致。</li>
 </ul></li>
 </ul>
-</div>
-</div>
+</div></div>
 </section>
-<section id="section-result-summary" class="level2">
-<h2 class="anchored" data-anchor-id="section-result-summary">關鍵發現總結：磁場調控 CPR</h2>
+<section id="section-result-summary" class="slide level2">
+<h2>收斂：面內磁場是 CPR 的可調旋鈕</h2>
 <ul>
 <li><strong>磁場作為「調控旋鈕」</strong>
 <ul>
@@ -388,98 +381,82 @@ window.Quarto = {
 <li>證實 PtTe<span class="math inline">\(_2\)</span> 接面具備 <strong>高度可調的非正弦 CPR</strong>。</li>
 </ul></li>
 </ul>
+</section></section>
+<section>
+<section id="chapter-discussion" class="title-slide slide level1 center">
+<h1>討論與意涵：磁場耦合 ABS，形塑非正弦 CPR</h1>
+
 </section>
-</section>
-<section id="chapter-discussion" class="level1">
-<h1>討論</h1>
-<section id="section-origin-asymmetry" class="level2">
-<h2 class="anchored" data-anchor-id="section-origin-asymmetry">物理機制探討：非對稱干涉圖樣的起源</h2>
+<section id="section-origin-asymmetry" class="slide level2">
+<h2>機制判讀：諧波相位差捕捉 TRS 破缺</h2>
 <ul>
-<li><strong>現象回顧</strong>
+<li><strong>現象對應</strong>：<span class="math inline">\(B_{in-plane} \neq 0\)</span> 時干涉畸變、<span class="math inline">\(I_c^+ \neq |I_c^-|\)</span> 皆指向時間反演對稱破缺。</li>
+<li><strong>模型比較</strong>：
 <ul>
-<li><span class="math inline">\(B_{in-plane} \neq 0\)</span> 時，夫朗和費圖樣嚴重扭曲。</li>
-<li><span class="math inline">\(I_c^+ \neq |I_c^-|\)</span> (Time-Reversal Symmetry Breaking)。</li>
+<li>透明度模型需 <span class="math inline">\(\tau &gt; 0.9\)</span> 才能產生足夠 <span class="math inline">\(I_2\)</span>，與實測 <span class="math inline">\(\tau \approx 0.6\)</span> 不符。</li>
+<li>諧波展開模型藉由相位差 <span class="math inline">\(\delta\)</span> 同時描述高階諧波與不對稱，與實驗吻合。</li>
 </ul></li>
-<li><strong>模型比較</strong>
-<ul>
-<li><strong>透明度模型 (Transparency Model)</strong>：需極高 <span class="math inline">\(\tau &gt; 0.9\)</span> 才能解釋 <span class="math inline">\(I_2\)</span>，且無法解釋不對稱。</li>
-<li><strong>諧波展開 (Harmonic Series)</strong>：引入相位 <span class="math inline">\(\delta\)</span>，成功描述 TRS 破缺與高階諧波。</li>
-</ul></li>
-<li><strong>結論</strong>
-<ul>
-<li>PtTe<span class="math inline">\(_2\)</span> 接面中存在 <strong>各向異性</strong> 的輸運機制。</li>
-<li>面內磁場有效耦合到 <strong>安德烈夫束縛態 (ABS)</strong>，調控其相位。</li>
-</ul></li>
+<li><strong>結論</strong>：面內磁場耦合 <strong>安德烈夫束縛態 (ABS)</strong>，在 PtTe<span class="math inline">\(_2\)</span> 中誘發可調式 <span class="math inline">\(\varphi_0\)</span> 行為。</li>
 </ul>
 </section>
-<section id="section-technical-challenges" class="level2">
-<h2 class="anchored" data-anchor-id="section-technical-challenges">技術挑戰與優化方向</h2>
+<section id="section-implications" class="slide level2">
+<h2>學術與實務意涵：可調式 CPR 為拓樸元件奠基</h2>
 <ul>
-<li><strong>製程挑戰</strong>
-<ul>
-<li><strong>側壁沉積 (Sidewall Deposition)</strong>：可能導致額外並聯路徑。</li>
-<li><strong>表面氧化</strong>：TMD 材料易氧化，需嚴格的原位清洗。</li>
-</ul></li>
-<li><strong>對量測的影響</strong>
-<ul>
-<li>接面均勻性影響干涉圖樣的對比度。</li>
-<li>需進一步優化 <strong>離子銑削</strong> 參數與 <strong>側壁保護</strong> 製程。</li>
-</ul></li>
+<li><strong>學術</strong>：提供 Type-II DSM 在超導近接下的實驗證據，量化高階諧波與相位偏移，填補 CPR 可調性的缺口。</li>
+<li><strong>實務</strong>：磁場即可設定 CPR 形狀，對 <strong>超導二極體</strong>、<strong>可程式化相位邏輯</strong>、<strong>拓樸量子位元</strong> 的相位操控具直接可行性。</li>
+<li><strong>展示策略</strong>：依白皮書建議，以圖表凸顯「相位旋鈕」效果，口試時可快速定錨委員關注焦點。</li>
 </ul>
 </section>
+<section id="section-technical-challenges" class="slide level2">
+<h2>限制與風險：製程與均勻度仍需優化</h2>
+<ul>
+<li><strong>製程</strong>：側壁沉積可能形成並聯路徑；TMD 易氧化，需嚴格原位清洗與側壁保護。</li>
+<li><strong>量測</strong>：接面均勻度影響干涉對比度；面內磁場角度校正仍是誤差源。</li>
+<li><strong>未來優化</strong>：細調離子銑削、加入防護層，並擴充角度與溫度掃描，以強化方法論防禦。</li>
+</ul>
+</section></section>
+<section>
+<section id="chapter-conclusion-prospect" class="title-slide slide level1 center">
+<h1>收斂與下一步：PtTe<span class="math inline">\(_2\)</span> 展現可調式 CPR 平台</h1>
+
 </section>
-<section id="chapter-conclusion-prospect" class="level1">
-<h1>結論與展望</h1>
-<section id="section-conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="section-conclusion">總結 (Conclusion)</h2>
+<section id="section-conclusion" class="slide level2">
+<h2>主要回答：磁場可重塑 CPR 並建立相位偏壓</h2>
 <ol type="1">
-<li><strong>成功建立 PtTe<span class="math inline">\(_2\)</span> 量子元件平台</strong>
-<ul>
-<li>結合機械剝離與非對稱 SQUID 技術。</li>
-<li>實現高品質擴散型接面 (<span class="math inline">\(L \gg l_e\)</span>)。</li>
-</ul></li>
-<li><strong>發現非傳統電流-相位關係 (Non-sinusoidal CPR)</strong>
-<ul>
-<li>直接觀測到顯著的 <strong>二階諧波 (<span class="math inline">\(I_2\)</span>)</strong>。</li>
-<li>證實 CPR 形式高度依賴於 <strong>面內磁場</strong>。</li>
-</ul></li>
-<li><strong>磁通量調控 (Magnetic Tuning)</strong>
-<ul>
-<li>實現了「<strong>可調式 <span class="math inline">\(\varphi_0\)</span> 接面</strong>」。</li>
-<li>為拓撲超導元件的相位操控提供了新途徑。</li>
-</ul></li>
+<li><strong>高品質平台</strong>：以非對稱 SQUID 量測高透明 PtTe<span class="math inline">\(_2\)</span> 接面，完成 <span class="math inline">\(\text{Swath}\)</span> 階段的品質驗證。</li>
+<li><strong>非正弦 CPR</strong>：直接觀測到顯著 <strong>二階諧波 <span class="math inline">\(I_2\)</span></strong>，並以諧波模型量化相位差 <span class="math inline">\(\delta\)</span>。</li>
+<li><strong>磁場調控</strong>：證實面內磁場可連續調整 CPR（<span class="math inline">\(\varphi_0\)</span> 偏移），為可程式化超導元件提供相位旋鈕。</li>
 </ol>
 </section>
-<section id="section-prospect" class="level2">
-<h2 class="anchored" data-anchor-id="section-prospect">未來展望 (Future Work)</h2>
+<section id="section-prospect" class="slide level2">
+<h2>下一步：深化機制並向應用推進</h2>
 <ul>
-<li><strong>短期目標：機制釐清</strong>
-<ul>
-<li><strong>溫度依賴性量測</strong>：區分體相與表面態貢獻。</li>
-<li><strong>Shapiro Steps</strong>：進一步驗證 AC 約瑟夫森效應。</li>
-</ul></li>
-<li><strong>長期目標：量子應用</strong>
-<ul>
-<li><strong>超導二極體 (Superconducting Diode)</strong>：零磁場下的非互易輸運。</li>
-<li><strong>拓撲量子位元 (Topological Qubits)</strong>：利用 <span class="math inline">\(\varphi_0\)</span> 偏移實現免磁場操控。</li>
-</ul></li>
-<li><strong>科學意義</strong>
-<ul>
-<li>連結 <strong>拓撲物理</strong> 與 <strong>宏觀量子元件</strong> 的橋樑。</li>
-</ul></li>
+<li><strong>機制釐清</strong>：溫度依賴量測以區分體相與表面態；Shapiro steps 驗證 AC 約瑟夫森效應。</li>
+<li><strong>應用路線</strong>：邁向 <strong>超導二極體</strong> 與 <strong>拓樸量子位元</strong>，探索零磁場下的非互易與相位操控。</li>
+<li><strong>資料強化</strong>：擴充角度與場強掃描，與白皮書強調的「備用投影片」策略搭配，應對委員質疑。</li>
 </ul>
 </section>
+<section id="section-closing" class="slide level2">
+<h2>臨場策略：對齊白皮書的收尾與 Q&amp;A 節奏</h2>
+<ul>
+<li>結尾重申核心貢獻與可調性，並預告備用投影片涵蓋樣品統計、完整 CPR 擬合與檢定結果。</li>
+<li>Q&amp;A 將依「承認限制→合理辯護」話術回應方法論挑戰，確保展演與文件一致。</li>
+</ul>
+</section></section>
+<section id="備用投影片qa-即時切換-backup-slides" class="title-slide slide level1 center">
+<h1>備用投影片：Q&amp;A 即時切換 (Backup Slides)</h1>
+
 </section>
-<section id="備用投影片-backup-slides" class="level1">
-<h1>備用投影片 (Backup Slides)</h1>
+
+<section>
+<section id="appendix-detailed-data" class="title-slide slide level1 center">
+<h1>備用投影片：委員質疑時的數據佐證</h1>
+
 </section>
-<section id="appendix-detailed-data" class="level1">
-<h1>附錄 A：詳細實驗數據</h1>
-<section id="section-complete-results" class="level2">
-<h2 class="anchored" data-anchor-id="section-complete-results">完整實驗結果</h2>
-<p>本附錄提供了主要實驗的詳細數據和補充分析。</p>
-<section id="subsection-sample-details" class="level3">
-<h3 class="anchored" data-anchor-id="subsection-sample-details">樣品詳細資訊</h3>
+<section id="section-complete-results" class="slide level2">
+<h2>備查：樣品統計與補充分析</h2>
+<p>依白皮書建議，本區保留可即時切換的佐證表與補充參數。</p>
+<h3 id="subsection-sample-details">樣品詳細資訊</h3>
 <table>
 <caption>
 <p>
@@ -1110,10 +1087,8 @@ Only Ref. JJ
 </tr>
 </tbody>
 </table>
-</section>
-<section id="subsection-quantum-transport-parameters-table" class="level3">
-<h3 class="anchored" data-anchor-id="subsection-quantum-transport-parameters-table">PtTe2、NbTi量子輸運參數表</h3>
-<table class="caption-top table">
+<h3 id="subsection-quantum-transport-parameters-table">PtTe2、NbTi量子輸運參數表</h3>
+<table class="caption-top" style="width:98%;">
 <caption>PtTe2、NbTi量子輸運參數表</caption>
 <colgroup>
 <col style="width: 23%">
@@ -1206,421 +1181,397 @@ Superconducting coherence length</strong></td>
 </tr>
 </tbody>
 </table>
-</section>
-</section>
-</section>
-<section id="參考文獻" class="level1">
+</section></section>
+<section id="參考文獻" class="title-slide slide level1 smaller scrollable">
 <h1>參考文獻</h1>
 <div id="refs" role="list">
 
 </div>
-</section>
 
-</main>
-<!-- /main column -->
-<script id="quarto-html-after-body" type="application/javascript">
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
-    const isCodeAnnotation = (el) => {
-      for (const clz of el.classList) {
-        if (clz.startsWith('code-annotation-')) {                     
-          return true;
-        }
-      }
-      return false;
-    }
-    const onCopySuccess = function(e) {
-      // button target
-      const button = e.trigger;
-      // don't keep focus
-      button.blur();
-      // flash "checked"
-      button.classList.add('code-copy-button-checked');
-      var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
-      let tooltip;
-      if (window.bootstrap) {
-        button.setAttribute("data-bs-toggle", "tooltip");
-        button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
-        tooltip = new bootstrap.Tooltip(button, 
-          { trigger: "manual", 
-            customClass: "code-copy-button-tooltip",
-            offset: [0, -8]});
-        tooltip.show();    
-      }
-      setTimeout(function() {
-        if (tooltip) {
-          tooltip.hide();
-          button.removeAttribute("data-bs-title");
-          button.removeAttribute("data-bs-toggle");
-          button.removeAttribute("data-bs-placement");
-        }
-        button.setAttribute("title", currentTitle);
-        button.classList.remove('code-copy-button-checked');
-      }, 1000);
-      // clear code selection
-      e.clearSelection();
-    }
-    const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-      text: getTextToCopy
-    });
-    clipboard.on('success', onCopySuccess);
-    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-        text: getTextToCopy,
-        container: window.document.getElementById('quarto-embedded-source-code-modal')
-      });
-      clipboardModal.on('success', onCopySuccess);
-    }
-      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
-      var isInternal = (href) => {
-          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-      }
-      // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-      for (var i=0; i<links.length; i++) {
-        const link = links[i];
-        if (!isInternal(link.href)) {
-          // undo the damage that might have been done by quarto-nav.js in the case of
-          // links that we want to consider external
-          if (link.dataset.originalHref !== undefined) {
-            link.href = link.dataset.originalHref;
-          }
-        }
-      }
-    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-      const config = {
-        allowHTML: true,
-        maxWidth: 500,
-        delay: 100,
-        arrow: false,
-        appendTo: function(el) {
-            return el.parentElement;
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="main_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="main_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="main_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="main_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="main_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="main_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="main_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="main_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="main_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="main_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
         },
-        interactive: true,
-        interactiveBorder: 10,
-        theme: 'quarto',
-        placement: 'bottom-start',
-      };
-      if (contentFn) {
-        config.content = contentFn;
-      }
-      if (onTriggerFn) {
-        config.onTrigger = onTriggerFn;
-      }
-      if (onUntriggerFn) {
-        config.onUntrigger = onUntriggerFn;
-      }
-      window.tippy(el, config); 
-    }
-    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-    for (var i=0; i<noterefs.length; i++) {
-      const ref = noterefs[i];
-      tippyHover(ref, function() {
-        // use id or data attribute instead here
-        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-        try { href = new URL(href).hash; } catch {}
-        const id = href.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note) {
-          return note.innerHTML;
-        } else {
-          return "";
-        }
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
       });
-    }
-    const xrefs = window.document.querySelectorAll('a.quarto-xref');
-    const processXRef = (id, note) => {
-      // Strip column container classes
-      const stripColumnClz = (el) => {
-        el.classList.remove("page-full", "page-columns");
-        if (el.children) {
-          for (const child of el.children) {
-            stripColumnClz(child);
-          }
-        }
-      }
-      stripColumnClz(note)
-      if (id === null || id.startsWith('sec-')) {
-        // Special case sections, only their first couple elements
-        const container = document.createElement("div");
-        if (note.children && note.children.length > 2) {
-          container.appendChild(note.children[0].cloneNode(true));
-          for (let i = 1; i < note.children.length; i++) {
-            const child = note.children[i];
-            if (child.tagName === "P" && child.innerText === "") {
-              continue;
-            } else {
-              container.appendChild(child.cloneNode(true));
-              break;
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
             }
           }
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(container);
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
           }
-          return container.innerHTML
-        } else {
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(note);
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
           }
-          return note.innerHTML;
+          return codeEl.innerText;
         }
-      } else {
-        // Remove any anchor links if they are present
-        const anchorLink = note.querySelector('a.anchorjs-link');
-        if (anchorLink) {
-          anchorLink.remove();
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
         }
-        if (note.classList.contains("callout")) {
-          return note.outerHTML;
-        } else {
-          return note.innerHTML;
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
         }
-      }
-    }
-    for (var i=0; i<xrefs.length; i++) {
-      const xref = xrefs[i];
-      tippyHover(xref, undefined, function(instance) {
-        instance.disable();
-        let url = xref.getAttribute('href');
-        let hash = undefined; 
-        if (url.startsWith('#')) {
-          hash = url;
-        } else {
-          try { hash = new URL(url).hash; } catch {}
-        }
-        if (hash) {
-          const id = hash.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note !== null) {
-            try {
-              const html = processXRef(id, note.cloneNode(true));
-              instance.setContent(html);
-            } finally {
-              instance.enable();
-              instance.show();
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
             }
           } else {
-            // See if we can fetch this
-            fetch(url.split('#')[0])
-            .then(res => res.text())
-            .then(html => {
-              const parser = new DOMParser();
-              const htmlDoc = parser.parseFromString(html, "text/html");
-              const note = htmlDoc.getElementById(id);
-              if (note !== null) {
-                const html = processXRef(id, note);
-                instance.setContent(html);
-              } 
-            }).finally(() => {
-              instance.enable();
-              instance.show();
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
             });
           }
-        } else {
-          // See if we can fetch a full url (with no hash to target)
-          // This is a special case and we should probably do some content thinning / targeting
-          fetch(url)
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.querySelector('main.content');
-            if (note !== null) {
-              // This should only happen for chapter cross references
-              // (since there is no id in the URL)
-              // remove the first header
-              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-                note.children[0].remove();
-              }
-              const html = processXRef(null, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
         }
-      }, function(instance) {
       });
-    }
-        let selectedAnnoteEl;
-        const selectorForAnnotation = ( cell, annotation) => {
-          let cellAttr = 'data-code-cell="' + cell + '"';
-          let lineAttr = 'data-code-annotation="' +  annotation + '"';
-          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-          return selector;
-        }
-        const selectCodeLines = (annoteEl) => {
-          const doc = window.document;
-          const targetCell = annoteEl.getAttribute("data-target-cell");
-          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-          const lineIds = lines.map((line) => {
-            return targetCell + "-" + line;
-          })
-          let top = null;
-          let height = null;
-          let parent = null;
-          if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
-            }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
-            }
-            selectedAnnoteEl = annoteEl;
-          }
-        };
-        const unselectCodeLines = () => {
-          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-          elementsIds.forEach((elId) => {
-            const div = window.document.getElementById(elId);
-            if (div) {
-              div.remove();
-            }
-          });
-          selectedAnnoteEl = undefined;
-        };
-          // Handle positioning of the toggle
-      window.addEventListener(
-        "resize",
-        throttle(() => {
-          elRect = undefined;
-          if (selectedAnnoteEl) {
-            selectCodeLines(selectedAnnoteEl);
-          }
-        }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
-              fn.apply(this, args);
-              throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
-              timer = setTimeout(() => {
-                fn.apply(this, args);
-                timer = throttle = false;
-              }, ms);
-          }
-        };
-      }
-        // Attach click handler to the DT
-        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-        for (const annoteDlNode of annoteDls) {
-          annoteDlNode.addEventListener('click', (event) => {
-            const clickedEl = event.target;
-            if (clickedEl !== selectedAnnoteEl) {
-              unselectCodeLines();
-              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-              if (activeEl) {
-                activeEl.classList.remove('code-annotation-active');
-              }
-              selectCodeLines(clickedEl);
-              clickedEl.classList.add('code-annotation-active');
-            } else {
-              // Unselect the line
-              unselectCodeLines();
-              clickedEl.classList.remove('code-annotation-active');
-            }
-          });
-        }
-    const findCites = (el) => {
-      const parentEl = el.parentElement;
-      if (parentEl) {
-        const cites = parentEl.dataset.cites;
-        if (cites) {
-          return {
-            el,
-            cites: cites.split(' ')
-          };
-        } else {
-          return findCites(el.parentElement)
-        }
-      } else {
-        return undefined;
-      }
-    };
-    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-    for (var i=0; i<bibliorefs.length; i++) {
-      const ref = bibliorefs[i];
-      const citeInfo = findCites(ref);
-      if (citeInfo) {
-        tippyHover(citeInfo.el, function() {
-          var popup = window.document.createElement('div');
-          citeInfo.cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
-            }
-            popup.appendChild(citeDiv);
-          });
-          return popup.innerHTML;
-        });
-      }
-    }
-  });
-  </script>
-</div> <!-- /content -->
-
-
-
+      </script>
+    
 
 </body></html>

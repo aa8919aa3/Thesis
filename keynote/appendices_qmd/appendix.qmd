@@ -1,8 +1,8 @@
-# 附錄 A：詳細實驗數據 {#appendix-detailed-data}
+# 備用投影片：委員質疑時的數據佐證 {#appendix-detailed-data}
 
-## 完整實驗結果 {#section-complete-results}
+## 備查：樣品統計與補充分析 {#section-complete-results}
 
-本附錄提供了主要實驗的詳細數據和補充分析。
+依白皮書建議，本區保留可即時切換的佐證表與補充參數。
 
 ### 樣品詳細資訊 {#subsection-sample-details}
 

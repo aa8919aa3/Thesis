@@ -1,0 +1,46 @@
+/*-- scss:defaults --*/
+
+$presentation-heading-color: #003366;
+$presentation-main-color: #000000;
+$presentation-link-color: #0066cc;
+
+/*-- scss:rules --*/
+
+.reveal section h1,
+.reveal section h2,
+.reveal section h3 {
+    color: $presentation-heading-color;
+    text-transform: none;
+    /* Keep original case */
+}
+
+/* Slide titles */
+.reveal h2 {
+    font-size: 1.8em;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 0.2em;
+}
+
+/* Emphasis */
+.strong {
+    font-weight: bold;
+    color: #cc0000;
+    /* Dark Red for emphasis */
+}
+
+/* Two-column layout helper */
+.columns {
+    display: flex;
+}
+
+.column {
+    flex: 50%;
+}
+
+/* Caption styling */
+figcaption {
+    font-size: 0.6em;
+    color: #666;
+    font-style: italic;
+    text-align: center;
+}
