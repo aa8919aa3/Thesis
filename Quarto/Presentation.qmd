@@ -6,88 +6,85 @@ date: "2024-06-20"
 institute: "National Sun Yat-sen University"
 format:
   revealjs:
+    theme: theme.scss
+    transition: fade
+    background-transition: fade
+    highlight-style: ayu-mirage
     center: false
     hash: true
-    progress: false
-    margin: 0.06
-    incremental: true
-    theme: [default, custom.scss]
-    slide-number: true
-    transition: slide
-    chalkboard: true
-    multiplex: false
     width: 1920
     height: 1080
     logo: "Images/logo_nsysu_thesis.jpg" 
-    css: styles.css
   beamer:
     theme: metropolis
+    pdf-engine: xelatex
     aspectratio: 169
-    mainfont: "Arial"
-    sansfont: "Arial"
+    mainfont: "Songti TC"
+    sansfont: "Songti TC"
     monofont: "Courier New"
     header-includes: |
       \titlegraphic{\includegraphics[width=2cm]{Images/logo_nsysu_thesis.jpg}}
+  pptx:
+    reference-doc: songti-template.pptx
 bibliography: ../references.bib
 ---
 
-# Introduction {.section}
+# Introduction
 
 ## Outline
 
-::: {.grid}
-::: {.card}
+::::: columns
+::: {.column width="25%"}
 ### Introduction
 - Research motivation
-- 1T-PtTe$_2$ (Type-II Dirac semimetal)
+- 1T-PtTe$_2$ (Type-II Dirac)
 :::
 
-::: {.card}
+::: {.column width="25%"}
 ### Theory
 - Josephson effect & CPR
-- Josephson diode effect (JDE)
+- Josephson diode effect
 :::
 
-::: {.card}
+::: {.column width="25%"}
 ### Methods
 - Device fabrication
 - Measurement setup
 :::
 
-::: {.card}
-### Results & conclusion
+::: {.column width="25%"}
+### Results
 - Basic characterization
 - CPR analysis
 - In-plane field effect
 :::
-:::
+:::::
 
 ## Research Motivation
 
-::: {.grid}
-::: {.card}
-### Topological materials + superconductivity
+::::: columns
+::: {.column width="33%"}
+### Topological SC
 - Type-II Dirac semimetal **PtTe$_2$** proximitized by a superconductor
-- Platform for novel quantum transport (e.g., surface/edge states)
+- Platform for novel quantum transport (surface/edge states)
 :::
 
-::: {.card}
-### Current–phase relation (CPR)
-- Direct probe of junction physics beyond a simple $\sin\phi$
+::: {.column width="33%"}
+### CPR
+- Direct probe of junction physics beyond simple $\sin\phi$
 - Harmonics encode transparency / Andreev bound states
 :::
 
-::: {.card}
-### Superconducting diode effect
+::: {.column width="33%"}
+### Diode Effect
 - Non-reciprocal transport $I_c^+ \neq |I_c^-|$
-- Route to dissipationless rectification & superconducting electronics
+- Route to dissipationless rectification & SC electronics
 :::
-:::
+:::::
 
 ## 1T-PtTe$_2$: A Type-II Dirac Semimetal
 
-:::: {.columns}
-
+::::: columns
 ::: {.column width="60%"}
 *   **Crystal Structure**:
     *   Layered Transition Metal Dichalcogenide (TMD).
@@ -101,47 +98,45 @@ bibliography: ../references.bib
 ::: {.column width="40%"}
 ![Crystal structure of PtTe$_2$.](Images/topological_materials.png)
 :::
+:::::
 
-::::
-
-# Theoretical Background {.section}
+# Theoretical Background
 
 ## Josephson Effect & Current–Phase Relation
 
-::: {.grid}
-::: {.card}
+::::: columns
+::: {.column width="50%"}
 ### Josephson relations
 - DC: $I_s = I_c\sin\phi$ (ideal tunnel junction)
 - AC: $\dot{\phi} = \frac{2e}{\hbar}V$
 :::
 
-::: {.card}
+::: {.column width="50%"}
 ### Beyond sinusoidal CPR
 - High transparency → **skewed** CPR
 - Harmonics: $I(\phi)=\sum_n I_n\sin(n\phi+\delta_n)$
 - Access via **asymmetric SQUID** readout
 :::
-:::
+:::::
 
 ## Josephson Diode Effect (Concept)
 
-::: {.grid}
-::: {.card}
+::::: columns
+::: {.column width="50%"}
 ### Definition
 - Non‑reciprocal critical current  
   $I_c^+ \neq |I_c^-|$
 - Superconducting rectification without Joule heating
 :::
 
-::: {.card}
+::: {.column width="50%"}
 ### Typical ingredients
 - Broken inversion symmetry + broken time‑reversal symmetry
 - Often tuned by $B_{\parallel}$ with strong spin–orbit coupling
 :::
-:::
+:::::
 
-
-# Experimental Methods {.section}
+# Experimental Methods
 
 ## Device Fabrication Flow
 
@@ -158,22 +153,20 @@ bibliography: ../references.bib
 
 ## Measurement Setup
 
-:::: {.columns}
+::::: columns
 ::: {.column width="55%"}
-::: {.card}
 - **Cryogenic system**: Dilution refrigerator (base **~40 mK**)
 - **Electronics**: low-noise filtering, 4-terminal measurement
 - **Magnetic control**: 3-axis vector magnet  
   (precise $B_{\parallel}$ and $B_{\perp}$ alignment)
 :::
-:::
 
 ::: {.column width="45%"}
 ![Measurement Schematic](Images/coordinate_system_schematic.png){width=95%}
 :::
-::::
+:::::
 
-# Results: Basic Characterization {.section}
+# Results: Basic Characterization
 
 ## I-V Characteristics (DC Transport)
 
@@ -182,7 +175,7 @@ bibliography: ../references.bib
     *   Switching Current ($I_c$) and Retrapping Current ($I_r$).
     *   Hysteretic behavior (underdamped junction).
 
-:::: {.columns}
+::::: columns
 ::: {.column width="50%"}
 ![I-V Curve at Base Temp.](Images/iv_run20.svg)
 :::
@@ -192,26 +185,24 @@ bibliography: ../references.bib
     *   Finite resistance in normal state ($R_N$).
     *   **Excess Current** observed at high bias $\rightarrow$ High transparency interface.
 :::
-::::
+:::::
 
 ## Fraunhofer Pattern (AC Josephson Effect)
 
-:::: {.columns}
+::::: columns
 ::: {.column width="45%"}
-::: {.card}
 - **Field modulation**: $I_c$ vs. out-of-plane $B_{\perp}$
 - **Pattern cues**
   - Regular lobes → initially uniform current distribution
   - Deviations → non-uniformity / phase winding changes
 :::
-:::
 
 ::: {.column width="55%"}
 ![Fraunhofer Pattern](Images/fraunhofer_heatmap_005-1_60mT_linear.svg){width=100%}
 :::
-::::
+:::::
 
-# Results: Current-Phase Relation {.section}
+# Results: Current-Phase Relation
 
 ## CPR Retrieval Method
 
@@ -226,7 +217,7 @@ bibliography: ../references.bib
 
 ## Measured CPR & Fitting
 
-:::: {.columns}
+::::: columns
 ::: {.column width="50%"}
 ![Extracted CPR Waveforms](Images/cpr_fit_127.svg)
 :::
@@ -236,25 +227,23 @@ bibliography: ../references.bib
     *   **High $I_2/I_1$ ratio**: Significant second harmonic component detected.
     *   Indicates presence of highly transparent Andreev Bound States (ABS).
 :::
-::::
+:::::
 
-# Results: In-Plane Magnetic Field Effect {.section}
+# Results: In-Plane Magnetic Field Effect
 
 ## Tunable CPR with In-Plane Field
 
-:::: {.columns}
+::::: columns
 ::: {.column width="45%"}
-::: {.card}
 - Applying $B_{\parallel}$ **modifies CPR shape**
 - Suggests a **phase shift** ($\phi_0$) in higher harmonics
 - Correlates with emergence of the **Josephson diode effect**
-:::
 :::
 
 ::: {.column width="55%"}
 ![CPR Evolution under In-Plane Field](Images/CPR_evolution_27_log_offset_corrected.svg){width=100%}
 :::
-::::
+:::::
 
 ## Josephson Diode Effect (JDE)
 
@@ -267,7 +256,7 @@ bibliography: ../references.bib
     *   Efficiency $\eta = \frac{I_c^+ - |I_c^-|}{I_c^+ + |I_c^-|}$.
     *   Tunable by magnetic field angle and magnitude.
 
-# Conclusion {.section}
+# Conclusion
 
 ## Summary
 

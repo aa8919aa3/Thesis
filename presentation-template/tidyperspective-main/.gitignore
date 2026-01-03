@@ -1,0 +1,10 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+/.quarto/
+*.key
+talks/images/images.key
+
+**/*.quarto_ipynb
