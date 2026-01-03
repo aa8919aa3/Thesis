@@ -15,7 +15,7 @@ $presentation-line-height: 1.25;
 .reveal {
   /* Prefer system fonts; include common Traditional Chinese fallbacks */
   --r-main-font: system-ui, -apple-system, "Segoe UI", "Noto Sans TC", "PingFang TC",
-                 "Microsoft JhengHei", Arial, sans-serif;
+    "Microsoft JhengHei", Arial, sans-serif;
   --r-heading-font: var(--r-main-font);
 
   --r-main-font-size: 34px;
@@ -38,11 +38,13 @@ $presentation-line-height: 1.25;
   letter-spacing: -0.02em;
   margin-bottom: 0.45em;
 }
+
 .reveal h2 {
   font-size: 1.35em;
   letter-spacing: -0.015em;
   margin-bottom: 0.55em;
 }
+
 .reveal h3 {
   font-size: 1.08em;
   margin-bottom: 0.4em;
@@ -53,10 +55,12 @@ $presentation-line-height: 1.25;
 .reveal li {
   line-height: 1.35;
 }
+
 .reveal ul,
 .reveal ol {
   margin-left: 1.1em;
 }
+
 .reveal li {
   margin: 0.18em 0;
 }
@@ -66,6 +70,7 @@ $presentation-line-height: 1.25;
   font-size: 0.46em;
   opacity: 0.55;
 }
+
 .reveal .slide-logo {
   /* Quarto injects .slide-logo when `logo:` is set */
   position: fixed !important;
@@ -87,9 +92,11 @@ $presentation-line-height: 1.25;
   object-fit: contain;
   border-radius: 14px;
 }
+
 .reveal figure {
   margin: 0.4em 0 0;
 }
+
 .reveal figcaption {
   margin-top: 0.45em;
   font-size: 0.62em;
@@ -99,9 +106,17 @@ $presentation-line-height: 1.25;
 }
 
 /* Utility helpers */
-.small { font-size: 0.82em; }
-.muted { opacity: 0.75; }
-.center { text-align: center; }
+.small {
+  font-size: 0.82em;
+}
+
+.muted {
+  opacity: 0.75;
+}
+
+.center {
+  text-align: center;
+}
 
 /* Card / grid components (use in .qmd with ::: {.card} ... ) */
 .card {
@@ -111,14 +126,21 @@ $presentation-line-height: 1.25;
   padding: 22px 26px;
   box-shadow: 0 12px 30px rgba(2, 6, 23, 0.08);
 }
-.card > :first-child { margin-top: 0; }
-.card > :last-child { margin-bottom: 0; }
+
+.card> :first-child {
+  margin-top: 0;
+}
+
+.card> :last-child {
+  margin-bottom: 0;
+}
 
 .grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
 }
+
 .grid-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -128,9 +150,11 @@ $presentation-line-height: 1.25;
   /* Reveal supports slide background styles; we use an in-slide background */
   background: linear-gradient(135deg, #0b1320 0%, #12325b 60%, #1b4d7a 100%);
 }
+
 .reveal section.section {
   color: #ffffff;
 }
+
 .reveal section.section h1,
 .reveal section.section h2,
 .reveal section.section h3,
@@ -138,12 +162,14 @@ $presentation-line-height: 1.25;
 .reveal section.section li {
   color: #ffffff;
 }
+
 .reveal section.section h1 {
   font-size: 2.25em;
   letter-spacing: -0.02em;
   margin-top: 0.25em;
   margin-bottom: 0.25em;
 }
+
 .reveal section.section::after {
   content: "";
   display: block;
@@ -158,6 +184,7 @@ $presentation-line-height: 1.25;
 .reveal .callout {
   border-radius: 16px;
 }
+
 .reveal .callout-title {
   font-weight: 700;
 }

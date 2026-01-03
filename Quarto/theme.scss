@@ -3,7 +3,7 @@
 // fonts
 @import 'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap';
 
-$font-family-sans-serif: "Atkinson Hyperlegible", sans-serif;
+$font-family-sans-serif: "Songti TC", "Atkinson Hyperlegible", sans-serif;
 $presentation-heading-color: #00589b;
 $presentation-title-slide-text-align: "left";
 $presentation-subtitle-slide-text-align: "left";
@@ -13,6 +13,46 @@ $presentation-h2-font-size: 1.4em;
 
 /*-- scss:rules --*/
 
+/* Title Slide Customization */
+.reveal .title-slide {
+    text-align: left;
+    margin-top: -10% !important;
+    /* Move content up */
+}
+
+.reveal .title-slide h1.title {
+    font-size: 1.8em !important;
+    /* ~56pt approx relative to base */
+    font-weight: bold;
+    color: #00589b;
+    margin-bottom: 0.3em;
+    line-height: 1.2;
+    border-bottom: 3px solid #00589b;
+    /* Blue separator line */
+    padding-bottom: 0.4em;
+    display: inline-block;
+    /* Make border span content width or full width depending on pref, reveal titles are block by default */
+    width: 100%;
+}
+
+.reveal .title-slide p.subtitle {
+    font-size: 0.9em !important;
+    /* ~28pt */
+    font-weight: normal;
+    color: #333333;
+    margin-top: 0.5em;
+    margin-bottom: 1.5em;
+    line-height: 1.3;
+}
+
+.reveal .title-slide .title-block {
+    font-size: 0.7em !important;
+    /* ~22pt */
+    color: #333333;
+    line-height: 1.4;
+}
+
+/* Existing Custom Classes */
 .reveal .custom-title {
     position: absolute;
     color: #00589b;

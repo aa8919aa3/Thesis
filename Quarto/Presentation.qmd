@@ -1,9 +1,17 @@
 ---
-title: "Investigation of Current-Phase Relationship in 1T-Phase Platinum Ditelluride Josephson Junctions under In-Plane Magnetic Field"
-subtitle: "面內磁場下 1T 相二碲化鉑約瑟夫森接面之電流-相位關係研究"
-author: "Tao-Yi Hsu (徐道宜)"
-date: "2024-06-20"
-institute: "National Sun Yat-sen University"
+title: |
+  面內磁場下 1T 相 PtTe$_2$ 約瑟夫森接面 <br> 
+  電流–相位關係（CPR）研究
+subtitle: |
+  Study of the Current–Phase Relation of a 1T-PtTe$_2$ Josephson Junction <br> 
+  Under an In-Plane Magnetic Field
+author: |
+  <div class="title-block">
+  **Tao-Yi Hsu (徐道宜)** <br>
+  Advisor: Dr. Kuei-Lin Chiu (邱奎霖 博士) <br>
+  National Sun Yat-sen University <br>
+  January 2026
+  </div>
 format:
   revealjs:
     theme: theme.scss
