@@ -9,8 +9,8 @@
 <link href="Presentation_files/libs/quarto-html/quarto-syntax-highlighting-09ce31efb0ed5730d839a538a88c6f53.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.26">
 
-  <meta name="author" content="Tao-Yi Hsu (徐道宜)   Advisor: Dr.&nbsp;Kuei-Lin Chiu (邱奎霖 博士)">
-  <meta name="dcterms.date" content="2026-01-04">
+  <meta name="author" content="Student: Tao-Yi Hsu (徐道宜)   Advisor: Dr.&nbsp;Kuei-Lin Chiu (邱奎霖 博士)">
+  <meta name="dcterms.date" content="2026-01-05">
   <title>面內磁場下1T相二碲化鉑約瑟夫森接面 之電流－相位關係研究</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -49,7 +49,7 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="Presentation_files/libs/revealjs/dist/theme/quarto-a763496e777477ba1e4969ce6a19acfb.css">
+  <link rel="stylesheet" href="Presentation_files/libs/revealjs/dist/theme/quarto-c38ced35a92bd23807d9122e8972fb30.css">
   <link href="Presentation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="Presentation_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="Presentation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -153,7 +153,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Tao-Yi Hsu (徐道宜) <br> Advisor: Dr.&nbsp;Kuei-Lin Chiu (邱奎霖 博士) 
+Student: Tao-Yi Hsu (徐道宜) <br> Advisor: Dr.&nbsp;Kuei-Lin Chiu (邱奎霖 博士) 
 </div>
         <p class="quarto-title-affiliation">
             National Sun Yat-sen University
@@ -161,7 +161,7 @@ Tao-Yi Hsu (徐道宜) <br> Advisor: Dr.&nbsp;Kuei-Lin Chiu (邱奎霖 博士)
     </div>
 </div>
 
-  <p class="date">2026-01-04</p>
+  <p class="date">2026-01-05</p>
 </section>
 <section>
 <section id="introduction" class="title-slide slide level1 center">
@@ -287,6 +287,230 @@ Tao-Yi Hsu (徐道宜) <br> Advisor: Dr.&nbsp;Kuei-Lin Chiu (邱奎霖 博士)
 <li>Often tuned by <span class="math inline">\(B_{\parallel}\)</span> with strong spin–orbit coupling</li>
 </ul>
 </div></div>
+</section></section>
+<section>
+<section id="theoretical-model-rashba-zeeman" class="title-slide slide level1 center">
+<h1>Theoretical Model: Rashba + Zeeman</h1>
+
+</section>
+<section id="rashba-zeeman-why-we-care" class="slide level2">
+<h2>Rashba + Zeeman: Why We Care</h2>
+<ul>
+<li>Platform: 2D electron system at an interface (e.g.&nbsp;PtTe<span class="math inline">\(_2\)</span> surface / S–PtTe<span class="math inline">\(_2\)</span> junction)</li>
+<li>Key ingredients:
+<ul>
+<li>Strong spin–orbit coupling (SOC) → Rashba effect</li>
+<li>External magnetic field → Zeeman effect</li>
+</ul></li>
+<li>Combined effect:
+<ul>
+<li>Generates <strong>helical spin–momentum locking + spin splitting</strong></li>
+<li>Breaks <strong>inversion</strong> and <strong>time-reversal</strong> symmetries → allows <strong>finite-momentum pairing</strong> and <strong>Josephson diode effect (JDE)</strong></li>
+</ul></li>
+</ul>
+</section>
+<section id="minimal-2d-model-rashba-zeeman" class="slide level2">
+<h2>Minimal 2D Model (Rashba + Zeeman)</h2>
+<ul>
+<li>Momentum in plane: <span class="math inline">\(\mathbf{k} = (k_x, k_y)\)</span></li>
+<li>Spin Pauli matrices: <span class="math inline">\(\boldsymbol{\sigma} = (\sigma_x, \sigma_y, \sigma_z)\)</span></li>
+<li>Total Hamiltonian: <span class="math display">\[
+H(\mathbf{k})
+= \underbrace{\frac{\hbar^2 k^2}{2m} - \mu}_{H_0}
++ \underbrace{\alpha_R (k_y\sigma_x - k_x\sigma_y)}_{H_R}
++ \underbrace{\tfrac{1}{2} g\mu_B \mathbf{B}\cdot\boldsymbol{\sigma}}_{H_Z}.
+\]</span></li>
+<li>We will discuss:
+<ul>
+<li><span class="math inline">\(H_0\)</span>: Free 2D electron gas</li>
+<li><span class="math inline">\(H_R\)</span>: Rashba spin–orbit coupling</li>
+<li><span class="math inline">\(H_Z\)</span>: Zeeman coupling to external magnetic field</li>
+</ul></li>
+</ul>
+</section>
+<section id="free-2d-electron-gas-h_0" class="slide level2">
+<h2>Free 2D Electron Gas (<span class="math inline">\(H_0\)</span>)</h2>
+<ul>
+<li>Hamiltonian: <span class="math display">\[
+H_0 = \frac{\hbar^2 k^2}{2m} - \mu,\quad k^2 = k_x^2 + k_y^2.
+\]</span></li>
+<li>Symmetries:
+<ul>
+<li><strong>Time-reversal symmetry (TRS)</strong>: preserved</li>
+<li><strong>Inversion / mirror symmetry</strong> (including <span class="math inline">\(z \to -z\)</span>): preserved if structure is centrosymmetric</li>
+<li><strong>Spin SU(2) symmetry</strong>: full spin-rotation invariance</li>
+<li><strong>In-plane rotational symmetry</strong> (if effective mass isotropic): approx. preserved</li>
+</ul></li>
+<li>Physical picture:
+<ul>
+<li>Spin-degenerate parabolic bands</li>
+<li>No spin–momentum locking; spin and momentum are independent</li>
+</ul></li>
+</ul>
+</section>
+<section id="rashba-term-h_r-origin-and-form" class="slide level2">
+<h2>Rashba Term (<span class="math inline">\(H_R\)</span>): Origin and Form</h2>
+<ul>
+<li>Requires <strong>structural inversion asymmetry (SIA)</strong> + strong SOC</li>
+<li>Rashba Hamiltonian: <span class="math display">\[
+H_R = \alpha_R (\boldsymbol{\sigma}\times\mathbf{k})\cdot\hat{\mathbf{z}}
+= \alpha_R (k_y\sigma_x - k_x\sigma_y).
+\]</span></li>
+<li>Parameters:
+<ul>
+<li><span class="math inline">\(\alpha_R\)</span>: Rashba coupling strength <span class="math inline">\(\propto\)</span> interfacial electric field <span class="math inline">\(E_z\)</span></li>
+</ul></li>
+<li>Physical effect:
+<ul>
+<li><strong>Spin–momentum locking in the plane</strong>:
+<ul>
+<li>Spin lies in-plane and perpendicular to momentum</li>
+</ul></li>
+<li>Splits the spin-degenerate Fermi surface into two helically polarized Fermi circles</li>
+</ul></li>
+</ul>
+</section>
+<section id="rashba-symmetry-breaking" class="slide level2">
+<h2>Rashba: Symmetry Breaking</h2>
+<ul>
+<li><strong>Breaks structural inversion symmetry</strong> (SIA):
+<ul>
+<li>Under <span class="math inline">\(z \rightarrow -z\)</span>: interfacial electric field <span class="math inline">\(E_z\)</span> changes sign</li>
+<li>Rashba coupling <span class="math inline">\(\alpha_R\)</span> changes sign → <span class="math inline">\(H_R\)</span> is not inversion-invariant</li>
+</ul></li>
+<li><strong>Breaks full spin SU(2) symmetry</strong>:
+<ul>
+<li>Spin no longer freely rotates; spin orientation is tied to momentum direction</li>
+<li>Only combined spin–orbital rotations may remain as approximate symmetries</li>
+</ul></li>
+<li><strong>Preserves time-reversal symmetry (TRS)</strong>:
+<ul>
+<li>Under <span class="math inline">\(\mathcal{T}\)</span>: <span class="math inline">\(\mathbf{k} \to -\mathbf{k}\)</span>, <span class="math inline">\(\boldsymbol{\sigma} \to -\boldsymbol{\sigma}\)</span></li>
+<li><span class="math inline">\(H_R(\mathbf{k}) \to H_R(-\mathbf{k})\)</span> → TRS holds</li>
+<li>Kramers degeneracy: states at <span class="math inline">\(\mathbf{k}\)</span> and <span class="math inline">\(-\mathbf{k}\)</span> remain degenerate</li>
+</ul></li>
+</ul>
+</section>
+<section id="zeeman-term-h_z-origin-and-form" class="slide level2">
+<h2>Zeeman Term (<span class="math inline">\(H_Z\)</span>): Origin and Form</h2>
+<ul>
+<li>External magnetic field <span class="math inline">\(\mathbf{B}\)</span> couples to spin: <span class="math display">\[
+H_Z = \frac{1}{2} g\mu_B \mathbf{B}\cdot\boldsymbol{\sigma}
+= \frac{1}{2}g\mu_B(B_x\sigma_x + B_y\sigma_y + B_z\sigma_z).
+\]</span></li>
+<li>Examples:
+<ul>
+<li>In-plane field along <span class="math inline">\(y\)</span>: <span class="math inline">\(H_Z^{(y)} = \tfrac{1}{2} g\mu_B B_y \sigma_y\)</span>.</li>
+</ul></li>
+<li>Physical effects:
+<ul>
+<li>Spin-splitting of bands</li>
+<li>Polarization of spins along <span class="math inline">\(\mathbf{B}\)</span></li>
+<li>Modifies Fermi surfaces for spin-up and spin-down differently</li>
+</ul></li>
+</ul>
+</section>
+<section id="zeeman-symmetry-breaking" class="slide level2">
+<h2>Zeeman: Symmetry Breaking</h2>
+<ul>
+<li><strong>Breaks time-reversal symmetry (TRS)</strong>:
+<ul>
+<li>Magnetic field <span class="math inline">\(\mathbf{B}\)</span> is odd under time reversal</li>
+<li>With <span class="math inline">\(\mathbf{B} \neq 0\)</span>, the system is no longer invariant under <span class="math inline">\(\mathcal{T}\)</span></li>
+<li>Lifts Kramers degeneracy</li>
+</ul></li>
+<li><strong>Reduces spin SU(2) to U(1)</strong>:
+<ul>
+<li>Only spin rotations about the <span class="math inline">\(\mathbf{B}\)</span> axis remain symmetric</li>
+<li>Spin is preferentially aligned parallel or antiparallel to <span class="math inline">\(\mathbf{B}\)</span></li>
+</ul></li>
+<li><strong>Spatial symmetries</strong>:
+<ul>
+<li>Depending on the crystal, <span class="math inline">\(\mathbf{B}\)</span> selects a preferred axis</li>
+<li>May break certain rotational or mirror symmetries (e.g.&nbsp;in-plane mirrors) depending on direction of <span class="math inline">\(\mathbf{B}\)</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="rashba-zeeman-together" class="slide level2">
+<h2>Rashba + Zeeman Together</h2>
+<ul>
+<li>Combined Hamiltonian: <span class="math display">\[
+H(\mathbf{k})
+= \frac{\hbar^2k^2}{2m} - \mu
++ \alpha_R (k_y\sigma_x - k_x\sigma_y)
++ \frac{1}{2} g\mu_B \mathbf{B}\cdot\boldsymbol{\sigma}.
+\]</span></li>
+<li>Symmetry summary:
+<ul>
+<li><strong>Inversion symmetry</strong> (along <span class="math inline">\(z\)</span>): broken by Rashba</li>
+<li><strong>Time-reversal symmetry</strong>: broken by Zeeman (finite <span class="math inline">\(\mathbf{B}\)</span>)</li>
+<li><strong>Spin SU(2)</strong>: strongly broken; only residual rotations around special axes</li>
+</ul></li>
+<li>Physical consequences:
+<ul>
+<li>Spin texture becomes <strong>helical + spin-split</strong></li>
+<li>Fermi surfaces for opposite spins are shifted and distorted</li>
+<li>This structure is the microscopic origin of:
+<ul>
+<li><strong>finite-momentum Cooper pairing</strong> (<span class="math inline">\(q \neq 0\)</span>)</li>
+<li><strong><span class="math inline">\(\phi_0\)</span>-shifted and second-harmonic CPR</strong></li>
+<li><strong>Josephson diode effect (JDE)</strong></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="connection-to-finite-momentum-pairing" class="slide level2">
+<h2>Connection to Finite-Momentum Pairing</h2>
+<ul>
+<li>In presence of Rashba + Zeeman:
+<ul>
+<li>Spin–momentum locking: spin orientation tied to <span class="math inline">\(\mathbf{k}\)</span></li>
+<li>Zeeman shifts spin-split Fermi surfaces in momentum space</li>
+</ul></li>
+<li>Result:
+<ul>
+<li>Cooper pairs formed between time-reversed partners no longer centered at <span class="math inline">\(q=0\)</span></li>
+<li>Effective pair momentum: <span class="math display">\[
+\mathbf{q}(\mathbf{B}) \propto \mathbf{B}_{\parallel},
+\]</span> e.g.&nbsp;<span class="math inline">\(q_x \propto B_y\)</span> for certain helical textures</li>
+</ul></li>
+<li>In the Josephson junction:
+<ul>
+<li>Additional phase: <span class="math display">\[
+\delta(B) \simeq 2\mathbf{q}(B)\cdot \mathbf{L},
+\]</span></li>
+<li>Appears in CPR as: <span class="math display">\[
+I(\phi) = I_1\sin\phi + I_2\sin(2\phi + \delta).
+\]</span></li>
+<li>This is the GL-level description used to model JDE in PtTe<span class="math inline">\(_2\)</span> / NiTe<span class="math inline">\(_2\)</span> junctions.</li>
+</ul></li>
+</ul>
+</section>
+<section id="symmetry-jde-summary" class="slide level2">
+<h2>Symmetry &amp; JDE (Summary)</h2>
+<ul>
+<li><strong>Two key symmetry breakings for JDE / <span class="math inline">\(\phi_0\)</span>-junction:</strong>
+<ol type="1">
+<li><strong>Inversion symmetry broken</strong> → Rashba SOC</li>
+<li><strong>Time-reversal symmetry broken</strong> → Zeeman field</li>
+</ol></li>
+<li>Rashba + Zeeman together:
+<ul>
+<li>Generate helical spin–momentum locking + finite-<span class="math inline">\(q\)</span> pairing</li>
+<li>Lead to a CPR containing higher harmonics and phase shifts: <span class="math display">\[
+I(\phi) = I_1\sin\phi + I_2\sin(2\phi + \delta),
+\]</span></li>
+<li>Allow nonreciprocal critical current: <span class="math display">\[
+I_c^+ \neq |I_c^-| \quad\Rightarrow\quad \text{Josephson diode effect}.
+\]</span></li>
+</ul></li>
+<li>Take-home message:
+<ul>
+<li><strong>Rashba = inversion breaking + SOC</strong></li>
+<li><strong>Zeeman = time-reversal breaking</strong></li>
+<li><strong>Combination is the microscopic mechanism for JDE</strong></li>
+</ul></li>
+</ul>
 </section></section>
 <section>
 <section id="experimental-methods" class="title-slide slide level1 center">
