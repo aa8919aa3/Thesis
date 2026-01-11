@@ -1,0 +1,12 @@
+error: assertion failed: elembic: element 'arrow': too many positional arguments, expected 0
+     ┌─ @preview/elembic:1.1.1/src/element.typ:2965:6
+     │
+2965 │       assert(false, message: args)
+     │       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+help: error occurred in this call of function `default-constructor`
+    ┌─ main.typ:151:284
+    │
+151 │ 在 $T < T_c$ 時，大量庫柏對凝聚並建立長程相位同調（long-range phase coherence），同時形成能隙（energy gap）與相位剛性（phase stiffness）。這些特徵能有效抑制造成耗散（dissipation）的低能激發，並支持無耗散超流（dissipationless superflow），其在電荷系統中對應為無耗散超電流（dissipationless supercurrent）。此凝聚態可由複數序參量（order parameter；亦常稱為宏觀波函數，macroscopic wavefunction）$Psi (arrow(r))$ 描述：
+    │                                                                                                                                                                                                                                                                                                                                                                                                              ^^^^^^^^
+
