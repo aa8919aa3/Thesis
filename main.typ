@@ -9,6 +9,9 @@
 #import "@preview/physica:0.9.5": *
 #import "@preview/equate:0.3.2": equate
 
+// Define varphi as alias for phi for compatibility and consistency
+#let varphi = sym.phi
+
 #set heading(numbering: "1.")
 // Reset equation counter at each chapter
 #show heading.where(level: 1): it => {
@@ -121,65 +124,292 @@
 == 超導體中的宏觀量子現象基礎 Foundations of Macroscopic Quantum Phenomena in Superconductors <section-superconductivity>
 超導性（superconductivity）為超導量子元件的基礎。本節將概述超導體的主要性質，並說明約瑟夫森效應如何奠基於超導體中的宏觀量子效應（macroscopic quantum effect）。
 
-=== 庫柏對凝聚與宏觀波函數 The Cooper Pair Condensate and the Macroscopic Wavefunction <subsection-cooper-pairs>
+=== 古柏對凝聚與宏觀波函數 The Cooper Pair Condensate and the Macroscopic Wavefunction <subsection-cooper-pairs>
 
-當溫度降至臨界溫度 $T_c$ （critical temperature）以下時，金屬可由常態轉變為超導態（superconducting state），並呈現零電阻（zero resistance）與完全抗磁性（perfect diamagnetism）等宏觀量子現象（macroscopic quantum phenomena）。傳統超導（conventional superconductivity）的微觀機制由巴丁–庫柏–施里弗理論（Bardeen–Cooper–Schrieffer theory, BCS theory）建立，並於 1957 年獲得系統化闡述；其核心觀點為：費米面（Fermi surface）附近的電子在有效吸引交互作用（effective attractive interaction）下形成配對，進而產生凝聚。@bardeen_microscopic_1957 @bardeen_theory_1957 @schrieffer_theory_1999
+當溫度降至臨界溫度（critical temperature, $T_c$）以下時，金屬可由正常態（normal state）轉變為超導態（superconducting state），並呈現零電阻（zero resistance）以及邁斯納效應（Meissner effect）@meissner_neuer_1933 等宏觀量子現象（macroscopic quantum phenomena）。其中，邁斯納效應意指超導體在處於邁斯納態（Meissner state）且外加磁場較弱時，會主動排斥磁通而呈現強抗磁性；惟對第二類超導體（Type II superconductor），在 $H_"c1"<H<H_"c2"$ 的混合態（mixed state）中磁通可藉由量子化渦旋（vortex）進入。
+傳統超導（conventional superconductivity）的微觀機制由巴丁-古柏-施里弗理論（Bardeen–Cooper–Schrieffer theory, BCS theory）建立，並於 1957 年獲得系統化闡述；其核心觀點為：費米面（Fermi surface）附近的電子在有效吸引交互作用（effective attractive interaction）下形成配對，進而產生凝聚。@bardeen_microscopic_1957 @bardeen_theory_1957 @schrieffer_theory_1999
 
-在典型金屬中，電子–聲子耦合（electron–phonon coupling）會導致具有延遲效應（retardation）的有效電子–電子作用。該作用主要在費米能級 $E_F$ （Fermi energy）附近、能量寬度約為 $planck omega_D$ 的能窗內顯著，其中 $omega_D$ 為德拜頻率（Debye frequency）。在此能窗中，有效作用可呈現吸引性，並在屏蔽（screening）後的庫倫排斥（Coulomb repulsion）背景下引發費米海（Fermi sea）的配對不穩定性（pairing instability）。因此，時間反演共軛（time-reversal conjugate）的兩個電子態會產生配對關聯；在傳統 $s$-wave 自旋單態（spin singlet）情況下，常以 $k #sym.arrow.t$ 與 $k #sym.arrow.b$ 表示。此類配對關聯稱為庫柏對（Cooper pair）。需要強調的是，此處所稱的「束縛」更精確地對應於費米海背景下的「庫柏不穩定性」（Cooper instability），而非真空中緊束縛的二體束縛態。
+在典型金屬中，電子–聲子耦合（electron–phonon coupling）會導致具有延遲效應（retardation）的有效電子間交互作用（effective electron-electron interaction）。該作用主要在費米能 $E_F$ （Fermi energy）附近、能量寬度約為 $planck omega_D$ 的能窗內顯著，其中 $omega_D$ 為德拜頻率（Debye frequency）。在此能窗中，有效作用可呈現吸引性，並在屏蔽（screening）後的庫倫排斥（Coulomb repulsion）背景下引發費米海（Fermi sea）的配對不穩定性（pairing instability）。因此，時間反演共軛（time-reversal conjugate）的兩個電子態會產生配對關聯；在傳統$s$-波自旋單態（$s$-wave spin singlet）情況下，常以 $k #sym.arrow.t$ 與 $k #sym.arrow.b$ 表示。此類配對關聯稱為古柏對（Cooper pair）。需要強調的是，此處所稱的「束縛」更精確地對應於費米海背景下的「古柏不穩定性」（Cooper instability），而非真空中緊束縛的二體束縛態。
 
-在 $T < T_c$ 時，大量庫柏對凝聚並建立長程相位同調（long-range phase coherence），同時形成能隙（energy gap）與相位剛性（phase stiffness）。這些特徵能有效抑制造成耗散（dissipation）的低能激發，並支持無耗散超流（dissipationless superflow），其在電荷系統中對應為無耗散超電流（dissipationless supercurrent）。此凝聚態可由複數序參量（order parameter；亦常稱為宏觀波函數，macroscopic wavefunction）$Psi (vec(r))$ 描述：
+在 $T < T_c$ 時，大量古柏對凝聚並建立長程相位同調（long-range phase coherence），同時形成能隙（energy gap）與相位剛性（phase stiffness）。這些特徵能有效抑制造成耗散（dissipation）的低能激發，並支持無耗散超流（dissipationless superflow），其在電荷系統中對應為無耗散超電流（dissipationless supercurrent）。此凝聚態可由複數序參數（order parameter；亦常稱為宏觀波函數（macroscopic wavefunction）$Psi (vb(r))$ 描述：
 $
-  Psi (vec(r)) = sqrt(n_s (vec(r))) e^(i phi (vec(r))),
+  Psi (vb(r)) = sqrt(n_s (vb(r))) e^(i phi (vb(r))),
 $<macroscopic-wavefunction>
 
-其中 $n_s (vec(r))$ 為超流密度（superfluid density），滿足 $abs(Psi (vec(r)))^2 = n_s (vec(r))$ ； $phi (vec(r))$ 為為宏觀量子相位（macroscopic quantum phase）。在理想均勻且無外加電流與磁場時， $phi(vec(r))$ 可近似視為空間常數。相位的可定義性構成約瑟夫森關係（Josephson relations）與超導量子干涉儀（superconducting quantum interference device, SQUID）干涉物理的共同出發點。
+其中 $n_s (vb(r))$ 為超流密度（superfluid density），滿足 $abs(Psi (vb(r)))^2 = n_s (vb(r))$ ； $phi (vb(r))$ 為為宏觀量子相位（macroscopic quantum phase）。在理想均勻且無外加電流與磁場時， $phi(vb(r))$ 可近似視為空間常數。相位的可定義性構成約瑟夫森關係（Josephson relations）與超導量子干涉儀（superconducting quantum interference device, SQUID）干涉物理的共同出發點。
 
-// 當一種材料冷卻到其特有的臨界溫度 $T_c$ 以下，進入超導狀態時，這代表了在凝聚態物理中觀察到的最引人注目的相變之一。此現象的微觀起源由巴丁-庫柏-施里弗 (Bardeen-Cooper-Schrieffer, BCS) 理論在 1957 年闡明，至今仍是我們理解傳統超導性的基石@bardeen_theory_1955 @bardeen_microscopic_1957 @bardeen_theory_1957 @schrieffer_theory_1999。根據 BCS 理論，在溫度低於 $T_c$ 時，電子之間一種有效的、儘管微弱的吸引力可以克服它們之間的庫倫排斥力。這種吸引力是由材料的晶格振動，即聲子 (phonons)，所介導的。一個電子穿過晶格時會使正離子晶格變形，產生一個瞬時的正電荷區域，從而吸引第二個電子。這種聲子介導的交互作用導致兩個動量與自旋相反的電子形成束縛態，這個量子力學實體被稱為庫柏對 (Cooper pair)。
+// 當一種材料冷卻到其特有的臨界溫度 $T_c$ 以下，進入超導狀態時，這代表了在凝聚態物理中觀察到的最引人注目的相變之一。此現象的微觀起源由巴丁-古柏-施里弗 (Bardeen-Cooper-Schrieffer, BCS) 理論在 1957 年闡明，至今仍是我們理解傳統超導性的基石@bardeen_theory_1955 @bardeen_microscopic_1957 @bardeen_theory_1957 @schrieffer_theory_1999。根據 BCS 理論，在溫度低於 $T_c$ 時，電子之間一種有效的、儘管微弱的吸引力可以克服它們之間的庫倫排斥力。這種吸引力是由材料的晶格振動，即聲子 (phonons)，所介導的。一個電子穿過晶格時會使正離子晶格變形，產生一個瞬時的正電荷區域，從而吸引第二個電子。這種聲子介導的交互作用導致兩個動量與自旋相反的電子形成束縛態，這個量子力學實體被稱為古柏對 (Cooper pair)。
 
-// 庫柏對的束縛能雖然與典型的電子能量尺度相比很小，但卻至關重要。對於溫度 $T < T_c$ 的情況，此束縛能大於可用於散射的熱能，使得庫柏對能夠保持穩定。由於庫柏對由兩個費米子 (fermions)（電子）組成，它們擁有整數自旋，因此表現得像複合玻色子 (bosons)。這種玻色子性質是宏觀量子現象出現的關鍵。在一個類似於玻色-愛因斯坦凝聚 (Bose-Einstein condensation) 的現象中，材料中一大部分的庫柏對會「凝聚」到單一的集體量子基態。這種凝聚意味著處於此狀態的所有庫柏對共享相同的量子力學相位並協同運動，不會與雜質或晶格振動發生散射，這就是零電阻的微觀起源。
+// 古柏對的束縛能雖然與典型的電子能量尺度相比很小，但卻至關重要。對於溫度 $T < T_c$ 的情況，此束縛能大於可用於散射的熱能，使得古柏對能夠保持穩定。由於古柏對由兩個費米子 (fermions)（電子）組成，它們擁有整數自旋，因此表現得像複合玻色子 (bosons)。這種玻色子性質是宏觀量子現象出現的關鍵。在一個類似於玻色-愛因斯坦凝聚 (Bose-Einstein condensation) 的現象中，材料中一大部分的古柏對會「凝聚」到單一的集體量子基態。這種凝聚意味著處於此狀態的所有古柏對共享相同的量子力學相位並協同運動，不會與雜質或晶格振動發生散射，這就是零電阻的微觀起源。
 
-// 這種凝聚最有力的結果是，整個庫柏對系綜（在一個宏觀樣本中數量可達數萬億）可以用一個單一的、複數值的宏觀波函數 (macroscopic wavefunction) 來描述。這個波函數，通常表示為 $Psi(vec(r))$，其形式類似於單一量子粒子：
-// $ Psi(vec(r)) = sqrt(n_s(vec(r))) e^(i phi(vec(r))) $
-// 此處，$n_s(vec(r))$ 代表庫柏對的局域密度，使得 $abs(Psi(vec(r)))^2 = n_s(vec(r))$，而 $phi(vec(r))$ 是宏觀量子相位，在沒有電流或磁場的情況下，它在單一連續的超導體中是均勻的。這個單一波函數的存在，在宏觀距離上擁有明確定義的相位，是推導出超導體定義特徵以及 SQUID 運作原理的核心統一原則。它標誌著一種物質狀態，其中通常僅限於原子尺度的量子相位相關性，在實驗室尺度的維度上得以展現。
+// 這種凝聚最有力的結果是，整個古柏對系綜（在一個宏觀樣本中數量可達數萬億）可以用一個單一的、複數值的宏觀波函數 (macroscopic wavefunction) 來描述。這個波函數，通常表示為 $Psi(vb(r))$，其形式類似於單一量子粒子：
+// $ Psi(vb(r)) = sqrt(n_s(vb(r))) e^(i phi(vb(r))) $
+// 此處，$n_s(vb(r))$ 代表古柏對的局域密度，使得 $abs(Psi(vb(r)))^2 = n_s(vb(r))$，而 $phi(vb(r))$ 是宏觀量子相位，在沒有電流或磁場的情況下，它在單一連續的超導體中是均勻的。這個單一波函數的存在，在宏觀距離上擁有明確定義的相位，是推導出超導體定義特徵以及 SQUID 運作原理的核心統一原則。它標誌著一種物質狀態，其中通常僅限於原子尺度的量子相位相關性，在實驗室尺度的維度上得以展現。
 
 === 邁斯納效應 The Meissner Effect <subsection-meissner-effect>
 
-超導體最主要的特性之一，是它能主動將磁通量從其內部排出，此現象稱為邁斯納效應（Meissner effect）@callaway_remarkable_1990 @bardeen_microscopic_1957 @hirsch_origin_2012。這也使超導體與假設的「完美導體」（perfect conductor；僅具零電阻的材料）區分開來：當材料在外部磁場下被冷卻至臨界溫度 $T_c$ 以下，超導體並非僅把原先存在的磁通「凍結」在內部，而是會在樣品表面附近形成持久且無耗散的屏蔽超電流（screening supercurrents），以排斥外加磁場。
+超導體最具代表性的電磁性質之一，是在平衡態下會*強烈抑制其體內的磁感應強度*（magnetic flux density）$bold(B)$；等價地說，在適當條件下外加磁通量（magnetic flux）不會自由穿透超導體本體，此現象稱為邁斯納效應（Meissner effect）。@callaway_remarkable_1990 @bardeen_microscopic_1957 @hirsch_origin_2012
+邁斯納效應亦清楚區分超導體與理想化之「完美導體」（perfect conductor；僅假設電阻率 $rho=0$ 而無超導相干（superconducting coherence）的材料）：完美導體在靜態下因 $E=0$ 使 $frac(partial bold(B), partial t) = 0$，因此磁通僅呈「保持既有分佈」的歷史依賴（flux freezing）；反之，超導體在冷卻穿越 $T_c$ 後會在表面附近自發建立持久且無耗散的屏蔽超電流（screening supercurrent），將系統帶到新的熱力學平衡態，使體內 $bold(B)$ 被排斥至極小。
 
-更精確地說，外加磁場並非在邊界處突變為零，而是只會在一個有限厚度的表層內滲入；其特徵尺度由倫敦穿透深度（London penetration depth）$lambda_L$ 決定，使磁感應強度 $vb(B)$ 自表面向內呈指數衰減。對於厚塊材且外場低於相應的臨界範圍時，超導體體內（距表面多個 $lambda_L$ ​以上）可近似視為 $vb(B) tilde.equiv 0$。若考慮第二類超導體（type-II superconductor），上述近似尤其對外加磁場小於下臨界磁場（lower critical field）$vb(H_"c1")$ 時最為合適；一旦外場超過 $vb(H_"c1")$，磁通將以量子化渦旋進入而不再是完全排斥。
+==== 倫敦方程與穿透深度 London equations and penetration depth
 
-從宏觀電磁學的角度來看，理想邁斯納狀態下超導體表現為完美抗磁體（perfect diamagnet）。在 SI 制中
+更精確地說，外加磁場並非在邊界處突變為零，而是只會在樣品表層有限厚度內滲入；其特徵尺度由倫敦穿透深度（London penetration depth）$lambda_L$ 決定。於靜態、各向同性且局域（local）倫敦近似下，可寫為
 $
-  vb(B) = mu_0(vb(H) + vb(M)),
+  curl(bold(J)_s) = - 1/(mu_0 lambda_L^2) bold(B),
 $
+並結合安培定律 $curl(bold(B)) = mu_0 bold(J)_s$ 得到
+$
+  nabla^2 bold(B) = bold(B) / lambda_L^2.
+$
+因此對厚塊材（bulk）在平面表面（取 $x>0$ 為超導體內部）的典型解為
+$
+  bold(B)(x) = bold(B)_0 exp(-x/lambda_L),
+$
+顯示 $bold(B)$ 於表面向內呈指數衰減；在距表面數個 $lambda_L$ 以上之體內區域，常可近似視為 $bold(B) approx 0$。@tinkham_introduction_2015
 
-因此在樣品體內若 $vb(B) tilde.equiv 0$，可得 $vb(M) tilde.equiv -vb(H)$，對應磁化率（magnetic susceptibility）$chi tilde.equiv -1$。需要注意的是， $vb(H)$ 應理解為樣品內部的磁場強度；由於樣品形狀會透過去磁因子（demagnetization factor）$N$ 使「外加場」與「內部場」有所差異，上述關係在實作上通常採用長柱/環形等可使去磁效應較小的幾何（或等效地視為 $N tilde.equiv 1$） 來理解。總結而言，邁斯納效應反映超導態具有相位剛性（phase stiffness）並對外加磁場做出平衡態的回應：系統透過建立屏蔽超電流以最小化自由能，維持其宏觀相干基態。
+倫敦穿透深度亦可與超流密度（superfluid density）連結：
+$
+  lambda_L = sqrt(m^* / (mu_0 n_s e^{*2})),
+$
+其中 $e^* = 2e$ 為庫柏對有效電荷。此式凸顯 $lambda_L$ 反映超導態的相位剛性（phase stiffness）與電磁耦合強度，並在薄膜器件的動能電感、磁通聚焦與 SQUID 有效面積校正中扮演重要角色。
+
+==== 第二類超導體、混合態與渦旋 Type-II superconductors, mixed state, and vortices
+
+對第二類超導體（Type II superconductor），上述「體內 $bold(B) approx 0$」的近似主要適用於外加磁場小於下臨界磁場（lower critical field）$H_"c1"$ 的 Meissner 態；當外場增至 $H > H_"c1"$ 時，磁通將以量子化渦旋（quantized vortex）形式進入超導體，形成混合態（mixed state），直至上臨界磁場 $H_"c2"$ 以上回到常態。實際樣品亦常因磁通釘扎（flux pinning）而出現磁通俘獲（flux trapping），使量測結果偏離理想可逆的 Meissner 行為；對高靈敏 SQUID 量測而言，俘獲磁通常造成背景偏置與低頻雜訊，實驗上需配合磁屏蔽/退磁與冷卻流程降低其影響。
+
+==== 完美抗磁、磁化率與去磁因子 Perfect diamagnetism, susceptibility, and demagnetization
+
+從宏觀電磁學角度，在 SI 制中
+$
+  bold(B) = mu_0 ( bold(H) + bold(M) ),
+$
+其中 $bold(H)$ 為磁場強度（magnetic field strength），$bold(M)$ 為磁化強度（magnetization）。在理想 Meissner 態的體內區域若 $bold(B) approx 0$，則有
+$
+  bold(M) approx - bold(H),
+$
+對應*內部磁化率*（internal magnetic susceptibility）$chi approx -1$（以 $bold(M)=chi bold(H)$ 定義）。
+
+需要注意的是，$bold(H)$ 應理解為「樣品內部場」而非「外加場」。由於幾何形狀造成去磁效應（demagnetization），常以去磁因子（demagnetization factor）$N$（對近似橢球體樣品）描述
+$
+  bold(H)_"int" = bold(H)_a - N bold(M).
+$
+在理想 Meissner（$bold(B) approx 0$）下由 $bold(M)=-bold(H)_"int"$ 可得
+$
+  bold(H)_"int" = bold(H)_a / (1-N),
+  quad
+  bold(M) = - bold(H)_a / (1-N),
+$
+因此以外加場 $bold(H)_a$ 定義的「表觀磁化率」為 $chi_"app" = M/H_a = -1/(1-N)$，會顯著依賴樣品形狀。為降低去磁效應帶來的解釋複雜度，討論時常選取去磁因子較小的幾何（例如*長柱沿外場方向*，典型 $N approx 0$；球體 $N=1/3$；薄片垂直外場則 $N approx 1$），並明確區分外加場與內部場。
+
+==== 與 SQUID 幾何的關聯 Relation to SQUID geometry (brief)
+
+最後需指出：在*多連通*（multiply connected）的超導體（例如環形/washer 與 SQUID 環路）中，即使材料本體處於 Meissner 態，環孔內仍可允許有限磁通穿越；其可由磁通子（fluxoid）量子化與環路相位單值性理解，並直接導出 SQUID 的磁通週期性與干涉訊號。此部分將於後續 SQUID 章節中再作系統推導。
+
+總結而言，邁斯納效應反映超導態的相位剛性與電磁耦合所導致的平衡態回應：系統透過建立屏蔽超電流以最小化自由能，使體內（或薄膜等效意義下）磁場分佈滿足倫敦/GL 描述的能量最小化條件，並為後續約瑟夫森相位差的規範不變性與 SQUID 干涉框架奠定基礎。
+
+
+== 約瑟夫森效應與電流–相位關係 Josephson Effect and Current–Phase Relation <section-josephson-effect>
+
+約瑟夫森接面（Josephson junction, JJ）是由兩個超導體（superconductor, S）以一段「弱連結」（weak link）相隔所形成的量子元件。弱連結可為絕緣層（insulator）、正常金屬（normal metal）、半導體（semiconductor）、或本研究關注之狄拉克半金屬（Dirac semimetal, DSM）所構成的 S–DSM–S 結構。其共同特徵是：弱連結使兩端超導序參數的相位仍能透過耦合維持一定程度的相干，因而允許無耗散超電流跨越弱連結。
+
+=== 規範不變相位差 Gauge-invariant Phase Difference <subsection-gauge-invariant-phase>
+
+為避免將「相位差」誤解為可任意規範變換（gauge transformation）的量，本論文採用規範不變（gauge-invariant）的約瑟夫森相位差（Josephson phase）定義：
+$
+  phi(upright(bold(r)), t) &= integral_1^2 gamma(upright(bold(r)), t) = integral_1^2 (nabla theta(upright(bold(r)), t) - (2 pi)/(Phi_0) upright(bold(A)) (upright(bold(r)) , t)) d upright(bold(l)) \
+  &= theta_2 (upright(bold(r)) , t) - theta_1 (upright(bold(r)) , t) - (2 pi)/(Phi_0) integral_1^2 upright(bold(A)) (upright(bold(r)) , t) d upright(bold(l))
+$ <eq-gauge-invariant-phase>
+其中 $theta_1, theta_2$ 為兩端超導序參數相位，$bold(A)$ 為向量位勢（vector potential），$Phi_0 = h/(2e)$ 為磁通量子（magnetic flux quantum）。此定義直接連結後續 SQUID 干涉中的「磁通–相位」關係，亦是約瑟夫森關係式成立的核心前提。 @aguado_new_2024
+=== 約瑟夫森關係式 Josephson Relations <subsection-josephson-relations>
+
+1962 年 Brian D. Josephson 預測：在弱耦合的兩超導體之間，即使外加電壓為零，仍可存在由相位差驅動的無耗散超電流（超導穿隧或超導近接耦合），並提出兩條基本關係式描述其靜態與動態行為。@clarke_squid_2004 @tinkham_introduction_2015
+
++ 第一約瑟夫森關係式（first Josephson relation）／直流約瑟夫森效應（DC Josephson effect）
+定義流經接面的超電流（supercurrent）為 $I_s$，則其與相位差 $varphi$ 的函數關係稱為電流–相位關係（current–phase relation, *CPR*）：
+$
+  I_s = I_s(varphi).
+$ <eq-cpr-def>
+
+對理想 *S–I–S* 穿隧接面，在弱穿隧（lowest-order tunneling）近似下，CPR 近似為正弦形式：
+$
+  I_s(varphi) = I_c sin(varphi),
+$ <eq-1st-josephson>
+其中 $I_c$ 為臨界電流（critical current），定義為
+$
+  I_c equiv max_(varphi) abs(I_s(varphi)).
+$ <eq-ic-def>
+需特別區分：實驗上在欠阻尼（underdamped）且具遲滯（hysteresis）的 *I–V* 量測中常量到「切換電流」（switching current）$I_("sw")$，其受熱活化/量子穿隧與雜訊影響，通常滿足 $I_("sw") #sym.lt.approx I_c$；本節理論中的 $I_s, I_c$ 為接面本徵（或準平衡）量，後續若涉及量測讀值將另行註明。[The SQUID Handbook Vol. I, Ch. 2][Introduction to Superconductivity, Ch. 6]
+
+對 *S–I–S* 穿隧接面，$I_c$ 與常態電阻 $R_N$ 的關係可由 Ambegaokar–Baratoff 結果給出（此式亦常用於估算接面品質）：
+$
+  I_c R_N approx (pi Delta(T)) / (2e) tanh(Delta(T) / (2 k_B T)).
+$ <eq-ambegaokar-baratoff>
+[Introduction to Superconductivity, Ch. 6][The SQUID Handbook Vol. I, Ch. 2]
+
+*（二）第二約瑟夫森關係式（second Josephson relation）／交流約瑟夫森效應（AC Josephson effect）*
+當接面兩端存在電壓 $V(t)$ 時，相位差隨時間演化滿足
+$
+  frac(partial varphi, partial t) = frac(2e, ħ) V(t) = frac(2pi, Phi_0) V(t).
+$ <eq-2nd-josephson>
+此式亦可寫成電壓–相位的形式（電路量子化常用）
+$
+  V(t) = frac(Phi_0, 2pi) frac(partial varphi, partial t).
+$ <eq-v-phase>
+
+若外加直流電壓 $V_("dc")$ 為常數，則
+$
+  varphi(t) = varphi_0 + frac(2e V_("dc"), ħ) t,
+$
+代回式 @eq-1st-josephson 可得超電流以約瑟夫森頻率（Josephson frequency）振盪：
+$
+  f_J = frac(1, 2pi) frac(d varphi, d t) = frac(2e, h) V_("dc") = K_J V_("dc"),
+$ <eq-josephson-frequency>
+其中 $K_J$ 為約瑟夫森常數（Josephson constant）：
+$
+  K_J equiv frac(2e, h).
+$ <eq-kj-def>
+在 2019 年 SI 制重新定義後，$e$ 與 $h$ 取為精確常數，因此 $K_J$ 與 $Phi_0$ 亦為精確常數；數值上
+$
+  Phi_0 = frac(h, 2e) approx 2.067833848 times 10^(-15) " Wb",
+$
+$
+  K_J = frac(2e, h) approx 483.5978484 times 10^9 " Hz/V".
+$ <eq-flux-quantum>
+因此 $V=1 " µV"$ 對應 $f_J approx 483.6 " MHz"$，此「電壓–頻率」精確對應關係構成約瑟夫森電壓標準（Josephson voltage standard）的物理基礎。[The SQUID Handbook Vol. I, Ch. 1–2][New Trends and Platforms for Quantum Technologies, superconducting circuits section]
+
+=== 非正弦 CPR 的一般表示與對稱性約束 General CPR and Symmetry Constraints <subsection-general-cpr>
+
+對任意 2π 週期且足夠平滑的 CPR，可展開為傅立葉級數：
+$
+  I_s(varphi)
+  = sum_(n=1)^infinity I_n sin(n varphi) + sum_(n=1)^infinity J_n cos(n varphi).
+$ <eq-cpr-fourier>
+
+*對稱性要點（常用於判讀「cos 項/相位位移」的物理意涵）：*
+- 若系統處於平衡態且滿足時間反演對稱（time-reversal symmetry, *TRS*），並且不存在外加磁通偏置或顯式耗散破缺，則一般有
+  $
+    I_s(varphi) = - I_s(-varphi),
+  $
+  因而 $J_n = 0$，CPR 為奇函數（僅含 $sin$ 諧波）。
+- 若因材料/界面/外場導致時間反演或反演對稱破缺，CPR 可能出現等效「相位位移」（phase shift）或所謂 $varphi_0$-junction：
+  $
+    I_s(varphi) = I_c sin(varphi - varphi_0).
+  $ <eq-phi0-junction>
+  其與式 @eq-cpr-fourier 的 $cos$ 項等價，因
+  $
+    I_c sin(varphi - varphi_0) = I_c cos(varphi_0) sin(varphi) - I_c sin(varphi_0) cos(varphi).
+  $
+  更一般地，也可寫為
+  $
+    I_s(varphi) = sum_(n=1)^infinity I_n sin(n varphi + delta_n),
+  $
+  其中 $delta_n$ 對應各諧波的相位偏移。[The SQUID Handbook Vol. I, Ch. 2][New Trends and Platforms for Quantum Technologies, Josephson devices section]
+
+在本研究脈絡中，特別關注「可觀的二次諧波」與「相位偏移」：
+$
+  I_s(varphi) approx I_1 sin(varphi) + I_2 sin(2 varphi + delta_2),
+$ <eq-2nd-harmonic-model>
+此形式可自然導致干涉圖樣偏移、非對稱調制或等效 $varphi_0$ 行為，並可由非對稱 dc-SQUID 架構放大擷取（後續章節詳述）。[The SQUID Handbook Vol. I, Ch. 2–3]
+
+=== 典型接面類型的 CPR 特徵 Examples of CPR in Different Junctions <subsection-cpr-examples>
+
+（1）*高透明度接面（high-transparency junctions；常見於 *S–N–S*、*S–Sm–S*、石墨烯等）*
+當弱連結透明度高時，電荷傳輸由安德烈夫反射（Andreev reflection）與安德烈夫束縛態（Andreev bound states, *ABS*）主導，CPR 往往顯著偏離正弦，呈「偏斜」（skewed）甚至近似鋸齒狀（saw-tooth）。在短結、彈道（ballistic）且單通道透明度為 $tau$ 的極限，常見的理論形式可寫成（零溫近似下）
+$
+  I_s(varphi) prop frac(tau sin(varphi), sqrt(1 - tau sin^2(varphi/2))),
+$
+顯示高透明度會強化高次諧波成分。[Introduction to Superconductivity, Ch. 6][The SQUID Handbook Vol. I, Ch. 2]
+
+（2）*鐵磁弱連結（*S–F–S*）與 $pi$ 接面（π-junction）*
+在鐵磁體中交換場（exchange field）會使配對振幅在弱連結內振盪衰減，可能使有效耦合能量變號，導致能量最低點由 $varphi=0$ 轉為 $varphi=pi$，常以「$pi$ 接面」表述：
+$
+  I_s(varphi) = I_c sin(varphi + pi) = - I_c sin(varphi).
+$ <eq-pi-junction>
+此現象可視為 $I_c$ 有效變號或能量勢阱平移，並在 SQUID 干涉中造成半週期位移等可觀測特徵。[Superconducting Materials, proximity/magnetism-related sections][The SQUID Handbook Vol. I, Ch. 2]
+
+（3）*更進一步的延伸：非 2π 週期與拓樸相關訊號（選讀）*
+在具拓樸超導或受保護的奇偶（parity）動力學情境下，理論上可能出現 4π 週期成分；然而該效應對弛豫機制相當敏感，通常需額外實驗判據。本論文後續主要聚焦於 2π 週期下的高階諧波與相位偏移之定量擷取。[New Trends and Platforms for Quantum Technologies, topological Josephson discussion]
+
+=== 約瑟夫森電感與約瑟夫森能量 Josephson Inductance and Josephson Energy <subsection-josephson-inductance-energy>
+
+由式 @eq-v-phase 可將接面視為「非線性無耗散元件」。一般情形下定義約瑟夫森微分電感（Josephson inductance）為
+$
+  L_J(varphi) equiv frac(partial Phi, partial I_s)
+  = frac(Phi_0, 2pi) frac(1, partial I_s / partial varphi),
+$ <eq-lj-general>
+其中
+$
+  Phi equiv frac(Phi_0, 2pi) varphi
+$
+為電路模型中常用的「相位對應之磁通變數」（flux variable；請勿與幾何磁通 $integral bold(B) dot dif bold(S)$ 混淆）。對正弦 CPR（式 @eq-1st-josephson），有
+$
+  frac(partial I_s, partial varphi) = I_c cos(varphi),
+  quad
+  L_J(varphi) = frac(Phi_0, 2pi I_c cos(varphi)).
+$ <eq-lj-sinusoidal>
+因此 $varphi -> pi/2$ 時 $cos(varphi)->0$，微分電感趨於發散，反映接面在該工作點對相位擾動極為敏感；此性質廣泛用於超導電路（例如參數放大、量子比特耦合）與 SQUID 可調電感設計。[The SQUID Handbook Vol. I, Ch. 2][New Trends and Platforms for Quantum Technologies, superconducting circuits section]
+
+接面的儲能可由功率 $P=V I$ 積分得到。由 $V = (Phi_0/2pi) (d varphi/d t)$，
+$
+  dif E = V I_s dif t
+  = frac(Phi_0, 2pi) I_s(varphi) dif varphi,
+$
+因此定義約瑟夫森位能（Josephson potential energy）為
+$
+  E(varphi) = frac(Phi_0, 2pi) integral I_s(varphi) dif varphi + "const".
+$ <eq-energy-general>
+
+對正弦 CPR，取常數使 $E(0)=0$，可得
+$
+  E(varphi) = E_J (1 - cos(varphi)),
+  quad
+  E_J equiv frac(Phi_0 I_c, 2pi) = frac(ħ I_c, 2e).
+$ <eq-ej>
+$E_J$ 稱為約瑟夫森能量（Josephson energy）。需強調：*約瑟夫森電感（junction inductance）不等同於動能電感（kinetic inductance）*。動能電感主要源自超導薄膜/導線中庫柏對慣性所造成的電流–相位梯度關係；而約瑟夫森電感源自接面耦合能量 $E(varphi)$ 對相位的曲率（即 $partial^2 E / partial varphi^2$）。兩者在實際 SQUID/超導電路中常同時存在，但物理起源與尺度可不同。[Introduction to Superconductivity, Ch. 3 & 6][The SQUID Handbook Vol. I, Ch. 2]
+
+=== 小結 Summary <subsection-josephson-summary>
+
+綜合以上，約瑟夫森關係式提供「相位差–超電流」與「相位差–電壓」的基本連結；而 CPR 的非正弦性（高階諧波）與相位偏移（$cos$ 項或等效 $varphi_0$）則是材料、界面透明度、近接效應、對稱性破缺與束縛態譜結構的直接指紋。後續章節將以非對稱 dc-SQUID 作為相位偏置與干涉讀出工具，將上述 CPR 的細節（特別是二次諧波與相位偏移）轉換為可直接擬合與定量化的實驗觀測量。[The SQUID Handbook Vol. I, Ch. 2–3][The SQUID Handbook Vol. II, Applications chapters]
+
+
+// === 邁斯納效應 The Meissner Effect <subsection-meissner-effect>
+
+// 超導體最主要的特性之一，是它能主動將磁通量從其內部排出，此現象稱為邁斯納效應（Meissner effect）@callaway_remarkable_1990 @bardeen_microscopic_1957 @hirsch_origin_2012。這也使超導體與假設的「完美導體」（perfect conductor；僅具零電阻的材料）區分開來：當材料在外部磁場下被冷卻至臨界溫度 $T_c$ 以下，超導體並非僅把原先存在的磁通「凍結」在內部，而是會在樣品表面附近形成持久且無耗散的屏蔽超電流（screening supercurrents），以排斥外加磁場。
+
+// 更精確地說，外加磁場並非在邊界處突變為零，而是只會在一個有限厚度的表層內滲入；其特徵尺度由倫敦穿透深度（London penetration depth）$lambda_L$ 決定，使磁感應強度 $vb(B)$ 自表面向內呈指數衰減。對於厚塊材且外場低於相應的臨界範圍時，超導體體內（距表面多個 $lambda_L$ ​以上）可近似視為 $vb(B) tilde.equiv 0$。若考慮第二類超導體（type-II superconductor），上述近似尤其對外加磁場小於下臨界磁場（lower critical field）$vb(H_"c1")$ 時最為合適；一旦外場超過 $vb(H_"c1")$，磁通將以量子化渦旋進入而不再是完全排斥。
+
+// 從宏觀電磁學的角度來看，理想邁斯納狀態下超導體表現為完美抗磁體（perfect diamagnet）。在 SI 制中
+// $
+//   vb(B) = mu_0(vb(H) + vb(M)),
+// $
+
+// 因此在樣品體內若 $vb(B) tilde.equiv 0$，可得 $vb(M) tilde.equiv -vb(H)$，對應磁化率（magnetic susceptibility）$chi tilde.equiv -1$。需要注意的是， $vb(H)$ 應理解為樣品內部的磁場強度；由於樣品形狀會透過去磁因子（demagnetization factor）$N$ 使「外加場」與「內部場」有所差異，上述關係在實作上通常採用長柱/環形等可使去磁效應較小的幾何（或等效地視為 $N tilde.equiv 1$） 來理解。總結而言，邁斯納效應反映超導態具有相位剛性（phase stiffness）並對外加磁場做出平衡態的回應：系統透過建立屏蔽超電流以最小化自由能，維持其宏觀相干基態。
 
 // 超導體最主要的特性之一，是它能主動將磁通量從其內部排出，此現象稱為邁斯納效應 (Meissner effect)@callaway_remarkable_1990 @bardeen_microscopic_1957 @hirsch_origin_2012。這將超導體與假設的「完美導體」（僅具零電阻的材料）區分開來。當一個材料在外部磁場存在下被冷卻至其臨界溫度 $T_c$ 以下時，它不僅僅是像完美導體那樣捕獲已存在的磁通線，而是會在表面產生持久的、無耗散的電流，稱為屏蔽電流 (screening currents)。
 
 // 這些屏蔽電流的流動方向和大小恰到好處，能夠產生一個內部磁場，完全抵銷外部施加的磁場。結果是，超導體內部各處的總磁場 $vec(B)$ 變為零。這種行為表明，超導性是一種真正的熱力學基態，而不僅僅是無限導電的狀態。從宏觀電磁學的角度來看，超導體表現為完美的抗磁體 (diamagnet)。磁化強度 $vec(M)$ 與外加磁場強度 $vec(H)$ 的關係為 $vec(B) = mu_0(vec(H) + vec(M))$。由於超導體內部 $vec(B) = 0$，因此 $vec(M) = -vec(H)$，這意味著磁化率 (magnetic susceptibility) $chi = -1$。邁斯納效應是宏觀量子態對抗外部磁場擾動的剛性的直接結果；系統消耗能量產生屏蔽電流，以維持其相位相關基態的完整性。
 
-== 約瑟夫森效應與電流-相位關係 Josephson Effect and Current-Phase Relation <section-josephson-effect>
+== 約瑟夫森效應與電流-相位關係 Josephson Effect and Current-Phase Relation <section-josephson-effect-dup>
 
-約瑟夫森接面 (Josephson Junction, JJ) 是由一個「弱連結 (weak link)」隔開的兩個超導體所構成的量子元件。此弱連結可以是絕緣層 (superconductor–insulator–superconductor, S-I-S)、正常金屬 (superconductor-normal-metal-superconductor, S-N-S)，或如本研究中的狄拉克半金屬 (superconductor-Dirac semimetal-superconductor, S-DSM-S)。1962年，Brian Josephson預測，庫柏對（Cooper pairs）可以應因近接效應 (proximity effect)透過量子穿隧(quantum tunneling)的方式，在弱連結區域建立起相干的超導電流的超導電流的宏觀量子現象。此效應由 Brian Josephson 於 1962 年預測@JOSEPHSON1962251 ，由兩個基本關係式描述@barone1982physics @feynman_feynman_2011：
+約瑟夫森接面 (Josephson Junction, JJ) 是由一個「弱連結 (weak link)」隔開的兩個超導體所構成的量子元件。此弱連結可以是絕緣層 (superconductor–insulator–superconductor, S-I-S)、正常金屬 (superconductor-normal-metal-superconductor, S-N-S)，或如本研究中的狄拉克半金屬 (superconductor-Dirac semimetal-superconductor, S-DSM-S)。1962年，Brian Josephson預測，古柏對（Cooper pairs）可以應因近接效應 (proximity effect)透過量子穿隧(quantum tunneling)的方式，在弱連結區域建立起相干的超導電流的超導電流的宏觀量子現象。此效應由 Brian Josephson 於 1962 年預測@JOSEPHSON1962251 ，由兩個基本關係式描述@barone1982physics @feynman_feynman_2011：
 
 第一約瑟夫森關係式（first Josephson relation）闡述了流經接面的無耗散超導電流 $I_s$ 與兩端超導體波函數的相位差 $phi$ 之間的關係，這便是電流-相位關係 (Current-Phase Relation, CPR)。它指出，在無任何電壓的情況下，超導電流$I_s$仍可流過接面，其驅動力完全來自於兩個超導電極中序參數 (order parameters) 的宏觀量子相位差$phi$，對於傳統的SIS穿隧接面，此關係呈現為一簡單的正弦形式，即直流約瑟夫森效應（The DC Josephson effect）：
-$ I_s(phi) = I_c sin(phi) $ <eq-1st-josephson>
+$ I_s(phi) = I_c sin(phi) $ <eq-1st-josephson-dup>
 其中$phi = phi_2 - phi_1$為金兹堡-朗道序參數（Ginzburg–Landau order parameter）在接面處的相位差，即約瑟夫森相位（Josephson phase）， $I_s$ 是接面的切換電流（有時也稱跳躍電流）為外加偏壓超過某一門檻時，元件由超導態跳變至電阻態時的電流值，而 $I_c$ 是接面在完全維持超導態（無電阻）時所能承受的最大電流，即臨界電流 (critical current)，其取決於超導體的性質，亦會受到溫度以及外加磁場等環境因素的影響。
 
-標準正弦電流-相位關係 $I_s = I_c sin(phi)$ 是理想 S-I-S 穿隧接面的典型形式，並作為理解基本 SQUID 操作的基礎模型。此形式源於單一庫柏對穿隧障壁的最低階量子力學過程。然而，隨著材料科學和奈米製造技術的進步，已開發出多種多樣的約瑟夫森接面，每種都展現出獨特的 CPR 特性。
+標準正弦電流-相位關係 $I_s = I_c sin(phi)$ 是理想 S-I-S 穿隧接面的典型形式，並作為理解基本 SQUID 操作的基礎模型。此形式源於單一古柏對穿隧障壁的最低階量子力學過程。然而，隨著材料科學和奈米製造技術的進步，已開發出多種多樣的約瑟夫森接面，每種都展現出獨特的 CPR 特性。
 
 一個通用的 CPR 可以表示為傅立葉級數 (Fourier series)：
 $ I_s(phi) = sum_(n=1)^infinity A_n sin(n phi) + B_n cos(n phi) $
 高次諧波 ($n > 1$) 或餘弦項的存在，意味著偏離了簡單的 S-I-S 模型，並指向更複雜的基礎物理。不同接面類型展現出不同的 CPR 特性：
 
-*高透明度接面 (High-Transparency Junctions, S-N-S)*：在弱連結是正常金屬 (N)、半導體 (Sm) 或石墨烯等材料的接面中，庫柏對傳輸的障壁遠低於 S-I-S 接面。在這些系統中，一種稱為安德烈夫反射 (Andreev reflection) 的過程主導電荷傳輸。多個庫柏對的相干傳輸同時變得可能，從而在 CPR 中產生高次諧波。這導致 CPR 呈非正弦且常被描述為「偏斜」(skewed) 或「鋸齒狀」(saw-toothed)。
+*高透明度接面 (High-Transparency Junctions, S-N-S)*：在弱連結是正常金屬 (N)、半導體 (Sm) 或石墨烯等材料的接面中，古柏對傳輸的障壁遠低於 S-I-S 接面。在這些系統中，一種稱為安德烈夫反射 (Andreev reflection) 的過程主導電荷傳輸。多個古柏對的相干傳輸同時變得可能，從而在 CPR 中產生高次諧波。這導致 CPR 呈非正弦且常被描述為「偏斜」(skewed) 或「鋸齒狀」(saw-toothed)。
 
-*鐵磁性接面 (Ferromagnetic Junctions, S-F-S)*：當弱連結是鐵磁性材料時，鐵磁體內的交換場 (exchange field) 會與庫柏對中電子的自旋相互作用。根據 F 層的厚度和交換場的強度，波函數的相位在穿過接面時可能會移動 $pi$。這會產生一個「$pi$-接面」，其 CPR 形式為 $I_s = I_c sin(phi + pi) = -I_c sin(phi)$。
+*鐵磁性接面 (Ferromagnetic Junctions, S-F-S)*：當弱連結是鐵磁性材料時，鐵磁體內的交換場 (exchange field) 會與古柏對中電子的自旋相互作用。根據 F 層的厚度和交換場的強度，波函數的相位在穿過接面時可能會移動 $pi$。這會產生一個「$pi$-接面」，其 CPR 形式為 $I_s = I_c sin(phi + pi) = -I_c sin(phi)$。
 
 第二約瑟夫森關係式（second Josephson relation）或超導相演變方程式（superconducting phase evolution equation）@barone1982physics，描述了在接面兩端存在電壓$V$時，相位差的演化，即交流約瑟夫森效應（The AC Josephson effect）：
 
-$ (partial phi)/(partial t) = (2e V(t))/ħ "," $ <eq-2nd-josephson>
+$ (partial phi)/(partial t) = (2e V(t))/ħ "," $ <eq-2nd-josephson-dup>
 
 其中$e$是基本電荷$1.602176634 times 10^(−19) C$（庫倫）@jeckelmann_elementary_2019@mohr_codata_2024，$ħ$是約化普朗克常數（reduced Planck constant） $1.054571817... times 10^(−34) J dot s$（焦耳$dot$秒）@mohr_codata_2024。
 
@@ -193,7 +423,7 @@ $ (partial phi)/(partial t)=2pi [K_J V(t)]=(2pi)/(Phi_0) V(t)"," $ <eq-sc-phase-
 
 $ V = (Phi_0)/(2pi) (partial phi)/(partial t) = (d Phi)/(d t) "," $
 
-換句話說，即在接面處施加固定電壓$V_(D C)$時，相位將隨時間線性變化，而電流則為幅度為$I_c$、頻率$f$為$K_J V_(D C)$的正弦交流電。
+換句話說，即在接面處施加固定電壓$V_("DC")$時，相位將隨時間線性變化，而電流則為幅度為$I_c$、頻率$f$為$K_J V_("DC")$的正弦交流電。
 此現象與法拉第感應定律的形式非常相似。但此電壓並非來自磁能，因為超導體中沒有磁場；相反地，此電壓來自載體的動能（即庫珀對）。此現象也稱為動態電感（Kinetic inductance）。
 當電流與約瑟夫森相位隨時間變化時，接面兩端的電壓降也會隨之變化；如下方導出所示，約瑟夫森關係確定此行為可由一個名為約瑟夫森電感（Josephson inductance）之動態電感來描述。@devoret_superconducting_2004
 將約瑟夫森關係式@eq-1st-josephson，@eq-sc-phase-evolution 改寫為：
@@ -281,13 +511,13 @@ $ d' = d_I + lambda_1 tanh(d_1/(2 lambda_1)) + lambda_2 tanh(d_2/(2 lambda_2)) $
 
 === 超導環中的磁通量量子化 Fluxoid Quantization in a Superconducting Ring <subsection-flux-quantization>
 
-當超導體被製成閉合迴路或環形時，量子相位 $phi(vec(r))$ 的宏觀性質引出了另一個深刻的結果。宏觀波函數 $Psi(vec(r))$ 在空間中任何一點都必須是單值的 (single-valued) 這一基本要求意味著，如果沿著超導體內的任何閉合路徑 C 繞行並回到起點，波函數的相位只能改變 $2pi$ 的整數倍。在數學上，此條件表示為：
+當超導體被製成閉合迴路或環形時，量子相位 $phi(vb(r))$ 的宏觀性質引出了另一個深刻的結果。宏觀波函數 $Psi(vb(r))$ 在空間中任何一點都必須是單值的 (single-valued) 這一基本要求意味著，如果沿著超導體內的任何閉合路徑 C 繞行並回到起點，波函數的相位只能改變 $2pi$ 的整數倍。在數學上，此條件表示為：
 $ integral.cont_C nabla phi dot d vec(l) = 2 pi n $
 其中 n 為任意整數。這是由波函數結構所施加的拓撲約束。
 
-這個相位約束可以透過庫柏對（電荷 $q = 2e$）的正則動量 (canonical momentum) 的表達式與電磁場聯繫起來，該表達式包含來自磁向量位 (magnetic vector potential) $vec(A)$ 的貢獻。超導電流的速度與相位的梯度及向量位有關。將此關係沿閉合迴路 C 積分，可導出一個稱為磁通量 (magnetic fluxoid) 的量的量子化：
+這個相位約束可以透過古柏對（電荷 $q = 2e$）的正則動量 (canonical momentum) 的表達式與電磁場聯繫起來，該表達式包含來自磁向量位 (magnetic vector potential) $vec(A)$ 的貢獻。超導電流的速度與相位的梯度及向量位有關。將此關係沿閉合迴路 C 積分，可導出一個稱為磁通量 (magnetic fluxoid) 的量的量子化：
 $ integral.cont_C (Lambda vec(J)_s + vec(A)) dot d vec(l) = n h/(2e) = n Phi_0 $
-其中，$vec(J)_s$ 是超導電流密度 (supercurrent density)，$Lambda$ 是一個與材料性質相關的常數，而 $Phi_0 = h/(2e) approx 2.07 times 10^(-15) "Wb"$ 是磁通量量子 (magnetic flux quantum)。磁通量量子分母中出現電荷 2e，是庫柏對理論最早且最直接的證明之一。
+其中，$vec(J)_s$ 是超導電流密度 (supercurrent density)，$Lambda$ 是一個與材料性質相關的常數，而 $Phi_0 = h/(2e) approx 2.07 times 10^(-15) "Wb"$ 是磁通量量子 (magnetic flux quantum)。磁通量量子分母中出現電荷 2e，是古柏對理論最早且最直接的證明之一。
 
 對於一個厚的超導環（其厚度遠大於磁穿透深度 (magnetic penetration depth)），積分路徑 C 可以選擇在超導材料深處，那裡的屏蔽電流已衰減為零，即 $vec(J)_s = 0$。在這個重要的極限下，磁通量量子化條件簡化為穿過迴路的磁通量 $Phi$ 本身的量子化。對向量位項應用斯托克斯定理 (Stokes' theorem) ($integral.cont_C vec(A) dot d vec(l) = integral_S (nabla times vec(A)) dot d vec(S) = integral_S vec(B) dot d vec(S) = Phi$)，條件變為：
 $ Phi = n Phi_0," " n = ± 1, ± 2, ... $
@@ -298,7 +528,7 @@ $ Phi = n Phi_0," " n = ± 1, ± 2, ... $
 SQUID 主要有兩種類型：直流（DC）和射頻（RF）。RF SQUID 只需要一個約瑟夫森接面（超導穿隧接面），這可能使其生產成本較低，但靈敏度較低。直流SQUID（DC SQUID）的基本結構是在一個超導環路中並聯兩個約瑟夫森接面，如 @fig-squid-schematic 所示。
 
 #figure(
-  image("Images/SQUID_schematic.png", width: 70%),
+  image("Images/Fig1-aSQUID.png", width: 100%),
   caption: [DC SQUID示意圖：兩個約瑟夫森接面（以叉號表示）並聯於一個電感為 L 的超導環上。偏置電流（bias current） $I$ 分流通過兩個臂，外加磁通量 $Phi_("ext")$ 穿過環路。 圖片來源：IMS, KIT@kit_squid_schematic],
 ) <fig-squid-schematic>
 
@@ -355,14 +585,14 @@ $
 
 整個 SQUID 的臨界電流，我們表示為 $I_max(Phi)$，是在給定磁通量 $Phi$ 下，總超導電流 $I_s$ 能達到的最大值。從總 CPR 中，我們可以直接寫出 SQUID 臨界電流的表達式：
 $ I_max(Phi) = 2I_c abs(cos((pi Phi)/Phi_0)) $
-其中 $Phi_0 = h/(2e)$ 是磁通量量子。此調變是庫柏對波函數通過兩條路徑發生建設性與破壞性干涉的直接結果。
+其中 $Phi_0 = h/(2e)$ 是磁通量量子。此調變是古柏對波函數通過兩條路徑發生建設性與破壞性干涉的直接結果。
 這個基本方程式描述了 SQUID 臨界電流作為穿過迴路的磁通量的函數的週期性調變。此關係的關鍵特徵是：
 
 - *週期性*：臨界電流是磁通量 $Phi$ 的週期函數，週期恰好為一個磁通量量子 $Phi_0$。測得的臨界電流每次振盪對應於磁通量變化一個 $Phi_0$。
 - *建設性干涉*：當磁通量是磁通量量子的整數倍，即 $Phi = n Phi_0$（n 為整數）時，臨界電流達到其絕對最大值 $2I_c$。在這些磁通值下，餘弦項為 $±1$。
 - *破壞性干涉*：當磁通量是磁通量量子的半整數倍，即 $Phi = (n + 1/2)Phi_0$ 時，臨界電流達到其最小值 0。在這些點上，餘弦項為 0。
 
-這種行為是宏觀量子干涉的直接而明確的體現。SQUID 作為庫柏對的量子干涉儀，其功能類似於邁克生 (Michelson) 或馬赫-曾德 (Mach-Zehnder) 干涉儀對光子的作用。
+這種行為是宏觀量子干涉的直接而明確的體現。SQUID 作為古柏對的量子干涉儀，其功能類似於邁克生 (Michelson) 或馬赫-曾德 (Mach-Zehnder) 干涉儀對光子的作用。
 
 == 非理想性對 SQUID 性能的影響 (Impact of Non-Idealities on SQUID Performance) <section-non-idealities-impact>
 
@@ -1488,7 +1718,7 @@ $I_c R_N$ 乘積是表徵約瑟夫森接面品質的重要參數，它反映了�
 
 // 首先，我們觀察到的約瑟夫森二極體效應（JDE）與近期在 $1T-"PtTe"_2$ 單一接面中報導的現象 [arXiv:2403.19445] 相呼應。相關研究同樣發現了可透過磁場調控的二階 Josephson 效應（$phi_0$-junction behavior），並將其歸因於螺旋自旋-動量鎖定的表面態。我們的 SQUID 量測進一步提供了電流-相位關係（CPR）的直接相位敏感證據，確認了高階諧波 ($I_2$) 的存在及其相位偏移 ($delta$) 是導致二極體效應的微觀根源。
 
-// 其次，與 $"NiTe"_2$ 的研究相比，我們同樣觀察到了二極體效率隨面內磁場的振盪與反轉行為。這被認為是有限動量庫柏對（Finite-momentum Cooper pairing）機制的特徵。然而，我們的角度依賴性測量顯示出獨特的對稱性特徵，這可能反映了 $"PtTe"_2$ 表面態具體的自旋織構差異。
+// 其次，與 $"NiTe"_2$ 的研究相比，我們同樣觀察到了二極體效率隨面內磁場的振盪與反轉行為。這被認為是有限動量古柏對（Finite-momentum Cooper pairing）機制的特徵。然而，我們的角度依賴性測量顯示出獨特的對稱性特徵，這可能反映了 $"PtTe"_2$ 表面態具體的自旋織構差異。
 
 // 總體而言，本研究採用非對稱 SQUID 技術，不僅驗證了先前基於傳輸測量（Transport）的發現，更提供了關於超導電流相位動力學的細緻資訊，補充了現有文獻在相位敏感性測量方面的不足。
 
