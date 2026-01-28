@@ -6,7 +6,7 @@
 #import "info.typ": info
 #import "@preview/unify:0.7.1": *
 #import "@preview/typsium:0.3.1": ce
-#import "@preview/physica:0.9.5": *
+#import "@preview/physica:0.9.8": *
 #import "@preview/equate:0.3.2": equate
 
 // Define varphi as alias for phi for compatibility and consistency
@@ -115,11 +115,9 @@
 
 
 // 第二章：理論背景
-#import "@preview/typsium:0.3.1": ce
-#import "@preview/physica:0.9.3": *
 = 理論背景 <chapter-theoretical-background>
 
-本章旨在建立理解本研究核心物理現象所需之理論框架。首先回顧約瑟夫森效應（Josephson effect）的基本原理；其次介紹其關鍵應用—超導量子干涉儀；並進一步說明aDC-SQUID如何作為量測非傳統電流–相位關係的有效工具。最後，本章聚焦於本研究之核心材料：第二類狄拉克半金屬—二碲化鉑，並闡述其材料特性為何可能導致偏離純正弦形式的電流–相位關係（包含可觀的高階諧波與相位差），且此類訊號在實際實驗量測中如何由非對稱DC-SQUID架構直接擷取。
+本章旨在建立理解本研究核心物理現象所需之理論框架。首先回顧約瑟夫森接面幾何結構與約瑟夫森效應（Josephson effect）的基本原理；其次介紹其關鍵應用—超導量子干涉儀；並進一步說明aDC-SQUID如何作為量測非傳統電流–相位關係的有效工具。最後，本章聚焦於本研究之核心材料：第二類狄拉克半金屬—二碲化鉑，並闡述其材料特性為何可能導致偏離純正弦形式的電流–相位關係（包含可觀的高階諧波與相位差），且此類訊號在實際實驗量測中如何由aDC-SQUID架構直接擷取。
 
 == 超導體中的宏觀量子現象基礎 Foundations of Macroscopic Quantum Phenomena in Superconductors <section-superconductivity>
 超導性（superconductivity）為超導量子元件的基礎。本節將概述超導體的主要性質，並說明約瑟夫森效應如何奠基於超導體中的宏觀量子效應（macroscopic quantum effect）。
@@ -133,10 +131,10 @@
 
 在 $T < T_c$ 時，大量古柏對凝聚並建立長程相位同調（long-range phase coherence），同時形成能隙（energy gap）與相位剛性（phase stiffness）。這些特徵能有效抑制造成耗散（dissipation）的低能激發，並支持無耗散超流（dissipationless superflow），其在電荷系統中對應為無耗散超電流（dissipationless supercurrent）。此凝聚態可由複數序參數（order parameter；亦常稱為宏觀波函數（macroscopic wavefunction）$Psi (vb(r))$ 描述：
 $
-  Psi (vb(r)) = sqrt(n_s (vb(r))) e^(i phi (vb(r))),
+  Psi (vb(r)) = sqrt(n_s (vb(r))) e^(i theta (vb(r))),
 $<macroscopic-wavefunction>
 
-其中 $n_s (vb(r))$ 為超流密度（superfluid density），滿足 $abs(Psi (vb(r)))^2 = n_s (vb(r))$ ； $phi (vb(r))$ 為為宏觀量子相位（macroscopic quantum phase）。在理想均勻且無外加電流與磁場時， $phi(vb(r))$ 可近似視為空間常數。相位的可定義性構成約瑟夫森關係（Josephson relations）與超導量子干涉儀（superconducting quantum interference device, SQUID）干涉物理的共同出發點。
+其中 $n_s (vb(r))$ 為超流密度（superfluid density），滿足 $abs(Psi (vb(r)))^2 = n_s (vb(r))$ ； $theta (vb(r))$ 為為宏觀量子相位（macroscopic quantum phase）。在理想均勻且無外加電流與磁場時， $theta(vb(r))$ 可近似視為空間常數。相位的可定義性構成約瑟夫森接面之約瑟夫森關係（Josephson relations）與SQUID中接面電流與環路電流干涉的共同出發點。
 
 // 當一種材料冷卻到其特有的臨界溫度 $T_c$ 以下，進入超導狀態時，這代表了在凝聚態物理中觀察到的最引人注目的相變之一。此現象的微觀起源由巴丁-古柏-施里弗 (Bardeen-Cooper-Schrieffer, BCS) 理論在 1957 年闡明，至今仍是我們理解傳統超導性的基石@bardeen_theory_1955 @bardeen_microscopic_1957 @bardeen_theory_1957 @schrieffer_theory_1999。根據 BCS 理論，在溫度低於 $T_c$ 時，電子之間一種有效的、儘管微弱的吸引力可以克服它們之間的庫倫排斥力。這種吸引力是由材料的晶格振動，即聲子 (phonons)，所介導的。一個電子穿過晶格時會使正離子晶格變形，產生一個瞬時的正電荷區域，從而吸引第二個電子。這種聲子介導的交互作用導致兩個動量與自旋相反的電子形成束縛態，這個量子力學實體被稱為古柏對 (Cooper pair)。
 
@@ -148,64 +146,146 @@ $<macroscopic-wavefunction>
 
 === 邁斯納效應 The Meissner Effect <subsection-meissner-effect>
 
-超導體最具代表性的電磁性質之一，是在平衡態下會*強烈抑制其體內的磁感應強度*（magnetic flux density）$bold(B)$；等價地說，在適當條件下外加磁通量（magnetic flux）不會自由穿透超導體本體，此現象稱為邁斯納效應（Meissner effect）。@callaway_remarkable_1990 @bardeen_microscopic_1957 @hirsch_origin_2012
-邁斯納效應亦清楚區分超導體與理想化之「完美導體」（perfect conductor；僅假設電阻率 $rho=0$ 而無超導相干（superconducting coherence）的材料）：完美導體在靜態下因 $E=0$ 使 $frac(partial bold(B), partial t) = 0$，因此磁通僅呈「保持既有分佈」的歷史依賴（flux freezing）；反之，超導體在冷卻穿越 $T_c$ 後會在表面附近自發建立持久且無耗散的屏蔽超電流（screening supercurrent），將系統帶到新的熱力學平衡態，使體內 $bold(B)$ 被排斥至極小。
+超導體最具代表性的電磁性質之一，是在平衡態下會*強烈抑制其體內的磁感應強度*（magnetic flux density）$vb(B)$；等價地說，在適當條件下外加磁通量（magnetic flux）不會自由穿透超導體本體，此現象稱為邁斯納效應（Meissner effect）。@callaway_remarkable_1990 @bardeen_microscopic_1957 @hirsch_origin_2012
+邁斯納效應亦清楚區分超導體與理想化之「完美導體」（perfect conductor；僅假設電阻率 $rho=0$ 而無超導相干（superconducting coherence）的材料）：完美導體在靜態下因 $E=0$ 使 $frac(partial vb(B), partial t) = 0$，因此磁通僅呈「保持既有分佈」的歷史依賴（flux freezing）；反之，超導體在冷卻穿越 $T_c$ 後會在表面附近自發建立持久且無耗散的屏蔽超電流（screening supercurrent），將系統帶到新的熱力學平衡態，使體內 $vb(B)$ 被排斥至極小。
 
-==== 倫敦方程與穿透深度 London equations and penetration depth
+=== 倫敦方程與穿透深度London equations and penetration depth <subsection-london>
 
-更精確地說，外加磁場並非在邊界處突變為零，而是只會在樣品表層有限厚度內滲入；其特徵尺度由倫敦穿透深度（London penetration depth）$lambda_L$ 決定。於靜態、各向同性且局域（local）倫敦近似下，可寫為
-$
-  curl(bold(J)_s) = - 1/(mu_0 lambda_L^2) bold(B),
-$
-並結合安培定律 $curl(bold(B)) = mu_0 bold(J)_s$ 得到
-$
-  nabla^2 bold(B) = bold(B) / lambda_L^2.
-$
-因此對厚塊材（bulk）在平面表面（取 $x>0$ 為超導體內部）的典型解為
-$
-  bold(B)(x) = bold(B)_0 exp(-x/lambda_L),
-$
-顯示 $bold(B)$ 於表面向內呈指數衰減；在距表面數個 $lambda_L$ 以上之體內區域，常可近似視為 $bold(B) approx 0$。@tinkham_introduction_2015
+更精確地說，外加磁場並非在超導體邊界處突變為零，而是僅能在樣品表層有限厚度內滲入。此滲入的特徵尺度由 *倫敦穿透深度*（London penetration depth）$lambda_L$ 所決定。以下在 *靜態*（time-independent）、*各向同性*（isotropic）且 *局域倫敦近似*（local London approximation）下，整理倫敦方程並導出磁場在超導體內的指數衰減解。@tinkham_introduction_2015
 
-倫敦穿透深度亦可與超流密度（superfluid density）連結：
-$
-  lambda_L = sqrt(m^* / (mu_0 n_s e^{*2})),
-$
-其中 $e^* = 2e$ 為庫柏對有效電荷。此式凸顯 $lambda_L$ 反映超導態的相位剛性（phase stiffness）與電磁耦合強度，並在薄膜器件的動能電感、磁通聚焦與 SQUID 有效面積校正中扮演重要角色。
+==== 倫敦方程與適用假設 London equations and assumptions <subsection-london-eq>
 
-==== 第二類超導體、混合態與渦旋 Type-II superconductors, mixed state, and vortices
+倫敦理論以超導超電流密度 $vb(J)_s$ 與電磁場的關係作為巨觀描述。於準靜態條件下（忽略位移電流項），安培定律可寫為：
+$
+  nabla times vb(B) = mu_0 vb(J)_s .
+$ <eq:ampere>
 
-對第二類超導體（Type II superconductor），上述「體內 $bold(B) approx 0$」的近似主要適用於外加磁場小於下臨界磁場（lower critical field）$H_"c1"$ 的 Meissner 態；當外場增至 $H > H_"c1"$ 時，磁通將以量子化渦旋（quantized vortex）形式進入超導體，形成混合態（mixed state），直至上臨界磁場 $H_"c2"$ 以上回到常態。實際樣品亦常因磁通釘扎（flux pinning）而出現磁通俘獲（flux trapping），使量測結果偏離理想可逆的 Meissner 行為；對高靈敏 SQUID 量測而言，俘獲磁通常造成背景偏置與低頻雜訊，實驗上需配合磁屏蔽/退磁與冷卻流程降低其影響。
+倫敦方程通常分為兩式。其一（第一倫敦方程）描述電場驅動超電流的加速：
+$
+  pdv(vb(J)_s, t) = (n_s text(e^*)^2 / m^*) vb(E) .
+$ <eq:london1>
 
-==== 完美抗磁、磁化率與去磁因子 Perfect diamagnetism, susceptibility, and demagnetization
+其二（第二倫敦方程）反映超導態的抗磁性（Meissner 效應），在此寫成：
+$
+  nabla times vb(J)_s = - (1 / (mu_0 lambda_L^2)) vb(B) .
+$ <eq:london2>
 
-從宏觀電磁學角度，在 SI 制中
-$
-  bold(B) = mu_0 ( bold(H) + bold(M) ),
-$
-其中 $bold(H)$ 為磁場強度（magnetic field strength），$bold(M)$ 為磁化強度（magnetization）。在理想 Meissner 態的體內區域若 $bold(B) approx 0$，則有
-$
-  bold(M) approx - bold(H),
-$
-對應*內部磁化率*（internal magnetic susceptibility）$chi approx -1$（以 $bold(M)=chi bold(H)$ 定義）。
+以上式中，$mu_0$ 為真空磁導率，$n_s$ 為超流密度（superfluid density；庫柏對凝聚密度），$e^* = 2e$ 為庫柏對有效電荷，$m^*$ 為庫柏對有效質量（或等效超電子質量）。在本節推導中亦使用 $nabla dot vb(B)=0$（無磁單極）以及「材料參數在空間上近似常數」等標準假設。
 
-需要注意的是，$bold(H)$ 應理解為「樣品內部場」而非「外加場」。由於幾何形狀造成去磁效應（demagnetization），常以去磁因子（demagnetization factor）$N$（對近似橢球體樣品）描述
-$
-  bold(H)_"int" = bold(H)_a - N bold(M).
-$
-在理想 Meissner（$bold(B) approx 0$）下由 $bold(M)=-bold(H)_"int"$ 可得
-$
-  bold(H)_"int" = bold(H)_a / (1-N),
-  quad
-  bold(M) = - bold(H)_a / (1-N),
-$
-因此以外加場 $bold(H)_a$ 定義的「表觀磁化率」為 $chi_"app" = M/H_a = -1/(1-N)$，會顯著依賴樣品形狀。為降低去磁效應帶來的解釋複雜度，討論時常選取去磁因子較小的幾何（例如*長柱沿外場方向*，典型 $N approx 0$；球體 $N=1/3$；薄片垂直外場則 $N approx 1$），並明確區分外加場與內部場。
+==== 倫敦穿透深度與磁場衰減 London penetration depth and magnetic field decay <subsection-london-decay>
 
-==== 與 SQUID 幾何的關聯 Relation to SQUID geometry (brief)
+將@eq:london2 兩側取旋度（curl），並代入安培定律@eq:ampere，可得
+$
+  nabla times (nabla times vb(B))
+  = mu_0 nabla times vb(J)_s
+  = - vb(B) / lambda_L^2 .
+$
 
-最後需指出：在*多連通*（multiply connected）的超導體（例如環形/washer 與 SQUID 環路）中，即使材料本體處於 Meissner 態，環孔內仍可允許有限磁通穿越；其可由磁通子（fluxoid）量子化與環路相位單值性理解，並直接導出 SQUID 的磁通週期性與干涉訊號。此部分將於後續 SQUID 章節中再作系統推導。
+再利用向量恆等式
+$
+  nabla times (nabla times vb(B))
+  = nabla (nabla dot vb(B)) - nabla^2 vb(B)
+$
+與 $nabla dot vb(B)=0$，得到 *倫敦方程的拉普拉斯形式*：
+$
+  nabla^2 vb(B) = vb(B) / lambda_L^2 .
+$ <eq:helmholtz>
 
-總結而言，邁斯納效應反映超導態的相位剛性與電磁耦合所導致的平衡態回應：系統透過建立屏蔽超電流以最小化自由能，使體內（或薄膜等效意義下）磁場分佈滿足倫敦/GL 描述的能量最小化條件，並為後續約瑟夫森相位差的規範不變性與 SQUID 干涉框架奠定基礎。
+對半無限厚塊材（bulk）且表面近似為平面之情況，令超導體佔據 $x>0$，外加磁場在表面處的切向分量為 $vb(B)_0$，則式 @eq:helmholtz 的典型解為：
+$
+  vb(B)(x) = vb(B)_0 exp(-x / lambda_L) .
+$ <eq:expdecay>
+
+@eq:expdecay 顯示磁通密度 $vb(B)$ 自表面向內呈指數衰減；在距表面數個 $lambda_L$ 以上的體內區域，常可近似視為 $vb(B) approx 0$。@tinkham_introduction_2015
+
+==== 倫敦穿透深度與超流密度 London penetration depth and superfluid density <subsection-london-lambda>
+
+在局域倫敦近似下，倫敦穿透深度可寫為：
+$
+  lambda_L = sqrt(m^* / (mu_0 n_s text(e^*)^2)) .
+$ <eq:lambda_ns>
+
+@eq:lambda_ns 凸顯 $lambda_L$ 反映超導態的相位剛性（phase stiffness）與電磁耦合強度；隨溫度上升而 $n_s (T)$ 降低時，通常會導致 $lambda_L (T)$ 增大（常見近似為 $lambda_L(T) prop 1 / sqrt(n_s (T))$）。
+
+==== 薄膜效應、動能電感與器件尺度修正 Thin-film effects, kinetic inductance, and device-scale corrections <subsection-london-thin>
+
+對於厚度 $t$ 之超導薄膜，當 $t << lambda_L$ 時，屏蔽電流分佈不再等同於厚塊材情況，常引入 *Pearl 長度*（Pearl length）作為有效穿透尺度：
+$
+  Lambda_P = 2 lambda_L^2 / t .
+$ <eq:pearl>
+
+此外，薄膜超導體的 *動能電感*（kinetic inductance）在微納器件中常不可忽略。以「每平方」動能電感（sheet kinetic inductance）為例，在 $t << lambda_L$ 的常用近似下可寫成：
+$
+  L_k^2 approx mu_0 lambda_L^2 / t .
+$ <eq:lk_sheet>
+
+上述薄膜效應在下列議題中特別重要：
++ *磁通聚焦*（flux focusing）與 *有效面積*（effective area）校正：器件邊界的屏蔽電流會改變實際穿過環路的總磁通，進而影響 SQUID 的 $Phi_0$ 週期性讀出與面積反推。
++ *SQUID 環路電感與 $beta_L$*：動能電感會增加等效環路電感 $L$，改變屏蔽參數 $beta_L = 2 L I_c / Phi_0$，並可能導致調制深度降低或出現磁滯行為。
++ *Josephson 接面之有效磁厚*（effective magnetic thickness）：對平面型接面常用近似
+  $
+    t_H approx d + 2 lambda_L
+  $
+  其中 $d$ 為障壁（或弱連結區）等效厚度。$t_H$ 會進一步影響磁場下的相位分佈與干涉圖樣（例如 Fraunhofer 與 SQUID 調制），並與器件幾何、電極材料及薄膜厚度共同決定實驗擬合中的有效參數。
+
+（本節符號：$vb(B)$ 為磁通密度，$vb(J)_s$ 為超電流密度，$bold(E)$ 為電場；$e^*=2e$，$Phi_0=h/(2e)$。）
+
+
+// ==== 倫敦方程與穿透深度 London equations and penetration depth
+
+// 更精確地說，外加磁場並非在邊界處突變為零，而是只會在樣品表層有限厚度內滲入；其特徵尺度由倫敦穿透深度（London penetration depth）$lambda_L$ 決定。於靜態、各向同性且局域（local）倫敦近似下，可寫為
+// $
+//   curl(vb(J)_s) = - 1/(mu_0 lambda_L^2) vb(B),
+// $
+// 並結合安培定律 $curl(vb(B)) = mu_0 vb(J)_s$ 得到
+// $
+//   nabla^2 vb(B) = vb(B) / lambda_L^2.
+// $
+// 因此對厚塊材（bulk）在平面表面（取 $x>0$ 為超導體內部）的典型解為
+// $
+//   vb(B)(x) = vb(B)_0 exp(-x/lambda_L),
+// $
+// 顯示 $vb(B)$ 於表面向內呈指數衰減；在距表面數個 $lambda_L$ 以上之體內區域，常可近似視為 $vb(B) approx 0$。@tinkham_introduction_2015
+
+// 倫敦穿透深度亦可與超流密度（superfluid density）連結：
+// $
+//   lambda_L = sqrt(m^* / (mu_0 n_s e^{*2})),
+// $
+// 其中 $e^* = 2e$ 為庫柏對有效電荷。此式凸顯 $lambda_L$ 反映超導態的相位剛性（phase stiffness）與電磁耦合強度，並在薄膜器件的動能電感、磁通聚焦與 SQUID 有效面積校正中扮演重要角色。
+
+// ==== 第二類超導體、混合態與渦旋 Type-II superconductors, mixed state, and vortices
+
+// 對第二類超導體（Type II superconductor），上述「體內 $vb(B) approx 0$」的近似主要適用於外加磁場小於下臨界磁場（lower critical field）$H_"c1"$ 的 Meissner 態；當外場增至 $H > H_"c1"$ 時，磁通將以量子化渦旋（quantized vortex）形式進入超導體，形成混合態（mixed state），直至上臨界磁場 $H_"c2"$ 以上回到常態。實際樣品亦常因磁通釘扎（flux pinning）而出現磁通俘獲（flux trapping），使量測結果偏離理想可逆的 Meissner 行為；對高靈敏 SQUID 量測而言，俘獲磁通常造成背景偏置與低頻雜訊，實驗上需配合磁屏蔽/退磁與冷卻流程降低其影響。
+
+// ==== 完美抗磁、磁化率與去磁因子 Perfect diamagnetism, susceptibility, and demagnetization
+
+// 從宏觀電磁學角度，在 SI 制中
+// $
+//   vb(B) = mu_0 ( bold(H) + bold(M) ),
+// $
+// 其中 $bold(H)$ 為磁場強度（magnetic field strength），$bold(M)$ 為磁化強度（magnetization）。在理想 Meissner 態的體內區域若 $vb(B) approx 0$，則有
+// $
+//   bold(M) approx - bold(H),
+// $
+// 對應*內部磁化率*（internal magnetic susceptibility）$chi approx -1$（以 $bold(M)=chi bold(H)$ 定義）。
+
+// 需要注意的是，$bold(H)$ 應理解為「樣品內部場」而非「外加場」。由於幾何形狀造成去磁效應（demagnetization），常以去磁因子（demagnetization factor）$N$（對近似橢球體樣品）描述
+// $
+//   bold(H)_"int" = bold(H)_a - N bold(M).
+// $
+// 在理想 Meissner（$vb(B) approx 0$）下由 $bold(M)=-bold(H)_"int"$ 可得
+// $
+//   bold(H)_"int" = bold(H)_a / (1-N),
+//   quad
+//   bold(M) = - bold(H)_a / (1-N),
+// $
+// 因此以外加場 $bold(H)_a$ 定義的「表觀磁化率」為 $chi_"app" = M/H_a = -1/(1-N)$，會顯著依賴樣品形狀。為降低去磁效應帶來的解釋複雜度，討論時常選取去磁因子較小的幾何（例如*長柱沿外場方向*，典型 $N approx 0$；球體 $N=1/3$；薄片垂直外場則 $N approx 1$），並明確區分外加場與內部場。
+
+// ==== 與 SQUID 幾何的關聯 Relation to SQUID geometry (brief)
+
+// 最後需指出：在*多連通*（multiply connected）的超導體（例如環形/washer 與 SQUID 環路）中，即使材料本體處於 Meissner 態，環孔內仍可允許有限磁通穿越；其可由磁通子（fluxoid）量子化與環路相位單值性理解，並直接導出 SQUID 的磁通週期性與干涉訊號。此部分將於後續 SQUID 章節中再作系統推導。
+
+// 總結而言，邁斯納效應反映超導態的相位剛性與電磁耦合所導致的平衡態回應：系統透過建立屏蔽超電流以最小化自由能，使體內（或薄膜等效意義下）磁場分佈滿足倫敦/GL 描述的能量最小化條件，並為後續約瑟夫森相位差的規範不變性與 SQUID 干涉框架奠定基礎。
 
 
 == 約瑟夫森效應與電流–相位關係 Josephson Effect and Current–Phase Relation <section-josephson-effect>
@@ -220,6 +300,15 @@ $
   &= theta_2 (upright(bold(r)) , t) - theta_1 (upright(bold(r)) , t) - (2 pi)/(Phi_0) integral_1^2 upright(bold(A)) (upright(bold(r)) , t) d upright(bold(l))
 $ <eq-gauge-invariant-phase>
 其中 $theta_1, theta_2$ 為兩端超導序參數相位，$bold(A)$ 為向量位勢（vector potential），$Phi_0 = h/(2e)$ 為磁通量子（magnetic flux quantum）。此定義直接連結後續 SQUID 干涉中的「磁通–相位」關係，亦是約瑟夫森關係式成立的核心前提。 @aguado_new_2024
+
+#figure(
+  image("Images/Fig1-JJ.svg", width: 100%),
+  caption: [約瑟夫森接面幾何示意圖],
+  alt: "(a) S-I-S 接面示意圖，(b) S-DSM-S 接面示意圖。",
+)<Fig1-JJ>
+@Fig1-JJ (a) 立體 S-I-S 接面示意圖，(b) 平面 S-DSM-S 接面示意圖。
+
+
 === 約瑟夫森關係式 Josephson Relations <subsection-josephson-relations>
 
 1962 年 Brian D. Josephson 預測：在弱耦合的兩超導體之間，即使外加電壓為零，仍可存在由相位差驅動的無耗散超電流（超導穿隧或超導近接耦合），並提出兩條基本關係式描述其靜態與動態行為。@clarke_squid_2004 @tinkham_introduction_2015
@@ -341,7 +430,7 @@ $ <eq-lj-general>
 $
   Phi equiv frac(Phi_0, 2pi) varphi
 $
-為電路模型中常用的「相位對應之磁通變數」（flux variable；請勿與幾何磁通 $integral bold(B) dot dif bold(S)$ 混淆）。對正弦 CPR（式 @eq-1st-josephson），有
+為電路模型中常用的「相位對應之磁通變數」（flux variable；請勿與幾何磁通 $integral vb(B) dot dif bold(S)$ 混淆）。對正弦 CPR（式 @eq-1st-josephson），有
 $
   frac(partial I_s, partial varphi) = I_c cos(varphi),
   quad
@@ -529,7 +618,7 @@ SQUID 主要有兩種類型：直流（DC）和射頻（RF）。RF SQUID 只需�
 
 #figure(
   image("Images/Fig1-aSQUID.png", width: 100%),
-  caption: [DC SQUID示意圖：兩個約瑟夫森接面（以叉號表示）並聯於一個電感為 L 的超導環上。偏置電流（bias current） $I$ 分流通過兩個臂，外加磁通量 $Phi_("ext")$ 穿過環路。 圖片來源：IMS, KIT@kit_squid_schematic],
+  caption: [DC SQUID示意圖：兩個約瑟夫森接面（以叉號表示）並聯於一個電感為 L 的超導環上。偏置電流（bias current） $I$ 分流通過兩個臂，外加磁通量 $Phi_("ext")$ 穿過環路。],
 ) <fig-squid-schematic>
 
 直流超導量子干涉儀（DC SQUID）於 1964 年由福特研究實驗室（Ford Research Labs）的 Robert Jaklevic、John J. Lambe、James Mercereau 和 Arnold Silver 所發明，此後於 1962 年由 Brian Josephson 提出約瑟夫森效應，並於 1963 年由 John Rowell 和 Philip Anderson 在貝爾實驗室（Bell Labs）製造了第一個約瑟夫森接面@anderson_probable_1963。SQUID的運作基於兩個宏觀量子現象：超導環路中的磁通量量子化，以及流經兩個接面的超導電流的量子干涉。

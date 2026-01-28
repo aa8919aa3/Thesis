@@ -85,6 +85,18 @@
   ),
   caption: [#ce[PtTe2]、#ce[NbTi]量子輸運參數表],
 )
+= 附錄 B：縮寫列表 List of Abbreviations<abbreviations-list>
+#let abbreviations = csv("abbreviations.csv")
+
+#figure(
+  table(
+    columns: (auto, 1fr),
+    align: (left, left),
+    table.header([*縮寫*], [*全稱*]),
+    ..abbreviations.map(row => (eval(row.at(0), mode: "markup", scope: (ce: ce)), row.at(1))).flatten(),
+  ),
+  caption: [縮寫列表],
+)
 
 // === 資料集詳細資訊 <subsection-dataset-details>
 
