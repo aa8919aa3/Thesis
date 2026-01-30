@@ -75,10 +75,9 @@
 // 第一章：緒論
 // Chapter 1: Introduction
 // 設定成段之文字首行皆空2字元
-#import "@preview/typsium:0.3.1": *
+
 #set par(first-line-indent: (amount: 2em, all: true))
 = 緒論 <chapter-introduction>
-
 == 研究背景與動機 <section-motivation>
 
 在凝聚態物理的前沿研究中，一項關鍵驅動力來自於將具備非平庸電子結構的新興量子材料，與成熟的宏觀量子平台（如超導電路）加以整合，以揭示新穎的量子輸運現象並發展功能更強的量子元件。本文系統性報告以過渡金屬二硫族化合物（transition metal dichalcogenides, TMDs）家族之第二類狄拉克半金屬(type-II Dirac semimetal ) 1T 相二碲化鉑（1T phase platinum ditelluride, 1T-#ce[PtTe2]）為弱連結(weak link)之超導量子干涉儀（superconducting quantum interference device, SQUID）的設計、微奈米製程與極低溫精密電性量測結果。
@@ -207,28 +206,28 @@ $ <eq:lambda_ns>
 
 @eq:lambda_ns 凸顯 $lambda_L$ 反映超導態的相位剛性（phase stiffness）與電磁耦合強度；隨溫度上升而 $n_s (T)$ 降低時，通常會導致 $lambda_L (T)$ 增大（常見近似為 $lambda_L(T) prop 1 / sqrt(n_s (T))$）。
 
-==== 薄膜效應、動能電感與器件尺度修正 Thin-film effects, kinetic inductance, and device-scale corrections <subsection-london-thin>
+// ==== 薄膜效應、動能電感與器件尺度修正 Thin-film effects, kinetic inductance, and device-scale corrections <subsection-london-thin>
 
-對於厚度 $t$ 之超導薄膜，當 $t << lambda_L$ 時，屏蔽電流分佈不再等同於厚塊材情況，常引入 *Pearl 長度*（Pearl length）作為有效穿透尺度：
-$
-  Lambda_P = 2 lambda_L^2 / t .
-$ <eq:pearl>
+// 對於厚度 $t$ 之超導薄膜，當 $t << lambda_L$ 時，屏蔽電流分佈不再等同於厚塊材情況，常引入 *Pearl 長度*（Pearl length）作為有效穿透尺度：
+// $
+//   Lambda_P = 2 lambda_L^2 / t .
+// $ <eq:pearl>
 
-此外，薄膜超導體的 *動能電感*（kinetic inductance）在微納器件中常不可忽略。以「每平方」動能電感（sheet kinetic inductance）為例，在 $t << lambda_L$ 的常用近似下可寫成：
-$
-  L_k^2 approx mu_0 lambda_L^2 / t .
-$ <eq:lk_sheet>
+// 此外，薄膜超導體的 *動能電感*（kinetic inductance）在微納器件中常不可忽略。以「每平方」動能電感（sheet kinetic inductance）為例，在 $t << lambda_L$ 的常用近似下可寫成：
+// $
+//   L_k^2 approx mu_0 lambda_L^2 / t .
+// $ <eq:lk_sheet>
 
-上述薄膜效應在下列議題中特別重要：
-+ *磁通聚焦*（flux focusing）與 *有效面積*（effective area）校正：器件邊界的屏蔽電流會改變實際穿過環路的總磁通，進而影響 SQUID 的 $Phi_0$ 週期性讀出與面積反推。
-+ *SQUID 環路電感與 $beta_L$*：動能電感會增加等效環路電感 $L$，改變屏蔽參數 $beta_L = 2 L I_c / Phi_0$，並可能導致調制深度降低或出現磁滯行為。
-+ *Josephson 接面之有效磁厚*（effective magnetic thickness）：對平面型接面常用近似
-  $
-    t_H approx d + 2 lambda_L
-  $
-  其中 $d$ 為障壁（或弱連結區）等效厚度。$t_H$ 會進一步影響磁場下的相位分佈與干涉圖樣（例如 Fraunhofer 與 SQUID 調制），並與器件幾何、電極材料及薄膜厚度共同決定實驗擬合中的有效參數。
+// 上述薄膜效應在下列議題中特別重要：
+// + *磁通聚焦*（flux focusing）與 *有效面積*（effective area）校正：器件邊界的屏蔽電流會改變實際穿過環路的總磁通，進而影響 SQUID 的 $Phi_0$ 週期性讀出與面積反推。
+// + *SQUID 環路電感與 $beta_L$*：動能電感會增加等效環路電感 $L$，改變屏蔽參數 $beta_L = 2 L I_c / Phi_0$，並可能導致調制深度降低或出現磁滯行為。
+// + *Josephson 接面之有效磁厚*（effective magnetic thickness）：對平面型接面常用近似
+//   $
+//     t_H approx d + 2 lambda_L
+//   $
+//   其中 $d$ 為障壁（或弱連結區）等效厚度。$t_H$ 會進一步影響磁場下的相位分佈與干涉圖樣（例如 Fraunhofer 與 SQUID 調制），並與器件幾何、電極材料及薄膜厚度共同決定實驗擬合中的有效參數。
 
-（本節符號：$vb(B)$ 為磁通密度，$vb(J)_s$ 為超電流密度，$bold(E)$ 為電場；$e^*=2e$，$Phi_0=h/(2e)$。）
+// （本節符號：$vb(B)$ 為磁通密度，$vb(J)_s$ 為超電流密度，$bold(E)$ 為電場；$e^*=2e$，$Phi_0=h/(2e)$。）
 
 
 // ==== 倫敦方程與穿透深度 London equations and penetration depth
@@ -327,7 +326,7 @@ $ <eq-1st-josephson>
 $
   I_c equiv max_(varphi) abs(I_s(varphi)).
 $ <eq-ic-def>
-需特別區分：實驗上在欠阻尼（underdamped）且具遲滯（hysteresis）的 *I–V* 量測中常量到「切換電流」（switching current）$I_("sw")$，其受熱活化/量子穿隧與雜訊影響，通常滿足 $I_("sw") #sym.lt.approx I_c$；本節理論中的 $I_s, I_c$ 為接面本徵（或準平衡）量，後續若涉及量測讀值將另行註明。[The SQUID Handbook Vol. I, Ch. 2][Introduction to Superconductivity, Ch. 6]
+需特別區分：實驗上在欠阻尼（underdamped）且具遲滯（hysteresis）的 *I–V* 量測中常量到「切換電流」（switching current）$I_"sw"$，其受熱活化/量子穿隧與雜訊影響，通常滿足 $I_"sw" #sym.lt.approx I_c$；本節理論中的 $I_s, I_c$ 為接面本徵（或準平衡）量，後續若涉及量測讀值將另行註明。[The SQUID Handbook Vol. I, Ch. 2][Introduction to Superconductivity, Ch. 6]
 
 對 *S–I–S* 穿隧接面，$I_c$ 與常態電阻 $R_N$ 的關係可由 Ambegaokar–Baratoff 結果給出（此式亦常用於估算接面品質）：
 $
@@ -614,20 +613,20 @@ $ Phi = n Phi_0," " n = ± 1, ± 2, ... $
 
 
 === 直流超導量子干涉儀 DC SQUID <subsection-dc-squid>
-SQUID 主要有兩種類型：直流（DC）和射頻（RF）。RF SQUID 只需要一個約瑟夫森接面（超導穿隧接面），這可能使其生產成本較低，但靈敏度較低。直流SQUID（DC SQUID）的基本結構是在一個超導環路中並聯兩個約瑟夫森接面，如 @fig-squid-schematic 所示。
+SQUID 主要有兩種類型：直流（direct current, DC）和射頻（radio frequency, RF）。RF SQUID 只需要一個約瑟夫森接面（超導穿隧接面），這可能使其生產成本較低，但靈敏度較低。DC SQUID的基本結構是在一個超導環路中並聯兩個約瑟夫森接面，如 @fig-squid-schematic 所示。
 
 #figure(
   image("Images/Fig1-aSQUID.png", width: 100%),
-  caption: [DC SQUID示意圖：兩個約瑟夫森接面（以叉號表示）並聯於一個電感為 L 的超導環上。偏置電流（bias current） $I$ 分流通過兩個臂，外加磁通量 $Phi_("ext")$ 穿過環路。],
+  caption: [DC SQUID示意圖：兩個約瑟夫森接面（以叉號表示）並聯於一個電感為 L 的超導環上。偏壓電流（bias current） $I_"bias"$ 分流通過兩個臂，外加磁通量 $Phi_"ext"$ 穿過環路。],
 ) <fig-squid-schematic>
 
 直流超導量子干涉儀（DC SQUID）於 1964 年由福特研究實驗室（Ford Research Labs）的 Robert Jaklevic、John J. Lambe、James Mercereau 和 Arnold Silver 所發明，此後於 1962 年由 Brian Josephson 提出約瑟夫森效應，並於 1963 年由 John Rowell 和 Philip Anderson 在貝爾實驗室（Bell Labs）製造了第一個約瑟夫森接面@anderson_probable_1963。SQUID的運作基於兩個宏觀量子現象：超導環路中的磁通量量子化，以及流經兩個接面的超導電流的量子干涉。
 
-而超導迴路中若並聯兩個約瑟夫森接面，基於直流約瑟夫森效應，在沒有任何外部磁場的情況下，輸入電流（input current）$I_("input")$會平均分佈到兩個分支。若對超導迴路施加一個小的外部磁場，則會開始在迴路中循環一個屏蔽電流（screening current）$I_s$，該電流會產生一個抵銷外加磁通量的磁場，並創造一個與外部磁通量成正比的額外約瑟夫森相位。感應電流（induced current）的方向與$I$在超導迴路的一個分支中相同，而在另一個分支中與 $I$ 相反；總電流變為 $1/2I_("input")+I_s$ 在某一分支，而$1/2I_("input")-I_s$ 在另一分支。一旦任一分支中的電流超過約瑟夫森接面的臨界電流$I_c$，則在接面上會出現電壓。
+而超導迴路中若並聯兩個約瑟夫森接面，基於直流約瑟夫森效應，在沒有任何外部磁場的情況下，偏壓電流$I_"bias"$會平均分佈到兩個分支。若對超導迴路施加一個小的外部磁場，則會開始在迴路中循環一個屏蔽電流（screening current）$I_"scr"$，該電流會產生一個抵銷外加磁通量的磁場，並創造一個與外部磁通量成正比的額外約瑟夫森相位。屏蔽電流的方向與$I_"bias"$在超導迴路的一個分支中相同，而在另一個分支中與 $I_"bias"$ 相反；總電流變為 $1/2 I_"bias" + I_"scr"$ 在某一分支，而$1/2 I_"bias" - I_"scr"$ 在另一分支。一旦任一分支中的電流超過約瑟夫森接面的臨界電流$I_c$，則在接面上會出現電壓。
 
 現在假設外部磁通量進一步增加，直到超過$Phi_0$，即磁通量量子的一半。由於超導迴路所包圍的磁通量必須是磁通量量子的整數倍，因此 SQUID 不再顯著屏蔽磁通量，而是能量上更傾向於將其增加到$Phi_1$。此時電流反向流動，抵禦了所容許的磁通量$Phi_2$ 與略超過 $Phi_3$ 的外部磁場之間的差異。隨著外部磁場的增加，電流逐漸減小，當磁通量剛好為 $Phi_4$ 時電流為零，並且當外部磁場進一步增加時，電流再次反向。因此，電流的方向會週期性地改變，每當磁通量增加半整數倍數的 $Phi_5$ 時就會改變一次，在最大電流時每增加半整數加整數倍數的 $Phi_6$ 時會改變一次，而在整數倍數時電流為零。
 
-若輸入電流大於$I_c$，則 SQUID 始終運作於電阻模式。此時，電壓即為外加磁場的函數，且週期等於$Phi_0$。由於直流 SQUID 的電流-電壓特性（current-voltage characteristic）具有遲滯現象（hysteretic），故在接面間連接一個並聯電阻$R$以消除遲滯（在內稟電阻（intrinsic resistance）足夠的情況下）。屏蔽電流為應用磁通量除以環路的自感。因此$Delta Phi$可估算為$Delta V$磁通量至電壓轉換器）@de_lacheisserie_magnetism:_2002 @clarke_squid_2004 ，如下所示：
+若偏壓電流大於$I_c$，則 SQUID 始終運作於電阻模式。此時，電壓即為外加磁場的函數，且週期等於$Phi_0$。由於直流 SQUID 的電流-電壓特性（current-voltage characteristic）具有遲滯現象（hysteretic），故在接面間連接一個並聯電阻$R$以消除遲滯（在內稟電阻（intrinsic resistance）足夠的情況下）。屏蔽電流為應用磁通量除以環路的自感。因此$Delta Phi$可估算為$Delta V$磁通量至電壓轉換器）@de_lacheisserie_magnetism:_2002 @clarke_squid_2004 ，如下所示：
 
 $
   Delta V=R dot Delta I, \
@@ -642,7 +641,7 @@ $ lambda = (i_c L)/Phi_0 $
 
 === 對稱直流 SQUID 的理論模型 Theoretical Model of Symmetric DC SQUIDs <subsection-symmetric-dc-squid>
 
-直流 SQUID，如@fig-squid-schematic 示意圖所示，由一個幾何自感為 L 的閉合超導迴路組成，該迴路被兩個並聯的約瑟夫森接面 JJ1 和 JJ2 中斷。偏置電流 $I_b$ 從迴路一側注入，從另一側導出，導致電流分流並流經包含接面的兩個臂。
+直流 SQUID，如@fig-squid-schematic 示意圖所示，由一個幾何自感為 L 的閉合超導迴路組成，該迴路被兩個並聯的約瑟夫森接面 JJ1 和 JJ2 中斷。偏壓電流 $I_"bias"$ 從迴路一側注入，從另一側導出，導致電流分流並流經包含接面的兩個臂。
 
 對於一個理想的對稱SQUID（即兩個接面完全相同），具體來說，假設滿足以下條件：
 1. *相同的接面*：兩個約瑟夫森接面具有相同的臨界電流 ($I_(c 1) = I_(c 2 ) = I_c$)、正常態電阻 ($R_(N 1) = R_(N 2) = R_N$) 和電容 ($C_1 = C_2 = C$)。
@@ -704,7 +703,7 @@ $ beta_L equiv (2 L I_c) / Phi_0 $
 - *最佳區域 ($beta_L approx 1$)*：對於大多數應用，特別是作為靈敏磁力計，需要達到最佳平衡。
 
 === 動態行為與熱漲落 Dynamic Behavior and Thermal Fluctuations <subsection-dynamic-behavior-thermal-fluctuations>
-當 SQUID 被偏置電流 $I_b$ 驅動，且該電流超過其依賴於磁通的臨界電流 $I_max(Phi)$ 時，它會轉變為電阻態，並在其端點出現有限電壓。為了模擬這種動態、耗散的行為，我們採用*電阻與電容並聯接面 (RCSJ) 模型*。
+當 SQUID 被偏壓電流 $I_"bias"b$ 驅動，且該電流超過其依賴於磁通的臨界電流 $I_max(Phi)$ 時，它會轉變為電阻態，並在其端點出現有限電壓。為了模擬這種動態、耗散的行為，我們採用*電阻與電容並聯接面 (RCSJ) 模型*。
 
 在此模型中，每個理想的約瑟夫森元件（由其 CPR 描述）與一個電阻 $R_N$（代表準粒子穿隧）和一個電容 C（代表接面的幾何電容）並聯。通過 SQUID 每個臂的總電流是超導電流、正常（歐姆）電流和位移電流的總和。
 
@@ -718,7 +717,7 @@ $
 
 這些方程式通過循環電流 $I_("cir")$ 耦合，完全描述了在存在熱雜訊的情況下 SQUID 的古典動力學。
 
-然而，真實世界的SQUID往往存在非對稱性（例如 $I_(c 1) != I_(c 2)$ 或環路電感分配不均）。這種非對稱性雖然在傳統應用中常被視為缺陷，卻能將SQUID轉變為一個強大的分析工具。特別是對於一個高度非對稱的SQUID（例如 $I_(c 1) >> I_(c 2)$），其總臨界電流的磁通調變曲線的形狀，會直接反映較弱接面（weak junction）的電流-相位關係。透過精密量測SQUID的臨界電流 $I_("max")$ 隨外部磁通量 $Phi_("ext")$ 的完整調變曲線，我們可以直接重構出弱連結的CPR，$I_("s,weak")(phi)$ @Babich2023_LimitationsCPR_NanoLett。這正是本研究採用非對稱SQUID來探測PtTe₂接面非傳統CPR的核心方法學基礎。
+然而，真實世界的SQUID往往存在非對稱性（例如 $I_(c 1) != I_(c 2)$ 或環路電感分配不均）。這種非對稱性雖然在傳統應用中常被視為缺陷，卻能將SQUID轉變為一個強大的分析工具。特別是對於一個高度非對稱的SQUID（例如 $I_(c 1) >> I_(c 2)$），其總臨界電流的磁通調變曲線的形狀，會直接反映較弱接面（weak junction）的電流-相位關係。透過精密量測SQUID的臨界電流 $I_("max")$ 隨外部磁通量 $Phi_("ext")$ 的完整調變曲線，我們可以直接重構出弱連結的CPR，$I_("s,weak")(phi)$ @Babich2023_LimitationsCPR_NanoLett。這正是本研究採用非對稱SQUID來探測#ce[PtTe2]接面非傳統CPR的核心方法學基礎。
 
 == 非對稱 SQUID：理論與應用 Asymmetric SQUIDs: Theory and Applications <section-asymmetric-squid>
 雖然完全對稱的 SQUID 行為提供了量子干涉的基礎理解，但非對稱性的引入卻開啟了更豐富且更複雜的物理現象景觀。無論非對稱性是來自於不可避免的製程缺陷還是有意設計的工程考量，它都能將 SQUID 從簡單的干涉儀轉變為可調式、非互易的量子元件。
@@ -924,21 +923,21 @@ $ I_s (Phi) approx I_c^"Ref" (pi/2) + I_c^"Tgt" (pi/2 - 2pi Phi/Phi_0) $
 
 // === 拓撲量子材料的應用 Applications in Topological Quantum Materials <subsection-topological-materials>
 
-// 在 PtTe₂ 等新興量子材料的研究中，非對稱 SQUID 技術不僅能夠揭示材料的內在拓撲性質，更為開發新型超導量子元件提供了重要的設計指導。
+// 在 #ce[PtTe2] 等新興量子材料的研究中，非對稱 SQUID 技術不僅能夠揭示材料的內在拓撲性質，更為開發新型超導量子元件提供了重要的設計指導。
 
-// PtTe₂ 作為第二類狄拉克半金屬 (Type-II Dirac Semimetal)，其約瑟夫森接面預期表現出@Cuozzo2024_MW_Tunable_Diode_PRResearch：
+// #ce[PtTe2] 作為第二類狄拉克半金屬 (Type-II Dirac Semimetal)，其約瑟夫森接面預期表現出@Cuozzo2024_MW_Tunable_Diode_PRResearch：
 // 1. 非正弦 CPR：由於狄拉克費米子的特殊輸運性質
 // 2. 高次諧波分量：特別是二階諧波 ($sin(2phi)$) 項
 // 3. 可調控性：透過外部磁場調控 CPR 的形式
 
 // 非對稱 SQUID 也是探測約瑟夫森二極體效應 (Josephson Diode Effect, JDE) 的有效工具@Cuozzo2024_MW_Tunable_Diode_PRResearch。透過量測正、負方向的切換電流差異：
-// $ eta = (I_("sw")^+ - I_("sw")^-) / (I_("sw")^+ + I_("sw")^-) $
+// $ eta = (I_"sw"^+ - I_"sw"^-) / (I_"sw"^+ + I_"sw"^-) $
 // 可以量化 JDE 的強度，並與重構的 CPR 進行比對分析。
 
 
-== 二碲化鉑 ($"PtTe"_2$)：拓樸半金屬中的非傳統超導近接效應 <section-ptte2-properties>
+== 二碲化鉑 (#ce[PtTe2])：拓樸半金屬中的非傳統超導近接效應 <section-ptte2-properties>
 
-二碲化鉑（Platinum ditelluride, $"PtTe"_2$）是一種過渡金屬二硫屬化物（Transition Metal Dichalcogenide, TMD），屬於通式為 MX₂ 的材料家族，近年來因其豐富的物理內涵而備受關注。在結構上，二碲化鉑結晶為1T相 (CdI₂-type)，呈現出一種由鉑（Platinum, #math.attach(math.upright("Pt"), bl: "78")）原子層夾在兩層碲（Tellurium, #math.attach(math.upright("Te"), bl: "52")）原子層之間的八面體配位層狀結構。這種層狀特性使其可以透過機械剝離法，輕易地獲得從塊材到幾個原子層甚至單原子層厚度的二維薄片，為構建凡德瓦爾異質結構 (van der Waals heterostructures) 和平面型奈米元件提供了極大的可能性。
+二碲化鉑（Platinum ditelluride, #ce[PtTe2]）是一種過渡金屬二硫屬化物（Transition Metal Dichalcogenide, TMD），屬於通式為 MX₂ 的材料家族，近年來因其豐富的物理內涵而備受關注。在結構上，二碲化鉑結晶為1T相 (CdI₂-type)，呈現出一種由鉑（Platinum, #math.attach(math.upright("Pt"), bl: "78")）原子層夾在兩層碲（Tellurium, #math.attach(math.upright("Te"), bl: "52")）原子層之間的八面體配位層狀結構。這種層狀特性使其可以透過機械剝離法，輕易地獲得從塊材到幾個原子層甚至單原子層厚度的二維薄片（Flake），為構建凡德瓦爾異質結構 (van der Waals heterostructures) 和平面型奈米元件提供了極大的可能性。
 在電子特性方面，二碲化鉑最引人注目的特徵是它已被理論預測並由角解析光電子能譜 (ARPES) 等實驗技術證實為一種第二類狄拉克半金屬 (Type-II Dirac Semimetal)。與傳統的第一類狄拉克半金屬（如石墨烯 Graphene）中點狀的費米面不同，第二類狄拉克半金屬擁有極度傾斜的狄拉克錐，使得電子和電洞口袋在狄拉克點處相切接觸。這些受晶體對稱性保護的狄拉克點，賦予了二碲化鉑獨特的低能電子態和輸運性質。特別是其拓樸保護的表面態，具有螺旋自旋-動量鎖定（helical spin-momentum locking）的特性，這意味著電子的動量與其自旋方向是鎖定的，賦予了二碲化鉑獨特的低能電子態和輸運性質，使其成為研究拓撲物理與超導性之間交互作用的理想材料平台。
 
 #figure(
@@ -959,7 +958,7 @@ h：電子束能量 70 eV 下的低能量電子衍射（Low-energy electron diff
 
 在這個S-DSM-S混合結構中，超導電流的傳輸是由由二碲化鉑內部獨特的狄拉克費米子所中介的。理論預測，這種由拓樸表面態主導的傳輸機制，會促進多重安德烈夫反射(multiple Andreev reflections, MAR))過程，從而導致一個偏離標準正弦函數的非傳統電流-相位關係@Cuozzo2024_MW_Tunable_Diode_PRResearch。此外，外加磁場可以與表面態的自旋相互作用，進而調控CPR的形式，甚至產生約瑟夫森二極體效應（Josephson Diode Effect, JDE），即正反方向的臨界電流不相等（$I_c^+ != I_c^-$），深入研究二碲化鉑約瑟夫森接面的電學特性，對於理解拓撲半金屬中的近接超導物理，以及探索其在未來量子技術中的應用潛力，具有至關重要的意義。
 
-因此，本研究的理論假說是：透過將PtTe₂作為弱連結整合進一個非對稱SQUID中，我們不僅能夠直接觀測到其預期中的非正弦CPR，還能利用外部磁場作為調控手段，系統性地研究其拓樸性質如何體現在宏觀的量子輸運現象上。
+因此，本研究的理論假說是：透過將#ce[PtTe2]作為弱連結整合進一個非對稱SQUID中，我們不僅能夠直接觀測到其預期中的非正弦CPR，還能利用外部磁場作為調控手段，系統性地研究其拓樸性質如何體現在宏觀的量子輸運現象上。
 
 #figure(
   image("Images/Fig3-S-DSM-S.png", width: 90%, fit: "stretch"),
@@ -979,38 +978,45 @@ h：電子束能量 70 eV 下的低能量電子衍射（Low-energy electron diff
 
 雖然 $1T-"PtTe"_2$ 已由 ARPES 與第一性原理計算確認具有受晶體對稱性保護的 II 型狄拉克錐與相關表面態，但在「化學計量、未特別調控化學勢」的典型塊材條件下，其狄拉克節點能量 $E_D$ 往往位於費米能階 $E_F$ 的深束縛能處（文獻整理常見尺度為 $|E_D - E_F| approx 0.8 "eV"$），使得狄拉克節點附近的線性色散並不直接主宰 $E approx E_F$ 的低能激發與直流輸運。@yan_lorentz-violating_2017 @xu_nite2_typeii_dirac_2018
 
-因此，在本研究關心的「近接超導輸運／約瑟夫森超電流」能量尺度（以 $E_F$ 附近的準粒子為核心）下，實際參與傳輸的主要是多條穿越 $E_F$ 的三維體相能帶所形成之電子/電洞費米口袋；也就是說，$"PtTe"_2$ 的導電更接近「多能帶半金屬」情境，而非「由拓樸表面態主導」的單一通道輸運。此觀點也與磁輸運與量子震盪分析相一致：在 $"PtTe"_2$ 的 SdH 等訊號中，對應能帶的 Berry phase 常呈現平庸特徵，並顯示多能帶導電的行為。@fei_irptte2_band_perfection_2018 @pavlosiuk_ptte2_galvanomagnetic_2018
+因此，在本研究關心的「近接超導輸運／約瑟夫森超電流」能量尺度（以 $E_F$ 附近的準粒子為核心）下，實際參與傳輸的主要是多條穿越 $E_F$ 的三維體相能帶所形成之電子/電洞費米口袋；也就是說，#ce[PtTe2] 的導電更接近「多能帶半金屬」情境，而非「由拓樸表面態主導」的單一通道輸運。此觀點也與磁輸運與量子震盪分析相一致：在 #ce[PtTe2] 的 SdH 等訊號中，對應能帶的 Berry phase 常呈現平庸特徵，並顯示多能帶導電的行為。@fei_irptte2_band_perfection_2018 @pavlosiuk_ptte2_galvanomagnetic_2018
 
-*對本研究之意涵*：在未能提供「化學勢已被閘極/摻雜/界面電荷轉移有效拉近 $E_D$」的直接證據前，本論文在解讀 $"PtTe"_2$ 弱連結所呈現的非正弦 CPR 與可能的約瑟夫森二極體效應（JDE）時，將以「體相多能帶（含自旋軌道耦合、Zeeman 與軌域效應、介面透明度不均、非對稱 SQUID 幾何與自場等）」作為更保守且可檢驗的主導機制框架；拓樸表面態的主導貢獻則視為需額外驗證（例如：閘極可調之臨界電流/正常態電導、厚度依賴、或能譜/表面敏感量測）才能成立的進一步假說。@yan_lorentz-violating_2017
+*對本研究之意涵*：在未能提供「化學勢已被閘極/摻雜/界面電荷轉移有效拉近 $E_D$」的直接證據前，本論文在解讀 #ce[PtTe2] 弱連結所呈現的非正弦 CPR 與可能的約瑟夫森二極體效應（JDE）時，將以「體相多能帶（含自旋軌道耦合、Zeeman 與軌域效應、介面透明度不均、非對稱 SQUID 幾何與自場等）」作為更保守且可檢驗的主導機制框架；拓樸表面態的主導貢獻則視為需額外驗證（例如：閘極可調之臨界電流/正常態電導、厚度依賴、或能譜/表面敏感量測）才能成立的進一步假說。@yan_lorentz-violating_2017
 
 // 第三章：實驗方法
-= 實驗方法 <chapter-experimental-methods>
+= 實驗方法Experimental Methods <CH3-experimental-methods>
 
 本章詳細闡述本研究所使用的完整實驗流程與設備，涵蓋了從二維材料的取得、奈米元件的製備，到極低溫電學量測系統的架設與操作。
 
-== 元件製備 (Device Fabrication)
+== 元件製備 Device Fabrication <CH3-1-device-fabrication>
 
 本節詳述使用機械剝離法得到二碲化鉑薄片，並透過多道微影與沉積步驟完成SQUID元件的完整流程。
 
-=== 助熔劑生長法 (Self‐Flux Method)
+=== 助熔劑生長法 Self‐Flux Method <CH3-1-1-self-flux-method>
+
 本實驗所使用之二碲化鉑為國立成功大學凝態物理實驗室呂欽山教授所提供@hsueh_investigating_2024，其使用助熔劑法生長而成。助熔劑法是一種功能強大且廣泛使用的技術，將欲生長晶體的成分（溶質）溶解於合適的溶劑（助熔劑）中，再藉由緩慢冷卻溶液來引發單晶結晶。
 
 #figure(
-  image("Images/topological_materials.png", width: 100%, fit: "stretch"),
-  caption: [拓樸材料晶體。Ref.@topological_materials],
-) <fig-topological_materials>
+  image("Images/Fig6-PtTe2-crystal.png", width: 73%),
+  caption: [二碲化鉑晶體塊材],
+) <Fig6-PtTe2-crystal>
+@Fig6-PtTe2-crystal 呂欽山教授所提供的二碲化鉑晶體塊材，拍攝與保存於手套箱內。
 
-== 機械剝離法 (Mechanical Exfoliation Method)
-本章將詳細說明本實驗使用機械剝離法 (Mechanical Exfoliation Method) 得到原子級厚度的二維材料層狀薄片 (Flake) 的完整流程與方法，包括基板預處理、膠帶黏貼剝離。
+== 機械剝離法 Mechanical Exfoliation Method <CH3-2-1-mechanical-exfoliation-method>
+本章將詳細說明本實驗使用機械剝離法 (Mechanical Exfoliation Method) 得到原子級厚度的二維材料層狀薄片的完整流程與方法，包括基板預處理、膠帶黏貼剝離。
 
-=== 基板準備 (Substrate Preparation)
-本實驗使用的基板為低電阻重參雜 P 型單面矽/熱氧化二氧化矽基板 (NOVA electronics \#HS39626-OX：4”, P-type, <100>, 1.0∼ 5.0 × 10−3Ω· 𝑐𝑚 Resistivity, 2850 A°±5% Dry Thermal Oxide)。
+=== 基板準備 Substrate Preparation <CH3-2-1-1-substrate-preparation>
+本實驗使用的基板為低電阻重參雜 P 型單面矽/熱氧化二氧化矽基板 (NOVA electronics \#HS39626-OX：4", P-type, $text(<100>)$,
+Resistivity:
+$ qtyrange("1.0", "5.0", "ohm centimeter ", per: "/", delimiter: tilde.op) $
+// $1.0 tilde.op 5.0 times 10^-3 Omega dot #unitcm)$,
+2850 A°±5% Dry Thermal Oxide)。
 
-1. 將 7×7mm 大小的破片放入 140 °C 的二甲基亞碸 (DMSO, Dimethyl sulfoxide) 溶劑中靜置 1 小時，以去除基板上保護用的正型光阻（MICROPOSIT™ S1813 G2 Photoresists）薄膜。
+1. 將 7×7mm 大小的破片放入 140 °C 的二甲基亞碸 (DMSO, Dimethyl sulfoxide) 溶劑中靜置 1 小時，以去除基板上保護用的光阻（MICROPOSIT™ S1813 G2 hotoresists）薄膜。
 2. 將破片放入 40 °C 的丙酮（Acetone）溶劑中去除 DMSO，約 1 分鐘後再放入異丙醇 (IPA) 溶劑中進行潤洗後取出，接著使用氮氣槍吹乾基板表面。
 3. 使用Henniker plasma HPT-100電漿處理系統，以氧電漿（$O_2$ Plasma）進行基板表面清潔，使用前用100% 運轉功率、50 標準立方公分每分（Standard Cubic Centimeter per Minute, SCCM），進行5分鐘的腔體清潔，過程中需觀察腔體內電漿顏色，以確保管路中沒有氧氣以外的其他氣體。腔體清潔結束後使用100%運轉功率、40 SCCM，進行10分鐘的基板表面清潔。完成後儘速將基板放置於手套箱內開始進行剝離以避免水氣附著。
 
-=== 二維材料剝離 (2D Materials Exfoliation)
+=== 二維材料剝離與光阻塗佈 2D Materials Exfoliation and Photoresist Coating
+為避免二碲化鉑氧化層生成，剝離步驟皆在手套箱內完成，且剝離完成後儘速進行光阻塗佈，因此將兩操作視為一個連續的製程節點以下進行詳細步驟說明：
 本實驗使用的膠帶為 Nitto SPV-224PR-MJ，以下簡稱藍膠。
 
 1. 確認手套箱內水氧值皆小於 0.5ppm，將零號藍膠 (Tape 0) 膠面朝上固定於平面，用鑷子將夾取二碲化鉑塊材（Bulk）放置於 Tape 0 上。
@@ -1021,20 +1027,22 @@ h：電子束能量 70 eV 下的低能量電子衍射（Low-energy electron diff
 6. 使用電磁加熱烤盤以 120 °C 加熱基板 10 分鐘後靜置 1 分鐘。
 7. 將基板放置於平面，藍膠膠面朝下並傾斜一小角度使其一側接觸基板後使用棉棒輕推表面，確保膠面與基板表面確實接觸且無氣泡後靜置 5 分鐘。
 8. 撕開膠帶實現層與層的分離後將基板置於可重複使用真空密封食品壓縮袋，使用手持式真空保鮮機抽真空後拿出手套箱。
-9. 儘速將基板移動至旋轉塗佈機 (Spin Coater) 使用聚甲基丙烯酸甲酯（Poly(methyl methacrylate), PMMA A6）正向抗蝕劑以 500 rpm 旋轉 5 秒, 以高加速度升速至最終轉速 4000 rpm，此旋塗步驟總時長為 55 秒。
-10. 使用 180 °C 預烤 (Prebake) 基板 3 分鐘即完成機械剝離流程。
+9. 儘速將基板移動至旋轉塗佈機 (spin coater) 使用聚甲基丙烯酸甲酯（Poly(methyl methacrylate), PMMA A6）正光阻（positive photoresist）以 500 rpm 旋轉 5 秒, 以高加速度升速至最終轉速 4000 rpm，此旋塗步驟總時長為 55 秒。
+10. 使用 180 °C 預烤 (prebake) 基板 180 秒即完成機械剝離與光阻塗佈流程。
 
 === 電子束微影 (E-Beam Lithography, EBL)
 本研究中所有奈米級圖案的定義，例如對準標記與元件電極，均是透過電子束微影技術完成。整個流程在一台 Raith PIONEER Two 掃描式電鏡/電子束微影系統上執行。以下將詳述其製備、曝光與顯影的具體步驟。
 
 ==== 抗蝕劑準備 (Resist Preparation)
-在進行圖案定義之前，首先須在樣品表面旋塗一層電子束抗蝕劑。本實驗選用聚甲基丙烯酸甲酯 (Poly-methyl methacrylate), PMMA) A6 等級作為正向抗蝕劑。旋塗程序分為兩階段：首先以 500 rpm 的低速旋轉 5 秒，以確保抗蝕劑均勻散佈，隨後以 4000 rpm 的高速旋轉 55 秒，以達到最終所需的厚度。旋塗完成後，樣品被放置於 180°C 的熱板上烘烤 180 秒，目的是為了完全去除抗蝕劑中的溶劑並使其固化。
+在進行圖案定義之前，首先須在樣品表面旋塗一層電子束抗蝕劑。本實驗選用PMMA A6作為正光阻。旋塗程序分為兩階段：首先以 500 rpm 的低速旋轉 5 秒，以確保抗蝕劑均勻散佈，隨後以 4000 rpm 的高速旋轉 55 秒，以達到最終所需的厚度。旋塗完成後，樣品被放置於 180°C 的熱板上烘烤 180 秒，目的是為了完全去除抗蝕劑中的溶劑並使其固化。
 
 ==== 圖案曝光 (Pattern Exposure)
 抗蝕劑準備完成後，樣品被送入 EBL 系統的真空腔體中進行圖案曝光。所有的曝光步驟均在 20 kV 的加速電壓下進行。此流程同樣分為兩步：
 
-1. *對準標記 (Alignment Markers)*：第一步是在樣品上定義大面積的對準標記 (alignment markers)，這些標記將作為後續高精度圖案疊對的基準。為實現快速曝光，此步驟選用了 120 µm 的大光圈 (aperture) 以獲得約 12 nA 的較大電子束流，並採用 370 μC/cm² 的面積劑量 (area dose) 進行寫入。
-2. *接觸電極 (Contact Electrodes)*：在系統通過對準標記精確鎖定 PtTe₂ 薄片的位置後，進行第二步高解析度的接觸電極圖案曝光。為確保圖案的精細度與邊緣的陡峭度，此步驟換用 30 µm 的小光圈，將束流精細地控制在約 0.3 nA，並以 375 μC/cm² 的劑量進行寫入。
++ *對準標記 (Alignment Markers)*：第一步是在樣品上定義大面積的對準標記 (alignment markers)，這些標記將作為後續高精度圖案疊對的基準。為實現快速曝光，此步驟選用了 120 µm 的大光圈 (aperture) 以獲得約 12 nA 的較大電子束流，並採用 370 μC/cm² 的面積劑量 (area dose) 進行寫入。
+
++ *接觸電極 (Contact Electrodes)*：在系統通過對準標記精確鎖定 #ce[PtTe2] 薄片的位置後，進行第二步高解析度的接觸電極圖案曝光。為確保圖案的精細度與邊緣的陡峭度，此步驟換用 30 µm 的小光圈，將束流精細地控制在約 0.3 nA，並以 375 μC/cm² 的劑量進行寫入。
+
 
 ==== 顯影 (Development)
 曝光完成後，將樣品從系統中取出進行化學顯影，以溶解經電子束照射後分子鏈斷裂的 PMMA 區域。樣品被沉浸於甲基異丁基酮 (MIBK) 與異丙醇 (IPA) 體積比為 1:3 的混合溶液中。整個顯影過程在 23°C 的恆溫環境下精確控制 50 秒。隨後，為終止顯影反應，樣品被迅速轉移至純 IPA 溶液中浸泡 20 秒，以沖洗並去除殘留的顯影劑。完成此步驟後，樣品表面即形成了所需圖案的抗蝕劑模板，可供後續的金屬沉積與舉離 (lift-off) 製程使用。
@@ -1043,121 +1051,163 @@ h：電子束能量 70 eV 下的低能量電子衍射（Low-energy electron diff
 == 金屬沉積與舉離 (Metal Deposition and Lift-off)
 本實驗涉及兩種金屬沉積：
 1. *對準標記 (Cr/Au)*：使用一般金屬作為後續製程的定位基準。
-2. *超導電極 (NbTi)*： 用於與$"PtTe"_2$薄片形成接觸。
+2. *超導電極 (NbTi)*： 用於與#ce[PtTe2]薄片形成接觸。
 
 === 一般金屬熱蒸鍍沉積與舉離 (Thermal Evaporation Deposition and Lift-off of Normal Metals)
 
-為了能夠在後續的電子束微影 (EBL) 步驟中，將奈米級的電極圖案精確地疊對 (align) 到目標 PtTe₂ 薄片上，我們首先在 SiO₂/Si 基板上製作了一組金屬材質的全域對準標記 (global alignment markers)。
+為了能夠在後續的電子束微影 (EBL) 步驟中，將奈米級的電極圖案精確地疊對 (align) 到目標 #ce[PtTe2] 薄片上，我們首先在 #ce[SiO2]/#ce[Si] 基板上製作了一組金屬材質的全域對準標記 (global alignment markers)。
 
 標記的圖案首先透過 EBL 技術被定義在抗蝕劑層上。在完成顯影後，樣品被送入一台 *Korvus HEX 桌上型物理氣相沉積 (PVD) 系統*中進行金屬沉積。該系統的核心是一個四腔電子束蒸發器，其原理是利用高能電子束在真空環境下直接轟擊並加熱裝有源材料的坩堝，使材料蒸發形成物理氣相沉積。
 
 為確保標記的穩定性與高對比度，我們採用了雙層金屬結構。在腔體被抽至高真空環境後，依序蒸鍍：
 
-1. *附著層 (Adhesion Layer)*：一層約 10 nm 厚的*鉻 (Cr)*，用以增強標記與基板的附著力。
-2. *對比層 (Contrast Layer)*：一層約 50 nm 厚的*金 (Au)*，其較高的原子序數能夠在掃描式電子顯微鏡 (SEM) 下提供清晰的二次電子或背向散射電子圖像，從而利於 EBL 系統進行自動識別和對位。
+1. *附著層 (adhesion layer)*：一層約 10 nm 厚的*鉻 (Cr)*，用以增強標記與基板的附著力。
+2. *對比層 (contrast layer)*：一層約 50 nm 厚的*金 (Au)*，其較高的原子序數能夠在掃描式電子顯微鏡 (scanning electron microscope, SEM) 下提供清晰的二次電子或背向散射電子圖像，從而利於 EBL 系統進行自動識別和對位。
 
-金屬沉積完成後，透過在丙酮中進行*舉離 (lift-off)*，移除抗蝕劑，最終在基板表面留下永久性的 Cr/Au 金屬對準標記。這些標記為所有後續的材料轉移和微影製程提供了一個固定的、高精度的參考坐標系。
+金屬沉積完成後，透過在丙酮中進行舉離，移除抗蝕劑，最終在基板表面留下永久性的 Cr/Au 金屬對準標記。這些標記為所有後續的材料轉移和微影製程提供了一個固定的、高精度的參考坐標系。
 
 === 超導金屬的濺鍍沉積與舉離 (Sputter Deposition of Superconducting Metals and Lift-off)
 
-最終用以連接$"PtTe"_2$元件的超導電極，是透過一套包含原位 (in-situ) 介面清潔與磁控濺鍍 (magnetron sputtering) 的整合性製程完成。所有步驟均在 Aja Orion 8 物理氣相沉積 (PVD) 系統中執行，以確保最佳的介面品質。
+最終用以連接#ce[PtTe2]元件的超導電極，是透過一套包含原位 (in-situ) 介面清潔與磁控濺鍍 (magnetron sputtering) 的整合性製程完成。所有步驟均在 Aja Orion 8 物理氣相沉積 (PVD) 系統中執行，以確保最佳的介面品質。
 
 === 介面清潔：原位離子銑削 (Interface Cleaning: In-situ Ion Milling)
 
-在沉積超導金屬之前，為了確保金屬與$"PtTe"_2$材料之間形成一個潔淨、低電阻的歐姆接觸 (Ohmic contact) 介面，我們對樣品進行了一道原位的離子束蝕刻處理。該過程在氬氣（Ar）流量控制在0.4 mTorr的腔體壓力環境下進行，離子源以 600 V 的加速電壓產生離子束，對樣品表面進行持續 30 秒的輕微離子銑削（Ion Milling）。此步驟旨在有效去除先前 EBL 製程中可能殘留的任何抗蝕劑殘渣或樣品表面的自然污染物。
+在沉積超導金屬之前，為了確保金屬與#ce[PtTe2]材料之間形成一個潔淨、低電阻的歐姆接觸 (Ohmic contact) 介面，我們對樣品進行了一道原位的離子束蝕刻處理。該過程在氬氣（Ar）流量控制在0.4 mTorr的腔體壓力環境下進行，離子源以 600 V 的加速電壓產生離子束，對樣品表面進行持續 30 秒的輕微離子銑削（Ion Milling）。此步驟旨在有效去除先前 EBL 製程中可能殘留的任何抗蝕劑殘渣或樣品表面的自然污染物。
 
 === 超導金屬的濺鍍沉積 (Sputter Deposition of Superconducting Metals)
 
 介面清潔完成後，樣品維持在高真空環境中，不破壞真空，立即進行超導薄膜的沉積。我們選擇*鈮鈦 (NbTi)* 合金作為超導接觸電極材料。濺鍍製程在 3 mTorr 的氬氣工作壓力下進行。一個 300 W 的直流 (DC) 電源被施加於 NbTi 靶材上，使其原子被濺射並沉積到樣品表面，最終形成一層厚度為 70-120 nm 的均勻薄膜。
 
-=== 接觸點的舉離 (Lift-off for Contacts)
+=== 接觸電極的舉離 (Lift-off for Contacts Electrodes)
 
-完成濺鍍後，樣品從真空系統中取出，並執行最後的舉離步驟以定義出最終的電極圖案。樣品浸泡於丙酮中，以溶解下層的 PMMA 抗蝕劑，並移除覆蓋其上的多餘 NbTi 薄膜。此步驟完成後，僅留下在 EBL 步驟中定義的、且與$"PtTe"_2$直接接觸的超導電極結構。
+完成濺鍍後，樣品從真空系統中取出，並執行最後的舉離步驟以定義出最終的電極圖案。樣品浸泡於丙酮中，以溶解下層的 PMMA ，並移除覆蓋其上的多餘 NbTi 薄膜。此步驟完成後，僅留下在 EBL 步驟中定義的、且與#ce[PtTe2]直接接觸的超導電極結構。
+
+#figure(
+  image("Images/Fig7-alignment-markers.png", width: 100%),
+  caption: [對準標記],
+) <Fig7-alignment-markers>
+@Fig7-alignment-markers 完成 Cr/Au 蒸鍍與舉離後，在基板上留下的對準標記（已再次塗佈PMMA）。
+
+#figure(
+  image("Images/Fig8-contacts-electrodes.png", width: 100%),
+  caption: [接觸電極],
+) <Fig8-contacts-electrodes>
+@Fig8-contacts-electrodes 完成 NbTi 濺鍍與舉離後，在基板上留下的接觸電極與SQUID環路。
 
 
-
-=== 顯微鏡檢測 (Microscopy)
+=== 顯微鏡檢測 Microscopy
 在製程的各個階段，我們使用多種顯微鏡進行檢測與定位：
-- *光學顯微鏡 (KEYENCE VHX-7000N)*：
-+ *尋找與定位二維材料層狀薄片 (Flake)*：完成機械剝離流程後，透過光學顯微鏡 (OM, Optical Microscope) 初步判斷是否有 二碲化鉑 薄片，並使用 VHX-7000N 的連續拍攝功能拍攝基板的四個角落及薄片照片，並得到座標。
+==== 光學顯微鏡 Optical Microscope
+本實驗主要使用的光學顯微鏡（optical microscope, OM）為KEYENCE VHX-7000N，其主要用途為：
++ *尋找與定位二維材料層狀薄片*：完成機械剝離流程後，透過OM初步判斷是否有 二碲化鉑 薄片，並使用 VHX-7000N 的連續拍攝功能拍攝基板的四個角落及薄片照片，並得到座標。
+  #figure(
+    image("Images/Fig9-OM-map.png", width: 100%),
+    caption: [二碲化鉑薄片的光學顯微鏡照片],
+  ) <Fig9-OM-map>
+  @Fig9-OM-map 使用 VHX-7000N 的連續拍攝功能拍攝基板的四個角落及薄片在基板上的位置分佈及目標薄片的高放大倍率照片。
 + *確認曝光後顯影結果*：完成顯影流程後，透過 OM 判斷曝光結果，確認線寬與曝光劑量是否正確，並使用「量測與標尺」功能拍攝照片並標注量測結果。
+  #figure(
+    image("Images/Fig10-OM-EBL.png", width: 100%),
+    caption: [EBL曝光後顯影的光學顯微鏡照片],
+  ) <Fig10-OM-EBL>
+  @Fig10-OM-EBL EBL曝光後顯影的整體結構結果與SQUID環路的高放大倍率照片。
 + *確認 Markers 蒸鍍後舉離結果*：完成舉離流程後，透過 OM 判斷 Markers 蒸鍍結果，確認 Markers 是否確實舉離無相連部分，並用適當倍率拍攝 Markers 與目標薄片同框的照片以供後續數位化流程使用。
 + *確認 Contacts 濺鍍後舉離結果*：完成舉離流程後，透過 OM 判斷 Contacts 濺鍍結果，確認小線寬部分是否確實舉離無相連部分，並使用「量測與標尺」功能拍攝照片並標注量測結果。
-+ *確認打線結果*：完成打線流程後，透過 OM 判斷打線結果，確認基板上供接線轉接用之銲墊 (Bonding Pad) 和 PCB 上金銲線連接指 (Bonding Finger) 與鋁銲線頭是否確實相連，並檢查鋁銲線無相互接觸以避免短路或形成預期外的電路通路。使用「圖片連接」功能用適當倍率拍攝所有金打線板與基板的照片，以供後續量測時作為線路參考。
-- *原子力顯微鏡 (Park systems NX10)*：在非接觸模式下，用來精確量測PtTe₂薄片的厚度（從而推算層數）以及確認沉積金屬的厚度與表面形貌。
-AFM 在此研究中扮演了兩個關鍵角色：(1) 鑑定機械剝離 (mechanically exfoliated) 的 PtTe₂ 薄片的厚度與層數；(2) 確認蒸鍍金屬電極的厚度、表面粗糙度與邊緣形貌。
++ *確認打線結果*：完成打線流程後，透過 OM 判斷打線結果，確認基板上供接線轉接用之銲墊 (bonding pad) 和印刷電路板（printed circuit board, PCB）上金銲線連接指 (bonding finger) 與鋁銲線頭是否確實相連，並檢查鋁銲線無相互接觸以避免短路或形成預期外的電路通路。使用「圖片連接」功能用適當倍率拍攝所有金連接指與基板的照片，以供後續量測時作為線路參考。
+  #figure(
+    image("Images/Fig11-OM-wirebonding.png", width: 100%),
+    caption: [打線結果的光學顯微鏡照片],
+  ) <Fig11-OM-wirebonding>
+  @Fig11-OM-wirebonding 整體打線結果與銲墊的高放大倍率照片。根據此圖可判斷打線結果良好，無短路或斷路現象，以及記錄樣品接觸電極與PCB銲線連接指的編號對應關係。
+==== 原子力顯微鏡 Atomic Force Microscope
+本實驗使用之AFM型號為 Park systems NX10 其在此研究中扮演了兩個關鍵角色：
++ 鑑定機械剝離 (mechanically exfoliated) 的 #ce[PtTe2] 薄片的厚度與層數。
++ 確認蒸鍍金屬電極的厚度、表面粗糙度與邊緣形貌。
 
-所有 AFM 量測均在*非接觸模式 (non-contact mode)* 下進行，以最小化探針與樣品表面之間的交互作用，從而保護脆弱的二維材料薄片與金屬結構不被物理損傷。
+所有 AFM 量測均在非接觸模式 (non-contact mode, NCM)下進行，以最小化探針與樣品表面之間的交互作用，從而保護脆弱的二維材料薄片與金屬結構不被物理損傷。
 
-首先，對於 PtTe₂ 薄片，我們透過量測其表面與周圍 SiO₂ 基板之間的*步階高度 (step height)* 來確定其物理厚度。基於已知的 PtTe₂ 材料層間距，我們可以從量測到的厚度推算出薄片的原子層數。這一步驟對於篩選出符合實驗需求的特定層數（例如單層或少層）的樣品至關重要。
+首先，對於 #ce[PtTe2] 薄片，我們透過量測其表面與周圍 #ce[SiO2] 基板之間的步階高度 (step height)搭配步階高度分佈 來確定其物理厚度。基於已知的 #ce[PtTe2] 材料層間距，我們可以從量測到的厚度推算出薄片的原子層數。這一步驟對於篩選出符合實驗需求的特定層數（例如單層或少層）的樣品至關重要。
 
 其次，在完成電極蒸鍍製程後，我們利用 AFM 對接觸金屬 NbTi 的形貌進行檢測。分析的重點包括金屬膜的表面粗糙度 (surface roughness)、顆粒大小 (grain size) 以及電極圖案的邊緣清晰度。同時，透過量測金屬與基板的步階高度，我們可以驗證其實際沉積厚度是否與蒸鍍儀器設定的目標值一致。此項表徵是確保元件具備良好歐姆接觸與電氣性能的關鍵品質控制環節。
+#figure(
+  image("Images/Fig12-AFM.png", width: 100%),
+  caption: [接觸電極與目標薄片的原子力顯微鏡照片],
+) <Fig12-AFM>
+@Fig12-AFM 透過 AFM 量測接觸電極與目標薄片的厚度，並分析其表面形貌與邊緣清晰度。利用步階高度與步階高度分佈分析顯示接觸電極厚度約為$qty("100", "nm")$，符合濺鍍目標值；目標薄片厚度約為$qty("21.17", "nm")$，約為40層。
 
-== 元件特性分析系統 (Device Characterization Setup)
+== 元件特性分析系統 Device Characterization Setup
 
-本研究旨在探討特定樣品在低溫環境及外加磁場下的電運輸性質 (Electrical Transport Properties)。為此，我們搭建了一套基於四端點量測法 (Four-Point Probe Method) 又名開爾文測量法（Kelvin sensing）的直流電學量測系統。本章節將詳述其量測原理、實驗架構與操作步驟。
+本研究旨在探討特定樣品在低溫環境及外加磁場下的電運輸性質 (electrical transport properties)。為此，我們搭建了一套基於四端點量測法 (four-point probe method) 又名開爾文測量法（Kelvin sensing）的直流電學量測系統。本章節將詳述其量測原理、實驗架構與操作步驟。
 
-== 量測裝置 (Measurement Setup)
+== 量測裝置 Measurement Setup
+本章節將介紹量測裝置的構造與操作步驟。
 
-=== 稀釋制冷機 (Dilution Refrigerator)
+=== 稀釋制冷機 Dilution Refrigerator
 
 為實現對樣品在毫開爾文 (milli-Kelvin, mK）溫度區間的量子現象觀測，本研究採用了一套 Bluefors 公司製造的 LD-400 型濕式稀釋制冷系統（Wet Dilution Refrigerator System）。該系統能夠提供約40 mK的穩定基礎溫度（Base Temperature）。提供如此低的實驗環境至關重要，其主要目的有二：第一，確保樣品溫度遠低於其超導轉變溫度 (Tc)10K，使樣品能完全進入並穩定維持在超導態；第二，有效抑制因熱能 ($k_B T$)引起的熱擾動（Thermal Fluctuations），從而降低量子退相干（Quantum Decoherence） 效應，使得如電流-相位關係（Current-Phase Relation） 等微弱的宏觀量子現象（macroscopic quantum effects)）得以被精確地量測。為進一步提升實驗效率，本系統配備了底部裝載快速樣品更換（Bottom-Loading Fast Sample Exchange, FSE） 機構。該機構允許在主制冷系統各級冷盤（如 4K plate 與 Still plate）皆保持在低溫狀態的情況下，獨立地將樣品載台（Sample Holder） 取出更換。相較於需要數日才能完成一次完整熱循環（升溫至室溫再降溫）的傳統方式，FSE 系統將更換樣品所需的週期縮短至14小時 。此功能極大地提高了樣品測試的效率，對於需要進行多輪製程參數迭代與多個元件篩選及特性比對的研究工作至關重要。
 
-=== 超導磁鐵系統 (Superconducting Magnet System)
+=== 超導磁鐵系統 Superconducting Magnet System
 
-為研究樣品在不同磁場強度與方向下的物理特性，本實驗系統集成了一套 Bluefors 製造的三維向量磁鐵 (3D Vector Magnet)。該磁鐵系統的核心由三組相互正交的超導線圈構成，能夠在主軸 (Z-axis) 方向上產生最高達 9 特斯拉 (Tesla) 的磁場，並在與之垂直的兩個次軸 (X-axis and Y-axis) 方向上分別產生最高 1 T 的磁場，此即為一組 9-1-1 T 組態。這種三軸向量能力使得我們可以在三維空間中產生任意方向的磁場向量，從而對樣品的各向異性 (anisotropy) 或需要精確磁場對位的現象進行深入探討。
+為研究樣品在不同磁場強度與方向下的物理特性，本實驗系統集成了一套 Bluefors 製造的三維向量磁鐵 (3D vector magnet)。該磁鐵系統的核心由三組相互正交的超導線圈構成，能夠在主軸 (Z-axis) 方向上產生最高達 9 特斯拉 (Tesla) 的磁場，並在與之垂直的兩個次軸 (X-axis and Y-axis) 方向上分別產生最高 1 T 的磁場，此即為一組 9-1-1 T 組態。這種三軸向量能力使得我們可以在三維空間中產生任意方向的磁場向量，從而對樣品的各向異性 (anisotropy) 或需要精確磁場對位的現象進行深入探討。
 
 整個磁鐵系統的驅動與控制由一套 American Magnetics, Inc. (AMI) 的整合式電源供應系統負責。該系統包含三組獨立的磁鐵電源，其輸出電流由一台 AMI Model 430 電源程式控制器進行精密調控。此控制器不僅確保了各軸磁場的穩定性，更允許我們透過電腦程式自動化地控制磁場向量的大小、方向以及場掃描速率 (ramp rate)，以執行複雜的磁場掃描序列。
 
-=== 低溫線路與客製化 PCB 樣品座 (Cryogenic Wiring and Custom PCB Sample Holder)
+=== 低溫線路與客製化 PCB 樣品座 Cryogenic Wiring and Custom PCB Sample Holder
 
-為了在將直流與射頻 (RF) 信號從室溫儀器傳導至毫開爾文溫區的量子元件時，最大程度地抑制傳導熱負載 (conducted heat load) 與電磁雜訊，本實驗搭建了一套多級濾波與熱錨方案。此方案的核心在於混合使用了商業化的低溫濾波器模組與客製化的終端樣品電路板。
+為了在將直流與射頻信號從室溫儀器傳導至mK溫區的量子元件時，最大程度地抑制傳導熱負載 (conducted heat load) 與電磁雜訊，本實驗搭建了一套多級濾波與熱錨方案。此方案的核心在於混合使用了商業化的低溫濾波器模組與客製化的終端樣品電路板。
 
-==== 直流/低頻線路濾波 (DC/Low-Frequency Line Filtering)
-所有通往樣品的直流與低頻控制線路，都經過一套 QDevil 公司生產的 QFilter 模組進行濾波。此模組被牢固地安裝於稀釋制冷機的混合腔冷盤 (Mixing Chamber plate) 上，以確保信號線及濾波器元件本身都能與 mK 溫區達到充分的熱平衡。我們採用的是標準的雙級濾波組態，將一個 24 通道的低頻 RC 濾波板與一個 24 通道的高頻 LC 濾波板進行串聯。RC 濾波級的衰減起始於 65 kHz，而 LC 濾波級則針對 225 MHz 以上的射頻雜訊提供有效衰減。
+==== 直流/低頻線路濾波 DC/Low-Frequency Line Filtering
+所有通往樣品的直流與低頻控制線路，都經過一套 QDevil 公司生產的 QFilter 模組進行濾波。此模組被牢固地安裝於稀釋制冷機的混合腔冷盤 (mixing chamber plate) 上，以確保信號線及濾波器元件本身都能與 mK 溫區達到充分的熱平衡。
 
-==== 客製化樣品座與高密度線路 (Custom Sample Holder and High-Density Wiring)
-經過主濾波級後，信號透過一套高密度、模組化的線路連接至安裝有兩個樣品 (2 X PCB) 的客製化樣品座。該線路方案利用了多芯數的 Micro-D 連接器（如 51-pin 及 100-pin）對多達 48 個獨立的信號通道進行整合與管理。在制冷機內部，這些信號透過多組（例如 4 組 12 對）磷青銅雙絞線 (Twisted Pair) 進行傳輸。最終，在室溫端的接口面板，線路被轉換為 Fischer 24-pin 連接器，以便與外部的量測儀器相連。整個信號路徑的設計旨在確保信號完整性、最小化串擾 (crosstalk)，並提供穩固可靠的連接。
+==== 客製化樣品座與高密度線路 Custom Sample Holder and High-Density Wiring
+經過主濾波級後，信號透過一套高密度、模組化的線路連接至安裝有兩個PCB的客製化樣品座。PCB上為對48個獨立的信號通道中的44個通道設置了簡單的電阻電容（resistor–capacitor, RC） 濾波器。該線路方案利用了多芯數的 Micro-D 連接器對多達 48 個獨立的信號通道進行整合與管理。在制冷機內部，這些信號透過多組磷青銅雙絞線 (twisted pair) 進行傳輸。最終，在室溫端的接口面板，線路被轉換為四個 Fischer 24-pin 連接器，以便與外部的量測儀器相連。整個信號路徑的設計旨在確保信號完整性、最小化串擾 (crosstalk)，並提供穩固可靠的連接。
 
-==== 高頻線路濾波 (High-Frequency Line Filtering)
+==== 高頻線路濾波 High-Frequency Line Filtering
 對於 RF 控制線路，則採用了不同的濾波策略。在同軸線路中，我們安裝了 Low-loss Infrared (IR) Filter，其主要功能是阻擋來自較高溫級的紅外光子直接輻射到樣品，以降低對量子態的干擾。該濾波器在有效阻擋紅外輻射的同時，對 DC 至 6 GHz 的工作信號僅有小於 1 dB 的插入損耗。
 
-=== 電流-電壓 (I-V) 量測系統 (Current-Voltage(I-V) Measurement System)
+=== 電流-電壓量測系統 Current-Voltage Measurement System
 
-為了全面性地鑑定元件的電學特性，本研究建立的 I-V 量測系統涵蓋了兩個關鍵階段：(1) 在室溫下對大量元件進行快速的初步篩選；(2) 在極低溫環境中對通過初篩的元件進行高精度的特性量測。
+為了全面性地鑑定元件的電學特性，本研究建立的電流-電壓（current-voltage, I-V）量測系統涵蓋了兩個關鍵階段：
++ 在室溫下對大量元件進行快速的初步篩選。
++ 在極低溫環境中對通過初篩的元件進行高精度的特性量測。
 
-==== 室溫初步特性鑑定 (Room-Temperature Pre-characterization)
+==== 室溫初步特性鑑定 Room-Temperature Pre-Characterization
 
-在此測試組態中，激勵電流 (stimulus current) 由一台 Keithley 2400 源-量測單元 (SMU) 提供，該儀器被設定於電壓源模式，其輸出經過一個 100 kΩ 的串聯電阻轉換為電流源。此電流隨後被路由至待測元件，而元件上的響應電壓則由一台 Basel Precision Instruments (BPI) Model SP1004 低噪聲差動放大器進行放大，並由 Keithley DMM6500 萬用電錶讀取。為了能對晶片上的大量元件進行高效的自動化測試，整個信號的路由與切換由兩台 Quantum Machines 生產的 24 通道 QDAC 模組構成的矩陣交換器進行管理。
+在此測試組態中，偏壓電流由一台 Keithley 2400 電源量測單元（source measure unit, SMU）提供，該儀器被設定於電壓源模式，其輸出經過一個$qty("100", "kilo ohm")$的串聯電阻轉換為電流源。此電流隨後被路由至待測元件，而元件上的響應電壓則由一台 Basel Precision Instruments Model SP1004 低噪聲差動放大器（differential amplifier）進行放大，並由 Keithley DMM6500 數位萬用表（digital multimeter,DMM）讀取。為了能對晶片上的大量元件進行高效的測試，整個信號的路由與切換由兩台 QDevil 生產的 24 通道 QBox 接線盒進行管理。
+此室溫量測主要用於快速篩選出樣品與接觸電極之間和銲墊與連接指之間皆無短路或斷路的元件。此測試結果將作為重新打線與後續低溫量測的初步篩選依據。記錄之I-V特性與低溫量測結果好壞之關係亦將作為爾後新樣品的室溫特性鑑定篩選依據。
 
-==== 極低溫 I-V 特性精細量測 (Cryogenic I-V Characterization)
+==== 極低溫 I-V 特性精細量測 Cryogenic I-V Characterization
 
-低溫下的高精度 I-V 量測，其核心由一套由台夫特理工大學 (Delft University of Technology) 設計與製造、專為低溫量子測量開發的、電池供電的 *IVVI-DAC2-rack* 系統執行。採用電池供電是為了實現與外部儀器電源的電氣隔離 (galvanic isolation)，從根本上消除接地迴路 (ground loops) 和來自電力線的雜訊。
+低溫下的高精度 I-V 量測，其核心由一套由台夫特理工大學 (Delft University of Technology) 設計與製造、專為低溫量子測量開發的、電池供電的 IVVI-DAC2-rack系統執行。採用電池供電是為了實現與外部儀器電源的電氣隔離 (galvanic isolation)，從根本上消除接地迴路 (ground loops) 和來自電力線的雜訊。
 
-*信號路由與儀器配置 (Signal Routing and Instrument Configuration)*
+===== 信號路由與儀器配置 Signal Routing and Instrument Configuration
 從低溫恆溫器引出的主線纜，其信號首先被轉換至四個 24-pin 的 Fischer 接口面板。實驗時，根據待測元件的位置，我們從中選取兩路 Fischer 插頭，將其連接至兩台 24 通道的 *Matrix-rack* 模組化跳線盤。這個 Matrix-rack 作為連接低溫世界與室溫儀器的中樞，其內部的 MCX 連接器跳線面板允許我們對每一條獨立的信號線進行靈活、精確的配置。對於一組特定的四端點量測，指定的線路通過 MCX-to-LEMO 轉接線，被分別連接至 IVVI-rack 中的功能模組：
 
-- *電流源 (Current Source)*: 負責施加偏壓的線路 (I+,I−) 被連接至一個 *S4m 電流源模組*。該模組的輸出電流量程可手動設置，而其精確的電流大小則由 IVVI-rack 內建的 DAC 進行掃描控制。我們採用此模組的*對稱 (symmetric)* 輸出模式進行量測。在此模式下，模組同時提供正、負兩路相對於地電位對稱的電壓輸出，其主要優點是能夠最小化樣品上可能出現的共模電壓 (common-mode voltage)，並有效倍增電壓源的輸出擺幅 (output swing)。
-- *電壓量測 (Voltage Measurement)*: 負責感測電壓的線路 (V+,V−) 被連接至一個 *M2b 電壓量測模組*。此模組是專為實現極低的 1/f 噪聲而優化的 JFET 輸入級差動放大器，其輸入電壓噪聲密度在 10 Hz 以上時低至 2 nV/√Hz。
+- 電流源 (current source):
 
-經過 M2b 模組放大後，類比電壓信號從機架的隔離環境中被輸出，並最終由一台 Keithley DMM6500 6½-Digit 數位萬用電錶進行高精度數位化及數據記錄。
+  負責施加偏壓的線路 ($I^+,I^− "（Ground）"$) 被連接至一個 S4m 電流源模組。該模組的輸出電流量程可手動設置，而其精確的電流大小則由 IVVI-rack 內建的 DAC 進行掃描控制。我們採用此模組的對稱 (symmetric) 輸出模式進行量測。在此模式下，模組同時提供正、負兩路相對於地電位對稱的電壓輸出，其主要優點是能夠最小化樣品上可能出現的共模電壓 (common-mode voltage)，並有效倍增電壓源的輸出擺幅 (output swing)。
+- 電壓量測 (voltage measurement):
 
-=== 射頻信號產生器 (RF Signal Generator)
+  負責感測電壓的線路 ($V^+,V^−$) 被連接至一個 M2b 電壓量測模組。此模組是專為實現極低的 $1 / f$ 噪聲而優化的接面場效電晶體（junction gate field-effect transistor,JFET）差動放大器，其輸入電壓噪聲密度在 10 Hz 以上時低至 $qty("2", "") "nV"/sqrt("Hz")$。
+
+經過 M2b 模組放大後，類比電壓信號從機架的隔離環境中被輸出，並最終由一台 Keithley DMM6500 數位萬用表進行高精度數位化及數據記錄。
+
+=== 射頻信號產生器 RF Signal Generator
 
 為了對元件進行射頻下的特性分析，例如 Shapiro steps 量測，本實驗系統整合了一台 Rohde & Schwarz (R&S) SGS100A 射頻信號產生器。該儀器能夠產生頻率範圍從 1 MHz 至 20 GHz 的高穩定度、低相位雜訊的正弦波信號。
 
 信號的輸出功率可在大範圍內進行精密調控。在送入低溫恆溫器之前，RF 信號會經過一系列的同軸衰減器 (coaxial attenuators) 進行大幅衰減，以確保最終施加於樣品上的功率處於適當的微弱範圍，避免過大的 RF 功率對樣品造成過熱或破壞其超導態。整個 RF 信號路徑的校準與衰減值的計算是確保量測結果準確性的關鍵步驟。
 
-=== 數據擷取框架：QCoDeS (Data Acquisition Framework: QCoDeS)
+=== 數據擷取框架：QCoDeS Data Acquisition Framework: QCoDeS
 
-本研究的所有實驗控制、儀器協調與數據擷取流程，均基於 *QCoDeS* (Quantum Code and Data acquisition System) 軟體框架實現。QCoDeS 是一個基於 Python 的開源框架，由哥本哈根/代爾夫特量子計算聯盟等機構開發，旨在為量子計算與凝聚態物理實驗提供一個標準化、模組化的軟體基礎設施。我們選用此框架的核心原因在於其強大的儀器抽象能力與結構化的數據管理模型，這使得複雜的實驗流程得以簡化，並確保了數據的高度可追溯性。
+本研究的所有實驗控制、儀器協調與數據擷取流程，均基於 QCoDeS (Quantum Code and Data acquisition System) 軟體框架實現。QCoDeS 是一個基於 Python 的開源框架，由哥本哈根/代爾夫特量子計算聯盟等機構開發，旨在為量子計算與凝聚態物理實驗提供一個標準化、模組化的軟體基礎設施。我們選用此框架的核心原因在於其強大的儀器抽象能力與結構化的數據管理模型，這使得複雜的實驗流程得以簡化，並確保了數據的高度可追溯性。
 
-在我們的具體實現中，所有實驗儀器（如 IVVI-rack 模組、信號產生器、數位電錶等）均被分別封裝為 QCoDeS 的 `Instrument` 物件，其可控屬性則對應為 `Parameter`。整個實驗裝置由一個 `Station` 物件進行統一管理，其詳細配置透過 YAML 檔案進行定義與載入，確保了實驗設置的靈活性與可重現性。所有的量測序列，無論是簡單的線性掃描還是複雜的多維掃描，都透過 QCoDeS 的 `Measurement` 上下文管理器執行。在每次量測運行 (`run`) 開始時，系統會自動擷取所有儀器參數的*快照 (snapshot)*，並與實驗數據一同儲存。
+在我們的具體實現中，所有實驗儀器（如 IVVI-rack 模組、信號產生器、數位電錶等）均被分別封裝為 QCoDeS 的 `Instrument` 物件，其可控屬性則對應為 `Parameter`。整個實驗裝置由一個 `Station` 物件進行統一管理，其詳細配置透過 YAML 檔案進行定義與載入，確保了實驗設置的靈活性與可重現性。所有的量測序列，無論是簡單的線性掃描還是複雜的多維掃描，都透過 QCoDeS 的 `Measurement` 上下文管理器執行。在每次量測運行 (`run`) 開始時，系統會自動擷取所有儀器參數的快照 (snapshot)，並與實驗數據一同儲存。
 
-所有實驗數據都被結構化地儲存於一個以 SQLite 為後端的本地數據庫中。每一個 `DataSet` 實例都包含完整的元數據、儀器快照以及量測結果，並被賦予一個*全域唯一識別碼 (GUID)*，極大地增強了數據的可追溯性、完整性與共享便利性。
+所有實驗數據都被結構化地儲存於一個以 SQLite 為後端的本地數據庫中。每一個 `DataSet` 實例都包含完整的元數據、儀器快照以及量測結果，並被賦予一個全域唯一識別碼 (globally unique identifier,GUID)，極大地增強了數據的可追溯性、完整性與共享便利性。
 
-== 實驗實現 (Experimental Realization)
-=== 坐標系與磁場定義 (Coordinate System and Magnetic Field Definitions)
+== 實驗實現 Experimental Realization
+=== 坐標系與磁場定義 Coordinate System and Magnetic Field Definitions
 在本研究中，我們先定義樣品座標系如下：樣品平面為 $x$–$y$ 平面，
 $x$ 軸沿約瑟夫森接面中的電流傳輸方向（從一側超導電極指向另一側），
 $y$ 軸沿接面寬度方向，$z$ 軸則垂直於樣品平面，由基板指向探針。
@@ -1170,24 +1220,42 @@ $B_x$, $B_y$, $B_z$，其定義如下：
 - $B_z$：垂直於樣品平面的磁場分量（沿 $z$ 軸）。
 
 除非另有特別說明，本文中提到的面內（in-plane）磁場係指由
-$(B_x, B_y)$ 組合而成的平面內磁場，而面外（out-of-plane）磁場則專指
-$B_z$。
+$(B_x, B_y)$ 組合而成的平面內磁場，而面外（out-of-plane）磁場則專指$B_z$。
 
-=== I-V 特性 (I-V Characteristics)
+=== I-V 特性 I-V Characteristics
 
-元件的基礎直流傳輸特性，是透過在恆定溫度下，量測其電壓-電流 (I-V) 特性曲線來進行鑑定。一條具代表性的 I-V 曲線，是透過緩慢掃描偏壓電流 ($I_("bias")$) 並同時記錄元件兩端的電壓降 (V) 而獲得的。
+元件的基礎直流傳輸特性，是透過在恆定溫度且固定外加磁場下，量測其電壓-電流特性曲線來進行鑑定。一條具代表性的 I-V 曲線，是透過緩慢掃描偏壓電流$I_"bias"$並同時記錄元件兩端的電壓降$V$而獲得的。
 
-當偏壓電流從零開始增加時，元件首先展現出零電壓的狀態 (V=0)，此即為直流約瑟夫森效應 (DC Josephson effect) 所導致的無耗散超導電流分支。此超導態可一直維持，直到偏壓電流超過一個臨界閾值，此時接面會突然切換 (switch) 至一個具有有限電壓的電阻態。實驗上觀測到的這個切換點，我們定義為*切換電流 ($I_("sw")$)*。
+約瑟夫森效應（Josephson Effect）自1962年由布賴恩·約瑟夫森（Brian Josephson）預測以來，已成為超導電子學、量子計算及精密計量學的基石 1。該效應描述了當兩塊超導體被一薄層弱連結（Weak Link，如絕緣體、正常金屬或幾何收縮）隔開時，宏觀量子波函數能夠發生穿隧或耦合的現象。這種耦合導致了超電流（Supercurrent）在無電壓降的情況下流過接面，其大小取決於兩側超導體之間的量子相位差 $phi$。
 
-在切換至電阻態後，I-V 特性遵循一個線性的歐姆關係，其斜率 ($d V / d I$) 即為接面的*正常態電阻 ($R_N$)*。
+在理想的理論模型中，約瑟夫森接面的電流-相位關係（Current-Phase Relation, CPR）通常被假定為正弦形式 $I_s = I_c sin(phi)$，其中 $I_c$ 為臨界電流（Critical Current），代表了接面所能承載的最大無耗散電流。然而，在實際的實驗操作與測量中，我們所觀測到的並非單一且固定的 $I_c$，而是一個受制於熱漲落、電路阻抗、掃描速率及接面內在動力學特性的動態變量。特別是在欠阻尼（Underdamped）接面中，電流—電壓（Current-Voltage, I-V）特性曲線呈現顯著的遲滯迴圈（Hysteresis Loop），導致系統從超導態（Superconducting State）進入電壓態（Voltage State）的電流閾值——即「切換電流」（switching current），與從電壓態返回超導態的電流閾值——即「重捕電流」（re-trapping current），在數值上並不重合。
 
-當偏壓電流反向掃描（從高電流向零點掃描）時，我們觀察到顯著的*遲滯現象 (hysteretic behavior)*。接面並不會在 $I_("sw")$ 處立即返回超導態，而是維持在電阻分支上，直到電流降低至一個更小的值，即*回滯電流 ($I_r$)* 時，才重新「掉落」回零電壓的超導態。
+釐清這些電流參數的操作型定義（Operational Definitions），不僅是基礎物理測量的需求，更是理解非互易傳輸（Non-reciprocal transport）、開發超導整流元件（Superconducting Diodes）以及優化超導量子位元（Qubits）讀取機制的基礎。特別是當系統存在磁場、自旋軌道耦合（Spin-Orbit Coupling, SOC）或磁性雜質時，正向與負向偏壓下的電流閾值可能不再對稱，這使得嚴格區分正負方向的切換與重捕電流變得尤為重要。
 
-這種由切換電流與回滯電流之間巨大差異 ($I_r << I_("sw")$) 所構成的遲滯迴線，是*欠阻尼 (underdamped)* 約瑟夫森接面的典型特徵。此行為可由 Stewart-McCumber 模型進行描述，其遲滯程度由無因次的史都華-麥肯柏參數 $beta_c=(2e/ħ)I_c R_N^2 C$ 所決定。觀測到的顯著遲滯意味著此接面的 $beta_c > 1$。
+本章將從微觀理論模型出發，逐步推導這些電流參數的物理起源，並詳細闡述在實驗上如何通過特定的掃描協定來定義與測量 $I_"sw"^+, I_"sw"^-, I_r^+, I_r^-$。我們將特別關注偏壓電流方向對這些參數的影響，以及它們在絕對值上的對稱或不對稱關係，這些關係直接揭示了系統的時間反演對稱性（Time-Reversal Symmetry, TRS）的破缺情況。
+
+=== 四大電流參數的詳盡操作型定義 <subsection-iv-characteristics>
+
+基於上述物理圖像，並結合實驗測量中的掃描程序，我們以下對四個關鍵電流參數進行嚴格的操作型定義。這些定義不僅描述了物理現象，還規範了測量條件。
+
+- 正向切換電流 (positive switching current, $I_"sw"^+$)
+在電流控制模式下，當偏壓電流 $I$ 從零開始向正方向（$I > 0$）單調增加（即絕對值增加）時，接面從零電壓態（超導態）突變至有限電壓態（電阻態）瞬間所記錄到的電流值。
+
+- 負向切換電流 (negative switching current, $I_"sw"^-$)
+
+在電流控制模式下，當偏壓電流 $I$ 從零開始向負方向（$I < 0$）單調減少（即絕對值增加）時，接面從超導態突變至有限負電壓態瞬間所記錄到的電流值。為了方便與 $I_"sw"^+$ 比較，文獻常取其絕對值 $|I_"sw"^-|$ 進行討論。
+
+- 正向重捕電流 (positive re-trapping current, $I_r^+$)
+
+當接面處於正向電壓態（$V > 0, I > 0$）時，將偏壓電流從高值逐漸降低，直到接面重新回到超導態（$V=0$）或進入低電壓擴散分支瞬間所對應的電流值。
+
+- 負向重捕電流 (negative re-trapping current, $I_r^-$)
+
+當接面處於負向電壓態（$V < 0, I < 0$）時，將偏壓電流絕對值逐漸降低（即 $I$ 從負值向零增加），直到接面重新回到超導態（$V=0$）瞬間所對應的電流值。
 
 === 夫朗和斐干涉圖樣 (Fraunhofer Interference Patterns)
 
-為了進一步探測接面內部超導電流的空間分佈特性，我們量測其臨界電流 $I_c$ 對外加磁場的依賴關係。實驗中，我們利用三軸向量磁鐵施加一個沿樣品法向（$z$ 軸）的磁場 $B_z$，並在每一個固定的磁場值下，量測其 I–V 特性曲線。藉由將接面從超導態驅動至電阻態所對應的切換電流 $I_("sw")$，我們將其視為該磁場下的臨界電流，即 $I_c(B_z) = I_("sw")(B_z)$。
+為了進一步探測接面內部超導電流的空間分佈特性，我們量測其臨界電流 $I_c$ 對外加磁場的依賴關係。實驗中，我們利用三軸向量磁鐵施加一個沿樣品法向（$z$ 軸）的磁場 $B_z$，並在每一個固定的磁場值下，量測其 I–V 特性曲線。藉由將接面從超導態驅動至電阻態所對應的切換電流 $I_"sw"$，我們將其視為該磁場下的臨界電流，即 $I_c(B_z) = I_"sw"(B_z)$。
 
 量測結果清楚顯示臨界電流隨 $B_z$ 變化的干涉圖樣。在零磁場 ($B_z = 0$) 時，臨界電流達到最大值 $I_(c,0)$；隨著 $|B_z|$ 的增加，$I_c(B_z)$ 呈現近似週期性的振盪，並在特定磁場值處壓低至接近零。整體包絡線與光學中的單狹縫夫朗和斐繞射 (Fraunhofer diffraction) 圖樣高度相似，因此我們將此 $I_c$–$B_z$ 依賴稱為*夫朗和斐干涉圖樣*。
 
@@ -1203,39 +1271,7 @@ $ A_("eff") = Phi_0 / B_("min",1) $
 // 第四章：實驗結果
 = 實驗結果 <chapter-results>
 
-本章呈現基於 1T-PtTe₂ 的超導量子干涉儀的核心實驗結果。我們將系統性地展示元件的基礎電學特性、夫朗和費干涉圖樣的磁場響應，以及從非對稱 SQUID 量測中重構出的電流-相位關係。這些結果不僅驗證了 PtTe₂ 中存在非傳統的超導行為，更展示了利用外部磁通量對其進行主動調控的可行性。
-
-== 基礎元件表徵 <section-basic-characterization>
-
-約瑟夫森效應（Josephson Effect）自1962年由布賴恩·約瑟夫森（Brian Josephson）預測以來，已成為超導電子學、量子計算及精密計量學的基石 1。該效應描述了當兩塊超導體被一薄層弱連結（Weak Link，如絕緣體、正常金屬或幾何收縮）隔開時，宏觀量子波函數能夠發生穿隧或耦合的現象。這種耦合導致了超電流（Supercurrent）在無電壓降的情況下流過接面，其大小取決於兩側超導體之間的量子相位差 $phi$。
-
-在理想的理論模型中，約瑟夫森接面的電流-相位關係（Current-Phase Relation, CPR）通常被假定為正弦形式 $I_s = I_c sin(phi)$，其中 $I_c$ 為臨界電流（Critical Current），代表了接面所能承載的最大無耗散電流。然而，在實際的實驗操作與測量中，我們所觀測到的並非單一且固定的 $I_c$，而是一個受制於熱漲落、電路阻抗、掃描速率及接面內在動力學特性的動態變量。特別是在欠阻尼（Underdamped）接面中，電流—電壓（Current-Voltage, I-V）特性曲線呈現顯著的遲滯迴圈（Hysteresis Loop），導致系統從超導態（Superconducting State）進入電壓態（Voltage State）的電流閾值——即「切換電流」（Switching Current），與從電壓態返回超導態的電流閾值——即「重捕電流」（Re-trapping Current），在數值上並不重合。
-
-釐清這些電流參數的操作型定義（Operational Definitions），不僅是基礎物理測量的需求，更是理解非互易傳輸（Non-reciprocal transport）、開發超導整流元件（Superconducting Diodes）以及優化超導量子位元（Qubits）讀取機制的基礎。特別是當系統存在磁場、自旋軌道耦合（Spin-Orbit Coupling, SOC）或磁性雜質時，正向與負向偏壓下的電流閾值可能不再對稱，這使得嚴格區分正負方向的切換與重捕電流變得尤為重要。
-
-本章將從微觀理論模型出發，逐步推導這些電流參數的物理起源，並詳細闡述在實驗上如何通過特定的掃描協定來定義與測量 $I_"sw"^+, I_"sw"^-, I_r^+, I_r^-$。我們將特別關注偏壓電流方向對這些參數的影響，以及它們在絕對值上的對稱或不對稱關係，這些關係直接揭示了系統的時間反演對稱性（Time-Reversal Symmetry, TRS）的破缺情況。
-
-== 四大電流參數的詳盡操作型定義 <subsection-iv-characteristics>
-
-基於上述物理圖像，並結合實驗測量中的掃描程序，我們以下對四個關鍵電流參數進行嚴格的操作型定義。這些定義不僅描述了物理現象，還規範了測量條件。
-
-- 正向切換電流 (Positive Switching Current, $I_"sw"^+$)
-在電流控制模式下，當偏壓電流 $I$ 從零開始向正方向（$I > 0$）單調增加（即絕對值增加）時，接面從零電壓態（超導態）突變至有限電壓態（電阻態）瞬間所記錄到的電流值。
-
-- 負向切換電流 (Negative Switching Current, $I_"sw"^-$)
-
-在電流控制模式下，當偏壓電流 $I$ 從零開始向負方向（$I < 0$）單調減少（即絕對值增加）時，接面從超導態突變至有限負電壓態瞬間所記錄到的電流值。為了方便與 $I_"sw"^+$ 比較，文獻常取其絕對值 $|I_"sw"^-|$ 進行討論。
-
-- 正向重捕電流 (Positive Re-trapping Current, $I_r^+$)
-
-當接面處於正向電壓態（$V > 0, I > 0$）時，將偏壓電流從高值逐漸降低，直到接面重新回到超導態（$V=0$）或進入低電壓擴散分支瞬間所對應的電流值。
-
-- 負向重捕電流 (Negative Re-trapping Current, $I_r^-$)
-
-當接面處於負向電壓態（$V < 0, I < 0$）時，將偏壓電流絕對值逐漸降低（即 $I$ 從負值向零增加），直到接面重新回到超導態（$V=0$）瞬間所對應的電流值。
-
-
-
+本章呈現基於 1T-#ce[PtTe2] 的超導量子干涉儀的核心實驗結果。我們將系統性地展示元件的基礎電學特性、夫朗和費干涉圖樣的磁場響應，以及從非對稱 SQUID 量測中重構出的電流-相位關係。這些結果不僅驗證了 #ce[PtTe2] 中存在非傳統的超導行為，更展示了利用外部磁通量對其進行主動調控的可行性。
 
 == 基礎溫度下的 I-V 特性 <subsection-iv-characteristics-base>
 
@@ -1257,17 +1293,17 @@ $ A_("eff") = Phi_0 / B_("min",1) $
 #figure(
   image("Images/run_33_expert_vis.svg", width: 100%, fit: "stretch"),
   caption: [
-    $"PtTe"_2$ 約瑟夫森接面的直流傳輸特性與多重安德烈夫反射 (MAR)。
+    #ce[PtTe2] 約瑟夫森接面的直流傳輸特性與多重安德烈夫反射 (MAR)。
     (a) 在基溫 ($T approx 40,"mK"$) 下量測之電流-電壓 ($I$-$V$) 特性曲線。接面展現出清晰的超電流分支 (Supercurrent branch)，其切換電流 (Switching current) $I_c approx 24, mu "A"$。高偏壓處的過剩電流 ($I_"exc"$，灰色虛線所示) 顯示該接面具有中透明度的介面特性。
-    (b) 微分電阻 ($d V slash d I$) 隨量測電壓 $V$ 的變化曲線。頻譜中展現一系列對應於次諧波能隙結構 (Sub-harmonic gap structures) 的電阻峰。垂直虛線標示了 MAR 特徵峰的理論預期位置 ($V_n = 2Delta slash "n"e$，其中 $n = 1, 2, 3$)，由此推算出超導能隙 $Delta approx 0.9725 "meV"$。並以 OBTK 模型的最佳擬合曲線，提取出的介面阻抗參數 $Z approx 0.7587$ 與穿透率 $tau approx 0.6347$並以$beta approx 1.1956$表示$e I_"exc" R_n slash Delta$。
+    (b) 微分電阻 ($dv(V, I)$) 隨量測電壓 $V$ 的變化曲線。頻譜中展現一系列對應於次諧波能隙結構 (Sub-harmonic gap structures) 的電阻峰。垂直虛線標示了 MAR 特徵峰的理論預期位置 ($V_n = 2 Delta slash "n"e$，其中 $n = 1, 2, 3$)，由此推算出超導能隙 $Delta approx 0.9725 "meV"$。並以 OBTK 模型的最佳擬合曲線，提取出的介面阻抗參數 $Z approx 0.7587$ 與穿透率 $tau approx 0.6347$並以$beta approx 1.1956$表示$e I_"exc" R_n slash Delta$。
   ],
 ) <fig-MAR>
 @fig-MAR 展示的多重安德烈夫反射（Multiple Andreev Reflection, MAR）特性，為樣品接面品質優良的有力證據，然而因超電流（Supercurrent）過大，無法直接量測到線性電阻區域，即大於 $2 Delta$的範圍。圖中標示的過電流(Excess Current) $I_"excess"^+ approx 42.3 "µA"$ 僅能作為大致估計，實際的過電流按趨勢應大於此值。同時，由自熱效應引起的溫升也需加以考慮。
-我們在微分電阻 ($d V slash d I$) 頻譜 [圖 1(b)] 中觀察到顯著的次諧波能隙結構，這提供了電荷傳輸是由多重安德烈夫反射 (MAR) 主導的直接證據。電阻谷的位置與理論公式 $V_n = 2 Delta slash n e$ 高度吻合，使我們得以確立超導能隙為 $Delta approx 0.97 "meV"$。為了定量分析介面透明度，我們針對高偏壓數據進行了 Octavio-Tinkham-Blonder-Klapwijk (OBTK) 模型擬合。分析結果顯示介面阻抗參數 $Z approx 0.76$，對應之穿透率 $tau approx 0.63$。此高透明度意味著超電流的限制因素並非來自介面阻障，而是主要源於 $"PtTe"_2$ 通道內部的擴散散射過程。
+我們在微分電阻 ($dv(V, I)$) 頻譜 [圖 1(b)] 中觀察到顯著的次諧波能隙結構，這提供了電荷傳輸是由多重安德烈夫反射 (MAR) 主導的直接證據。電阻谷的位置與理論公式 $V_n = 2 Delta slash n e$ 高度吻合，使我們得以確立超導能隙為 $Delta approx 0.97 "meV"$。為了定量分析介面透明度，我們針對高偏壓數據進行了 Octavio-Tinkham-Blonder-Klapwijk (OBTK) 模型擬合。分析結果顯示介面阻抗參數 $Z approx 0.76$，對應之穿透率 $tau approx 0.63$。此高透明度意味著超電流的限制因素並非來自介面阻障，而是主要源於 #ce[PtTe2] 通道內部的擴散散射過程。
 
 值得注意的是，量測所得的 $I_c R_n$ 積約為 $0.70 "mV"$，此數值低於短彈道接面 (Short ballistic junction) 的理論極限 ($I_c R_n approx pi Delta slash 2 e approx 1.52 "mV"$)。為了釐清此數值的物理起源，我們檢視了元件的特徵長度尺度。給定接面長度 $L = 260 "nm"$，我們發現實驗數據與擴散極限 (Diffusive limit) 高度吻合。利用長接面理論公式 $e I_c R_n approx 10.82 E_"Th"$ [Dubos et al., PRB 2001]，我們提取出的 Thouless 能為 $E_"Th" approx 65 mu "eV"$。
 
-由此推算的擴散係數 $D = E_"Th" L^2 slash planck approx 0.0067 "m"^2 slash "s"$，在費米速度 $v_F approx 0.65 times 10^6 "m/s"$ 的估算下，對應之平均自由徑 $l_e = 3 D slash v_F approx 31 "nm"$。這表明比值 $L slash l_e approx 8.4$，確認元件運作於明確的擴散區間 ($L >> l_e$)。此外，擴散相干長度估算為 $xi_"diff" = sqrt(planck D slash Delta) approx 67 "nm"$，使得 $L slash xi_"diff" approx 4$。這證實了我們的 $"PtTe"_2$ 接面屬於「長擴散約瑟夫森接面」類別，其超電流大小受限於電子穿越接面所需的擴散時間 (即 Thouless 能)，而非超導能隙。此結果成功解釋了為何在高介面透明度 ($tau approx 0.63$) 下，$I_c R_n$ 數值仍小於短接面理論極限的主因，並展示了 $"PtTe"_2$ 在擴散長度尺度下仍保有良好的相位同調性。
+由此推算的擴散係數 $D = E_"Th" L^2 slash planck approx 0.0067 "m"^2 slash "s"$，在費米速度 $v_F approx 0.65 times 10^6 "m/s"$ 的估算下，對應之平均自由徑 $l_e = 3 D slash v_F approx 31 "nm"$。這表明比值 $L slash l_e approx 8.4$，確認元件運作於明確的擴散區間 ($L >> l_e$)。此外，擴散相干長度估算為 $xi_"diff" = sqrt(planck D slash Delta) approx 67 "nm"$，使得 $L slash xi_"diff" approx 4$。這證實了我們的 #ce[PtTe2] 接面屬於「長擴散約瑟夫森接面」類別，其超電流大小受限於電子穿越接面所需的擴散時間 (即 Thouless 能)，而非超導能隙。此結果成功解釋了為何在高介面透明度 ($tau approx 0.63$) 下，$I_c R_n$ 數值仍小於短接面理論極限的主因，並展示了 #ce[PtTe2] 在擴散長度尺度下仍保有良好的相位同調性。
 
 在高於超導能隙 ($e V > 2 Delta$) 的偏壓區間，我們觀察到微分電阻 ($d V slash d I$) 並未如 BCS 理論預期飽和至恆定的正常態電阻 $R_n$，而是呈現隨電壓單調上升的趨勢 [圖 1(b)]。此現象主要歸因於接面處的焦耳熱效應 (Joule Heating) 累積導致的電子溫度 ($T_e$) 升高。在極低溫 ($T approx 20 "mK"$) 環境下，電子-聲子耦合 (electron-phonon coupling) 極弱，導致熱電子難以將能量耗散至晶格。
 
@@ -1375,9 +1411,10 @@ $
 #figure(
   image("Images/coordinate_system_schematic_003_2.png", width: 60%),
   caption: [
-    Sample 003-2 的座標系配置示意圖。樣品位於實驗室 $X-Z$ 平面，逆時針旋轉角度 $alpha = 121.3^degree$。綠色矩形代表樣品，藍色箭頭指示沿長軸的電流方向（$x'$ axis）。
+    Sample 003-2 的座標系配置示意圖。。
   ],
 ) <fig-coordinate-system>
+@fig-coordinate-system 樣品位於實驗室 $X-Z$ 平面，逆時針旋轉角度 $alpha = 121.3^degree$。綠色矩形代表樣品，藍色箭頭指示沿長軸的電流方向（$x'$ axis）。
 
 === 夫朗和費圖樣 ($B_"in-plane" = 0$) <subsection-standard-fraunhofer>
 
@@ -1499,7 +1536,7 @@ $
 
 4. *振幅調變*：不同極小值的深度出現差異，破壞了原有的週期性
 
-這些變化強烈暗示平面內磁場改變了 PtTe₂ 接面的電流-相位關係，可能產生時間反演對稱性破缺。
+這些變化強烈暗示平面內磁場改變了 #ce[PtTe2] 接面的電流-相位關係，可能產生時間反演對稱性破缺。
 
 == 電流-相位關係分析 <section-cpr-analysis>
 
@@ -1550,17 +1587,17 @@ $ I(phi) = I_1 sin phi + I_2 sin(2 phi + delta) $ <CPR-with-delta>
 
 #figure(
   image("Images/KO-1_cpr_fit_127.svg", width: 80%),
-  caption: [使用Kulik-Omelyanchuk模型擬合典型 PtTe₂ 約瑟夫森接面的電流相位關係特性曲線],
+  caption: [使用Kulik-Omelyanchuk模型擬合典型 #ce[PtTe2] 約瑟夫森接面的電流相位關係特性曲線],
 ) <fig-OK-1-cpr-fit>
-使用Kulik-Omelyanchuk模型擬合典型 PtTe₂ 約瑟夫森接面的電流相位關係特性曲線。
+使用Kulik-Omelyanchuk模型擬合典型 #ce[PtTe2] 約瑟夫森接面的電流相位關係特性曲線。
 
-在無面內磁場時，使用Kulik-Omelyanchuk模型擬合典型 PtTe₂ 約瑟夫森接面的電流相位關係特性曲線。得出介面透明度為 $tau approx 0.6$，屬於中高透明度接面。
+在無面內磁場時，使用Kulik-Omelyanchuk模型擬合典型 #ce[PtTe2] 約瑟夫森接面的電流相位關係特性曲線。得出介面透明度為 $tau approx 0.6$，屬於中高透明度接面。
 
 #figure(
   image("Images/delta_cpr_fit_127.svg", width: 80%),
-  caption: [使用二階諧波相位差可調模型擬合典型 PtTe₂ 約瑟夫森接面的電流相位關係特性曲線],
+  caption: [使用二階諧波相位差可調模型擬合典型 #ce[PtTe2] 約瑟夫森接面的電流相位關係特性曲線],
 ) <fig-delta-cpr-fit>
-使用二階諧波相位差可調模型擬合典型 PtTe₂ 約瑟夫森接面的電流相位關係特性曲線。
+使用二階諧波相位差可調模型擬合典型 #ce[PtTe2] 約瑟夫森接面的電流相位關係特性曲線。
 
 #figure(
   image("Images/cpr_fit_508.svg", width: 80%),
@@ -1576,7 +1613,7 @@ $I_c R_N$ 乘積是表徵約瑟夫森接面品質的重要參數，它反映了�
 #figure(
   include "chapters/generated_icrn_table.typ",
   caption: [
-    多個 PtTe₂ 約瑟夫森接面的 $I_c R_N$ 乘積統計
+    多個 #ce[PtTe2] 約瑟夫森接面的 $I_c R_N$ 乘積統計
   ],
 ) <tab-icrn-statistics>
 
@@ -1585,19 +1622,19 @@ $I_c R_N$ 乘積是表徵約瑟夫森接面品質的重要參數，它反映了�
 // - 正常態電阻：$R_N approx 1.848$ Ω
 // - $I_c^"(1)" R_N$ 乘積：$approx 7.272$ µV
 
-// 雖然此數值低於理論極限，但表 @tab-icrn-statistics 顯示其他樣品（如 Sample 004-2）可達 $1.2$ mV，表明 $I_c R_N$ 乘積受製程變異影響較大。整體而言，數值範圍與其他 PtTe₂ 相關研究一致。
-// 這個數值與典型的金屬約瑟夫森接面相比較低，但與其他拓撲材料基礎的接面相當，反映了 PtTe₂ 作為弱連結材料的特性以及可能存在的近接效應影響。
+// 雖然此數值低於理論極限，但表 @tab-icrn-statistics 顯示其他樣品（如 Sample 004-2）可達 $1.2$ mV，表明 $I_c R_N$ 乘積受製程變異影響較大。整體而言，數值範圍與其他 #ce[PtTe2] 相關研究一致。
+// 這個數值與典型的金屬約瑟夫森接面相比較低，但與其他拓撲材料基礎的接面相當，反映了 #ce[PtTe2] 作為弱連結材料的特性以及可能存在的近接效應影響。
 
 // 根據 Ambegaokar-Baratoff 關係，理論預期的 $I_c R_N$ 乘積應為：
 // $ I_c R_N = (π Δ)/(2e) tanh(Δ/(2k_B T)) $
 
-// 其中 $Δ$ 為超導能隙。在 $T ≪ T_c$ 的極限下，對於 $T_c ≈ 2.7$ K 的 PtTe₂，理論預期約為 0.4 mV。觀測到的較高數值可能反映了接面的多重安德烈夫反射過程或非傳統的配對機制。
+// 其中 $Δ$ 為超導能隙。在 $T ≪ T_c$ 的極限下，對於 $T_c ≈ 2.7$ K 的 #ce[PtTe2]，理論預期約為 0.4 mV。觀測到的較高數值可能反映了接面的多重安德烈夫反射過程或非傳統的配對機制。
 
 
 // #figure(
 //   include "chapters/generated_properties_table.typ",
 //   caption: [
-//     NbTi 與 PtTe₂ 物性參數表。
+//     NbTi 與 #ce[PtTe2] 物性參數表。
 //   ],
 // ) <tab-properties>
 
@@ -1606,12 +1643,12 @@ $I_c R_N$ 乘積是表徵約瑟夫森接面品質的重要參數，它反映了�
 
 // === 非傳統 CPR特徵 <subsection-unconventional-cpr>
 
-// 透過分析非對稱 SQUID 的磁通量調變行為，我們可以重構出 PtTe₂ 接面的電流-相位關係 (CPR)。@fig-cpr-reconstruction 展示了重構出的 CPR 與傳統正弦 CPR 的比較。
+// 透過分析非對稱 SQUID 的磁通量調變行為，我們可以重構出 #ce[PtTe2] 接面的電流-相位關係 (CPR)。@fig-cpr-reconstruction 展示了重構出的 CPR 與傳統正弦 CPR 的比較。
 
 // #figure(
 //   image("Images/Thesis_Fig_CPR_Harmonics.png", width: 90%),
 //   caption: [
-//     重構的 PtTe₂ 接面電流-相位關係 (Sample 005-1, Run 170)。實驗數據與擬合結果顯示了顯著的非純正弦特徵。
+//     重構的 #ce[PtTe2] 接面電流-相位關係 (Sample 005-1, Run 170)。實驗數據與擬合結果顯示了顯著的非純正弦特徵。
 //   ],
 // ) <fig-cpr-reconstruction>
 
@@ -1678,7 +1715,7 @@ $I_c R_N$ 乘積是表徵約瑟夫森接面品質的重要參數，它反映了�
 
 // 4. *CPR 非互易性*：$I_s(φ) ≠ -I_s(-φ)$，這是時間反演對稱性破缺的間接證據。
 
-// 這些非傳統 CPR 特徵可以歸因於 PtTe₂ 的拓撲表面態。在狄拉克半金屬中，螺旋自旋-動量鎖定的表面態能夠促進高階安德烈夫反射過程，從而產生高次諧波超電流分量。面內磁場透過調控自旋軌道耦合強度，進一步增強了這些非傳統效應。我們在擬合過程中提取的參數誤差（如 $delta I_1, delta I_2$）均小於擬合值的 5%，證實了特徵的穩健性。
+// 這些非傳統 CPR 特徵可以歸因於 #ce[PtTe2] 的拓撲表面態。在狄拉克半金屬中，螺旋自旋-動量鎖定的表面態能夠促進高階安德烈夫反射過程，從而產生高次諧波超電流分量。面內磁場透過調控自旋軌道耦合強度，進一步增強了這些非傳統效應。我們在擬合過程中提取的參數誤差（如 $delta I_1, delta I_2$）均小於擬合值的 5%，證實了特徵的穩健性。
 
 // === 角度依賴的約瑟夫森二極體效應 <subsection-angle-jde>
 // 為了進一步探究二極體效應的幾何依賴性，我們測量了二極體效率 $eta$ 隨面內磁場角度 $theta$ 的變化。
@@ -1763,24 +1800,24 @@ $I_c R_N$ 乘積是表徵約瑟夫森接面品質的重要參數，它反映了�
 
 // 2. *磁場可調控性*：透過調節面內磁場 $B_"In-Plane"$，可以連續地調控 CPR 的非傳統性
 
-// 3. *共同物理起源*：這種關聯性強烈暗示夫朗和費非對稱性和非傳統 CPR 具有共同的物理起源——PtTe₂ 的拓撲表面態
+// 3. *共同物理起源*：這種關聯性強烈暗示夫朗和費非對稱性和非傳統 CPR 具有共同的物理起源——#ce[PtTe2] 的拓撲表面態
 
 // 4. *二極體效應的定量表徵*：二極體效率 $η = (I_c^+ - I_c^-)/(I_c^+ + I_c^-)$ 隨 $B_"In-Plane"$ 呈現可預測的變化
 
-// 這些結果為理解 PtTe₂ 中的拓撲超導現象提供了直接的實驗證據，並展示了利用外部磁場調控量子元件特性的巨大潜力。
+// 這些結果為理解 #ce[PtTe2] 中的拓撲超導現象提供了直接的實驗證據，並展示了利用外部磁場調控量子元件特性的巨大潜力。
 
 == 結果總結 <section-results-summary>
 
 本章的實驗結果確立了以下重要發現：
 
-1. *高品質的 PtTe₂ 約瑟夫森接面*：成功製備了具有清晰超導特性和良好電學性能的元件。
+1. *高品質的 #ce[PtTe2] 約瑟夫森接面*：成功製備了具有清晰超導特性和良好電學性能的元件。
 
 2. *非傳統的電流-相位關係*：直接觀測到包含顯著二階諧波分量的非純正弦 CPR。
 
 3. *高面內磁場下的顯著二階諧波分量與相位差*：觀察到高面內磁場下的 CPR 中二階諧波分量與相位差的顯著變化，這表明了磁場對 CPR 的調控作用。
 
 
-這些結果為理解 PtTe₂ 中的非傳統的電流-相位關係提供了直接的實驗證據，並展示了利用外部磁場調控量子元件特性的巨大潛力。
+這些結果為理解 #ce[PtTe2] 中的非傳統的電流-相位關係提供了直接的實驗證據，並展示了利用外部磁場調控量子元件特性的巨大潛力。
 
 
 // 第五章：討論
@@ -1788,7 +1825,7 @@ $I_c R_N$ 乘積是表徵約瑟夫森接面品質的重要參數，它反映了�
 
 == 直接量測電流相位關係探討非對稱夫朗和費干涉圖樣的起源 <section-asymmetric-fraunhofer-origin>
 
-不同於使用量測正負向切換電流計算切換電流差 $Delta I_s$間接得出電流相位關係的方式，本研究使用$"PtTe"_2$構成的非對稱SQUID直接量測電流相位關係，從而提供了深入理解非對稱夫朗和費（Fraunhofer）干涉圖樣的起源內在物理機制的重要線索。
+不同於使用量測正負向切換電流計算切換電流差 $Delta I_s$間接得出電流相位關係的方式，本研究使用#ce[PtTe2]構成的非對稱SQUID直接量測電流相位關係，從而提供了深入理解非對稱夫朗和費（Fraunhofer）干涉圖樣的起源內在物理機制的重要線索。
 
 // 待補充：具體的非對稱性分析、物理機制討論、與理論預測的比較
 
@@ -1797,7 +1834,7 @@ $I_c R_N$ 乘積是表徵約瑟夫森接面品質的重要參數，它反映了�
 // // Nature and Origin of Unconventional CPRs
 // // 本節內容有待補充
 
-// 非傳統的電流-相位關係（Current-Phase Relation, CPR）的出現是第二類狄拉克半金屬（Type-II Dirac Semimetal）與超導性結合的重要表現。在$"PtTe"_2$約瑟夫森接面中，偏離標準正弦函數的CPR反映了其獨特的拓撲電子結構。
+// 非傳統的電流-相位關係（Current-Phase Relation, CPR）的出現是第二類狄拉克半金屬（Type-II Dirac Semimetal）與超導性結合的重要表現。在#ce[PtTe2]約瑟夫森接面中，偏離標準正弦函數的CPR反映了其獨特的拓撲電子結構。
 
 // // 待補充：CPR的具體形式分析、高階諧波成分、與材料拓撲性質的關聯
 
@@ -1807,7 +1844,7 @@ $I_c R_N$ 乘積是表徵約瑟夫森接面品質的重要參數，它反映了�
 
 // 首先，我們觀察到的約瑟夫森二極體效應（JDE）與近期在 $1T-"PtTe"_2$ 單一接面中報導的現象 [arXiv:2403.19445] 相呼應。相關研究同樣發現了可透過磁場調控的二階 Josephson 效應（$phi_0$-junction behavior），並將其歸因於螺旋自旋-動量鎖定的表面態。我們的 SQUID 量測進一步提供了電流-相位關係（CPR）的直接相位敏感證據，確認了高階諧波 ($I_2$) 的存在及其相位偏移 ($delta$) 是導致二極體效應的微觀根源。
 
-// 其次，與 $"NiTe"_2$ 的研究相比，我們同樣觀察到了二極體效率隨面內磁場的振盪與反轉行為。這被認為是有限動量古柏對（Finite-momentum Cooper pairing）機制的特徵。然而，我們的角度依賴性測量顯示出獨特的對稱性特徵，這可能反映了 $"PtTe"_2$ 表面態具體的自旋織構差異。
+// 其次，與 $"NiTe"_2$ 的研究相比，我們同樣觀察到了二極體效率隨面內磁場的振盪與反轉行為。這被認為是有限動量古柏對（Finite-momentum Cooper pairing）機制的特徵。然而，我們的角度依賴性測量顯示出獨特的對稱性特徵，這可能反映了 #ce[PtTe2] 表面態具體的自旋織構差異。
 
 // 總體而言，本研究採用非對稱 SQUID 技術，不僅驗證了先前基於傳輸測量（Transport）的發現，更提供了關於超導電流相位動力學的細緻資訊，補充了現有文獻在相位敏感性測量方面的不足。
 
@@ -1816,14 +1853,14 @@ $I_c R_N$ 乘積是表徵約瑟夫森接面品質的重要參數，它反映了�
 // Fabrication Challenges
 // 製備過程中遇到的技術挑戰與解決方案
 
-在$"PtTe"_2$基礎超導元件的製備過程中，遇到了多項技術挑戰，這些挑戰直接影響了最終元件的電學特性與量測結果的可靠性。
+在#ce[PtTe2]基礎超導元件的製備過程中，遇到了多項技術挑戰，這些挑戰直接影響了最終元件的電學特性與量測結果的可靠性。
 
 === 薄片尺寸與厚度控制 <subsection-flake-size-thickness>
 
 // Flake Size and Thickness
 // 本小節內容有待補充
 
-二維材料薄片（Flake）的尺寸與厚度控制是影響元件性能的關鍵因素。機械剝離法（Mechanical Exfoliation）獲得的$"PtTe"_2$薄片在尺寸分佈和厚度均勻性方面存在固有的變異性。
+二維材料薄片（Flake）的尺寸與厚度控制是影響元件性能的關鍵因素。機械剝離法（Mechanical Exfoliation）獲得的#ce[PtTe2]薄片在尺寸分佈和厚度均勻性方面存在固有的變異性。
 
 // 待補充：具體的尺寸要求、厚度對電學特性的影響、改進策略
 
@@ -1862,7 +1899,7 @@ $I_c R_N$ 乘積是表徵約瑟夫森接面品質的重要參數，它反映了�
 
 == 結論 <section-conclusion>
 
-本研究成功地實現了對第二類狄拉克半金屬 (Type-II Dirac Semimetal) 1T-PtTe₂ 基超導量子干涉儀 (Superconducting Quantum Interference Device, SQUID) 中磁通量控制電流-相位關係 (flux-controlled current-phase relation) 的深入探索。透過結合精密的元件製備技術、極低溫量測平台以及先進的數據分析方法，我們獲得了以下重要的研究成果：
+本研究成功地實現了對第二類狄拉克半金屬 (Type-II Dirac Semimetal) 1T-#ce[PtTe2] 基超導量子干涉儀 (Superconducting Quantum Interference Device, SQUID) 中磁通量控制電流-相位關係 (flux-controlled current-phase relation) 的深入探索。透過結合精密的元件製備技術、極低溫量測平台以及先進的數據分析方法，我們獲得了以下重要的研究成果：
 
 === 主要研究成果 <subsection-main-achievements>
 
@@ -1871,8 +1908,8 @@ $I_c R_N$ 乘積是表徵約瑟夫森接面品質的重要參數，它反映了�
 
 
 + *非傳統電流-相位關係的直接觀測*：
-  - 成功製備了基於 1T-PtTe₂ 的平面型超導量子干涉儀元件
-  - 透過非對稱 SQUID 量測技術，直接重構出 PtTe₂ 約瑟夫森接面 (Josephson Junction) 的電流-相位關係
+  - 成功製備了基於 1T-#ce[PtTe2] 的平面型超導量子干涉儀元件
+  - 透過非對稱 SQUID 量測技術，直接重構出 #ce[PtTe2] 約瑟夫森接面 (Josephson Junction) 的電流-相位關係
   - 確認了電流-相位關係顯著偏離傳統的正弦函數形式 $I_s = I_c sin(phi)$，展現出明顯的高階諧波分量
 
 + *磁通量調控特性的系統性研究*：
@@ -1905,7 +1942,7 @@ $I_c R_N$ 乘積是表徵約瑟夫森接面品質的重要參數，它反映了�
 
 + *元件性能優化*：
   - 進一步優化製備工藝，提高接面的均勻性和可重現性
-  - 探索不同厚度 PtTe₂ 薄片對電流-相位關係的影響
+  - 探索不同厚度 #ce[PtTe2] 薄片對電流-相位關係的影響
   - 改良樣品幾何結構設計以取得量測精度與速度的平衡
   - 替換參考接面材料以排除其對目標接面電流-相位關係的影響
 
@@ -1923,11 +1960,11 @@ $I_c R_N$ 乘積是表徵約瑟夫森接面品質的重要參數，它反映了�
 + *新型量子元件開發*：
   - 基於可調控 $phi_0$-接面開發拓撲保護的量子位元 (topologically protected qubits)
   - 設計具有內建相位偏移的超導量子干涉元件，實現免磁場的量子態操控
-  - 探索 PtTe₂ 基約瑟夫森接面在超導量子計算中的應用潛力
+  - 探索 #ce[PtTe2] 基約瑟夫森接面在超導量子計算中的應用潛力
 
 + *材料體系拓展*：
   - 探索其他狄拉克/外爾半金屬 (如 WTe₂、MoTe₂) 中的類似現象
-  - 研究異質結構 (如 PtTe₂/石墨烯) 中的介面超導與拓撲效應
+  - 研究異質結構 (如 #ce[PtTe2]/石墨烯) 中的介面超導與拓撲效應
   - 開發基於范德瓦耳斯異質結構 (van der Waals heterostructures) 的可調控超導元件
 
 
@@ -1937,7 +1974,7 @@ $I_c R_N$ 乘積是表徵約瑟夫森接面品質的重要參數，它反映了�
 
 == 結語 <section-concluding-remarks>
 
-本研究成功地展示了 1T-PtTe₂ 基超導量子干涉儀中磁通量控制電流-相位關係的豐富物理內涵。所獲得的非傳統電流-相位關係和約瑟夫森二極體效應，不僅加深了我們對拓撲超導物理的理解，也為開發新一代量子元件奠定了重要基礎。
+本研究成功地展示了 1T-#ce[PtTe2] 基超導量子干涉儀中磁通量控制電流-相位關係的豐富物理內涵。所獲得的非傳統電流-相位關係和約瑟夫森二極體效應，不僅加深了我們對拓撲超導物理的理解，也為開發新一代量子元件奠定了重要基礎。
 
 這項研究體現了材料科學、凝聚態物理和量子工程等多學科交叉融合的力量。透過將新興拓撲量子材料與成熟的超導技術相結合，我們不僅發現了新的物理現象，更開闢了通向未來量子技術的新途徑。
 
