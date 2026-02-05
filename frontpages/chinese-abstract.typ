@@ -5,7 +5,7 @@
 #import "../lib.typ": nsysu-abstract-page
 
 #let chinese-abstract(info) = nsysu-abstract-page(
-  title: "摘要",
+  title: "中文摘要",
   keywords: info.keywords,
   [
     // 在此撰寫您的中文摘要內容

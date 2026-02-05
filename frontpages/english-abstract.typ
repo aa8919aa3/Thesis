@@ -5,7 +5,7 @@
 #import "../lib.typ": nsysu-abstract-page
 
 #let english-abstract(info) = nsysu-abstract-page(
-  title: "Abstract",
+  title: "英文摘要",
   keywords: info.keywords-en,
   keyword-title: "Keywords",
   [

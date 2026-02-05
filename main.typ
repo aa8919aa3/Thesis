@@ -67,18 +67,18 @@
 #v(1fr)
 #set page(background: none)
 
-// 公開授權書
-// 使用背景圖片方式插入，以保留頁碼並避免空白頁
-#{
-  show heading: it => {
-    pagebreak(weak: true)
-  }
-  heading(level: 1, numbering: none, outlined: true)[公開授權書]
-}
-#set page(background: image("frontpages/國立中山大學博碩士論文公開授權書.pdf", width: 90%, height: 90%))
-// 插入空白內容以佔據一頁
-#v(1fr)
-#set page(background: none)
+// // 公開授權書
+// // 使用背景圖片方式插入，以保留頁碼並避免空白頁
+// #{
+//   show heading: it => {
+//     pagebreak(weak: true)
+//   }
+//   heading(level: 1, numbering: none, outlined: true)[公開授權書]
+// }
+// #set page(background: image("frontpages/國立中山大學博碩士論文公開授權書.pdf", width: 90%, height: 90%))
+// // 插入空白內容以佔據一頁
+// #v(1fr)
+// #set page(background: none)
 
 // 誌謝
 #include "frontpages/acknowledgement.typ"
@@ -1840,16 +1840,16 @@ $ I(phi) = I_1 sin phi + I_2 sin(2 phi + delta) $ <CPR-with-delta>
 
 在分析電流-相位關係時，我們選擇採用截斷的傅立葉級數模型 (@CPR-with-delta)，而非Kulik-Omelyanchuk模型 ($I(phi) prop sin(phi)/sqrt(1 - tau sin^2(phi/2))$)。此選擇基於以下兩個主要考量：
 
-1. *極高的透明度要求*：如 @fig-cpr-harmonics-tau 所示，若要僅透過透明度模型來解釋我們觀察到的顯著二階諧波分量（$I_2/I_1 approx 0.25$），接面的透明度 $tau$ 必須達到約 0.90。這是一個非常嚴格的物理條件，通常僅在完美的單原子接觸或極高品質的界面中才能實現。
++ *極高的透明度要求*：如 @fig-cpr-harmonics-tau 所示，若要僅透過透明度模型來解釋我們觀察到的顯著二階諧波分量（$A_2/A_1 approx 0.25$），接面的透明度 $tau$ 必須達到約 0.90。這是一個非常嚴格的物理條件，通常僅在完美的單原子接觸或極高品質的界面中才能實現。
 
 #figure(
   image("Images/CPR_Harmonics_vs_Tau.png", width: 70%),
   caption: [
-    二階與三階諧波分量隨透明度 $tau$ 的變化。為了產生 $I_2/I_1 = 0.25$ 的二階分量，透明度必須高達 $tau approx 0.90$。
+    二階與三階諧波分量隨透明度 $tau$ 的變化。為了產生 $A_2/A_1 = 0.25$ 的二階分量，透明度必須高達 $tau approx 0.90$。
   ],
 ) <fig-cpr-harmonics-tau>
 
-2. *時間反演對稱性的破缺*：標準的Kulik-Omelyanchuk模型通常假設時間反演對稱性，導致 $I_c^+ = |I_c^-|$（如 @fig-cpr-diode-comparison 綠色曲線所示）。然而，我們的實驗數據顯示明顯的時間反演對稱性的破缺 ($I_c^+ eq.not |I_c^-|$)。為了描述這種時間反演對稱性的破缺，必須引入高階諧波的相位偏移 $delta$。然而標準的Kulik-Omelyanchuk模型隱含對高階諧波的相位偏移 $delta$ 的限制，$delta$必須固定於0。反而簡單的諧波展開模型多了這種自由度（如 @fig-cpr-diode-comparison 紫色曲線所示），能夠靈活地描述此系統。
++ *時間反演對稱性的破缺*：標準的Kulik-Omelyanchuk模型通常假設時間反演對稱性，導致 $I_c^+ = |I_c^-|$（如 @fig-cpr-diode-comparison 綠色曲線所示）。然而，我們的實驗數據顯示明顯的時間反演對稱性的破缺 ($I_c^+ eq.not |I_c^-|$)。為了描述這種時間反演對稱性的破缺，必須引入高階諧波的相位偏移 $delta$。然而標準的Kulik-Omelyanchuk模型隱含對高階諧波的相位偏移 $delta$ 的限制，$delta$必須固定於0。反而簡單的諧波展開模型多了這種自由度（如 @fig-cpr-diode-comparison 紫色曲線所示），能夠靈活地描述此系統。
 
 #figure(
   image("Images/CPR_Diode_Comparison.png", width: 70%),
@@ -2060,7 +2060,7 @@ $I_c R_N$ 乘積是表徵約瑟夫森接面品質的重要參數，它反映了�
   ],
 ) <fig-cpr-fit-parameters-evolution>
 
-@fig-cpr-fit-parameters-evolution 展示了關鍵數參 ($I_c^"Ref", I_c^"(1)", I_c^"(2)", I_c^"(2)"/I_c^"(1)", delta, chi^2$) 隨面內磁場強度的演化。從擬合參數的演化可以觀察到參考接面臨界電流 $I_"c,ref"$、$I_"c1"$、$I_"c2"$ 在不同夾角$theta$下的面內場$B_"In-Plane"$作用下的下降趨勢有別，因此可能需要考慮參考介面的面內磁場作用，所以此參數演化統計的可靠性值得商榷，但依然可以從中提取出一些有用的物理現象。在低面內場時，$I_c^"(2)"/I_c^"(1)"$ 與 $delta$ 的數值較低，擬合誤差也較大，需要提升量測精度，以獲得更準確的結果。然而在高面內場時，$I_c^"(2)"/I_c^"(1)"$ 與 $delta$ 的數值較高，擬合誤差也較小，二階諧波相位可調模型可以很好地描述現象，但固定夾角$theta$時的面內場$B_"In-Plane"$強度與$I_c^"(2)"/I_c^"(1)"$ 和 $delta$ 的關係並非簡單的線性關係，這可能暗示了更複雜的物理現象，並非完全如 @sivakumar_long-range_2024 所述使用Rashba效應與SOC效應造成的自旋-動量耦合現象即可描述，因此樣品目標接面長度更長，面內場$B_"In-Plane"$更強，需要考慮更多因素。
+@fig-cpr-fit-parameters-evolution 展示了關鍵數參 ($I_c^"Ref", I_c^"(1)", I_c^"(2)", I_c^"(2)"/I_c^"(1)", delta, chi^2$) 隨面內磁場強度的演化。從擬合參數的演化可以觀察到參考接面臨界電流 $I_c^"Ref"$、目標接面一階臨界電流$I_c^"(1)"$、二階臨界電流$I_c^"(2)"$ 在不同夾角$theta$下的面內場$B_"In-Plane"$作用下的下降趨勢有別，因此可能需要考慮參考接面的面內磁場作用，所以此參數演化統計的可靠性值得商榷，但依然可以從中提取出一些有用的物理現象。在低面內場時，$I_c^"(2)"/I_c^"(1)"$ 與 $delta$ 的數值較低，擬合誤差也較大即歸一化卡方（Reduced Chi-Square）$chi^2$ 較小，需要提升量測精度，以獲得更準確的結果。然而在高面內場時，$I_c^"(2)"/I_c^"(1)"$ 與 $delta$ 的數值較高，擬合誤差也較小，二階諧波相位可調模型可以很好地描述現象，但固定夾角$theta$時的面內場$B_"In-Plane"$強度與$I_c^"(2)"/I_c^"(1)"$ 和 $delta$ 的關係並非簡單的線性關係，這可能暗示了更複雜的物理現象，並非完全如 @sivakumar_long-range_2024 所述使用Rashba效應與SOC效應造成的自旋-動量耦合現象即可描述，因此樣品目標接面長度更長，面內場$B_"In-Plane"$更強，需要考慮更多因素。
 
 // === 夫朗和斐非對稱性與 CPR 非傳統性的關聯 <subsection-fraunhofer-cpr-correlation>
 
@@ -2401,15 +2401,11 @@ $I_c R_N$ 乘積是表徵約瑟夫森接面品質的重要參數，它反映了�
 
 
 
+// 參考文獻
+// 參考文獻
+#heading(level: 1, numbering: none, outlined: true)[參考文獻]
+#bibliography("references.bib", title: none)
+
 // 附錄
 #include "appendices/appendix.typ"
-
-// 參考文獻
-#pagebreak()
-#{
-  set align(center)
-  text(size: 18pt, weight: "bold")[參考文獻]
-}
-#v(1em)
-#bibliography("references.bib", title: none)
 

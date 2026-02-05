@@ -40,12 +40,12 @@
   v(5em)
 
   // 論文標題（中文）
-  text(size: 20pt, weight: "bold")[
+  text(size: 18pt, weight: "bold")[
     #info.title\
   ]
 
   // 論文標題（英文）
-  text(size: 18pt, weight: "bold")[
+  text(size: 16pt, weight: "bold")[
     #info.title-en\
   ]
 
@@ -101,7 +101,7 @@
   v(1em)
 
   // 日期（中英文）
-  text(size: 14pt)[
+  text(size: 16pt)[
     中華民國 #info.year 年 #info.month \
     #info.month-en #info.year-en
   ]
@@ -115,7 +115,7 @@
 
   content
 
-  v(2em)
+  v(1.5em)
 
   [#keyword-title：#keywords]
 }
