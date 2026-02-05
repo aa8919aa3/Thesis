@@ -60,43 +60,43 @@
   caption: [樣品詳細資訊],
 )
 
-=== #ce[PtTe2]、#ce[NbTi]量子輸運參數表 <subsection-quantum-transport-parameters-table>
-#figure(
-  table(
-    columns: (1fr, 1fr, 1fr, 1fr, 1fr),
-    align: center,
-    // inset: 4pt,
-    // stroke: 0.5pt,
+// === #ce[PtTe2]、#ce[NbTi]量子輸運參數表 <subsection-quantum-transport-parameters-table>
+// #figure(
+//   table(
+//     columns: (1fr, 1fr, 1fr, 1fr, 1fr),
+//     align: center,
+//     // inset: 4pt,
+//     // stroke: 0.5pt,
 
-    table.header([*參數*], [*符號*], [*#ce[NbTi]*], [*#ce[PtTe2]*], [*單位*]),
-    // ---- Transport / length scales ----
-    [*費米速度 \ Fermi velocity*], [$v_F$], [≈ 1.25–1.55], [$3.3 times 10^"-5"$], [m/s],
-    [*平均碰撞時間 \ Mean free time*], [$tau$], [≈ 10⁻¹²–10⁻¹¹], [≈ 10⁻¹²–10⁻¹¹], [s],
-    [*擴散係數 \ Diffusion coefficient*], [$D = v_F^2 tau / 2$], [≈ 5.6×10²–5.6×10³], [≈ 1.5×10²–2.4×10³], [cm²/s],
+//     table.header([*參數*], [*符號*], [*#ce[NbTi]*], [*#ce[PtTe2]*], [*單位*]),
+//     // ---- Transport / length scales ----
+//     [*費米速度 \ Fermi velocity*], [$v_F$], [≈ 1.25–1.55], [$3.3 times 10^"-5"$], [m/s],
+//     [*平均碰撞時間 \ Mean free time*], [$tau$], [≈ 10⁻¹²–10⁻¹¹], [≈ 10⁻¹²–10⁻¹¹], [s],
+//     [*擴散係數 \ Diffusion coefficient*], [$D = v_F^2 tau / 2$], [≈ 5.6×10²–5.6×10³], [≈ 1.5×10²–2.4×10³], [cm²/s],
 
-    [*電阻率 \ Resistivity* ¹], [$rho = [n_s e mu_e]^(-1)$], [≈ 0.001–0.01], [≈ 0.0002–0.002], [kΩ (per □)],
+//     [*電阻率 \ Resistivity* ¹], [$rho = [n_s e mu_e]^(-1)$], [≈ 0.001–0.01], [≈ 0.0002–0.002], [kΩ (per □)],
 
-    [*費米波長 \ Fermi wavelength*], [$lambda_F = 2 pi / k_F$], [≈ 0.32 nm], [≈ 7–11 nm], [nm],
+//     [*費米波長 \ Fermi wavelength*], [$lambda_F = 2 pi / k_F$], [≈ 0.32 nm], [≈ 7–11 nm], [nm],
 
-    [*平均自由路徑 \ Mean-free path*], [$l_e = v_F tau$], [80–800], [180], [nm],
-    [*載子遷移率 \ Electron mobility*], [$mu_e = v_F / l_e$], [≈ 1.25–1.55], [≈ 6.5–7.5], [cm²/Vs],
-    [*狄拉克點 \ Dirac point*], [$E_D$], [≈ 0.32 eV], [≈ 0.32 eV], [eV],
-    [*超導相干長度 \ Superconducting coherence length*], [$xi$], [≈ 10 nm], [≈ 10 nm], [nm],
-  ),
-  caption: [#ce[PtTe2]、#ce[NbTi]量子輸運參數表],
-)
-= 附錄 B：縮寫列表 List of Abbreviations<abbreviations-list>
-#let abbreviations = csv("abbreviations.csv")
+//     [*平均自由路徑 \ Mean-free path*], [$l_e = v_F tau$], [80–800], [180], [nm],
+//     [*載子遷移率 \ Electron mobility*], [$mu_e = v_F / l_e$], [≈ 1.25–1.55], [≈ 6.5–7.5], [cm²/Vs],
+//     [*狄拉克點 \ Dirac point*], [$E_D$], [≈ 0.32 eV], [≈ 0.32 eV], [eV],
+//     [*超導相干長度 \ Superconducting coherence length*], [$xi$], [≈ 10 nm], [≈ 10 nm], [nm],
+//   ),
+//   caption: [#ce[PtTe2]、#ce[NbTi]量子輸運參數表],
+// )
+// = 附錄 B：縮寫列表 List of Abbreviations<abbreviations-list>
+// #let abbreviations = csv("abbreviations.csv")
 
-#figure(
-  table(
-    columns: (auto, 1fr),
-    align: (left, left),
-    table.header([*縮寫*], [*全稱*]),
-    ..abbreviations.map(row => (eval(row.at(0), mode: "markup", scope: (ce: ce)), row.at(1))).flatten(),
-  ),
-  caption: [縮寫列表],
-)
+// #figure(
+//   table(
+//     columns: (auto, 1fr),
+//     align: (left, left),
+//     table.header([*縮寫*], [*全稱*]),
+//     ..abbreviations.map(row => (eval(row.at(0), mode: "markup", scope: (ce: ce)), row.at(1))).flatten(),
+//   ),
+//   caption: [縮寫列表],
+// )
 
 // === 資料集詳細資訊 <subsection-dataset-details>
 

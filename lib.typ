@@ -108,33 +108,23 @@
 }
 
 // 摘要頁面函數
-#let nsysu-abstract-page(title: "", content, keywords: "") = {
+#let nsysu-abstract-page(title: "", content, keywords: "", keyword-title: "關鍵詞") = {
   pagebreak()
 
-  {
-    set align(center)
-    text(size: 18pt, weight: "bold")[#title]
-  }
-
-  v(2em)
+  heading(level: 1, numbering: none, outlined: true)[#title]
 
   content
 
   v(2em)
 
-  [關鍵詞：#keywords]
+  [#keyword-title：#keywords]
 }
 
 // 誌謝頁面函數
 #let nsysu-acknowledgement-page(content) = {
   pagebreak()
 
-  {
-    set align(center)
-    text(size: 18pt, weight: "bold")[誌謝]
-  }
-
-  v(2em)
+  heading(level: 1, numbering: none, outlined: true)[誌謝]
 
   content
 }
@@ -175,6 +165,7 @@
       right: 2.5cm,
     ),
     numbering: "1",
+    number-align: center,
   )
 
   // 設定文字格式
@@ -198,15 +189,15 @@
     counter(figure.where(kind: image)).update(0)
     counter(figure.where(kind: table)).update(0)
     pagebreak(weak: true)
-    v(2em)
+    // v(2em)
     set text(size: 18pt, weight: "bold")
     set align(center)
     it
-    v(1.5em)
+    v(0.5em)
   }
 
   show heading.where(level: 2): it => {
-    v(1.5em)
+    v(1em)
     set text(size: 16pt, weight: "bold")
     it
     v(1em)
