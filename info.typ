@@ -3,7 +3,7 @@
 #import "@preview/typsium:0.3.1": *
 #let info = (
   title: [面內磁場下1T相二碲化鉑約瑟夫森接面之電流－相位關係研究],
-  title-en: [Study of the Current–Phase Relation of a 1T-$bold(#ce[PtTe2])$ Josephson Junction Under an In-Plane Magnetic Field],
+  title-en: [Study Current to Phase Relationship of 1T-$bold(#ce[PtTe2])$ Josephson Junction Under an In-Plane Magnetic Field],
   author: "徐道宜",
   author-en: "Tao-Yi Hsu",
   advisor: "邱奎霖 博士",

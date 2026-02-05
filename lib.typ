@@ -195,6 +195,8 @@
   // 設定標題格式
   set heading(numbering: "1.1.1")
   show heading.where(level: 1): it => {
+    counter(figure.where(kind: image)).update(0)
+    counter(figure.where(kind: table)).update(0)
     pagebreak(weak: true)
     v(2em)
     set text(size: 18pt, weight: "bold")
@@ -220,7 +222,10 @@
   // 設定圖表格式
   set figure(
     supplement: [圖],
-    numbering: "1.1",
+    numbering: n => {
+      let chapter = counter(heading.where(level: 1)).at(here()).first()
+      numbering("1-1", chapter, n)
+    },
   )
 
   set figure.caption(
@@ -234,91 +239,12 @@
 
   // 生成封面頁
   nsysu-cover-page(info)
+  pagebreak()
 
   // 重設頁碼為羅馬數字
   set page(numbering: "i")
   counter(page).update(1)
 
-  // 生成目錄 - 僅在此頁面顯示水印
-  pagebreak()
-
-  // 為目錄頁面設定水印
-  set page(
-    background: if watermark {
-      place(
-        center + horizon,
-        rotate(0deg, rect(
-          fill: none,
-          stroke: none,
-          image("Images/watermark.jpg", width: 8cm, fit: "contain"),
-        )),
-      )
-    } else {
-      none
-    },
-  )
-
-  {
-    set align(center)
-    text(size: 18pt, weight: "bold")[#toc-title]
-  }
-  v(1em)
-
-  show outline.entry.where(level: 1): it => {
-    strong(it)
-  }
-
-  outline(
-    title: none,
-    indent: auto,
-    depth: 3,
-  )
-
-  // 移除水印設定，回到一般頁面
-  set page(background: none)
-
-  // 生成圖次
-  pagebreak()
-  {
-    set align(center)
-    text(size: 18pt, weight: "bold")[#lof-title]
-  }
-  v(1em)
-
-  outline(
-    title: none,
-    target: figure.where(kind: image),
-  )
-
-  // 生成表目錄
-  pagebreak()
-  {
-    set align(center)
-    text(size: 18pt, weight: "bold")[#lot-title]
-  }
-  v(1em)
-
-  outline(
-    title: none,
-    target: figure.where(kind: table),
-  )
-
-  // 主要內容重設頁碼
-  pagebreak()
-  set page(numbering: "1")
-  counter(page).update(1)
-
-  // 插入主要內容
+  // 插入主要內容（此時為前置頁面與目錄等）
   body
-
-  // 顯示參考文獻
-  if bibliography != none {
-    pagebreak()
-    {
-      set align(center)
-      text(size: 18pt, weight: "bold")[參考文獻]
-    }
-    v(1em)
-    bibliography
-  }
 }
