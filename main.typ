@@ -103,10 +103,7 @@
   ),
 )
 
-#{
-  set align(center)
-  text(size: 18pt, weight: "bold")[目錄]
-}
+#heading(level: 1, numbering: none, outlined: true)[目錄]
 #v(1em)
 
 #show outline.entry.where(level: 1): it => {
@@ -124,10 +121,7 @@
 
 // 圖次
 #pagebreak()
-#{
-  set align(center)
-  text(size: 18pt, weight: "bold")[圖次]
-}
+#heading(level: 1, numbering: none, outlined: true)[圖次]
 #v(1em)
 
 #outline(
@@ -137,10 +131,7 @@
 
 // 表目錄
 #pagebreak()
-#{
-  set align(center)
-  text(size: 18pt, weight: "bold")[表目錄]
-}
+#heading(level: 1, numbering: none, outlined: true)[表目錄]
 #v(1em)
 
 #outline(

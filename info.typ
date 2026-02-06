@@ -16,8 +16,8 @@
   degree-en: "Master's",
   year: "115",
   year-en: "2026",
-  month: "2月",
-  month-en: "February",
+  month: "1月",
+  month-en: "January",
   keywords: "二碲化鉑、約瑟夫森接面、超導量子干涉儀、電流相位關係、面內磁場",
   keywords-en: [#ce[PtTe2], Josephson junction, superconducting quantum interference device, current phase relationship, in-plane magnetic field],
 )
